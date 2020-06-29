@@ -1,0 +1,171 @@
+/* Color */
+$white-color: #fff;
+$black-color: #333;
+$purple-color-bold: #8145f0;
+$purple-color-light: #b896f6;
+$primary-color-bold: #4961ea;
+$primary-color-light: #3f51b563;
+$green-color: #04d786;
+$gray-color-bold: #9fafc1;
+$gray-color-light: #c9d3dd;
+$red-color: #f76060;
+$disabled-color: #e5e8ea;
+$disabled-color-light: #e0e3e4;
+
+
+.white-color {
+  color: $white-color;
+}
+
+/* Typography */
+$base-font-family: "Open Sans", sans-serif;
+$base-font-size: 16px;
+
+/* Common style */
+%wrapper {
+  box-sizing: border-box;
+  background-color: $white-color;
+  border-radius: 5px;
+}
+
+body {
+  font-size: $base-font-size !important;
+  font-family: $base-font-family !important;
+}
+
+h1 {
+  font-size: $base-font-size * 2.441;
+}
+
+h2 {
+  font-size: $base-font-size * 1.953;
+}
+
+h3 {
+  font-size: $base-font-size * 1.563;
+}
+
+h4 {
+  font-size: $base-font-size * 1.25;
+}
+
+h5 {
+  font-size: $base-font-size;
+}
+
+h6 {
+  font-size: $base-font-size * 0.8;
+}
+
+span {
+  font-size: $base-font-size * 0.75;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: 2px solid $gray-color-light;
+  padding: 5px;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input::placeholder {
+  font-size: $base-font-size * 0.75;
+  color: $gray-color-bold;
+}
+
+button {
+  color: $white-color;
+  padding: 8px 15px;
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  background-color: $primary-color-bold;
+  font-family: $base-font-family;
+  cursor: pointer;
+}
+
+.required {
+  display: block;
+  text-align: left;
+  color: $red-color;
+}
+
+#components-layout-demo-custom-trigger .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.authen-loading{
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: #fefefc;
+  >img{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 15%;
+    width: 400px;
+  }
+}
+
+.event-loading{
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: rgba(215, 224, 243, 0.5);
+  >div{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 18%;
+    width: 400px;
+  }
+}
+
+.ant-message{
+  top: 5% !important;
+}
+
+.ant-modal-footer{
+  display: none;
+}
+
+@import "./_login.scss";
+@import "./_form.scss";
+

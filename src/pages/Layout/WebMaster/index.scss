@@ -1,0 +1,13 @@
+.layout {
+  &__header-page{
+    padding: 0;
+    // box-shadow: 0 4px 10px #ddd;
+    background: #fff !important;
+    z-index: 9;
+  }
+  .site-layout-page {
+    height: calc(100vh - 65px);
+    background: #fff;
+    overflow: inherit;
+  }
+}
