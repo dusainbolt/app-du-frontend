@@ -117,6 +117,9 @@ button {
 .site-layout .site-layout-background {
   background: #fff;
 }
+.site-layout-web-background{
+  margin-top: 30px;
+}
 
 .authen-loading{
   position: fixed;
@@ -168,4 +171,4 @@ button {
 
 @import "./_login.scss";
 @import "./_form.scss";
-
+@import "./landing.scss";
