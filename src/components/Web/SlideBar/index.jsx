@@ -1,43 +1,46 @@
-import React from "react";
-import { Layout, Menu } from "antd";
-import { withTranslation } from "react-i18next";
-import { AdminRoutes } from "../../../Routes";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
-import "./index.scss";
-
-const { Item } = Menu;
-const icons = {
-  manager: UserOutlined,
-  task: VideoCameraOutlined,
-  contact: UploadOutlined,
-};
-class Sidebar extends React.Component {
-  renderMenu = () => {
-    let menu = null;
-    menu = AdminRoutes.map((item, index) => {
-      return (
-        <Menu.Item key={`${item.name}_${index}`} icon={this.getIconMenu(item.nameIcon)}>
-          {item.name}
-        </Menu.Item>
-      );
-    });
-    return menu;
-  };
-  getIconMenu = iconName => {
-    const Icon = icons[iconName];
-    return icons ? <Icon /> : "";
+import { Drawer, Button, Radio, Space } from "antd";
+import React, { Component } from "react";
+class sidarBarWeb extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: this.props.visible,
+      placement: "top",
+    };
   }
+  onClose = () => {
+    this.setState({
+      visible: false,
+    });
+    this.props.receiveVisible();
+  };
+
+  onChange = (e) => {
+    this.setState({
+      placement: e.target.value,
+    });
+  };
+
   render() {
+    let { placement, visible } = this.state;
+    // console.log("prpos: ", this.props.visible);
+    // console.log(visible);
+    visible = this.props.visible;
     return (
-      <Menu mode="inline" theme="light" className="layout-page-sider-menu">
-        {this.renderMenu()}
-      </Menu>
+      <Drawer
+        title="Basic Drawer"
+        placement={placement}
+        closable={false}
+        onClose={this.onClose}
+        visible={visible}
+        key={placement}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
     );
   }
 }
 
-export default Sidebar;
+export default sidarBarWeb;

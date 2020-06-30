@@ -3,6 +3,52 @@
 .img-background-top {
   width: 100%;
 }
+
+.title-top-right{
+  padding: 55px 0px 0px 50px;
+  &__title.ant-typography{
+    font-size: 50px;
+    font-weight: 720;
+    color: $primary-color-bold;
+  }
+  &__title-wellcome.ant-typography{
+    font-size: 20px;
+    // font-weight: 720;
+    margin-bottom: 7%;
+    color: $primary-color-bold;
+  }
+  &__title-description.ant-typography{
+    font-size: 20px;
+    // font-weight: 720;
+    margin-bottom: 7%;
+    color: $primary-color-light;
+  }
+  &__icon-group{
+    position: relative;
+    &--item{
+      font-size: 30px;
+      padding: 15px;
+      margin-right: 15px;
+      border-radius: 50%;
+      background-color: $primary-color-bold;
+      >svg{
+        color: white;
+      }
+    }
+  }
+}
+
+.rp-mobie{
+  display: none !important;
+}
+
+.rp-web{
+  display: flex !important;
+}
+.buton-col-6{
+  width: 25%;
+}
+
 .header {
   &__icon {
     padding: 20px;
@@ -20,6 +66,10 @@
     }
     &--display-mobie {
       display: none;
+      &--icon>svg{
+        color: $primary-color-bold;
+        font-size: 30px;
+      }
     }
     &--menu {
       > ul {
@@ -37,16 +87,21 @@
             color: $primary-color-bold;
             text-align: center;
             font-weight: 550;
-            padding: 15px 15px;
+            padding: 11px 15px;
             border-radius: 150px;
             border: solid 1px $primary-color-bold;
             text-decoration: none;
             &:hover{
                 color:white;
-                background-color: $primary-color-bold;
+                background-color: $purple-color-light;
+                border: solid 1px $purple-color-light;
             }
           }
         }
+      }
+      &--icon{
+        margin-right: 7px;
+        font-size: 15px;
       }
     }
   }
@@ -61,6 +116,20 @@ div.ant-popover-inner {
 }
 
 @media (max-width: 414px) {
+  .rp-mobie{
+    display: flex !important;
+  }
+  .rp-web{
+    display: none !important;
+  }
+  .title-top-right{
+    padding: 40px 0px 0px 20px;
+    &__title.ant-typography{
+      font-size: 25px;
+      font-weight: 720;
+      color: $primary-color-bold;
+    }
+  }
   .header {
     display: flex;
     &__web {
