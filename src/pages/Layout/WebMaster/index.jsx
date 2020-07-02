@@ -31,7 +31,6 @@ class App extends Component {
               <Layout className="site-layout-web">
                 <Content className="site-layout-web-background">
                   <MyComponent {...routeProps} />
-                  <MyComponent {...routeProps} />
                 </Content>
               </Layout>
             </Layout>

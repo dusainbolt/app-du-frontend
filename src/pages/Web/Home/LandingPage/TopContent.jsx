@@ -8,10 +8,11 @@ import {
   MenuOutlined,
   UserOutlined,
   MessageFilled,
-  LogoutOutlined,
-  MailOutlined,
+  MailFilled,
   InstagramFilled,
   FacebookFilled,
+  ContainerFilled,
+  EyeFilled
 } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
@@ -36,12 +37,18 @@ class TopContent extends Component {
         <div className="title-top-right__icon-group">
           <FacebookFilled className="title-top-right__icon-group--item" />
           <InstagramFilled className="title-top-right__icon-group--item" />
-          <MailOutlined className="title-top-right__icon-group--item" />
+          <MailFilled className="title-top-right__icon-group--item" />
+        </div>
+        <div className="title-top-right__icon-group-detail">
+          <EyeFilled className="title-top-right__icon-group-detail--icon" />
+          <label className="title-top-right__icon-group-detail--value">9999</label>
+          {/* <ContainerFilled className="title-top-right__icon-group-detail--icon" />
+          <label className="title-top-right__icon-group-detail--value">9999</label> */}
         </div>
         <Button
           type="submit"
           // onClick={formik.handleSubmit}
-          className="login__form--button white-color buton-col-6"
+          className="login__form--button white-color title-top-right--button buton-col-6"
           buttonTitle="GET STARTED"
         />
       </div>
@@ -49,7 +56,7 @@ class TopContent extends Component {
   };
 
   genderContentRight = () => {
-    return <img className="img-background-top" src={ImgTop} alt="img top" />;
+    return <img className="img-background--top" src={ImgTop} alt="img top" />;
   };
 
   render() {
@@ -70,17 +77,6 @@ class TopContent extends Component {
             {this.genderContentLeft()}
           </Col>
         </Row>
-        {/* <FadeIn delay={1000} transitionDuration={1000}> */}
-        {/* <Row justify="space-around" align="middle">
-            <Col span={4}>
-              <Card bordered={false} style={{ width: "100%" }}>
-                <p>Card content</p>
-              </Card>
-            </Col>
-            <Col span={4}>col-4</Col>
-            <Col span={4}>col-4</Col>
-            <Col span={4}>col-4</Col>
-          </Row> */}
       </div>
     );
   }

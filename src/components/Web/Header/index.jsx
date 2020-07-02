@@ -68,30 +68,25 @@ class CommonHeader extends React.Component {
                     to="/bautroixanh/login"
                   >
                     <MailOutlined className="header__web--menu--icon" />
-                    Home{" "}
+                    Home
                   </Link>
                 </li>
                 <li>
                   <Link to="/bautroixanh/login">
                     <AppstoreOutlined className="header__web--menu--icon" />
-                    Home part 2{" "}
+                    Home part 2
                   </Link>
                 </li>
                 <li>
                   <Link to="/bautroixanh/login">
                     <SettingOutlined className="header__web--menu--icon" />
-                    Home part 3{" "}
+                    Home part 3
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className="header__web--display-mobie">
-            {/* <Avatar
-              className="header__web--display-mobie--icon"
-              icon={}
-              onClick={this.onShowSidebar}
-            /> */}
             <AppstoreOutlined
               className="header__web--display-mobie--icon"
               onClick={this.onShowSidebar}
