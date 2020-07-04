@@ -12,7 +12,7 @@
   }
   &__title-description.ant-typography{
     font-size: 20px;
-    margin-bottom: 7%;
+    margin-bottom: 5%;
     color: $black-color;
   }
   &__icon-group{
@@ -26,38 +26,62 @@
       >svg{
         color: white;
       }
+      &:hover{
+        box-shadow: 0 0 11px rgba(33,33,33,.2); 
+      }
     }
   }
   &__icon-group-detail{
-    margin-top: 10%;
+    margin-top: 1%;
     position: relative;
-    &--icon{
-      font-size: 28px;
-      margin-right: 5px;
-      >svg {
+    margin-bottom: 7%;
+    &--process-circle{
+      margin: 0px 30px 10px 0px !important;
+      &__value{
+        display: block;
         color: $primary-color-bold;
+        font-weight: 600;
+      }
+      &__title{
+        display: block;
+        color: $black-color;
+        font-size: 18px;
+        font-weight: 400;
       }
     }
-    &--value{
-      font-size: 28px;
-      font-weight: 700;
-      color: $primary-color-bold;
-      margin-right: 25px;
-    }
+  }
+  &--button{
+    margin-top: 7% !important;
   }
 }
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
 
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
 .container-ld {
   margin-top: 5%;
+  position: relative;
   &--rows{
     width: 100%;
+    >div{
+      margin-bottom: 30px;
+    }
     &__col-one{
+      margin-top: 20px;
       background-color: $primary-color-bold;
+      box-shadow: 0 0 11px rgba(33,33,33,.2); 
       color: white;
-      height: 250px;
+      height: 100%;
       &--item{
         text-align: center;
-        height: 40%;
+        margin-bottom: 10px;
         &__icon{
           margin: 10%;
           background-color: white;
@@ -69,11 +93,51 @@
           }
         }
       }
+      &--content{
+        text-align: center;
+        &__title.ant-typography{
+          color: $white-color;
+          font-size: 25px;
+          font-weight: 800;
+        }
+        &__description.ant-typography{
+          padding: 0px 10px 15px 10px;
+          color: $white-color;
+          font-size: 18px;
+          word-break: break-all;
+        }
+      }
     }
     &__col-two{
       @extend .container-ld--rows__col-one;
       background-color: white;
       color: black;
+      margin-bottom: 20px;
+      &--item{
+        text-align: center;
+        &__icon{
+          @extend .container-ld--rows__col-one--item__icon;
+          background-color: $primary-color-bold;
+          >svg {
+            color: $white-color;
+          }
+        }
+      }
+      &--content{
+        text-align: center;
+        &__title.ant-typography{
+          color: $black-color;
+          font-size: 25px;
+          font-weight: 800;
+        }
+        &__description.ant-typography{
+          @extend .container-ld--rows__col-one--content__description;
+          color: $black-color;
+        }
+      }
+    }
+    &__col-course{
+      display: inline-block !important;
     }
   }
   &--title.ant-typography{
@@ -84,6 +148,10 @@
     margin-top: 40px;
     margin-bottom: 30px;
   }
+}
+
+.ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path{
+  stroke: $primary-color-bold !important;
 }
 
 .home-item-menu-active{
@@ -109,13 +177,6 @@ border-radius: 5px;
   &--top{
     width: 100%;
   }
-  // &--circel-left{
-  //   margin-top: 10%;
-  //   border-radius: 0 50% 50% 0;
-  //   width: 95%;
-  //   height: 80%;
-  //   border: solid 10px $primary-color-bold;
-  // }
 }
 .header {
   &__icon {
@@ -181,12 +242,12 @@ border-radius: 5px;
   }
   .title-top-right{
     &__icon-group{
-      text-align: center;
+      text-align: left;
       &--item{
         font-size: 15px;
       }
     }
-    &--button-01{
+    &--button{
       text-align: center;
       
     }
@@ -223,6 +284,17 @@ border-radius: 5px;
       font-size: 25px;
       font-weight: 720;
       color: $primary-color-bold;
+    }
+    &__icon-group{
+      text-align: center;
+      &--item{
+        font-size: 15px;
+      }
+    }
+    &__icon-group-detail{
+      &--container{
+        text-align: center;
+      }
     }
   }
   .buton-col-6 {

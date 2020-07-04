@@ -4,6 +4,7 @@ import Button from "../../../../component/Button";
 import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
+import CountDownTimer from "./CountDownTime";
 import {
   MenuOutlined,
   UserOutlined,
@@ -32,25 +33,22 @@ class TopContent extends Component {
           It's been a long day without you, my friend And I'll tell you all
           about it when I see you again We've come a long way from where we
           began Oh I'll tell you all about it when I see you again When I see
-          you again
+          you again. We have started:
         </Paragraph>
+        <CountDownTimer />
         <div className="title-top-right__icon-group">
           <FacebookFilled className="title-top-right__icon-group--item" />
           <InstagramFilled className="title-top-right__icon-group--item" />
           <MailFilled className="title-top-right__icon-group--item" />
         </div>
-        <div className="title-top-right__icon-group-detail">
-          <EyeFilled className="title-top-right__icon-group-detail--icon" />
-          <label className="title-top-right__icon-group-detail--value">9999</label>
-          {/* <ContainerFilled className="title-top-right__icon-group-detail--icon" />
-          <label className="title-top-right__icon-group-detail--value">9999</label> */}
-        </div>
+        <div className="title-top-right__icon-group">
         <Button
           type="submit"
           // onClick={formik.handleSubmit}
           className="login__form--button white-color title-top-right--button buton-col-6"
           buttonTitle="GET STARTED"
         />
+        </div>
       </div>
     );
   };
@@ -63,7 +61,7 @@ class TopContent extends Component {
     const { t } = this.props;
     return (
       <div>
-        <Row>
+        <Row className="top-content">
           <Col className="rp-web" span={12}>
             {this.genderContentLeft()}
           </Col>

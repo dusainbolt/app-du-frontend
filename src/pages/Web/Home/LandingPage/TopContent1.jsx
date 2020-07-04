@@ -11,31 +11,56 @@ import {
   MessageFilled,
   LogoutOutlined,
   MailFilled,
-  InstagramFilled,
+  InstagramOutlined,
   FacebookFilled,
 } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
 class TopContent extends Component {
-  genderContentLeft = (nuberRows, objectGuitar = []) => {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      description: "The analogies and problems used in these experiments were not specific to any domain of expertise and used fantasy problems relying only on linguistic descriptions."
+    };
+  }
+
+  renderContent = (nuberRows, objectGuitar = []) => {
     return (
       <Row gutter={objectGuitar} className="container-ld--rows">
         <Col span={nuberRows}>
-          <div className="container-ld--rows__col-one">
-            <div className="container-ld--rows__col-one--item">
-              <InstagramFilled className="container-ld--rows__col-one--item__icon" />
+          <div className="container-ld--rows__col-two">
+            <div className="container-ld--rows__col-two--item">
+              <InstagramOutlined className="container-ld--rows__col-two--item__icon" />
+            </div>
+            <div className="container-ld--rows__col-two--content">
+            <Title className="container-ld--rows__col-two--content__title">Title</Title>
+                <Paragraph className="container-ld--rows__col-two--content__description">{this.state.description}</Paragraph>
             </div>
           </div>
         </Col>
         <Col span={nuberRows}>
-          <div className="container-ld--rows__col-two">col-6</div>
+          <div className="container-ld--rows__col-one">
+            <div className="container-ld--rows__col-one--item">
+              <UserOutlined className="container-ld--rows__col-one--item__icon" />
+            </div>
+            <div className="container-ld--rows__col-one--content">
+                <Title className="container-ld--rows__col-one--content__title">Title</Title>
+                <Paragraph className="container-ld--rows__col-one--content__description">{this.state.description}</Paragraph>
+              </div>
+            </div>
         </Col>
         <Col span={nuberRows}>
-          <div className="container-ld--rows__col-one">col-6</div>
-        </Col>
-        <Col span={nuberRows}>
-          <div className="container-ld--rows__col-two">col-6</div>
+          <div className="container-ld--rows__col-two">
+            <div className="container-ld--rows__col-two--item">
+              <MenuOutlined className="container-ld--rows__col-two--item__icon" />
+            </div>
+            <div className="container-ld--rows__col-two--content">
+            <Title className="container-ld--rows__col-two--content__title">Title</Title>
+                <Paragraph className="container-ld--rows__col-two--content__description">{this.state.description} sdsd sdsdsd  sdsdsds sadasdas assdsadas  asdasdsa asdasdsadsa asdsadsadas sadsadsadassdsdsd sdsdsa  asdsadas asdasdasa asdsadas asdsad asdsadas</Paragraph>
+            </div>
+          </div>
         </Col>
       </Row>
     );
@@ -54,10 +79,10 @@ class TopContent extends Component {
             <Title className="container-ld--title">Why choose us</Title>
           </Col>
           <Col className="rp-web" span={18} offset={3}>
-            {this.genderContentLeft(6, [48, 16])}
+            {this.renderContent(8, [48, 16])}
           </Col>
           <Col className="rp-mobie" span={18} offset={3}>
-            {this.genderContentLeft(24)}
+            {this.renderContent(24)}
           </Col>
         </Row>
       </div>
