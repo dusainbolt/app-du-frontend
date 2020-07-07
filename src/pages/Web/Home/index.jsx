@@ -6,7 +6,7 @@ import { withTranslation } from "react-i18next";
 import FadeIn from "react-fade-in";
 import TopContent from "./LandingPage/TopContent";
 import TopContent1 from "./LandingPage/TopContent1";
-import CourseTeam from "./LandingPage/CourseTeam";
+import CarouselTeam from "./LandingPage/CarouselTeam";
 
 
 class Home extends Component {
@@ -21,7 +21,7 @@ class Home extends Component {
           <TopContent1 />
         </FadeIn>
         <FadeIn delay={1000} transitionDuration={1000}>
-          <CourseTeam />
+          <CarouselTeam />
         </FadeIn>
         <FadeIn delay={1000} transitionDuration={1000}>
           <TopContent1 />

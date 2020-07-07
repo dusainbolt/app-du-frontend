@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
 import CountDownTimer from "./CountDownTime";
-import { Carousel } from "antd";
+import { Carousel, Timeline } from "antd";
 
 import {
   MenuOutlined,
@@ -58,7 +58,15 @@ class TopContent extends Component {
   genderContentLeft = () => {
     return (
       <div className="container-ld--rows__col-course--content-left">
-        <div>sdsd</div>
+        <div className="container-ld--rows__col-course--content-left-position">
+          <div className="container-ld--rows__col-course--content-left__office">
+            Chief Executive Officer
+          </div>
+          <div className="container-ld--rows__col-course--content-left__content">
+            Chief Executive Officer Chief Executive Officer Chief Executive
+            Officer Chief Executive Officer Chief Executive Officer
+          </div>
+        </div>
       </div>
     );
   };
@@ -75,15 +83,42 @@ class TopContent extends Component {
                 {this.state.user.name}
               </div>
               <div className="container-ld--rows__col-course--content-right__icon-social">
-                <FacebookFilled className="container-ld--rows__col-course--content-right__icon-social--item"/>
-                <InstagramFilled className="container-ld--rows__col-course--content-right__icon-social--item"/>
-                <MailFilled className="container-ld--rows__col-course--content-right__icon-social--item"/>
+                <FacebookFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
+                <InstagramFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
+                <MailFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
+              </div>
+              
+              <div className="container-ld--rows__col-course--content-right__description">
+              Chief Executive Officer Chief Executive Officer Chief Executive
+            Officer Chief Executive Officer Chief Executive Offisssssss sssssssssss max 155 character
               </div>
             </div>
           </Col>
           <Col span={12}>
             <div className="container-ld--rows__col-course--content-right__wrapper">
-              sdsdsd
+              <div className="container-ld--rows__col-course--content-right__timeline-detail">
+              <Timeline>
+                <Timeline.Item>
+                  <label className="container-ld--rows__col-course--content-right__timeline-detail--label"><UserOutlined /> Birthday: </label>18-11-1999
+                </Timeline.Item>
+                <Timeline.Item>
+                <label className="container-ld--rows__col-course--content-right__timeline-detail--label"><UserOutlined /> Height & Weight: </label>175cm, 74kg
+                </Timeline.Item>
+                <Timeline.Item>
+                <label className="container-ld--rows__col-course--content-right__timeline-detail--label"><UserOutlined /> University
+: </label>Học viện kỹ thuật mật mã
+                </Timeline.Item>
+                <Timeline.Item>
+                <label className="container-ld--rows__col-course--content-right__timeline-detail--label"><UserOutlined /> Date Joined: </label>17-7-2020
+                </Timeline.Item>
+                <Timeline.Item>
+                <label className="container-ld--rows__col-course--content-right__timeline-detail--label"><UserOutlined /> Name: </label>Create a services site 2015-09-01
+                </Timeline.Item>
+              </Timeline>
+              </div>
+              <div className="container-ld--rows__col-course--content-right__maxim-wrapper">
+              <em>" Cuộc đời này ngắn lắm, cứ dám nghĩ to, ước lớn, không ai đánh thuế giấc mơ của bạn cả ..."</em>
+              </div>
             </div>
           </Col>
         </Row>
@@ -95,7 +130,7 @@ class TopContent extends Component {
     const { t } = this.props;
     return (
       <div className="container-ld--rows__course">
-        <Carousel effect="fade">
+        <Carousel autoplay effect="fade">
           <Col span={24}>{this.renderContentCourse()}</Col>
           <Col span={24}>{this.renderContentCourse()}</Col>
           <Col span={24}>{this.renderContentCourse()}</Col>

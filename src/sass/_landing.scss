@@ -1,49 +1,49 @@
-.title-top-right{
+.title-top-right {
   padding: 55px 0px 0px 50px;
-  &__title.ant-typography{
+  &__title.ant-typography {
     font-size: 50px;
     font-weight: 720;
     color: $primary-color-bold;
   }
-  &__title-wellcome.ant-typography{
+  &__title-wellcome.ant-typography {
     font-size: 20px;
     margin-bottom: 7%;
     color: $primary-color-bold;
   }
-  &__title-description.ant-typography{
+  &__title-description.ant-typography {
     font-size: 20px;
     margin-bottom: 5%;
     color: $black-color;
   }
-  &__icon-group{
+  &__icon-group {
     position: relative;
-    &--item{
+    &--item {
       font-size: 30px;
       padding: 15px;
       margin-right: 15px;
       cursor: pointer;
       border-radius: 50%;
       background-color: $primary-color-bold;
-      >svg{
+      > svg {
         color: white;
       }
-      &:hover{
-        box-shadow: 0 0 11px rgba(33,33,33,.2); 
+      &:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
       }
     }
   }
-  &__icon-group-detail{
+  &__icon-group-detail {
     margin-top: 1%;
     position: relative;
     margin-bottom: 7%;
-    &--process-circle{
+    &--process-circle {
       margin: 0px 30px 10px 0px !important;
-      &__value{
+      &__value {
         display: block;
         color: $primary-color-bold;
         font-weight: 600;
       }
-      &__title{
+      &__title {
         display: block;
         color: $black-color;
         font-size: 18px;
@@ -51,7 +51,7 @@
       }
     }
   }
-  &--button{
+  &--button {
     margin-top: 7% !important;
   }
 }
@@ -69,39 +69,43 @@
 .container-ld {
   margin-top: 5%;
   position: relative;
-  &--rows{
+  &--rows {
     width: 100%;
-    >div{
+    > div {
       margin-bottom: 30px;
     }
-    &__col-one{
+    &__col-one {
       margin-top: 20px;
       background-color: $primary-color-bold;
-      box-shadow: 0 0 11px rgba(33,33,33,.2); 
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      &:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+      }
       color: white;
       height: 100%;
-      &--item{
+      border-radius: 30px;
+      &--item {
         text-align: center;
         margin-bottom: 10px;
-        &__icon{
+        &__icon {
           margin: 10%;
           background-color: white;
           font-size: 40px;
           padding: 20px;
           border-radius: 50%;
-          >svg {
+          > svg {
             color: $primary-color-bold;
           }
         }
       }
-      &--content{
+      &--content {
         text-align: center;
-        &__title.ant-typography{
+        &__title.ant-typography {
           color: $white-color;
           font-size: 25px;
           font-weight: 800;
         }
-        &__description.ant-typography{
+        &__description.ant-typography {
           padding: 0px 10px 15px 10px;
           color: $white-color;
           font-size: 18px;
@@ -109,66 +113,100 @@
         }
       }
     }
-    &__col-two{
+    &__col-two {
       @extend .container-ld--rows__col-one;
       background-color: white;
       color: black;
       margin-bottom: 20px;
-      &--item{
+      &--item {
         text-align: center;
-        &__icon{
+        &__icon {
           @extend .container-ld--rows__col-one--item__icon;
           background-color: $primary-color-bold;
-          >svg {
+          > svg {
             color: $white-color;
           }
         }
       }
-      &--content{
+      &--content {
         text-align: center;
-        &__title.ant-typography{
+        &__title.ant-typography {
           color: $black-color;
           font-size: 25px;
           font-weight: 800;
         }
-        &__description.ant-typography{
+        &__description.ant-typography {
           @extend .container-ld--rows__col-one--content__description;
           color: $black-color;
         }
       }
     }
-    &__col-course{
+    &__col-course {
       display: inline-block !important;
       width: 100%;
-      &--content-left{
-        width: 60%;
+      &--content-left {
+        width: 90%;
+        position: relative;
         float: right;
+        line-height: 21px;
+        &__office {
+          color: $white-color;
+          font-weight: 700;
+          margin-top: 29%;
+          font-size: 25px;
+          text-align: left;
+          word-wrap: break-word;
+        }
+        &__content {
+          @extend .container-ld--rows__col-course--content-left__office;
+          font-size: 12px;
+          margin-top: 25px;
+        }
       }
-      &--content-right{
+      &--content-left-position {
+        width: 65%;
+        left: 25%;
+        position: absolute;
+      }
+      &--content-right {
         width: 100%;
         float: left;
         padding-top: 40px;
-        &__wrapper{
+        &__wrapper {
           width: 90%;
           height: 400px;
           background-color: $white-color;
-          box-shadow: 12px 12px 11px rgba(33,33,33,.2); 
+          box-shadow: 12px 12px 11px rgba(33, 33, 33, 0.2);
           border-radius: 30px;
         }
-        &__avatar{
+        &__timeline-detail {
+          padding: 30px 10px 10px 10px;
+          text-align: left;
+          &--label {
+            font-weight: 700;
+          }
+        }
+        &__maxim-wrapper {
+          line-height: 20px;
+          padding: 0px 10px;
+        }
+        &__description {
+          display: none;
+        }
+        &__avatar {
           position: relative;
           width: 100%;
-          >img{
+          > img {
             top: 30px;
             position: inherit;
             width: 60%;
-            border: solid 5px $primary-color-bold;
-            box-shadow: 0 0 11px rgba(33,33,33,.2); 
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
             margin-left: 20%;
             border-radius: 50%;
           }
         }
-        &__name{
+
+        &__name {
           margin-top: 45px;
           text-align: center;
           font-weight: 700;
@@ -176,26 +214,26 @@
           line-height: normal;
           margin-bottom: 15px;
         }
-        &__icon-social{
+        &__icon-social {
           line-height: normal;
           margin-left: 8px;
-          &--item{
+          &--item {
             @extend .title-top-right__icon-group--item;
             font-size: 22px;
             padding: 10px;
             margin-right: 6px;
-            >svg{
+            > svg {
               color: $white-color;
             }
           }
         }
       }
     }
-    &__course{
+    &__course {
       margin-top: 100px;
     }
   }
-  &--title.ant-typography{
+  &--title.ant-typography {
     font-size: 35px;
     color: $black-color;
     text-align: center;
@@ -205,35 +243,36 @@
   }
 }
 
-.ant-carousel .slick-slide{
+.ant-carousel .slick-slide {
   background-color: $primary-color-bold;
 }
 
-.ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path{
+.ant-progress-inner:not(.ant-progress-circle-gradient)
+  .ant-progress-circle-path {
   stroke: $primary-color-bold !important;
 }
 
-.home-item-menu-active{
-  color:white !important;
-  background-color: $primary-color-bold; 
+.home-item-menu-active {
+  color: white !important;
+  background-color: $primary-color-bold;
 }
 
 div.ant-popover-inner {
-border-radius: 5px;
+  border-radius: 5px;
 }
 
-.rp-mobie{
+.rp-mobie {
   display: none !important;
 }
 
-.rp-web{
+.rp-web {
   display: flex !important;
 }
-.buton-col-6{
+.buton-col-6 {
   width: 25%;
 }
 .img-background {
-  &--top{
+  &--top {
     width: 100%;
   }
 }
@@ -254,7 +293,7 @@ border-radius: 5px;
     }
     &--display-mobie {
       display: none;
-      &--icon>svg{
+      &--icon > svg {
         color: $primary-color-bold;
         font-size: 30px;
       }
@@ -279,15 +318,15 @@ border-radius: 5px;
             border-radius: 150px;
             border: solid 1px $primary-color-bold;
             text-decoration: none;
-            &:hover{
-                color:white;
-                background-color: $purple-color-light;
-                border: solid 1px $purple-color-light;
+            &:hover {
+              color: white;
+              background-color: $purple-color-light;
+              border: solid 1px $purple-color-light;
             }
           }
         }
       }
-      &--icon{
+      &--icon {
         margin-right: 7px;
         font-size: 15px;
       }
@@ -296,34 +335,53 @@ border-radius: 5px;
 }
 
 @media (max-width: 768px) {
-  .buton-col-6{
+  .buton-col-6 {
     width: 50%;
   }
-  .title-top-right{
-    &__icon-group{
+  .title-top-right {
+    &__icon-group {
       text-align: left;
-      &--item{
+      &--item {
         font-size: 15px;
       }
     }
-    &--button{
+    &--button {
       text-align: center;
-      
     }
-    &__title.ant-typography{
+    &__title.ant-typography {
       font-size: 40px;
     }
-    &__title-description.ant-typography{
+    &__title-description.ant-typography {
       font-size: 18px;
+    }
+  }
+  .container-ld {
+    &--rows {
+      &__col-course {
+        &--content-right {
+          &__maxim-wrapper {
+            display: none;
+          }
+          &__description {
+            margin-top: 25px;
+            display: block;
+            line-height: 20px;
+          }
+        }
+        &--content-left-position {
+          left: 10%;
+          line-height: 23px;
+        }
+      }
     }
   }
   .header {
     display: flex;
     &__web {
-      &--menu{
+      &--menu {
         margin-right: -70px;
       }
-      >img{
+      > img {
         margin-left: -50px;
       }
     }
@@ -331,34 +389,66 @@ border-radius: 5px;
 }
 
 @media (max-width: 414px) {
-  .rp-mobie{
+  .rp-mobie {
     display: inline !important;
   }
-  .rp-web{
+  .rp-web {
     display: none !important;
   }
-  .title-top-right{
+  .title-top-right {
     padding: 40px 0px 0px 20px;
-    &__title.ant-typography{
+    &__title.ant-typography {
       font-size: 25px;
       font-weight: 720;
       color: $primary-color-bold;
     }
-    &__icon-group{
+    &__icon-group {
       text-align: center;
-      &--item{
+      &--item {
         font-size: 15px;
       }
     }
-    &__icon-group-detail{
-      &--container{
+    &__icon-group-detail {
+      &--container {
         text-align: center;
       }
     }
   }
+
   .buton-col-6 {
     width: 47%;
     margin-left: -15px;
+  }
+
+  .container-ld {
+    &--rows {
+      &__col-course {
+        &--content-right {
+          margin-left: 10px;
+          &__maxim-wrapper {
+            display: none;
+          }
+          &__description {
+            margin-top: 25px;
+            display: block;
+            line-height: 20px;
+          }
+        }
+        &--content-left {
+          &__content {
+            display: none;
+          }
+          &__office {
+            text-align: center;
+          }
+        }
+        &--content-left-position {
+          left: 10%;
+          line-height: 30px;
+          top: -70px;
+        }
+      }
+    }
   }
   .header {
     display: flex;
@@ -371,8 +461,8 @@ border-radius: 5px;
       &--display-web {
         display: none;
       }
-      >img{
-        margin-left: -15%; 
+      > img {
+        margin-left: -15%;
         margin-top: 2%;
       }
       &--display-mobie {
@@ -382,11 +472,9 @@ border-radius: 5px;
     }
   }
   .container-ld {
-
-    &--title.ant-typography{
+    &--title.ant-typography {
       font-size: 25px;
       font-weight: 600;
     }
   }
 }
-
