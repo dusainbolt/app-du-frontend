@@ -17,7 +17,7 @@ class ModalCommon extends Component {
         password: "",
         passwordNew: "",
         passwordConfirm: "",
-        email: this.props.auth.email,
+        email: this.props.userDetail.email,
       },
     };
 
@@ -51,7 +51,7 @@ class ModalCommon extends Component {
 
   render() {
     const { initialValues } = this.state;
-    const { auth } = this.props;
+    const { userDetail } = this.props;
     return (
       <Formik
         initialValues={initialValues}
@@ -65,14 +65,14 @@ class ModalCommon extends Component {
               <Row justify="space-between">
                 <Col span={24}>
                   <label className="form-group__label-left">Tên:</label>
-                  <label className="form-group__label-right">{auth.name}</label>
+                  <label className="form-group__label-right">{userDetail.name}</label>
                 </Col>
               </Row>
               <Row justify="space-between">
                 <Col span={24}>
                   <label className="form-group__label-left">Email:</label>
                   <label className="form-group__label-right">
-                    {auth.email}
+                    {userDetail.email}
                   </label>
                 </Col>
               </Row>
@@ -123,7 +123,7 @@ class ModalCommon extends Component {
 }
 
 const mstp = state => ({
-  auth: state.loginReducer.actorInfo,
+  userDetail: state.loginReducer.userDetail,
 });
 
 const mdtp = dispatch => ({

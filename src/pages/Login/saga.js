@@ -14,12 +14,7 @@ function* postLogin(action) {
   try {
     const response = yield postLoginApi(action.values);
     if (!response.status) {
-      // const responseData = yield postAuthAdminApi(response);
       yield put(actions.postLoginSuccess(response));
-      yield localStorage.setItem("auth", response.token); 
-      yield (api.instance.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${response.token}`);
       yield genMsgResult("success", "Chào mừng đến trang quản trị", 800, 1, "/bautroixanh/home");
     } else {
       yield put(actions.postLoginError({}));
@@ -34,29 +29,23 @@ function* postLogin(action) {
 function* redirectForLogin(action){
   yield put(actionLoadingAuth.showLoadingAuth());
   try {
-    const response = yield postAuthAdminApi(action.values);
-    yield (api.instance.defaults.headers.common[
-      "Authorization"
-    ] = `Bearer ${action.values.token}`);
-    yield put(actions.postLoginSuccess(response));
+    yield api.setAuthRequest(action.values);
+    const response = yield postAuthAdminApi();
+    yield put(actions.postAuthAdminSuccess(response));
     yield genMsgResult("success", "Chào mừng đến trang quản trị", 800, 2, "/bautroixanh/home");
   } catch (e) {
+    yield put(actions.postAuthAdminError(e));
     yield genMsgResult("error", "Phiên đăng nhập hết hạn", 800, 2);
   }
 }
 
 function* checkAuthAdmin(action){
   try {
-    if(action.values.token === ""){
-      browserHistory.push("/bautroixanh/login");
-    }else{
-      const response = yield postAuthAdminApi(action.values);
-      yield (api.instance.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${action.values.token}`);
-      yield put(actions.postLoginSuccess(response));
-    }
+    yield api.setAuthRequest(action.values);
+    const response = yield postAuthAdminApi();
+    yield put(actions.postAuthAdminSuccess(response));
   } catch (e) {
+    yield put(actions.postAuthAdminError(e));
     yield genMsgResult("error", "Phiên đăng nhập hết hạn", 800, 2);
   }
 }
@@ -69,7 +58,6 @@ function* logoutAdmin(action){
     yield put(actions.postLoginSuccess({}));
   }
   yield put(actions.postLoginSuccess({}));
-  yield localStorage.removeItem("auth");
   yield genMsgResult("warning", "Đã đăng xuất", 800, 1, "/bautroixanh/login");
 }
 
@@ -81,6 +69,8 @@ function* changePassword(action){
       yield put(actions.postLoginSuccess(response));
       yield put(actionModal.hideModal());
       yield genMsgResult("success", "Đổi mật khẩu thành công", 800, 1);
+    }else{
+      yield genMsgResult("warning", "Đổi mật khẩu thất bại", 800, 1);
     }
   } catch (e) {
     yield genMsgResult("warning", "Đổi mật khẩu thất bại", 800, 1);
@@ -89,7 +79,7 @@ function* changePassword(action){
 
 function* genMsgResult(typeMsg, msg, timeDelay, typeHide = 0, redirect=""){
   yield delay(timeDelay);
-  if(redirect !== ""){
+  if(redirect){
     yield browserHistory.push(redirect);
   }
   if(typeHide === 1){

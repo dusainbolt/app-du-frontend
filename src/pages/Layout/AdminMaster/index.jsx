@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import { browserHistory } from "../../../utils/history";
 import { Layout } from "antd";
 import { connect } from "react-redux";
@@ -20,18 +20,18 @@ class App extends Component {
   }
 
   toggleMenu() {
-    this.setState(state => ({
+    this.setState((state) => ({
       collapsed: !state.collapsed,
     }));
   }
 
   componentDidMount() {
-    const { postAuth } = this.props;
-    const token = localStorage.getItem("auth")
-      ? localStorage.getItem("auth")
-      : "";
-    postAuth({ token });
-    
+    const { postAuth, token } = this.props;
+    if(token){
+      postAuth(token);
+    }else{
+      browserHistory.push("/bautroixanh/login");
+    }
   }
 
   render() {
@@ -39,12 +39,14 @@ class App extends Component {
       component: MyComponent,
       classes,
       name,
+      token,
       ...remainProps
     } = this.props;
+    
     return (
       <Route
         {...remainProps}
-        render={routeProps => {
+        render={(routeProps) => {
           if (this.props.path === "/bautroixanh") {
             return browserHistory.push("/bautroixanh/home");
           }
@@ -73,12 +75,12 @@ class App extends Component {
   }
 }
 
-const mstp = state => ({
-  auth: state.loginReducer.actorInfo,
+const mstp = (state) => ({
+  token: state.loginReducer.actorInfo.token,
 });
 
-const mdtp = dispatch => ({
-  postAuth: values => dispatch(actions.postAuthAdminStart(values)),
+const mdtp = (dispatch) => ({
+  postAuth: (values) => dispatch(actions.postAuthAdminStart(values)),
 });
 
 export default connect(mstp, mdtp)(App);

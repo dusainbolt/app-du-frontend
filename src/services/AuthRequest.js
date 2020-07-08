@@ -4,8 +4,8 @@ export const postLoginApi = params => {
   return api.post("/admin/login", params);
 };
 
-export const postAuthAdminApi = params => {
-  return api.get(`/admin/auth?token=${params.token}`);
+export const postAuthAdminApi = () => {
+  return api.get("/admin/auth");
 };
 
 export const postLogoutAdminApi = () => {

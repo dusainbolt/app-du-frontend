@@ -1,7 +1,8 @@
 import { ActionTypes } from "./actions";
 
 const DEFAULT_STATE = {
-  actorInfo: {}
+  actorInfo: {},
+  userDetail: {},
 };
 
 export default (state = DEFAULT_STATE, action) => {
@@ -17,6 +18,15 @@ export default (state = DEFAULT_STATE, action) => {
     };
   case ActionTypes.POST_LOGIN_ERROR:
     return {
+      ...state,
+    };
+  case ActionTypes.POST_AUTH_SUCCESS:
+    return {
+      ...state,
+      userDetail: action.payload
+    };
+  case ActionTypes.POST_AUTH_ERROR:
+    return{
       ...state,
     };
   default:

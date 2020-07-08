@@ -4,16 +4,15 @@ import { browserHistory } from "../utils/history";
 class AxiosServer {
   constructor() {
     const instance = axios.create();
-    const token = localStorage.getItem("auth")
-      ? localStorage.getItem("auth")
-      : "";
-    if (token !== "") {
-      instance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    } else {
-      delete instance.defaults.headers.common["Authorization"];
-    }
     instance.interceptors.response.use(this.handelSuccess, this.handelError);
     this.instance = instance;
+  }
+  setAuthRequest(token) {
+    if (token) {
+      this.instance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    } else {
+      delete this.instance.defaults.headers.common["Authorization"];
+    }
   }
   getFullUrl(url) {
     if (!url.startsWith("/")) {
@@ -26,7 +25,6 @@ class AxiosServer {
   }
   handelError(error) {
     if (error.response && error.response.status === 401) {
-      localStorage.removeItem("auth");
       localStorage.removeItem("persist:root");
       browserHistory.push("/bautroixanh/login");
     }

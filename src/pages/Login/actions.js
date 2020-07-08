@@ -1,9 +1,11 @@
 export const ActionTypes = {
   POST_LOGIN_START: "POST_LOGIN_START",
-  POST_REDIRECT_START: "POST_REDIRECT_START",
   POST_LOGOUT_START: "POST_LOGOUT_START",
   POST_LOGOUT_SUCCESS: "POST_LOGOUT_SUCCESS",
+  POST_REDIRECT_START: "POST_REDIRECT_START",
   POST_AUTH_START: "POST_AUTH_START",
+  POST_AUTH_SUCCESS: "POST_AUTH_SUCCESS",
+  POST_AUTH_ERROR: "POST_AUTH_ERROR",
   POST_LOGIN_SUCCESS: "POST_LOGIN_SUCCESS",
   POST_LOGIN_ERROR: "POST_LOGIN_ERROR",
   POST_CHANGE_PASSWORD_START: "POST_CHANGE_PASSWORD_START",
@@ -16,16 +18,28 @@ export const actions = {
       values,
     };
   },
+  postAuthAdminStart: function (values) {
+    return {
+      type: ActionTypes.POST_AUTH_START,
+      values,
+    };
+  },
   postRedirectLoginStart: function (values) {
     return {
       type: ActionTypes.POST_REDIRECT_START,
       values,
     };
   },
-  postAuthAdminStart: function (values) {
+  postAuthAdminSuccess: function (success) {
+    return {
+      type: ActionTypes.POST_AUTH_SUCCESS,
+      payload: success,
+    };
+  },
+  postAuthAdminError: function (error) {
     return {
       type: ActionTypes.POST_AUTH_START,
-      values,
+      payload: error,
     };
   },
   postLoginSuccess: function (success) {

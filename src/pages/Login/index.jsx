@@ -8,9 +8,10 @@ import * as Yup from "yup";
 import Input from "../../component/Login";
 import Button from "../../component/Button";
 import { actions } from "../Login/actions";
+import api  from "../../services/api";
 
 class LoginPage extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       initialValues: {
@@ -25,35 +26,33 @@ class LoginPage extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  componentDidMount(){
-    const auth = localStorage.getItem("auth");
-    if(auth){
-      console.log("auth: ", auth);
-      this.props.postRedirect({ token: auth });
-    }
-  }
-
   onSubmit(values) {
     this.props.postLogin(values);
   }
-
+  componentDidMount() {
+    const { token } = this.props;
+    if(token){
+      this.props.postRedirect(token);
+    }
+  }  
   render() {
     const { initialValues } = this.state;
-    
     return (
       <Formik
         initialValues={initialValues}
         validationSchema={this.validationSchema}
         onSubmit={this.onSubmit}
       >
-        {formik => (
+        {(formik) => (
           <div className="login">
             <div className="login__wrapper">
               <h5 className="login__wrapper--title white-color">Du Sainbolt</h5>
-              <h3 className="login__wrapper--des white-color">Welcome to Admin Manager</h3>
+              <h3 className="login__wrapper--des white-color">
+                Welcome to Admin Manager
+              </h3>
               <div className="login__form">
                 <p className="login__form--title">
-                  <img width="40%"  src={logo} alt="logo" />
+                  <img width="40%" src={logo} alt="logo" />
                 </p>
                 <Field
                   name="email"
@@ -83,12 +82,12 @@ class LoginPage extends Component {
   }
 }
 
-const mstp = state => ({
-  auth : state.loginReducer.actorInfo,
+const mstp = (state) => ({
+  token: state.loginReducer.actorInfo.token,
 });
-const mdtp = dispatch => ({
-  postLogin: values => dispatch(actions.postLoginStart(values)),
-  postRedirect: values => dispatch(actions.postRedirectLoginStart(values)),
+const mdtp = (dispatch) => ({
+  postLogin: (values) => dispatch(actions.postLoginStart(values)),
+  postRedirect: (values) => dispatch(actions.postRedirectLoginStart(values)),
 });
 
 export default connect(mstp, mdtp)(withTranslation()(LoginPage));
