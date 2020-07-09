@@ -16,9 +16,12 @@ import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actio
 const { Paragraph } = Typography;
 
 class CommonHeader extends React.Component {
+  state = {
+    visiblePopover: false,
+  }
   list = (
     <ul className="list__profile">
-      <li className="list__item" onClick={() => this.changePassword()} >
+      <li className="list__item" onClick={() => this.changePassword()}>
         <UserOutlined className="list__item--icon" /> Change Password
       </li>
       <li onClick={() => this.logout()} className="list__item">
@@ -29,11 +32,17 @@ class CommonHeader extends React.Component {
 
   changePassword = () => {
     this.props.showModal("Đổi mật khẩu", <ChangePassModal />);
-  }
+    this.handleVisibleChange();
+  };
 
   logout = () => {
     this.props.logoutAdmin();
   };
+
+  handleVisibleChange = () => {
+    this.setState({ visiblePopover: !this.state.visiblePopover });
+  }
+
   render() {
     return (
       <div className="header">
@@ -43,7 +52,7 @@ class CommonHeader extends React.Component {
         />
         <div className="header__actor">
           <Paragraph className="header__actor--logo" level={4}>
-            <img width="140" height="55" src={LogoHeader} alt="avatar"/>
+            <img width="140" height="55" src={LogoHeader} alt="avatar" />
           </Paragraph>
           <div className="header__actor--profile">
             <MessageFilled className="profile__icon--message" />
@@ -52,6 +61,8 @@ class CommonHeader extends React.Component {
               content={this.list}
               trigger="click"
               className="profile__popover"
+              visible={this.state.visiblePopover}
+              onVisibleChange={this.handleVisibleChange}
             >
               <Avatar
                 className="profile__icon--avatar"
@@ -65,14 +76,12 @@ class CommonHeader extends React.Component {
   }
 }
 
-const mstp = state => ({
+const mstp = (state) => ({});
 
-});
-
-const mdtp = dispacth => ({
+const mdtp = (dispacth) => ({
   logoutAdmin: () => dispacth(actions.postLogoutStart()),
-  showModal: (title, content) => dispacth(actionsModal.showModal(title, content)),
-
+  showModal: (title, content) =>
+    dispacth(actionsModal.showModal(title, content)),
 });
 
 export default connect(mstp, mdtp)(CommonHeader);
