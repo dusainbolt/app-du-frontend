@@ -9,7 +9,7 @@ export const postAuthAdminApi = () => {
 };
 
 export const postLogoutAdminApi = () => {
-  return api.get("/admin/logout");
+  return api.post("/admin/logout");
 };
 
 export const postChangePasswordAdminApi = params=> {

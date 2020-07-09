@@ -21,13 +21,16 @@ export default (state = DEFAULT_STATE, action) => {
       ...state,
     };
   case ActionTypes.POST_AUTH_SUCCESS:
+    console.log(action);
     return {
       ...state,
-      userDetail: action.payload
+      actorInfo: action.payload.token,
+      userDetail: action.payload.data
     };
   case ActionTypes.POST_AUTH_ERROR:
     return{
       ...state,
+      actorInfo: action.payload
     };
   default:
     return state;

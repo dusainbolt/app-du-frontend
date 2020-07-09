@@ -30,15 +30,19 @@ export const actions = {
       values,
     };
   },
-  postAuthAdminSuccess: function (success) {
+  postAuthAdminSuccess: function (token, data) {
+    console.log(token, data);
     return {
       type: ActionTypes.POST_AUTH_SUCCESS,
-      payload: success,
+      payload: {
+        token,
+        data
+      },
     };
   },
   postAuthAdminError: function (error) {
     return {
-      type: ActionTypes.POST_AUTH_START,
+      type: ActionTypes.POST_AUTH_ERROR,
       payload: error,
     };
   },
