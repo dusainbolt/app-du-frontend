@@ -9,11 +9,10 @@ import AuthLoading from "./component/Loading/AuthenLoading";
 import EventLoading from "./component/Loading/EventLoading";
 import Modal from "./component/Modal";
 import LoginPage from "./pages/Login";
+import { actions as actionLayout } from "./pages/Layout/AdminMaster/actions";
 import "./App.css";
 import "./sass/app.scss";
-import { Spin } from "antd";
-
-
+import { connect } from "react-redux";
 class App extends Component {
   renderAdminLayout = () => {
     let html = null;
@@ -46,11 +45,12 @@ class App extends Component {
     return html;
   };
   render() {
+    const { layout } = this.props;
     return (
       <div className="App bg-app">
-        <AuthLoading />
-        <EventLoading />
-        <Modal />
+        <AuthLoading isLoading={layout.isLoadingAuth} />
+        <EventLoading isLoading={layout.isLoadingEvent}/>
+        <Modal hideModal={this.props.hideModal} modal={layout.modal} />
         <Router history={browserHistory}>
           <Switch>
             <Route exact path="/bautroixanh/login" component={LoginPage} />
@@ -63,4 +63,13 @@ class App extends Component {
   }
 }
 
-export default withTranslation()(App);
+const mstp = state => ({
+  layout: state.LayoutReducer,
+});
+
+const mdtp = dispatch => ({
+  hideModal: () => dispatch(actionLayout.hideModal()),
+});
+
+
+export default connect(mstp, mdtp)(withTranslation()(App));

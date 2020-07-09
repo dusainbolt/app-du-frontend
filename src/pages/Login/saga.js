@@ -1,7 +1,6 @@
 import {
   put,
   takeLatest,
-  delay
 } from "redux-saga/effects";
 import {
   actions,
@@ -14,14 +13,8 @@ import {
   postChangePasswordAdminApi,
 } from "../../services/AuthRequest";
 import {
-  actions as actionLoadingAuth
-} from "../../component/Loading/AuthenLoading/actions";
-import {
-  actions as actionLoadingEvent
-} from "../../component/Loading/EventLoading/actions";
-import {
-  actions as actionModal
-} from "../../component/Modal/actions";
+  actions as actionLayout
+} from "../Layout/AdminMaster/actions";
 
 import {
   message
@@ -30,7 +23,7 @@ import api from "../../services/api";
 import { browserHistory } from "../../utils/history";
 
 function* postLogin(action) {
-  yield put(actionLoadingEvent.showLoadingEvent());
+  yield put(actionLayout.showLoadingEvent());
   try {
     const response = yield postLoginApi(action.values);
     yield put(actions.postLoginSuccess(response));
@@ -41,7 +34,7 @@ function* postLogin(action) {
 }
 
 function* redirectForLogin(action) {
-  yield put(actionLoadingAuth.showLoadingAuth());
+  yield put(actionLayout.showLoadingAuth());
   try {
     yield api.setAuthRequest(action.values);
     const response = yield postAuthAdminApi();
@@ -65,7 +58,7 @@ function* checkAuthAdmin(action) {
 }
 
 function* logoutAdmin(action) {
-  yield put(actionLoadingEvent.showLoadingEvent());
+  yield put(actionLayout.showLoadingEvent());
   try {
     yield postLogoutAdminApi();
   } catch (e) {
@@ -76,10 +69,10 @@ function* logoutAdmin(action) {
 }
 
 function* changePassword(action) {
-  yield put(actionLoadingEvent.showLoadingEvent());
+  yield put(actionLayout.showLoadingEvent());
   try {
     yield postChangePasswordAdminApi(action.values);
-    yield put(actionModal.hideModal());
+    yield put(actionLayout.hideModal());
     yield genMsgResult("success", "Đổi mật khẩu thành công", 1);
   } catch (e) {
     yield genMsgResult("warning", "Đổi mật khẩu thất bại", 1);
@@ -91,9 +84,9 @@ function* genMsgResult(typeMsg, msg, typeHide = 0, redirect = "") {
     yield browserHistory.push(redirect);
   }
   if (typeHide === 1) {
-    yield put(actionLoadingEvent.hideLoadingEvent());
+    yield put(actionLayout.hideLoadingEvent());
   } else if (typeHide === 2) {
-    yield put(actionLoadingAuth.hideLoadingAuth());
+    yield put(actionLayout.hideLoadingAuth());
   }
   yield message[typeMsg](msg);
 }

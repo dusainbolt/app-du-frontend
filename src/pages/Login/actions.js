@@ -36,7 +36,7 @@ export const actions = {
       type: ActionTypes.POST_AUTH_SUCCESS,
       payload: {
         token,
-        data
+        data,
       },
     };
   },

@@ -11,15 +11,11 @@ import { connect } from "react-redux";
 import { actions } from "../../../pages/Login/actions";
 import ChangePassModal from "../../../components/Admin/ChangePasswordModal";
 import LogoHeader from "../../../common/image/LogoSidebar.png";
-import { actions as actionsModal } from "../../../component/Modal/actions";
+import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actions";
 
 const { Paragraph } = Typography;
 
 class CommonHeader extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state({});
-  // }
   list = (
     <ul className="list__profile">
       <li className="list__item" onClick={() => this.changePassword()} >

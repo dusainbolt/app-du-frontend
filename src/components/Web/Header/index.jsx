@@ -2,9 +2,7 @@
 
 import React from "react";
 import {
-  MenuOutlined,
   UserOutlined,
-  MessageFilled,
   LogoutOutlined,
   MailOutlined,
   AppstoreOutlined,
@@ -13,12 +11,12 @@ import {
 import FadeIn from "react-fade-in";
 
 import { Link } from "react-router-dom";
-import { Typography, Avatar, Menu, Row, Col } from "antd";
+import { Typography, Menu, } from "antd";
 import { connect } from "react-redux";
 import { actions } from "../../../pages/Login/actions";
 import ChangePassModal from "../../../components/Admin/ChangePasswordModal";
 import LogoHeader from "../../../common/image/LogoSidebar.png";
-import { actions as actionsModal } from "../../../component/Modal/actions";
+import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actions";
 import SideBar from "../SlideBar";
 const { Paragraph } = Typography;
 const { SubMenu, current } = Menu;

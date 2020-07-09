@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Row, Col, Card, Typography } from "antd";
 
 import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";

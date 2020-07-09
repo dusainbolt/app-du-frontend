@@ -3,7 +3,7 @@ import { Modal, Button, Row, Col } from "antd";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Input from "../../../component/Login";
-import { actions as actionsModal } from "../../../component/Modal/actions";
+import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actions";
 import { actions as actionLogin } from "../../../pages/Login/actions";
 import { Formik, Field } from "formik";
 

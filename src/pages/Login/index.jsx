@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Formik, Field } from "formik";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import logo from "../../common/image/logo.png";
@@ -8,7 +7,6 @@ import * as Yup from "yup";
 import Input from "../../component/Login";
 import Button from "../../component/Button";
 import { actions } from "../Login/actions";
-import api  from "../../services/api";
 
 class LoginPage extends Component {
   constructor(props) {
@@ -44,7 +42,7 @@ class LoginPage extends Component {
         validationSchema={this.validationSchema}
         onSubmit={this.onSubmit}
       >
-        {(formik) => (
+        {formik => (
           <div className="login">
             <div className="login__wrapper">
               <h5 className="login__wrapper--title white-color">Du Sainbolt</h5>
@@ -83,12 +81,12 @@ class LoginPage extends Component {
   }
 }
 
-const mstp = (state) => ({
+const mstp = state => ({
   token: state.loginReducer.actorInfo.token,
 });
-const mdtp = (dispatch) => ({
-  postLogin: (values) => dispatch(actions.postLoginStart(values)),
-  postRedirect: (values) => dispatch(actions.postRedirectLoginStart(values)),
+const mdtp = dispatch => ({
+  postLogin: values => dispatch(actions.postLoginStart(values)),
+  postRedirect: values => dispatch(actions.postRedirectLoginStart(values)),
 });
 
 export default connect(mstp, mdtp)(withTranslation()(LoginPage));
