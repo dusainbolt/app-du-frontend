@@ -1,27 +1,24 @@
-/** @format */
-
-import React from "react";
+import React, { Component } from "react";
 import {
-  UserOutlined,
-  LogoutOutlined,
   MailOutlined,
   AppstoreOutlined,
+  GlobalOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
 import FadeIn from "react-fade-in";
 
 import { Link } from "react-router-dom";
-import { Typography, Menu, } from "antd";
+import { Menu, Dropdown } from "antd";
+
 import { connect } from "react-redux";
 import { actions } from "../../../pages/Login/actions";
-import ChangePassModal from "../../../components/Admin/ChangePasswordModal";
 import LogoHeader from "../../../common/image/LogoSidebar.png";
 import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actions";
 import SideBar from "../SlideBar";
-const { Paragraph } = Typography;
-const { SubMenu, current } = Menu;
+import { withTranslation } from "react-i18next";
 
-class CommonHeader extends React.Component {
+const listLangage = ["vn","en"];
+class CommonHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,30 +26,34 @@ class CommonHeader extends React.Component {
     };
   }
 
-  list = (
-    <ul className="list__profile">
-      <li className="list__item" onClick={() => this.changePassword()}>
-        <UserOutlined className="list__item--icon" /> Change Password
-      </li>
-      <li onClick={() => this.logout()} className="list__item">
-        <LogoutOutlined className="list__item--icon" /> Log Out
-      </li>
-    </ul>
-  );
-
-  changePassword = () => {
-    this.props.showModal("Đổi mật khẩu", <ChangePassModal />);
-  };
-
-  logout = () => {
-    this.props.logoutAdmin();
-  };
   onShowSidebar = () => {
     this.setState({
       visible: !this.state.visible,
     });
   };
+
+  renderMenuLanguage = (t, lang)=> { 
+    return (
+      <Menu>
+        { listLangage.map(value =>
+          <Menu.Item key={value} className={this.checkActiveLanguage(lang, value)} onClick={this.changeLocales(value)}>{t(`language_${value}`)}</Menu.Item>
+        )}
+      </Menu>
+    );
+  };
+  checkActiveLanguage = (lang, value) => {
+    if(lang === value) return "header__active-language";
+    return "";
+  }
+  changeLocales = type => () => {
+    this.props.i18n.changeLanguage(type);
+    localStorage.setItem("lang", type);
+  };
+
   render() {
+    const { t } = this.props;
+    let lang = localStorage.getItem("lang");
+    if(!lang) lang = "vn";
     return (
       <FadeIn transitionDuration={1000}>
         <div className="header__web">
@@ -81,6 +82,15 @@ class CommonHeader extends React.Component {
                     Home part 3
                   </Link>
                 </li>
+                <li>
+                  <Dropdown overlayClassName="header__language" overlay={this.renderMenuLanguage(t, lang)}>
+                    <p
+                      className="ant-dropdown-link dropdown-language"
+                    >
+                      <GlobalOutlined /> { lang === "vn" ? t("language_vn") : t("language_en")}
+                    </p>
+                  </Dropdown>
+                </li>
               </ul>
             </div>
           </div>
@@ -108,4 +118,4 @@ const mdtp = (dispacth) => ({
     dispacth(actionsModal.showModal(title, content)),
 });
 
-export default connect(mstp, mdtp)(CommonHeader);
+export default connect(mstp, mdtp)(withTranslation()(CommonHeader));
