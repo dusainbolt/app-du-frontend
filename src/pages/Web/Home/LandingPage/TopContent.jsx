@@ -6,27 +6,22 @@ import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
 import CountDownTimer from "./CountDownTime";
 import {
-  MenuOutlined,
-  UserOutlined,
-  MessageFilled,
   MailFilled,
   InstagramFilled,
   FacebookFilled,
-  ContainerFilled,
-  EyeFilled
 } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
 class TopContent extends Component {
-  genderContentLeft = () => {
+  genderContentLeft = t => {
     return (
       <div className="title-top-right">
         <Title className="title-top-right__title" level={1}>
           PROGRAMMING
         </Title>
         <Title className="title-top-right__title-wellcome" level={4}>
-          WELL COME TO MY WEBSITE
+          {t("hello")}
         </Title>
 
         <Paragraph className="title-top-right__title-description">
@@ -44,8 +39,7 @@ class TopContent extends Component {
         <div className="title-top-right__icon-group">
         <Button
           type="submit"
-          // onClick={formik.handleSubmit}
-          className="login__form--button white-color title-top-right--button buton-col-6"
+          className="login__form--button white-color title-top-right--button"
           buttonTitle="GET STARTED"
         />
         </div>
@@ -62,18 +56,12 @@ class TopContent extends Component {
     return (
       <div>
         <Row className="top-content">
-          <Col xs={24, { order: 2 }} lg={12}>
-            {this.genderContentLeft()}
+          <Col xs={{ span: 24, order: 2 }} lg={{ span: 12, order: 1 }}>
+            {this.genderContentLeft(t)}
           </Col>
-          <Col xs={24,{ order: 1 }} lg={12}>
+          <Col xs={{ span: 24, order: 1 }} lg={{ span: 12, order: 2 }}>
             {this.genderContentRight()}
           </Col>
-          {/* <Col className="rp-mobie" span={24}>
-            {this.genderContentRight()}
-          </Col>
-          <Col className="rp-mobie" span={24}>
-            {this.genderContentLeft()}
-          </Col> */}
         </Row>
       </div>
     );

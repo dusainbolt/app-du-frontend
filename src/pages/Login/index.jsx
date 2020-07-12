@@ -82,7 +82,7 @@ class LoginPage extends Component {
 }
 
 const mstp = state => ({
-  token: state.loginReducer.actorInfo.token,
+  token: state.loginReducer.actorInfo?.token,
 });
 const mdtp = dispatch => ({
   postLogin: values => dispatch(actions.postLoginStart(values)),

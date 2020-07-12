@@ -15,6 +15,10 @@
     margin-bottom: 5%;
     color: $black-color;
   }
+  &--button {
+    width: 210px;
+    text-align: center;
+  }
   &__icon-group {
     position: relative;
     &--item {
@@ -36,8 +40,8 @@
     margin-top: 1%;
     position: relative;
     margin-bottom: 7%;
-    &--process-circle {
-      margin: 0px 30px 10px 0px !important;
+    div &--process-circle {
+      margin: 0px 30px 10px 0px;
       &__value {
         display: block;
         color: $primary-color-bold;
@@ -373,14 +377,21 @@ div.ant-popover-inner {
 }
 
 @media (max-width: 768px) {
-  .buton-col-6 {
-    width: 50%;
-  }
   .title-top-right {
     &__icon-group {
-      text-align: left;
+      text-align: center;
       &--item {
         font-size: 15px;
+        margin: 0 5px;
+      }
+    }
+    &__icon-group-detail{
+      &--container{
+        width: max-content;
+        margin: auto;
+      }
+      div &--process-circle {
+        margin: 0px 25px 20px 25px;
       }
     }
     &--button {
@@ -388,6 +399,10 @@ div.ant-popover-inner {
     }
     &__title.ant-typography {
       font-size: 40px;
+      text-align: center;
+    }
+    &__title-wellcome{
+      text-align: center;
     }
     &__title-description.ant-typography {
       font-size: 12px;
@@ -440,10 +455,10 @@ div.ant-popover-inner {
       font-weight: 720;
       color: $primary-color-bold;
     }
-    &__icon-group {
-      text-align: center;
-      &--item {
-        font-size: 15px;
+    &__icon-group-detail{
+      &--container{
+        width: 100%;
+        margin: auto;
       }
     }
     &__icon-group-detail {
@@ -452,12 +467,6 @@ div.ant-popover-inner {
       }
     }
   }
-
-  .buton-col-6 {
-    width: 47%;
-    margin-left: -15px;
-  }
-
   .container-ld {
     &--rows {
       // &__col-course {

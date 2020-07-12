@@ -76,7 +76,7 @@ class App extends Component {
 }
 
 const mstp = (state) => ({
-  token: state.loginReducer.actorInfo.token,
+  token: state.loginReducer.actorInfo?.token,
 });
 
 const mdtp = (dispatch) => ({
