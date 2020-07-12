@@ -16,7 +16,7 @@ class CountDownTimer extends Component {
     this.setState({ time: timeLeftVar });
     this.startTimer();
   }
-
+  
   startTimer = () => {
     if (this.timer == 0 && this.state.seconds > 0) {
       this.timer = setInterval(this.countDown, 1000);
@@ -34,8 +34,12 @@ class CountDownTimer extends Component {
   renderProcessValue = (value, title) => {
     return (
       <div>
-        <label className="title-top-right__icon-group-detail--process-circle__value">{value}</label>
-        <label className="title-top-right__icon-group-detail--process-circle__title">{title}</label>
+        <label className="title-top-right__icon-group-detail--process-circle__value">
+          {value}
+        </label>
+        <label className="title-top-right__icon-group-detail--process-circle__title">
+          {title}
+        </label>
       </div>
     );
   };
@@ -47,32 +51,32 @@ class CountDownTimer extends Component {
     const percentHours = Math.floor((h / 24) * 100);
     return (
       <div className="title-top-right__icon-group-detail">
-          <div className="title-top-right__icon-group-detail--container">
-        <Progress
-          className="title-top-right__icon-group-detail--process-circle"
-          type="circle"
-          percent={100}
-          format={(percent) => this.renderProcessValue(d, "Days")}
-        />
-        <Progress
-          className="title-top-right__icon-group-detail--process-circle"
-          type="circle"
-          percent={percentHours}
-          format={(percent) => this.renderProcessValue(h, "Hours")}
-        />
-        <Progress
-          className="title-top-right__icon-group-detail--process-circle"
-          type="circle"
-          percent={percentMinutes}
-          format={(percent) => this.renderProcessValue(m, "Minutes")}
-        />
+        <div className="title-top-right__icon-group-detail--container">
+          <Progress
+            className="title-top-right__icon-group-detail--process-circle"
+            type="circle"
+            percent={100}
+            format={(percent) => this.renderProcessValue(d, "Days")}
+          />
+          <Progress
+            className="title-top-right__icon-group-detail--process-circle"
+            type="circle"
+            percent={percentHours}
+            format={(percent) => this.renderProcessValue(h, "Hours")}
+          />
+          <Progress
+            className="title-top-right__icon-group-detail--process-circle"
+            type="circle"
+            percent={percentMinutes}
+            format={(percent) => this.renderProcessValue(m, "Minutes")}
+          />
 
-        <Progress
-          className="title-top-right__icon-group-detail--process-circle"
-          type="circle"
-          percent={percentSeconds}
-          format={(percent) => this.renderProcessValue(s, "Seconds")}
-        />
+          <Progress
+            className="title-top-right__icon-group-detail--process-circle"
+            type="circle"
+            percent={percentSeconds}
+            format={(percent) => this.renderProcessValue(s, "Seconds")}
+          />
         </div>
       </div>
     );

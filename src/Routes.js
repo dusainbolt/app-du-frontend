@@ -1,9 +1,8 @@
-import LoginPage from "./pages/Login";
+// import LoginPage from "./pages/Login";
 import Homepage from "./pages/Admin/Home";
 import MyAccount from "./pages/Admin/MyAccount";
 // import Web from "./pages/Layout/Web";
 import HomeWeb from "./pages/Web/Home";
-import NotFound from "./pages/Web/NotFound";
 
 export const AdminRoutes = [
   {
@@ -36,13 +35,7 @@ export const WebRoutes = [
     path: "/",
     component: HomeWeb,
     exact: true,
-  },
-  {
-    name: "Not Found",
-    path: "",
-    component: NotFound,
-    exact: true,
-  },
+  }
   // {
   //   name: "sdsd",
   //   path: "/bautroixanh/my-account",

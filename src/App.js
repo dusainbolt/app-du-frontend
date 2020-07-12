@@ -9,6 +9,7 @@ import AuthLoading from "./component/Loading/AuthenLoading";
 import EventLoading from "./component/Loading/EventLoading";
 import Modal from "./component/Modal";
 import LoginPage from "./pages/Login";
+import NotFound from "./pages/Web/NotFound";
 import { actions as actionLayout } from "./pages/Layout/AdminMaster/actions";
 import "./App.css";
 import "./sass/app.scss";
@@ -56,6 +57,7 @@ class App extends Component {
             <Route exact path="/bautroixanh/login" component={LoginPage} />
             {this.renderAdminLayout()}
             {this.renderWebLayout()}
+            <Route exact path="" component={NotFound} />
           </Switch>
         </Router>
       </div>

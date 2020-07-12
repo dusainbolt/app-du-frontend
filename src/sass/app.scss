@@ -141,6 +141,51 @@ button {
   }
 }
 
+.not-found{
+  width: 100%;
+  position: relative;
+  top: 80px;
+  display: block;
+  text-align: center;
+  &--wrapper{
+    &__img{
+      padding-left: 30px;
+      width: 80%;
+    }
+  }
+  &--footer{
+    width: 100%;
+    text-align: center;
+    &--title{
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: 700;
+      color: $primary-color-bold;
+    }
+    &--description{
+      margin-top: 15px;
+      font-size: 15px;
+      margin-bottom: 50px;
+    }
+    &--button{
+      margin-top: 15px;
+      background-color: $primary-color-bold;
+      padding: 15px;
+      font-weight: 700;
+      font-size: 15px;
+      color: $white-color;
+      border-radius: 30px;
+      &__icon{
+        font-size: 15px;
+      }
+      &:hover{
+        color: $white-color;
+        background-color: $purple-color-bold;
+      }
+    }
+  }
+}
+
 .event-loading{
   position: fixed;
   left: 0;

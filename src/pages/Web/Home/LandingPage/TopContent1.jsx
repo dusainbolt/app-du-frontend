@@ -18,47 +18,61 @@ import {
 const { Title, Paragraph } = Typography;
 
 class TopContent extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      description: "The analogies and problems used in these experiments were not specific to any domain of expertise and used fantasy problems relying only on linguistic descriptions."
+      description:
+        "The analogies and problems used in these experiments were not specific to any domain of expertise and used fantasy problems relying only on linguistic descriptions.",
     };
   }
 
   renderContent = (nuberRows, objectGuitar = []) => {
     return (
       <Row gutter={objectGuitar} className="container-ld--rows">
-        <Col  className="container-ld--col-padding" xs={24} lg={nuberRows}>
+        <Col className="container-ld--col-padding" xs={24} sm={nuberRows}>
           <div className="container-ld--rows__col-two">
             <div className="container-ld--rows__col-two--item">
               <InstagramOutlined className="container-ld--rows__col-two--item__icon" />
             </div>
             <div className="container-ld--rows__col-two--content">
-            <Title className="container-ld--rows__col-two--content__title">Title</Title>
-                <Paragraph className="container-ld--rows__col-two--content__description">{this.state.description}</Paragraph>
+              <Title className="container-ld--rows__col-two--content__title">
+                Title
+              </Title>
+              <Paragraph className="container-ld--rows__col-two--content__description">
+                {this.state.description}
+              </Paragraph>
             </div>
           </div>
         </Col>
-        <Col  className="container-ld--col-padding" xs={24} lg={nuberRows}>
+        <Col className="container-ld--col-padding" xs={24} sm={nuberRows}>
           <div className="container-ld--rows__col-one">
             <div className="container-ld--rows__col-one--item">
               <UserOutlined className="container-ld--rows__col-one--item__icon" />
             </div>
             <div className="container-ld--rows__col-one--content">
-                <Title className="container-ld--rows__col-one--content__title">Title</Title>
-                <Paragraph className="container-ld--rows__col-one--content__description">{this.state.description}</Paragraph>
-              </div>
+              <Title className="container-ld--rows__col-one--content__title">
+                Title
+              </Title>
+              <Paragraph className="container-ld--rows__col-one--content__description">
+                {this.state.description}
+              </Paragraph>
             </div>
+          </div>
         </Col>
-        <Col  className="container-ld--col-padding" xs={24} lg={nuberRows}>
+        <Col className="container-ld--col-padding" xs={24} sm={nuberRows}>
           <div className="container-ld--rows__col-two">
             <div className="container-ld--rows__col-two--item">
               <MenuOutlined className="container-ld--rows__col-two--item__icon" />
             </div>
             <div className="container-ld--rows__col-two--content">
-            <Title className="container-ld--rows__col-two--content__title">Title</Title>
-                <Paragraph className="container-ld--rows__col-two--content__description">{this.state.description} sdsd sdsdsd  sdsdsds sadasdas assdsadas  asdasdsa asdasdsadsa asdsadsadas sadsadsadassdsdsd sdsdsa  asdsadas asdasdasa asdsadas asdsad asdsadas</Paragraph>
+              <Title className="container-ld--rows__col-two--content__title">
+                Title
+              </Title>
+              <Paragraph className="container-ld--rows__col-two--content__description">
+                {this.state.description} sdsd sdsdsd sdsdsds sadasdas assdsadas
+                asdasdsa asdasdsadsa asdsadsadas sadsadsadassdsdsd sdsdsa
+                asdsadas asdasdasa asdsadas asdsad asdsadas
+              </Paragraph>
             </div>
           </div>
         </Col>
@@ -79,9 +93,7 @@ class TopContent extends Component {
             <Title className="container-ld--title">Why choose us</Title>
           </Col>
           <Col className="container-ld__content_center" span={16}>
-            <div className="container-ld--body">
-            {this.renderContent(8)}
-            </div>
+            <div className="container-ld--body">{this.renderContent(8)}</div>
           </Col>
         </Row>
       </div>

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import {
-  MailOutlined,
-  AppstoreOutlined,
+  HomeFilled,
+  AppstoreFilled,
   GlobalOutlined,
-  SettingOutlined,
+  DownOutlined,
+  AppstoreOutlined,
+  BookFilled,
 } from "@ant-design/icons";
 import FadeIn from "react-fade-in";
 
@@ -17,7 +19,7 @@ import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actio
 import SideBar from "../SlideBar";
 import { withTranslation } from "react-i18next";
 
-const listLangage = ["vn","en"];
+const listLangage = ["vn", "en"];
 class CommonHeader extends Component {
   constructor(props) {
     super(props);
@@ -32,20 +34,26 @@ class CommonHeader extends Component {
     });
   };
 
-  renderMenuLanguage = (t, lang)=> { 
+  renderMenuLanguage = (t, lang) => {
     return (
       <Menu>
-        { listLangage.map(value =>
-          <Menu.Item key={value} className={this.checkActiveLanguage(lang, value)} onClick={this.changeLocales(value)}>{t(`language_${value}`)}</Menu.Item>
-        )}
+        {listLangage.map((value) => (
+          <Menu.Item
+            key={value}
+            className={this.checkActiveLanguage(lang, value)}
+            onClick={this.changeLocales(value)}
+          >
+            {t(`language_${value}`)}
+          </Menu.Item>
+        ))}
       </Menu>
     );
   };
   checkActiveLanguage = (lang, value) => {
-    if(lang === value) return "header__active-language";
+    if (lang === value) return "header__active-language";
     return "";
-  }
-  changeLocales = type => () => {
+  };
+  changeLocales = (type) => () => {
     this.props.i18n.changeLanguage(type);
     localStorage.setItem("lang", type);
   };
@@ -53,7 +61,7 @@ class CommonHeader extends Component {
   render() {
     const { t } = this.props;
     let lang = localStorage.getItem("lang");
-    if(!lang) lang = "vn";
+    if (!lang) lang = "vn";
     return (
       <FadeIn transitionDuration={1000}>
         <div className="header__web">
@@ -64,30 +72,33 @@ class CommonHeader extends Component {
                 <li>
                   <Link
                     className="home-item-menu-active"
-                    to="/bautroixanh/login"
+                    to="/"
                   >
-                    <MailOutlined className="header__web--menu--icon" />
+                    <HomeFilled className="header__web--menu--icon" />
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/bautroixanh/login">
-                    <AppstoreOutlined className="header__web--menu--icon" />
-                    Home part 2
+                  <Link to="/blog">
+                    <BookFilled className="header__web--menu--icon" />
+                    Blog
                   </Link>
                 </li>
                 <li>
-                  <Link to="/bautroixanh/login">
-                    <SettingOutlined className="header__web--menu--icon" />
-                    Home part 3
+                  <Link to="/app">
+                    <AppstoreFilled className="header__web--menu--icon" />
+                    App
                   </Link>
                 </li>
                 <li>
-                  <Dropdown overlayClassName="header__language" overlay={this.renderMenuLanguage(t, lang)}>
-                    <p
-                      className="ant-dropdown-link dropdown-language"
-                    >
-                      <GlobalOutlined /> { lang === "vn" ? t("language_vn") : t("language_en")}
+                  <Dropdown
+                    overlayClassName="header__language"
+                    overlay={this.renderMenuLanguage(t, lang)}
+                  >
+                    <p className="ant-dropdown-link dropdown-language">
+                      <GlobalOutlined />{" "}
+                      {lang === "vn" ? t("language_vn") : t("language_en")}{" "}
+                      <DownOutlined />
                     </p>
                   </Dropdown>
                 </li>

@@ -5,16 +5,12 @@ import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
 import CountDownTimer from "./CountDownTime";
-import {
-  MailFilled,
-  InstagramFilled,
-  FacebookFilled,
-} from "@ant-design/icons";
+import { MailFilled, InstagramFilled, FacebookFilled } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
 class TopContent extends Component {
-  genderContentLeft = t => {
+  genderContentLeft = (t) => {
     return (
       <div className="title-top-right">
         <Title className="title-top-right__title" level={1}>
@@ -37,11 +33,11 @@ class TopContent extends Component {
           <MailFilled className="title-top-right__icon-group--item" />
         </div>
         <div className="title-top-right__icon-group">
-        <Button
-          type="submit"
-          className="login__form--button white-color title-top-right--button"
-          buttonTitle="GET STARTED"
-        />
+          <Button
+            type="submit"
+            className="login__form--button white-color title-top-right--button"
+            buttonTitle="GET STARTED"
+          />
         </div>
       </div>
     );
@@ -56,10 +52,18 @@ class TopContent extends Component {
     return (
       <div>
         <Row className="top-content">
-          <Col xs={{ span: 24, order: 2 }} lg={{ span: 12, order: 1 }}>
+          <Col
+            xs={{ span: 24, order: 2 }}
+            lg={{ span: 14, order: 1 }}
+            xl={{ span: 12, order: 1 }}
+          >
             {this.genderContentLeft(t)}
           </Col>
-          <Col xs={{ span: 24, order: 1 }} lg={{ span: 12, order: 2 }}>
+          <Col
+            xs={{ span: 24, order: 1 }}
+            lg={{ span: 10, order: 2 }}
+            xl={{ span: 12, order: 2 }}
+          >
             {this.genderContentRight()}
           </Col>
         </Row>

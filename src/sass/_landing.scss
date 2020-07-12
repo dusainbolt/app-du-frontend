@@ -32,6 +32,7 @@
         color: white;
       }
       &:hover {
+        background-color: $purple-color-bold;
         box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
       }
     }
@@ -73,6 +74,7 @@
 .container-ld {
   margin-top: 5%;
   position: relative;
+  margin-bottom: 4%;
   .container-ld__content_center{
     max-width: 80%;
     flex: 0 0 80%;
@@ -89,7 +91,8 @@
     &__col-one {
       margin-top: 20px;
       background-color: $primary-color-bold;
-      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      // box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075);
       &:hover {
         box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
       }
@@ -101,7 +104,7 @@
         &__icon {
           margin: 20px 10px;
           background-color: white;
-          font-size: 40px;
+          font-size: 35px;
           padding: 20px;
           border-radius: 50%;
           > svg {
@@ -251,8 +254,8 @@
     // }
   }
   &--title.ant-typography {
-    font-size: 35px;
-    color: $black-color;
+    font-size: 25px;
+    color: $primary-color-bold;
     text-align: center;
     font-weight: 700;
     margin-top: 40px;
@@ -353,8 +356,8 @@ div.ant-popover-inner {
             text-decoration: none;
             &:hover {
               color: white;
-              background-color: $purple-color-light;
-              border: solid 1px $purple-color-light;
+              background-color: $purple-color-bold;
+              border: solid 1px $purple-color-bold;
             }
           }
           >p.dropdown-language {
@@ -373,6 +376,12 @@ div.ant-popover-inner {
         font-size: 15px;
       }
     }
+  }
+}
+
+@media (max-width: 1024px){
+  .title-top-right__icon-group-detail--container{
+    width: max-content;
   }
 }
 
@@ -410,6 +419,15 @@ div.ant-popover-inner {
   }
   .container-ld {
     &--rows {
+      &__col-one{
+        &--item {
+          text-align: center;
+          &__icon {
+            font-size: 20px;
+            padding: 15px;
+          }
+        }
+      }
       // &__col-course {
       //   &--content-right {
       //     &__maxim-wrapper {
@@ -469,6 +487,7 @@ div.ant-popover-inner {
   }
   .container-ld {
     &--rows {
+
       // &__col-course {
       //   &--content-right {
       //     &__maxim-wrapper {
@@ -499,6 +518,15 @@ div.ant-popover-inner {
       //     height: 700px;
       //   }
       // }
+      &__col-one{
+        &--item {
+          text-align: center;
+          &__icon {
+            font-size: 30px;
+            padding: 15px;
+          }
+        }
+      }
     }
   }
   .header {
