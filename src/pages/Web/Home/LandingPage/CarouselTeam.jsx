@@ -34,56 +34,58 @@ class TopContent extends Component {
 
   renderContentCourse = () => {
     return (
-        <Row>
-          <Col lg={12} xs={24}>
-            asdsa
-          </Col>
-          <Col lg={12} xs={24}>
-            asdadsa          </Col>
-        </Row>
-
+      <Row>
+        <Col className="team-carouse" lg={12} xs={24}>
+          <div className="team-carouse__content">
+            <label className="team-carouse__content--title">Chief Executive Officer</label>
+            <p className="team-carouse__content--description">
+              Chief Executive Officer Chief Executive Officer Chief Executive
+              Officer Chief Executive Officer Chief Executive Officer
+            </p>
+          </div>
+        </Col>
+        <Col lg={12} xs={24}>
+          asdadsa{" "}
+        </Col>
+      </Row>
     );
   };
 
   genderContentLeft = () => {
-    return (
-      <div className="container-ld--rows__col-course--content-left">
-
-      </div>
-    );
+    return <div className="container-ld--rows__col-course--content-left"></div>;
   };
   genderContentRight = (objectGuitar = []) => {
     return (
-        <Row gutter={objectGuitar}>
-          <Col span={24}>
-            <div className="container-ld--rows__col-course--content-right__wrapper">
+      <Row gutter={objectGuitar}>
+        <Col span={24}>
+          <div className="container-ld--rows__col-course--content-right__wrapper">
             <Row>
-            <Col lg={12} xs={24}>
-            <div className="container-ld--rows__col-course--content-right__avatar">
-                <img src={this.state.user.url_avatar} alt="avatar" />
-              </div>
-              <div className="container-ld--rows__col-course--content-right__name">
-                {this.state.user.name}
-              </div>
-              <div className="container-ld--rows__col-course--content-right__icon-social">
-                <FacebookFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
-                <InstagramFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
-                <MailFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
-              </div>
-              
-              <div className="container-ld--rows__col-course--content-right__description">
-              Chief Executive Officer Chief Executive Officer Chief Executive
-            Officer Chief Executive Officer Chief Executive Offisssssss sssssssssss max 155 character
-              </div>
+              <Col lg={12} xs={24}>
+                <div className="container-ld--rows__col-course--content-right__avatar">
+                  <img src={this.state.user.url_avatar} alt="avatar" />
+                </div>
+                <div className="container-ld--rows__col-course--content-right__name">
+                  {this.state.user.name}
+                </div>
+                <div className="container-ld--rows__col-course--content-right__icon-social">
+                  <FacebookFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
+                  <InstagramFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
+                  <MailFilled className="container-ld--rows__col-course--content-right__icon-social--item" />
+                </div>
+
+                <div className="container-ld--rows__col-course--content-right__description">
+                  Chief Executive Officer Chief Executive Officer Chief
+                  Executive Officer Chief Executive Officer Chief Executive
+                  Offisssssss sssssssssss max 155 character
+                </div>
               </Col>
               <Col lg={12} xs={24}>
-asdsad
+                asdsad
               </Col>
             </Row>
-
-            </div>
-          </Col>
-          {/* <Col span={12}>
+          </div>
+        </Col>
+        {/* <Col span={12}>
             <div className="container-ld--rows__col-course--content-right__wrapper">
               <div className="container-ld--rows__col-course--content-right__timeline-detail">
               <Timeline>
@@ -110,7 +112,7 @@ asdsad
               </div>
             </div>
           </Col> */}
-        </Row>
+      </Row>
     );
   };
 

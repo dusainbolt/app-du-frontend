@@ -1,5 +1,5 @@
 .title-top-right {
-  padding: 50px 20px 0px 50px;
+  padding: 50px 20px 0px 20px;
   &__title.ant-typography {
     font-size: 50px;
     font-weight: 720;
@@ -57,6 +57,8 @@
     }
   }
   &--button {
+    font-size: 14px;
+    font-weight: 700;
     margin-top: 7% !important;
   }
 }
@@ -70,6 +72,22 @@
 
 .ant-carousel .slick-slide h3 {
   color: #fff;
+}
+.team-carouse{
+  &__content{
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    line-height: 21px;
+    &--title{
+      font-size: 18px;
+      font-weight: 700;
+      color: $white-color;
+    }
+    &--description{
+      color: $white-color;
+    }
+  }
 }
 .container-ld {
   margin-top: 5%;
@@ -131,7 +149,6 @@
       @extend .container-ld--rows__col-one;
       background-color: white;
       color: black;
-      margin-bottom: 20px;
       &--item {
         text-align: center;
         &__icon {
@@ -254,12 +271,11 @@
     // }
   }
   &--title.ant-typography {
-    font-size: 25px;
+    font-size: 27px;
     color: $primary-color-bold;
     text-align: center;
     font-weight: 700;
     margin-top: 40px;
-    margin-bottom: 30px;
   }
 }
 
@@ -417,6 +433,13 @@ div.ant-popover-inner {
       font-size: 12px;
     }
   }
+  .team-carouse{
+    // position: relative !important;
+    &__content{
+      width: 80%;
+      margin: auto;
+    }
+  }
   .container-ld {
     &--rows {
       &__col-one{
@@ -553,7 +576,6 @@ div.ant-popover-inner {
   .container-ld {
     &--title.ant-typography {
       font-size: 25px;
-      font-weight: 600;
     }
   }
 }

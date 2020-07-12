@@ -48,7 +48,7 @@ class App extends Component {
   render() {
     const { layout } = this.props;
     return (
-      <div className="App bg-app">
+      <div className="App">
         <AuthLoading isLoading={layout.isLoadingAuth} />
         <EventLoading isLoading={layout.isLoadingEvent}/>
         <Modal hideModal={this.props.hideModal} modal={layout.modal} />
