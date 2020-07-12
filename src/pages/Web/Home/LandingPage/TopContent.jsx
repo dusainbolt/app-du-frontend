@@ -62,18 +62,18 @@ class TopContent extends Component {
     return (
       <div>
         <Row className="top-content">
-          <Col className="rp-web" span={12}>
+          <Col xs={24, { order: 2 }} lg={12}>
             {this.genderContentLeft()}
           </Col>
-          <Col className="rp-web" span={12}>
+          <Col xs={24,{ order: 1 }} lg={12}>
+            {this.genderContentRight()}
+          </Col>
+          {/* <Col className="rp-mobie" span={24}>
             {this.genderContentRight()}
           </Col>
           <Col className="rp-mobie" span={24}>
-            {this.genderContentRight()}
-          </Col>
-          <Col className="rp-mobie" span={24}>
             {this.genderContentLeft()}
-          </Col>
+          </Col> */}
         </Row>
       </div>
     );

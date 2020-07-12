@@ -29,7 +29,7 @@ class TopContent extends Component {
   renderContent = (nuberRows, objectGuitar = []) => {
     return (
       <Row gutter={objectGuitar} className="container-ld--rows">
-        <Col span={nuberRows}>
+        <Col  className="container-ld--col-padding" xs={24} lg={nuberRows}>
           <div className="container-ld--rows__col-two">
             <div className="container-ld--rows__col-two--item">
               <InstagramOutlined className="container-ld--rows__col-two--item__icon" />
@@ -40,7 +40,7 @@ class TopContent extends Component {
             </div>
           </div>
         </Col>
-        <Col span={nuberRows}>
+        <Col  className="container-ld--col-padding" xs={24} lg={nuberRows}>
           <div className="container-ld--rows__col-one">
             <div className="container-ld--rows__col-one--item">
               <UserOutlined className="container-ld--rows__col-one--item__icon" />
@@ -51,7 +51,7 @@ class TopContent extends Component {
               </div>
             </div>
         </Col>
-        <Col span={nuberRows}>
+        <Col  className="container-ld--col-padding" xs={24} lg={nuberRows}>
           <div className="container-ld--rows__col-two">
             <div className="container-ld--rows__col-two--item">
               <MenuOutlined className="container-ld--rows__col-two--item__icon" />
@@ -74,15 +74,14 @@ class TopContent extends Component {
     const { t } = this.props;
     return (
       <div>
-        <Row className="container-ld">
-          <Col span={24}>
+        <Row className="container-ld" justify="center">
+          <Col span={16}>
             <Title className="container-ld--title">Why choose us</Title>
           </Col>
-          <Col className="rp-web" span={18} offset={3}>
-            {this.renderContent(8, [48, 16])}
-          </Col>
-          <Col className="rp-mobie" span={18} offset={3}>
-            {this.renderContent(24)}
+          <Col className="container-ld__content_center" span={16}>
+            <div className="container-ld--body">
+            {this.renderContent(8)}
+            </div>
           </Col>
         </Row>
       </div>

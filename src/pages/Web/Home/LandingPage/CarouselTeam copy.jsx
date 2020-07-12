@@ -34,26 +34,45 @@ class TopContent extends Component {
 
   renderContentCourse = () => {
     return (
+      <div className="container-ld--rows__course-wrapper">
         <Row>
-          <Col lg={12} xs={24}>
-            asdsa
+        <Col className="container-ld--rows__col-course" span={24}>
+            {this.genderContentLeft()}
           </Col>
-          <Col lg={12} xs={24}>
-            asdadsa          </Col>
+          <Col className="container-ld--rows__col-course" span={24}>
+            {this.genderContentRight([32, 5])}
+          </Col>
         </Row>
-
+        {/* <div className="rp-mobie">
+          <Col className="container-ld--rows__col-course" span={24}>
+            {this.genderContentLeft()}
+          </Col>
+          <Col className="container-ld--rows__col-course" span={24}>
+            {this.genderContentRight([8, 5])}
+          </Col>
+        </div> */}
+      </div>
     );
   };
 
   genderContentLeft = () => {
     return (
       <div className="container-ld--rows__col-course--content-left">
-
+        <div className="container-ld--rows__col-course--content-left-position">
+          <div className="container-ld--rows__col-course--content-left__office">
+            Chief Executive Officer
+          </div>
+          <div className="container-ld--rows__col-course--content-left__content">
+            Chief Executive Officer Chief Executive Officer Chief Executive
+            Officer Chief Executive Officer Chief Executive Officer
+          </div>
+        </div>
       </div>
     );
   };
   genderContentRight = (objectGuitar = []) => {
     return (
+      <div className="container-ld--rows__col-course--content-right">
         <Row gutter={objectGuitar}>
           <Col span={24}>
             <div className="container-ld--rows__col-course--content-right__wrapper">
@@ -111,6 +130,7 @@ asdsad
             </div>
           </Col> */}
         </Row>
+      </div>
     );
   };
 
