@@ -262,27 +262,37 @@ div.ant-popover-inner {
     background-color: #95a5ff5c;
   }
   &__web {
+    position: relative;
     width: 100%;
     padding: 5px 30px 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    >img{
+      position: absolute;
+      left: 15px;
+      top: 3px;
+    }
     &--display-web {
       display: flex;
     }
     &--display-mobie {
       display: none;
       &--icon > svg {
+        position: absolute;
         color: $primary-color-bold;
         font-size: 30px;
+        top: 15px;
+        right: -40px;
       }
     }
     &--menu {
       > ul {
+        position: absolute;
         list-style-type: none;
-        margin: 0;
+        right: 15px;
         width: auto;
-        padding: 0;
+        top: 10px;
         text-overflow: ellipsis;
         overflow: hidden;
         > li {
@@ -450,13 +460,8 @@ div.ant-popover-inner {
       &--display-web {
         display: none;
       }
-      > img {
-        margin-left: -15%;
-        margin-top: 2%;
-      }
       &--display-mobie {
         display: flex;
-        margin-right: -15%;
       }
     }
   }
