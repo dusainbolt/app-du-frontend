@@ -93,11 +93,12 @@ class CommonHeader extends Component {
                 <li>
                   <Dropdown
                     overlayClassName="header__language"
+                    trigger="click"
                     overlay={this.renderMenuLanguage(t, lang)}
                   >
                     <p className="ant-dropdown-link dropdown-language">
-                      <GlobalOutlined />{" "}
-                      {lang === "vn" ? t("language_vn") : t("language_en")}{" "}
+                      <GlobalOutlined />
+                      {lang === "vn" ? t("language_vn") : t("language_en")}
                       <DownOutlined />
                     </p>
                   </Dropdown>

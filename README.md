@@ -1,7 +1,18 @@
 
-# Streaming
-
+# app du
 - Doc gen text local  (https://drive.google.com/drive/folders/1XmsGcXNLwP1Hw4s_j8pQc2Tck5QOjtuR)
+
+# build github
+
+install gh-pages
+them vao package.json
+// Thêm đường dẫn homepage
+// https://[your-user-name].github.io/[your-repo-name]/
+"homepage": "https://minhlq-0928.github.io/deploy-github/",
+
+// Thêm command predeploy & deploy app
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build",
 
 # Flow call api
 
