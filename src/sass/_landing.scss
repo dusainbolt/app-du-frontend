@@ -72,7 +72,7 @@
   text-align: center;
   height: auto;
   line-height: 160px;
-  background: #364d79;
+  // background: #364d79;
   overflow: hidden;
 }
 
@@ -80,12 +80,42 @@
   color: #fff;
 }
 .team-carouse{
+  position: relative;
   .ant-carousel .slick-slide{
     line-height: 100px;
   }
   ul.team-carouse--time-line{
-    margin: 20px 0 0 20px;
+    padding: 15px 10px 0px 15px;
     text-align: left;
+    max-height: 220px;
+    overflow: auto;
+    >li{
+      div.ant-timeline-item-content{
+        font-size: 14px;
+        color: $black-color;
+        label.team-carouse--time-line__title{
+          font-weight: 700;
+          margin-right: 10px;
+        }
+      } 
+    }
+  }
+  &--icon-left{
+    z-index: 10;
+    padding: 5px;
+    position: absolute;
+    top: 37%;
+    border-radius: 0px 45px 45px 0px;
+    font-size: 35px;
+    opacity: 0.7;
+    >svg{
+      color: $white-color;
+    }
+  }
+  &--icon-right{
+    @extend .team-carouse--icon-left;
+    right: 0;
+    border-radius: 45px 0px 0px 45px;
   }
   &--card{
     &__image{
@@ -315,12 +345,16 @@ div.ant-popover-inner {
             }
           }
           >p.dropdown-language {
-            margin-top: 15px;
+            margin-top: 13px;
             cursor: pointer;
             color: $primary-color-bold;
             font-weight: 550;
-            >span{
+            >span.anticon-global{
               font-size: 15px;
+              margin-right: 3px;
+            }
+            >span.anticon-down{
+              margin-left: 3px;
             }
           }
         }
@@ -333,11 +367,21 @@ div.ant-popover-inner {
   }
 }
 
+.top-content{
+  .ant-carousel .slick-slide{
+    background-color: $white-color;
+    line-height: 0;
+  }
+}
+
 @media (max-width: 1024px){
   .title-top-right__icon-group-detail--container{
     width: max-content;
   }
   .team-carouse{
+    &__content{
+      width: 70%;
+    }
     &--card{
       &__image{
         border-radius: 15px 0px 0px 0px;
@@ -375,14 +419,16 @@ div.ant-popover-inner {
       text-align: center;
     }
     &__title-description.ant-typography {
-      font-size: 12px;
+      font-size: 13px;
     }
   }
   .team-carouse{
-    // position: relative !important;
     &__content{
       width: 80%;
       margin: auto;
+    }
+    ul.team-carouse--time-line{
+      max-height: 270px;
     }
   }
   .container-ld {
@@ -423,6 +469,16 @@ div.ant-popover-inner {
     &__icon-group-detail {
       &--container {
         text-align: center;
+      }
+    }
+  }
+  .team-carouse{
+    ul.team-carouse--time-line{
+      max-height: 250px;
+    }
+    &--card{
+      &__image{
+        border-radius: 15px 15px 0px 0px;
       }
     }
   }

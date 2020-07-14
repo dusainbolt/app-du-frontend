@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { Row, Col, Typography } from "antd";
+import { Row, Col, Typography, Carousel } from "antd";
 import Button from "../../../../component/Button";
 import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
+import ImgTop2 from "../../../../common/image/bg-loginIT.jpg";
+
 import CountDownTimer from "./CountDownTime";
 import { MailFilled, InstagramFilled, FacebookFilled } from "@ant-design/icons";
 
@@ -28,7 +30,9 @@ class TopContent extends Component {
         </Paragraph>
         <CountDownTimer />
         <div className="title-top-right__icon-group">
-          <FacebookFilled className="title-top-right__icon-group--item" />
+          <a href={"http://facebook.com"} rel="noreferrer" target="_blank">
+            <FacebookFilled className="title-top-right__icon-group--item" />
+          </a>
           <InstagramFilled className="title-top-right__icon-group--item" />
           <MailFilled className="title-top-right__icon-group--item" />
         </div>
@@ -43,12 +47,10 @@ class TopContent extends Component {
     );
   };
 
-  genderContentRight = () => {
-    return <img className="img-background--top" src={ImgTop} alt="img top" />;
-  };
 
   render() {
     const { t } = this.props;
+    console.log(this.Carousel)
     return (
       <div>
         <Row className="top-content">
@@ -64,7 +66,17 @@ class TopContent extends Component {
             lg={{ span: 10, order: 2 }}
             xl={{ span: 12, order: 2 }}
           >
-            {this.genderContentRight()}
+                    <Carousel dots={false} speed={1500} autoplay effect="fade">
+          <Col span={24}>
+          <img className="img-background--top" src={ImgTop} alt="img top" />
+            </Col>
+          <Col span={24}>
+          <img className="img-background--top" src={ImgTop2} alt="img top" />
+          </Col>
+          <Col span={24}>
+          <img className="img-background--top" src={ImgTop} alt="img top" />
+          </Col>
+        </Carousel>
           </Col>
         </Row>
       </div>

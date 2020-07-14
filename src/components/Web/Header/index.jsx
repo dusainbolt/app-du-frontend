@@ -3,7 +3,7 @@ import {
   HomeFilled,
   AppstoreFilled,
   GlobalOutlined,
-  DownOutlined,
+  CaretDownFilled,
   AppstoreOutlined,
   BookFilled,
 } from "@ant-design/icons";
@@ -99,7 +99,7 @@ class CommonHeader extends Component {
                     <p className="ant-dropdown-link dropdown-language">
                       <GlobalOutlined />
                       {lang === "vn" ? t("language_vn") : t("language_en")}
-                      <DownOutlined />
+                      <CaretDownFilled />
                     </p>
                   </Dropdown>
                 </li>
