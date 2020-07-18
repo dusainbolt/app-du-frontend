@@ -6,11 +6,10 @@ import FadeIn from "react-fade-in";
 import TopContent from "./LandingPage/TopContent";
 import TopContent1 from "./LandingPage/TopContent1";
 import CarouselTeam from "./LandingPage/CarouselTeam";
-
+import { actions } from "../../Admin/Home/actions";
 
 class Home extends Component {
   render() {
-    const { t } = this.props;
     return (
       <div>
         <FadeIn delay={500} transitionDuration={1000}>
@@ -30,7 +29,9 @@ class Home extends Component {
   }
 }
 
-const mstp = (state) => ({});
-const mdtp = (dispatch) => ({});
+const mstp = state => ({
+});
+const mdtp = dispatch => ({
+});
 
 export default connect(mstp, mdtp)(withTranslation()(Home));

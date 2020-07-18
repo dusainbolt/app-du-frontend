@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Typography, Carousel } from "antd";
 import Button from "../../../../component/Button";
-import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
 import ImgTop2 from "../../../../common/image/bg-loginIT.jpg";
@@ -12,21 +11,18 @@ import { MailFilled, InstagramFilled, FacebookFilled } from "@ant-design/icons";
 const { Title, Paragraph } = Typography;
 
 class TopContent extends Component {
-  genderContentLeft = (t) => {
+  genderContentLeft = () => {
+    const { t } = this.props;
     return (
       <div className="title-top-right">
         <Title className="title-top-right__title" level={1}>
-          PROGRAMMING
+          {t("landing_page.title_top")}
         </Title>
         <Title className="title-top-right__title-wellcome" level={4}>
-          {t("hello")}
+          {t("landing_page.hello")}
         </Title>
-
         <Paragraph className="title-top-right__title-description">
-          It's been a long day without you, my friend And I'll tell you all
-          about it when I see you again We've come a long way from where we
-          began Oh I'll tell you all about it when I see you again When I see
-          you again. We have started:
+          {t("landing_page.description_top")}
         </Paragraph>
         <CountDownTimer />
         <div className="title-top-right__icon-group">
@@ -40,17 +36,14 @@ class TopContent extends Component {
           <Button
             type="submit"
             className="login__form--button white-color title-top-right--button"
-            buttonTitle="GET STARTED"
+            buttonTitle={t("landing_page.button_get_started_top")}
           />
         </div>
       </div>
     );
   };
 
-
   render() {
-    const { t } = this.props;
-    console.log(this.Carousel)
     return (
       <div>
         <Row className="top-content">
@@ -59,24 +52,36 @@ class TopContent extends Component {
             lg={{ span: 14, order: 1 }}
             xl={{ span: 12, order: 1 }}
           >
-            {this.genderContentLeft(t)}
+            {this.genderContentLeft()}
           </Col>
           <Col
             xs={{ span: 24, order: 1 }}
             lg={{ span: 10, order: 2 }}
             xl={{ span: 12, order: 2 }}
           >
-                    <Carousel dots={false} speed={1500} autoplay effect="fade">
-          <Col span={24}>
-          <img className="img-background--top" src={ImgTop} alt="img top" />
-            </Col>
-          <Col span={24}>
-          <img className="img-background--top" src={ImgTop2} alt="img top" />
-          </Col>
-          <Col span={24}>
-          <img className="img-background--top" src={ImgTop} alt="img top" />
-          </Col>
-        </Carousel>
+            <Carousel dots={false} speed={1500} autoplay effect="fade">
+              <Col span={24}>
+                <img
+                  className="img-background--top"
+                  src={ImgTop}
+                  alt="img top"
+                />
+              </Col>
+              <Col span={24}>
+                <img
+                  className="img-background--top"
+                  src={ImgTop2}
+                  alt="img top"
+                />
+              </Col>
+              <Col span={24}>
+                <img
+                  className="img-background--top"
+                  src={ImgTop}
+                  alt="img top"
+                />
+              </Col>
+            </Carousel>
           </Col>
         </Row>
       </div>
@@ -84,7 +89,4 @@ class TopContent extends Component {
   }
 }
 
-const mstp = (state) => ({});
-const mdtp = (dispatch) => ({});
-
-export default connect(mstp, mdtp)(withTranslation()(TopContent));
+export default withTranslation()(TopContent);

@@ -1,4 +1,6 @@
-import { ActionTypes } from "./actions";
+import {
+  ActionTypes
+} from "./actions";
 
 const DEFAULT_STATE = {
   modal: {
@@ -13,7 +15,9 @@ const DEFAULT_STATE = {
 export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
   case ActionTypes.SHOW_MODAL:
-    var { title, content } = action;
+    var {
+      title, content
+    } = action;
     return {
       ...state,
       modal: {
@@ -36,7 +40,7 @@ export default (state = DEFAULT_STATE, action) => {
     return {
       ...state,
       isLoadingAuth: false,
-    };  
+    };
   case ActionTypes.SHOW_LOADING_EVENT:
     return {
       ...state,

@@ -1,26 +1,17 @@
-import { ActionTypes } from "./actions";
+import {
+  ActionTypes
+} from "./actions";
 
 const DEFAULT_STATE = {
-  isLoading: false
+  lang: "vn",
 };
 
 export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-  case ActionTypes.GET_DEMO_START:
+  case ActionTypes.CHANGE_LANGUAGE: 
     return {
       ...state,
-      isLoading: true
-    };
-  case ActionTypes.GET_DEMO_ERROR:
-    return {
-      ...state,
-      isLoading: false,
-      error: ""
-    };
-  case ActionTypes.GET_DEMO_SUCCESS:
-    return {
-      ...state,
-      isLoading: false
+      lang: action.lang
     };
   default:
     return state;

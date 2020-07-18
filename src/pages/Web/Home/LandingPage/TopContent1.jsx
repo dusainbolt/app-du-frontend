@@ -21,7 +21,7 @@ class TopContent extends Component {
     super(props);
   }
 
-  renderContent = nuberRows => {
+  renderContent = (nuberRows) => {
     const { t } = this.props;
     return (
       <Row className="container-ld--rows">
@@ -32,10 +32,10 @@ class TopContent extends Component {
             </div>
             <div className="container-ld--rows__col-two--content">
               <Title className="container-ld--rows__col-two--content__title">
-                {t("why_title_1")}
+                {t("landing_page.why_title_1")}
               </Title>
               <Paragraph className="container-ld--rows__col-two--content__description">
-                {t("why_description_1")}
+                {t("landing_page.why_description_1")}
               </Paragraph>
             </div>
           </div>
@@ -47,10 +47,10 @@ class TopContent extends Component {
             </div>
             <div className="container-ld--rows__col-one--content">
               <Title className="container-ld--rows__col-one--content__title">
-                {t("why_title_2")}
+                {t("landing_page.why_title_2")}
               </Title>
               <Paragraph className="container-ld--rows__col-one--content__description">
-                {t("why_description_2")}
+                {t("landing_page.why_description_2")}
               </Paragraph>
             </div>
           </div>
@@ -62,10 +62,10 @@ class TopContent extends Component {
             </div>
             <div className="container-ld--rows__col-two--content">
               <Title className="container-ld--rows__col-two--content__title">
-                {t("why_title_3")}
+                {t("landing_page.why_title_3")}
               </Title>
               <Paragraph className="container-ld--rows__col-two--content__description">
-                {t("why_description_3")}
+                {t("landing_page.why_description_3")}
               </Paragraph>
             </div>
           </div>
@@ -77,10 +77,10 @@ class TopContent extends Component {
             </div>
             <div className="container-ld--rows__col-two--content">
               <Title className="container-ld--rows__col-two--content__title">
-                {t("why_title_4")}
+                {t("landing_page.why_title_4")}
               </Title>
               <Paragraph className="container-ld--rows__col-two--content__description">
-                {t("why_description_4")}
+                {t("landing_page.why_description_4")}
               </Paragraph>
             </div>
           </div>
@@ -92,10 +92,10 @@ class TopContent extends Component {
             </div>
             <div className="container-ld--rows__col-one--content">
               <Title className="container-ld--rows__col-one--content__title">
-                {t("why_title_5")}
+                {t("landing_page.why_title_5")}
               </Title>
               <Paragraph className="container-ld--rows__col-one--content__description">
-                {t("why_description_5")}
+                {t("landing_page.why_description_5")}
               </Paragraph>
             </div>
           </div>
@@ -107,10 +107,10 @@ class TopContent extends Component {
             </div>
             <div className="container-ld--rows__col-two--content">
               <Title className="container-ld--rows__col-two--content__title">
-                {t("why_title_6")}
+                {t("landing_page.why_title_6")}
               </Title>
               <Paragraph className="container-ld--rows__col-two--content__description">
-                {t("why_description_6")}
+                {t("landing_page.why_description_6")}
               </Paragraph>
             </div>
           </div>
@@ -129,7 +129,9 @@ class TopContent extends Component {
       <div>
         <Row className="container-ld" justify="center">
           <Col span={16}>
-            <Title className="container-ld--title">{t("why_title")}</Title>
+            <Title className="container-ld--title">
+              {t("landing_page.why_title")}
+            </Title>
           </Col>
           <Col className="container-ld__content_center" span={16}>
             <div className="container-ld--body">{this.renderContent(8)}</div>
@@ -140,7 +142,4 @@ class TopContent extends Component {
   }
 }
 
-const mstp = (state) => ({});
-const mdtp = (dispatch) => ({});
-
-export default connect(mstp, mdtp)(withTranslation()(TopContent));
+export default withTranslation()(TopContent);

@@ -15,7 +15,7 @@ import { Menu, Dropdown } from "antd";
 import { connect } from "react-redux";
 import { actions } from "../../../pages/Login/actions";
 import LogoHeader from "../../../common/image/LogoSidebar.png";
-import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actions";
+import { actions as actionLandingPage } from "../../../pages/Web/Home/actions";
 import SideBar from "../SlideBar";
 import { withTranslation } from "react-i18next";
 
@@ -37,13 +37,13 @@ class CommonHeader extends Component {
   renderMenuLanguage = (t, lang) => {
     return (
       <Menu>
-        {listLangage.map((value) => (
+        {listLangage.map(value => (
           <Menu.Item
             key={value}
             className={this.checkActiveLanguage(lang, value)}
             onClick={this.changeLocales(value)}
           >
-            {t(`language_${value}`)}
+            {t(`header.language_${value}`)}
           </Menu.Item>
         ))}
       </Menu>
@@ -53,15 +53,14 @@ class CommonHeader extends Component {
     if (lang === value) return "header__active-language";
     return "";
   };
-  changeLocales = (type) => () => {
+  changeLocales = type => () => {
     this.props.i18n.changeLanguage(type);
-    localStorage.setItem("lang", type);
+    this.props.changeLanguage(type);
   };
 
   render() {
-    const { t } = this.props;
-    let lang = localStorage.getItem("lang");
-    if (!lang) lang = "vn";
+    const { t, lang } = this.props;
+    const { visible } = this.state;
     return (
       <FadeIn transitionDuration={1000}>
         <div className="header__web">
@@ -70,24 +69,21 @@ class CommonHeader extends Component {
             <div className="header__web--menu">
               <ul>
                 <li>
-                  <Link
-                    className="home-item-menu-active"
-                    to="/"
-                  >
+                  <Link className="home-item-menu-active" to="/">
                     <HomeFilled className="header__web--menu--icon" />
-                    Home
+                    {t("header.menu_home")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/blog">
                     <BookFilled className="header__web--menu--icon" />
-                    Blog
+                    {t("header.menu_blog")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/app">
                     <AppstoreFilled className="header__web--menu--icon" />
-                    App
+                    {t("header.menu_app")}
                   </Link>
                 </li>
                 <li>
@@ -98,7 +94,9 @@ class CommonHeader extends Component {
                   >
                     <p className="ant-dropdown-link dropdown-language">
                       <GlobalOutlined />
-                      {lang === "vn" ? t("language_vn") : t("language_en")}
+                      {lang === "vn"
+                        ? t("header.language_vn")
+                        : t("header.language_en")}
                       <CaretDownFilled />
                     </p>
                   </Dropdown>
@@ -111,10 +109,7 @@ class CommonHeader extends Component {
               className="header__web--display-mobie--icon"
               onClick={this.onShowSidebar}
             />
-            <SideBar
-              receiveVisible={() => this.setState({ visible: false })}
-              visible={this.state.visible}
-            />
+            <SideBar receiveVisible={this.onShowSidebar} visible={visible} />
           </div>
         </div>
       </FadeIn>
@@ -122,12 +117,12 @@ class CommonHeader extends Component {
   }
 }
 
-const mstp = (state) => ({});
+const mstp = state => ({
+  lang: state.LandingPageReducer.lang
+});
 
-const mdtp = (dispacth) => ({
-  logoutAdmin: () => dispacth(actions.postLogoutStart()),
-  showModal: (title, content) =>
-    dispacth(actionsModal.showModal(title, content)),
+const mdtp = dispatch => ({
+  changeLanguage: lang => dispatch(actionLandingPage.changeLanguage(lang))
 });
 
 export default connect(mstp, mdtp)(withTranslation()(CommonHeader));

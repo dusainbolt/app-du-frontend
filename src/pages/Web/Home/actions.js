@@ -1,13 +1,14 @@
 export const ActionTypes = {
-  GET_DEMO_START: "GET_DEMO_START",
+  CHANGE_LANGUAGE: "CHANGE_LANGUAGE",
   GET_DEMO_SUCCESS: "GET_DEMO_SUCCESS",
   GET_DEMO_ERROR: "GET_DEMO_ERROR"
 };
 
 export const actions = {
-  getDemoStart: function () {
+  changeLanguage: function (lang) {
     return {
-      type: ActionTypes.GET_DEMO_START    
+      type: ActionTypes.CHANGE_LANGUAGE,
+      lang
     };
   },
   getDemoSuccess: function (success) {

@@ -23,3 +23,7 @@ export function countSecondToTime(secs) {
   };
   return obj;
 }
+
+export function renderContentLanguage(valueVn, valueEn, lang) {
+  return lang === "en" ? valueEn : valueVn;
+}

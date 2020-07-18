@@ -1,17 +1,14 @@
 import { Drawer, Button, Radio, Space } from "antd";
 import React, { Component } from "react";
+import { withTranslation } from "react-i18next";
 class sidarBarWeb extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: this.props.visible,
       placement: "top",
     };
   }
   onClose = () => {
-    this.setState({
-      visible: false,
-    });
     this.props.receiveVisible();
   };
 
@@ -22,13 +19,11 @@ class sidarBarWeb extends Component {
   };
 
   render() {
-    let { placement, visible } = this.state;
-    // console.log("prpos: ", this.props.visible);
-    // console.log(visible);
-    visible = this.props.visible;
+    const { visible, t } = this.props;
+    const { placement } = this.state;
     return (
       <Drawer
-        title="Basic Drawer"
+        title={t("header.title_menu_drawer")}
         placement={placement}
         closable={false}
         onClose={this.onClose}
@@ -43,4 +38,4 @@ class sidarBarWeb extends Component {
   }
 }
 
-export default sidarBarWeb;
+export default withTranslation()(sidarBarWeb);

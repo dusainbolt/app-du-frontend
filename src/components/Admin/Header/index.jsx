@@ -76,12 +76,12 @@ class CommonHeader extends React.Component {
   }
 }
 
-const mstp = (state) => ({});
+const mstp = state => ({});
 
-const mdtp = (dispacth) => ({
-  logoutAdmin: () => dispacth(actions.postLogoutStart()),
+const mdtp = dispatch => ({
+  logoutAdmin: () => dispatch(actions.postLogoutStart()),
   showModal: (title, content) =>
-    dispacth(actionsModal.showModal(title, content)),
+    dispatch(actionsModal.showModal(title, content)),
 });
 
 export default connect(mstp, mdtp)(CommonHeader);

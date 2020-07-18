@@ -2,10 +2,7 @@ import {
   put,
   takeLatest,
 } from "redux-saga/effects";
-import {
-  actions,
-  ActionTypes
-} from "./actions";
+import { actions, ActionTypes } from "./actions";
 import {
   postLoginApi,
   postAuthAdminApi,

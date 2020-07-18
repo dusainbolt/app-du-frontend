@@ -18,12 +18,12 @@ class Home extends Component {
           />
         </div>
         <div className="not-found--footer">
-          <div className="not-found--footer--title">Page Not Found 404</div>
+          <div className="not-found--footer--title">{t("not_found.title")}</div>
           <div className="not-found--footer--description">
-            Sorry, this page could not be found on the server
+            {t("not_found.description")}
           </div>
           <Link className="not-found--footer--button" to="/">
-            <RightCircleFilled className="not-found--footer--button__icon"/> Go back home
+            <RightCircleFilled className="not-found--footer--button__icon"/> {t("not_found.button_go_home")}
           </Link>
         </div>
       </Row>

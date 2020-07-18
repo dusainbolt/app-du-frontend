@@ -1,32 +1,38 @@
-.layout-web{
-  .ant-layout-header{
+.layout-web {
+  .ant-layout-header {
     padding: 0;
   }
 }
 
 .title-top-right {
   padding: 50px 20px 0px 20px;
+
   &__title.ant-typography {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 720;
     color: $primary-color-bold;
   }
+
   &__title-wellcome.ant-typography {
     font-size: 20px;
     margin-bottom: 7%;
     color: $primary-color-bold;
   }
+
   &__title-description.ant-typography {
     font-size: 20px;
     margin-bottom: 5%;
     color: $black-color;
   }
+
   &--button {
     width: 210px;
     text-align: center;
   }
+
   &__icon-group {
     position: relative;
+
     &--item {
       font-size: 30px;
       padding: 15px;
@@ -34,26 +40,32 @@
       cursor: pointer;
       border-radius: 50%;
       background-color: $primary-color-bold;
-      > svg {
+
+      >svg {
         color: white;
       }
+
       &:hover {
         background-color: $purple-color-bold;
         box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
       }
     }
   }
+
   &__icon-group-detail {
     margin-top: 1%;
     position: relative;
     margin-bottom: 7%;
+
     div &--process-circle {
       margin: 0px 30px 10px 0px;
+
       &__value {
         display: block;
         color: $primary-color-bold;
         font-weight: 600;
       }
+
       &__title {
         display: block;
         color: $black-color;
@@ -62,12 +74,14 @@
       }
     }
   }
+
   &--button {
     font-size: 14px;
     font-weight: 700;
     margin-top: 7% !important;
   }
 }
+
 .ant-carousel .slick-slide {
   text-align: center;
   height: auto;
@@ -79,28 +93,64 @@
 .ant-carousel .slick-slide h3 {
   color: #fff;
 }
-.team-carouse{
+
+.team-carouse {
   position: relative;
-  .ant-carousel .slick-slide{
+
+  .ant-carousel .slick-slide {
     line-height: 100px;
   }
-  ul.team-carouse--time-line{
+  &--image-item{
+    overflow: hidden;
+  }
+  &--wrapper-social{
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    height: 25%;
+    bottom: 0px;
+    border-radius: 100px 100px 0 0; 
+    &__group{
+      position: absolute;
+      width: 80%;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-18%);
+      bottom: 5px;
+      >a.icon_team{
+        >span{
+          padding: 10px;
+          margin: 0 5px;
+          border-radius: 50%;
+          background-color: $white-color;
+          >svg{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  ul.team-carouse--time-line {
     padding: 15px 10px 0px 15px;
     text-align: left;
     max-height: 220px;
     overflow: auto;
-    >li{
-      div.ant-timeline-item-content{
+
+    >li {
+      div.ant-timeline-item-content {
         font-size: 14px;
         color: $black-color;
-        label.team-carouse--time-line__title{
+
+        label.team-carouse--time-line__title {
           font-weight: 700;
           margin-right: 10px;
         }
-      } 
+      }
     }
   }
-  &--icon-left{
+
+  &--icon-left {
     z-index: 10;
     padding: 5px;
     position: absolute;
@@ -108,21 +158,25 @@
     border-radius: 0px 45px 45px 0px;
     font-size: 35px;
     opacity: 0.7;
-    >svg{
+
+    >svg {
       color: $white-color;
     }
   }
-  &--icon-right{
+
+  &--icon-right {
     @extend .team-carouse--icon-left;
     right: 0;
     border-radius: 45px 0px 0px 45px;
   }
-  &--card{
-    &__image{
+
+  &--card {
+    &__image {
       width: 100%;
       border-radius: 15px 0px 0px 15px;
       box-shadow: 6px 6px 11px rgba(33, 33, 33, 0.2);
     }
+
     width: 85%;
     margin: auto;
     border-radius: 15px;
@@ -130,18 +184,21 @@
     box-shadow: 12px 12px 11px rgba(33, 33, 33, 0.2);
     margin-bottom: 50px;
   }
-  &__content{
+
+  &__content {
     width: 50%;
-    margin-left:auto;
-    margin-right:0;
+    margin-left: auto;
+    margin-right: 0;
     text-align: left;
     line-height: 21px;
-    &--title{
+
+    &--title {
       font-size: 20px;
       font-weight: 700;
       color: $white-color;
     }
-    &--description{
+
+    &--description {
       margin-top: 15px;
       font-size: 12px;
       font-weight: 600;
@@ -149,53 +206,66 @@
     }
   }
 }
+
 .container-ld {
   margin-top: 5%;
   position: relative;
   margin-bottom: 4%;
-  .container-ld__content_center{
+
+  .container-ld__content_center {
     max-width: 80%;
     flex: 0 0 80%;
   }
 
-  &--col-padding{
+  &--col-padding {
     padding: 0 2%;
   }
+
   &--rows {
     width: 100%;
-    > div {
+
+    >div {
       margin-bottom: 30px;
     }
+
     &__col-one {
       margin-top: 20px;
       background-color: $primary-color-bold;
       box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075);
+
       &:hover {
         box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
       }
+
       color: white;
       height: 100%;
       border-radius: 30px;
+
       &--item {
         text-align: center;
+
         &__icon {
           margin: 20px 10px;
           background-color: white;
           font-size: 35px;
           padding: 20px;
           border-radius: 50%;
-          > svg {
+
+          >svg {
             color: $primary-color-bold;
           }
         }
       }
+
       &--content {
         text-align: center;
+
         &__title.ant-typography {
           color: $white-color;
           font-size: 18px;
           font-weight: 800;
         }
+
         &__description.ant-typography {
           padding: 0px 10px 15px 10px;
           color: $white-color;
@@ -204,27 +274,34 @@
         }
       }
     }
+
     &__col-two {
       @extend .container-ld--rows__col-one;
       background-color: white;
       color: black;
+
       &--item {
         text-align: center;
+
         &__icon {
           @extend .container-ld--rows__col-one--item__icon;
           background-color: $primary-color-bold;
-          > svg {
+
+          >svg {
             color: $white-color;
           }
         }
       }
+
       &--content {
         text-align: center;
+
         &__title.ant-typography {
           color: $black-color;
           font-size: 18px;
           font-weight: 800;
         }
+
         &__description.ant-typography {
           @extend .container-ld--rows__col-one--content__description;
           color: $black-color;
@@ -232,6 +309,7 @@
       }
     }
   }
+
   &--title.ant-typography {
     font-size: 27px;
     color: $primary-color-bold;
@@ -245,8 +323,7 @@
   background-color: $primary-color-bold;
 }
 
-.ant-progress-inner:not(.ant-progress-circle-gradient)
-  .ant-progress-circle-path {
+.ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
   stroke: $primary-color-bold !important;
 }
 
@@ -266,50 +343,61 @@ div.ant-popover-inner {
 .rp-web {
   display: flex !important;
 }
+
 .buton-col-6 {
   width: 25%;
 }
+
 .img-background {
   &--top {
     width: 100%;
   }
 }
+
 .header {
   &__icon {
     padding: 20px;
     font-size: 25px;
     box-shadow: 1px 0 4px #ddd;
   }
-  &__language{
-    >ul{
+
+  &__language {
+    >ul {
       border-radius: 10px;
       overflow: hidden;
       padding: 0px;
       box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08);
-      >li{
+
+      >li {
         padding: 10px 15px;
         color: $primary-color-bold;
         font-weight: 700;
       }
     }
   }
-  &__active-language{
+
+  &__active-language {
     height: 100%;
     background-color: #95a5ff5c;
   }
+
   &__web {
     position: relative;
-    >img{
+
+    >img {
       position: absolute;
       left: 50px;
       top: 3px;
     }
+
     &--display-web {
       display: flex;
     }
+
     &--display-mobie {
       display: none;
-      &--icon > svg {
+
+      &--icon>svg {
         position: absolute;
         color: $primary-color-bold;
         font-size: 30px;
@@ -317,8 +405,9 @@ div.ant-popover-inner {
         right: -40px;
       }
     }
+
     &--menu {
-      > ul {
+      >ul {
         position: absolute;
         list-style-type: none;
         right: 15px;
@@ -326,10 +415,12 @@ div.ant-popover-inner {
         top: 10px;
         text-overflow: ellipsis;
         overflow: hidden;
-        > li {
+
+        >li {
           margin-right: 20px;
           float: left;
-          > a {
+
+          >a {
             display: block;
             color: $primary-color-bold;
             text-align: center;
@@ -338,27 +429,32 @@ div.ant-popover-inner {
             border-radius: 150px;
             border: solid 1px $primary-color-bold;
             text-decoration: none;
+
             &:hover {
               color: white;
               background-color: $purple-color-bold;
               border: solid 1px $purple-color-bold;
             }
           }
+
           >p.dropdown-language {
             margin-top: 13px;
             cursor: pointer;
             color: $primary-color-bold;
             font-weight: 550;
-            >span.anticon-global{
+
+            >span.anticon-global {
               font-size: 15px;
               margin-right: 3px;
             }
-            >span.anticon-down{
+
+            >span.anticon-down {
               margin-left: 3px;
             }
           }
         }
       }
+
       &--icon {
         margin-right: 7px;
         font-size: 15px;
@@ -367,23 +463,25 @@ div.ant-popover-inner {
   }
 }
 
-.top-content{
-  .ant-carousel .slick-slide{
+.top-content {
+  .ant-carousel .slick-slide {
     background-color: $white-color;
     line-height: 0;
   }
 }
 
-@media (max-width: 1024px){
-  .title-top-right__icon-group-detail--container{
+@media (max-width: 1024px) {
+  .title-top-right__icon-group-detail--container {
     width: max-content;
   }
-  .team-carouse{
-    &__content{
+
+  .team-carouse {
+    &__content {
       width: 70%;
     }
-    &--card{
-      &__image{
+
+    &--card {
+      &__image {
         border-radius: 15px 0px 0px 0px;
       }
     }
@@ -394,48 +492,59 @@ div.ant-popover-inner {
   .title-top-right {
     &__icon-group {
       text-align: center;
+
       &--item {
         font-size: 15px;
         margin: 0 5px;
       }
     }
-    &__icon-group-detail{
-      &--container{
+
+    &__icon-group-detail {
+      &--container {
         width: max-content;
         margin: auto;
       }
+
       div &--process-circle {
         margin: 0px 25px 20px 25px;
       }
     }
+
     &--button {
       text-align: center;
     }
+
     &__title.ant-typography {
       font-size: 40px;
       text-align: center;
     }
-    &__title-wellcome{
+
+    &__title-wellcome {
       text-align: center;
     }
+
     &__title-description.ant-typography {
       font-size: 13px;
     }
   }
-  .team-carouse{
-    &__content{
+
+  .team-carouse {
+    &__content {
       width: 80%;
       margin: auto;
     }
-    ul.team-carouse--time-line{
+
+    ul.team-carouse--time-line {
       max-height: 270px;
     }
   }
+
   .container-ld {
     &--rows {
-      &__col-one{
+      &__col-one {
         &--item {
           text-align: center;
+
           &__icon {
             font-size: 20px;
             padding: 15px;
@@ -450,43 +559,52 @@ div.ant-popover-inner {
   .rp-mobie {
     display: inline !important;
   }
+
   .rp-web {
     display: none !important;
   }
+
   .title-top-right {
     padding: 40px 10px 0px 10px;
+
     &__title.ant-typography {
       font-size: 25px;
       font-weight: 720;
       color: $primary-color-bold;
     }
-    &__icon-group-detail{
-      &--container{
+
+    &__icon-group-detail {
+      &--container {
         width: 100%;
         margin: auto;
       }
     }
+
     &__icon-group-detail {
       &--container {
         text-align: center;
       }
     }
   }
-  .team-carouse{
-    ul.team-carouse--time-line{
+
+  .team-carouse {
+    ul.team-carouse--time-line {
       max-height: 250px;
     }
-    &--card{
-      &__image{
+
+    &--card {
+      &__image {
         border-radius: 15px 15px 0px 0px;
       }
     }
   }
+
   .container-ld {
     &--rows {
-      &__col-one{
+      &__col-one {
         &--item {
           text-align: center;
+
           &__icon {
             font-size: 30px;
             padding: 15px;
@@ -495,20 +613,25 @@ div.ant-popover-inner {
       }
     }
   }
+
   .header {
     display: flex;
+
     &__web {
       width: 100%;
       padding: 0 10px 0 1px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       &--display-web {
         display: none;
       }
-      > img {
+
+      >img {
         left: 10px;
       }
+
       &--display-mobie {
         display: flex;
         position: absolute;
@@ -516,6 +639,7 @@ div.ant-popover-inner {
       }
     }
   }
+
   .container-ld {
     &--title.ant-typography {
       font-size: 25px;
