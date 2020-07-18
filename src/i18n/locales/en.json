@@ -22,8 +22,8 @@
   "header": {
     "language_en": "English",
     "language_vn": "Vietnamese",
-    "menu_home": "Trang chủ",
-    "menu_blog": "Dòng thời gian",
-    "menu_app": "Ứng dụng"
+    "menu_home": "Home",
+    "menu_blog": "Timeline",
+    "menu_app": "App"
   }
 }

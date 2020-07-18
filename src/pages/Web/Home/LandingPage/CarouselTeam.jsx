@@ -11,6 +11,9 @@ import {
   MailFilled
 } from "@ant-design/icons";
 
+const ENG = "ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH";
+const VN = "VN VN VN VN VN VN VN VN VN VN VN VN VN VN VN VN VN VVN VN";
+
 class TopContent extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +44,7 @@ class TopContent extends Component {
               Chief Executive Officer
             </label>
             <p className="team-carouse__content--description">
-              {renderContentLanguage("TIENG VIET", "ENGLISH", t("language.value"))}
+              {renderContentLanguage(VN, ENG, t("language.value"))}
             </p>
           </div>
         </Col>
