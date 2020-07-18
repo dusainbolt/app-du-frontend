@@ -60,7 +60,7 @@ class TopContent extends Component {
     return (
       <div className="team-carouse--card">
         <Row>
-          <Col className="team-carouse--image-item" xl={6} lg={12} sm={12} xs={24}>
+          <Col className="team-carouse--image-item" xl={8} xll={6} lg={12} sm={12} xs={24}>
             <img
               alt="img_team"
               className="team-carouse--card__image"
@@ -80,7 +80,7 @@ class TopContent extends Component {
               </div>
             </div>
           </Col>
-          <Col xl={18} lg={12} sm={12} xs={24}>
+          <Col xl={16} lg={12} sm={12} xs={24} xll={18}>
             <Timeline className="team-carouse--time-line">
               <Timeline.Item>
                 <label className="team-carouse--time-line__title">

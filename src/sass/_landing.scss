@@ -5,23 +5,23 @@
 }
 
 .title-top-right {
-  padding: 50px 20px 0px 20px;
+  padding: 30px 20px 0px 20px;
 
   &__title.ant-typography {
-    font-size: 35px;
+    font-size: 27px;
     font-weight: 720;
     color: $primary-color-bold;
   }
 
   &__title-wellcome.ant-typography {
-    font-size: 20px;
-    margin-bottom: 7%;
+    font-size: 18px;
+    margin-bottom: 35px;
     color: $primary-color-bold;
   }
 
   &__title-description.ant-typography {
-    font-size: 20px;
-    margin-bottom: 5%;
+    font-size: 14px;
+    margin-bottom: 35px;
     color: $black-color;
   }
 
@@ -34,8 +34,8 @@
     position: relative;
 
     &--item {
-      font-size: 30px;
-      padding: 15px;
+      font-size: 25px;
+      padding: 13px;
       margin-right: 15px;
       cursor: pointer;
       border-radius: 50%;
@@ -55,21 +55,26 @@
   &__icon-group-detail {
     margin-top: 1%;
     position: relative;
-    margin-bottom: 7%;
+    margin-bottom: 35px;
 
     div &--process-circle {
       margin: 0px 30px 10px 0px;
-
+      div.ant-progress-inner{
+        width: 90px !important;
+        height: 90px !important;
+        font-size: 15px;
+      }
       &__value {
         display: block;
         color: $primary-color-bold;
         font-weight: 600;
+        font-size: 18px;
       }
 
       &__title {
         display: block;
         color: $black-color;
-        font-size: 18px;
+        font-size: 13px;
         font-weight: 400;
       }
     }
@@ -85,6 +90,7 @@
   margin: 30px 0;
   &--wrapper{
     position: relative;
+    margin-bottom: 40px
   }
   &--col-image{
     width: 50%;
@@ -93,9 +99,10 @@
     margin: auto;
   }
   &--title{
-    margin-top: 20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
     text-align: center;
-    font-size: 21px;
+    font-size: 20px;
     color: $primary-color-bold;
     font-weight: 700;
     word-break: break-word;
@@ -178,7 +185,7 @@
     overflow: auto;
     >li {
       div.ant-timeline-item-content {
-        font-size: 14px;
+        font-size: 13px;
         color: $black-color;
         label.team-carouse--time-line__title {
           font-weight: 700;
@@ -210,6 +217,7 @@
   &--card {
     &__image {
       width: 100%;
+      height: 100%;
       border-radius: 15px 0px 0px 15px;
       box-shadow: 6px 6px 11px rgba(33, 33, 33, 0.2);
       &:hover+.team-carouse--wrapper-social{
@@ -232,15 +240,15 @@
     line-height: 21px;
 
     &--title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: $white-color;
     }
 
     &--description {
       margin-top: 15px;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 500;
       color: $white-color;
     }
   }
@@ -301,14 +309,15 @@
 
         &__title.ant-typography {
           color: $white-color;
-          font-size: 18px;
+          font-size: 15px;
           font-weight: 800;
+          padding: 0 10px;
         }
 
         &__description.ant-typography {
           padding: 0px 10px 15px 10px;
           color: $white-color;
-          font-size: 14px;
+          font-size: 13px;
           word-break: break-word;
         }
       }
@@ -318,14 +327,11 @@
       @extend .container-ld--rows__col-one;
       background-color: white;
       color: black;
-
       &--item {
         text-align: center;
-
         &__icon {
           @extend .container-ld--rows__col-one--item__icon;
           background-color: $primary-color-bold;
-
           >svg {
             color: $white-color;
           }
@@ -337,8 +343,9 @@
 
         &__title.ant-typography {
           color: $black-color;
-          font-size: 18px;
+          font-size: 15px;
           font-weight: 800;
+          padding: 0 10px;
         }
 
         &__description.ant-typography {
@@ -350,11 +357,11 @@
   }
 
   &--title.ant-typography {
-    font-size: 27px;
+    font-size: 20px;
     color: $primary-color-bold;
     text-align: center;
     font-weight: 700;
-    margin-top: 40px;
+    margin-top: 10px;
   }
 }
 
@@ -389,7 +396,8 @@ div.ant-popover-inner {
 
 .img-background {
   &--top {
-    width: 100%;
+    width: 80%;
+    margin: auto;
   }
 }
 
@@ -451,24 +459,23 @@ div.ant-popover-inner {
         list-style-type: none;
         right: 15px;
         width: auto;
-        top: 10px;
+        top: 13px;
         text-overflow: ellipsis;
         overflow: hidden;
 
         >li {
           margin-right: 20px;
           float: left;
-
           >a {
             display: block;
             color: $primary-color-bold;
             text-align: center;
             font-weight: 550;
-            padding: 11px 15px;
+            font-size: 13px; 
+            padding: 8px 13px;
             border-radius: 150px;
             border: solid 1px $primary-color-bold;
             text-decoration: none;
-
             &:hover {
               color: white;
               background-color: $purple-color-bold;
@@ -477,13 +484,14 @@ div.ant-popover-inner {
           }
 
           >p.dropdown-language {
-            margin-top: 13px;
+            margin-top: 11px;
             cursor: pointer;
+            font-size: 13px;
             color: $primary-color-bold;
             font-weight: 550;
 
             >span.anticon-global {
-              font-size: 15px;
+              font-size: 13px;
               margin-right: 3px;
             }
 
@@ -673,7 +681,7 @@ div.ant-popover-inner {
   }
 
   .title-top-right {
-    padding: 40px 10px 0px 10px;
+    padding: 30px 10px 0px 10px;
 
     &__title.ant-typography {
       font-size: 25px;
