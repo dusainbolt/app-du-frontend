@@ -86,7 +86,7 @@ class CommonHeader extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app">
+                  <Link to="/bautroixanh">
                     <AppstoreFilled className="header__web--menu--icon" />
                     {t("header.menu_app")}
                   </Link>
