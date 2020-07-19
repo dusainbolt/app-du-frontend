@@ -205,13 +205,39 @@ button {
     width: 400px;
   }
 }
-
+span.error-field{
+  border-color: #ff2121;
+  border-right-width: 1px !important;
+  outline: 0;
+  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.13);
+  margin-bottom: 3px;
+  &:hover{
+    border-color: #ff2121;
+    box-shadow: 0 0 0 1px rgba(247, 0, 0, 0.23);
+  }
+}
 .ant-message{
   top: 5% !important;
 }
 
-.ant-modal-footer{
-  display: none;
+div.ant-modal-header{
+  border-radius: 13px 13px 0 0;
+}
+
+button.ant-btn{
+  border-radius: 13px;
+  >span{
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+div.ant-modal-content{
+  border-radius: 13px 13px;
+}
+
+span.ant-input-affix-wrapper{
+  border-radius: 8px;
 }
 
 @import "./_login.scss";

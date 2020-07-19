@@ -8,8 +8,8 @@ export const postAuthAdminApi = () => {
   return api.get("/admin/auth");
 };
 
-export const postLogoutAdminApi = () => {
-  return api.post("/admin/logout");
+export const postLogoutAdminApi = token => {
+  return api.post("/admin/logout", token);
 };
 
 export const postChangePasswordAdminApi = params=> {

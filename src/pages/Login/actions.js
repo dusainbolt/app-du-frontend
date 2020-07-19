@@ -57,9 +57,10 @@ export const actions = {
       payload: error,
     };
   },
-  postLogoutStart: function () {
+  postLogoutStart: function (token) {
     return {
       type: ActionTypes.POST_LOGOUT_START,
+      token,
     };
   },
   postLogoutSuccess: function (success) {

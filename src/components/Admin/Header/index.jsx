@@ -36,7 +36,8 @@ class CommonHeader extends React.Component {
   };
 
   logout = () => {
-    this.props.logoutAdmin();
+    const { logoutAdmin, token } = this.props;
+    logoutAdmin(token);
   };
 
   handleVisibleChange = () => {
@@ -76,10 +77,12 @@ class CommonHeader extends React.Component {
   }
 }
 
-const mstp = state => ({});
+const mstp = state => ({
+  token: state.loginReducer.auth?.token,
+});
 
 const mdtp = dispatch => ({
-  logoutAdmin: () => dispatch(actions.postLogoutStart()),
+  logoutAdmin: token => dispatch(actions.postLogoutStart(token)),
   showModal: (title, content) =>
     dispatch(actionsModal.showModal(title, content)),
 });

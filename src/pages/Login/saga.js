@@ -55,9 +55,10 @@ function* checkAuthAdmin(action) {
 }
 
 function* logoutAdmin(action) {
+  const { token } = action;
   yield put(actionLayout.showLoadingEvent());
   try {
-    yield postLogoutAdminApi();
+    yield postLogoutAdminApi({ token });
   } catch (e) {
     yield put(actions.postLoginSuccess({}));
   }
