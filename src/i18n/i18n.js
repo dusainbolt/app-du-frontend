@@ -14,12 +14,15 @@ const resources = {
   }
 };
 
+const localLang = localStorage.getItem("lang");
+const lang = localLang ? localLang : "vn";
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "vn",
-    fallbackLng: "vn",
+    lng: lang,
+    fallbackLng: lang,
     nsSeparator: false
 
   });

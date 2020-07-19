@@ -13,9 +13,7 @@ import { Link } from "react-router-dom";
 import { Menu, Dropdown } from "antd";
 
 import { connect } from "react-redux";
-import { actions } from "../../../pages/Login/actions";
 import LogoHeader from "../../../common/image/LogoSidebar.png";
-import { actions as actionLandingPage } from "../../../pages/Web/Home/actions";
 import SideBar from "../SlideBar";
 import { withTranslation } from "react-i18next";
 
@@ -33,6 +31,10 @@ class CommonHeader extends Component {
       visible: !this.state.visible,
     });
   };
+
+  componentDidMount() {
+
+  }
 
   renderMenuLanguage = (t, lang) => {
     return (
@@ -53,14 +55,17 @@ class CommonHeader extends Component {
     if (lang === value) return "header__active-language";
     return "";
   };
+  
   changeLocales = type => () => {
     this.props.i18n.changeLanguage(type);
-    this.props.changeLanguage(type);
+    localStorage.setItem("lang", type);
   };
 
   render() {
-    const { t, lang } = this.props;
+    const { t } = this.props;
     const { visible } = this.state;
+    const localLang = localStorage.getItem("lang");
+    const lang = localLang ? localLang : "vn";
     return (
       <FadeIn transitionDuration={1000}>
         <div className="header__web">
@@ -118,11 +123,10 @@ class CommonHeader extends Component {
 }
 
 const mstp = state => ({
-  lang: state.LandingPageReducer.lang
+  lang: state.landingPageReducer.lang
 });
 
 const mdtp = dispatch => ({
-  changeLanguage: lang => dispatch(actionLandingPage.changeLanguage(lang))
 });
 
 export default connect(mstp, mdtp)(withTranslation()(CommonHeader));

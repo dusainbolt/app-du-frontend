@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
-import ImgTop from "../../../../common/image/top-img.png";
-import ImgTop2 from "../../../../common/image/bg-loginIT.jpg";
 import ImgFrontEnd from "../../../../common/image/font-end.png";
 import ImgBackEnd from "../../../../common/image/back-end.png";
 import Html from "../../../../common/image/tech-stack/html.png";
@@ -57,8 +55,8 @@ class TopContent extends Component {
       return (
         <Row>
           <Col
-            xs={{ span: 24}}
-            lg={{ span: 12}}
+            xs={{ span: 24 }}
+            lg={{ span: 12 }}
           >
             <Row>
               <Col span={24}>
@@ -79,8 +77,8 @@ class TopContent extends Component {
             </Row>
           </Col>
           <Col
-            xs={{ span: 24}}
-            lg={{ span: 12}}
+            xs={{ span: 24 }}
+            lg={{ span: 12 }}
           >
             <Row>
               <Col span={24}>

@@ -44,7 +44,7 @@ function* redirectForLogin(action) {
 }
 
 function* checkAuthAdmin(action) {
-  yield put(actions.postAuthAdminError({}));
+  // yield put(actions.postAuthAdminError({}));
   try {
     yield api.setAuthRequest(action.values);
     const response = yield postAuthAdminApi();

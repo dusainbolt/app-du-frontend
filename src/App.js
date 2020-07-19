@@ -66,7 +66,7 @@ class App extends Component {
 }
 
 const mstp = state => ({
-  layout: state.LayoutReducer,
+  layout: state.layoutReducer,
 });
 
 const mdtp = dispatch => ({

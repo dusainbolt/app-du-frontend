@@ -57,7 +57,7 @@ class CountDownTimer extends Component {
             className="title-top-right__icon-group-detail--process-circle"
             type="circle"
             percent={100}
-            format={(percent) =>
+            format={percent =>
               this.renderProcessValue(d, t("landing_page.countdown_day"))
             }
           />
@@ -65,7 +65,7 @@ class CountDownTimer extends Component {
             className="title-top-right__icon-group-detail--process-circle"
             type="circle"
             percent={percentHours}
-            format={(percent) =>
+            format={percent =>
               this.renderProcessValue(h, t("landing_page.countdown_hours"))
             }
           />
@@ -73,7 +73,7 @@ class CountDownTimer extends Component {
             className="title-top-right__icon-group-detail--process-circle"
             type="circle"
             percent={percentMinutes}
-            format={(percent) =>
+            format={percent =>
               this.renderProcessValue(m, t("landing_page.countdown_minutes"))
             }
           />
@@ -82,7 +82,7 @@ class CountDownTimer extends Component {
             className="title-top-right__icon-group-detail--process-circle"
             type="circle"
             percent={percentSeconds}
-            format={(percent) =>
+            format={percent =>
               this.renderProcessValue(s, t("landing_page.countdown_second"))
             }
           />

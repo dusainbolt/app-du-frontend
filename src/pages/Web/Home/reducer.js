@@ -3,7 +3,7 @@ import {
 } from "./actions";
 
 const DEFAULT_STATE = {
-  lang: "vn",
+  demo: "",
 };
 
 export default (state = DEFAULT_STATE, action) => {
@@ -11,7 +11,6 @@ export default (state = DEFAULT_STATE, action) => {
   case ActionTypes.CHANGE_LANGUAGE: 
     return {
       ...state,
-      lang: action.lang
     };
   default:
     return state;

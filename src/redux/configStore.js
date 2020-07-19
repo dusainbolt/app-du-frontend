@@ -13,7 +13,7 @@ import createSagaMiddleware from "redux-saga";
 const persistConfig = {
   key: "root",
   storage: storage,
-  whitelist: ["loginReducer"],
+  whitelist: ["loginReducer","landingPageReducer"],
   blacklist: []
 };
 

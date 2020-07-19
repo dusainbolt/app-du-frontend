@@ -18,7 +18,7 @@ class AxiosServer {
     if (!url.startsWith("/")) {
       url = "/" + url;
     }
-    return `${process.env.REACT_APP_API_URL}` + url;
+    return `${process.env.REACT_APP_API_URL}/api` + url;
   }
   handelSuccess(response) {
     return response.data;

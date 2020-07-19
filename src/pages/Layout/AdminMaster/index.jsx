@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   toggleMenu() {
-    this.setState((state) => ({
+    this.setState(state => ({
       collapsed: !state.collapsed,
     }));
   }
@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <Route
         {...remainProps}
-        render={(routeProps) => {
+        render={routeProps => {
           if (this.props.path === "/bautroixanh") {
             return browserHistory.push("/bautroixanh/home");
           }
@@ -75,12 +75,12 @@ class App extends Component {
   }
 }
 
-const mstp = (state) => ({
-  token: state.loginReducer.actorInfo?.token,
+const mstp = state => ({
+  token: state.loginReducer.auth?.token,
 });
 
-const mdtp = (dispatch) => ({
-  postAuth: (values) => dispatch(actions.postAuthAdminStart(values)),
+const mdtp = dispatch => ({
+  postAuth: values => dispatch(actions.postAuthAdminStart(values)),
 });
 
 export default connect(mstp, mdtp)(App);

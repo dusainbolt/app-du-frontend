@@ -31,7 +31,6 @@ export const actions = {
     };
   },
   postAuthAdminSuccess: function (token, data) {
-    console.log(token, data);
     return {
       type: ActionTypes.POST_AUTH_SUCCESS,
       payload: {
