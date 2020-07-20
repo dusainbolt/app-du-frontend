@@ -5,7 +5,7 @@
 }
 
 .title-top-right {
-  padding: 30px 20px 0px 20px;
+  padding: 30px 20px 0px 50px;
 
   &__title.ant-typography {
     font-size: 27px;
@@ -141,7 +141,9 @@
 
 .team-carouse {
   position: relative;
-
+  &--wrapper{
+    margin-top: 30px;
+  }
   .ant-carousel .slick-slide {
     line-height: 100px;
   }
@@ -155,14 +157,15 @@
     position: absolute;
     height: 25%;
     bottom: 0px;
-    border-radius: 100px 100px 0 0; 
+    border-radius: 100px 100px 0 15px; 
     &__group{
       position: absolute;
       width: 80%;
-      height: 100%;
+      bottom: 15px;
+      line-height: 0px;
+      height: auto;
       left: 50%;
       transform: translateX(-50%) translateY(-18%);
-      bottom: 5px;
       >a.icon_team{
         >span{
           margin: 0 8px;
@@ -181,8 +184,21 @@
   ul.team-carouse--time-line {
     padding: 15px 10px 0px 15px;
     text-align: left;
-    max-height: 220px;
+    max-height: 300px;
     overflow: auto;
+    &::-webkit-scrollbar{
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb{
+      border-radius: 4px;
+      background-color: #4961ea;
+    }
+    &::-webkit-scrollbar-track{
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+    }
     >li {
       div.ant-timeline-item-content {
         font-size: 13px;
@@ -238,7 +254,7 @@
     margin-right: 0;
     text-align: left;
     line-height: 21px;
-
+    margin-top: 65px;
     &--title {
       font-size: 18px;
       font-weight: 700;
@@ -523,10 +539,9 @@ div.ant-popover-inner {
   }
   .team-carouse {
     &__content {
-      width: 70%;
+      width: 80%;
     }
     &--wrapper-social{
-      // display: block;
       height: 20%;
       &__group{
         transform: translateX(-50%) translateY(-20%);
@@ -620,7 +635,7 @@ div.ant-popover-inner {
       }
     }
     ul.team-carouse--time-line {
-      max-height: 270px;
+      max-height: 325px;
     }
   }
 

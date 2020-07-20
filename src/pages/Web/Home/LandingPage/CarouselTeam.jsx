@@ -38,7 +38,7 @@ class TopContent extends Component {
     const { t } = this.props;
     return (
       <Row>
-        <Col className="team-carouse--wrapper" lg={10} xs={24}>
+        <Col className="team-carouse--wrapper" lg={8} xl={10} xs={24}>
           <div className="team-carouse__content">
             <label className="team-carouse__content--title">
               Chief Executive Officer
@@ -48,7 +48,7 @@ class TopContent extends Component {
             </p>
           </div>
         </Col>
-        <Col className="team-carouse--wrapper" lg={14} xs={24}>
+        <Col className="team-carouse--wrapper" lg={16} xl={14} xs={24}>
           {this.genderContentRight()}
         </Col>
       </Row>
@@ -82,6 +82,42 @@ class TopContent extends Component {
           </Col>
           <Col xl={16} lg={12} sm={12} xs={24} xll={18}>
             <Timeline className="team-carouse--time-line">
+              <Timeline.Item>
+                <label className="team-carouse--time-line__title">
+                  {t("landing_page.label_birthday")}:
+                </label>
+                18/11/1999
+              </Timeline.Item>
+              <Timeline.Item>
+                <label className="team-carouse--time-line__title">
+                  {t("landing_page.label_birthday")}:
+                </label>
+                18/11/1999
+              </Timeline.Item>
+              <Timeline.Item>
+                <label className="team-carouse--time-line__title">
+                  {t("landing_page.label_birthday")}:
+                </label>
+                18/11/1999
+              </Timeline.Item>
+              <Timeline.Item>
+                <label className="team-carouse--time-line__title">
+                  {t("landing_page.label_birthday")}:
+                </label>
+                18/11/1999
+              </Timeline.Item>
+              <Timeline.Item>
+                <label className="team-carouse--time-line__title">
+                  {t("landing_page.label_birthday")}:
+                </label>
+                18/11/1999
+              </Timeline.Item>
+              <Timeline.Item>
+                <label className="team-carouse--time-line__title">
+                  {t("landing_page.label_birthday")}:
+                </label>
+                18/11/1999
+              </Timeline.Item>
               <Timeline.Item>
                 <label className="team-carouse--time-line__title">
                   {t("landing_page.label_birthday")}:
