@@ -27,7 +27,7 @@ class LoginPage extends Component {
   onSubmit(values) {
     this.props.postLogin(values);
   }
-  componentsDidMount() {
+  componentDidMount() {
     const { token } = this.props;
     console.log(token);
     if(token){
@@ -57,14 +57,14 @@ class LoginPage extends Component {
                   name="email"
                   labelTitle="Email"
                   placeholder="Nhập email"
-                  components={Input}
+                  component={Input}
                 />
                 <Field
                   name="password"
                   labelTitle="Password"
                   type="password"
                   placeholder="Nhập password"
-                  components={Input}
+                  component={Input}
                 />
                 <Button
                   type="submit"

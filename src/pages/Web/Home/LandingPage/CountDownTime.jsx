@@ -11,7 +11,7 @@ class CountDownTimer extends Component {
     this.state = { time: {}, seconds: getCountTime(942226248) };
     this.timer = 0;
   }
-  componentsDidMount() {
+  componentDidMount() {
     let timeLeftVar = countSecondToTime(this.state.seconds);
     this.setState({ time: timeLeftVar });
     this.startTimer();

@@ -31,8 +31,6 @@ class commonFooter extends Component {
           <div className="my-footer__wrapper-copyright">
             <div className="my-footer__wrapper-copyright--content">Copyright* by Du Sainbolt 2020 
             </div>
- 
-            {/* <div className="my-footer__wrapper-copyright--content">Copyright* by Du Sainbolt 2020</div> */}
           </div>
         </Row>
       </Footer>

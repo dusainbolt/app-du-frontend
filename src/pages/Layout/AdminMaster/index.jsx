@@ -25,7 +25,7 @@ class App extends Component {
     }));
   }
 
-  componentsDidMount() {
+  componentDidMount() {
     const { postAuth, token } = this.props;
     if(token){
       postAuth(token);
@@ -36,7 +36,7 @@ class App extends Component {
 
   render() {
     const {
-      components: Mycomponents,
+      component: Mycomponent,
       classes,
       name,
       token,
@@ -64,7 +64,7 @@ class App extends Component {
                   <Sidebar />
                 </Sider>
                 <Content className="site-layout-background">
-                  <Mycomponents {...routeProps} />
+                  <Mycomponent {...routeProps} />
                 </Content>
               </Layout>
             </Layout>

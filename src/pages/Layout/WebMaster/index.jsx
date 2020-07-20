@@ -12,7 +12,7 @@ class App extends Component {
 
   render() {
     const {
-      components: Mycomponents,
+      component: Mycomponent,
       classes,
       name,
       ...remainProps
@@ -28,7 +28,7 @@ class App extends Component {
               </Header>
               <Layout className="site-layout-web">
                 <Content className="site-layout-web-background">
-                  <Mycomponents {...routeProps} />
+                  <Mycomponent {...routeProps} />
                   <Footer />
                 </Content>
               </Layout>

@@ -1,4 +1,4 @@
-import { Modal, Button, Row, Col } from "antd";
+import { Button, Row, Col } from "antd";
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -81,21 +81,21 @@ class ModalCommon extends Component {
               labelTitle="Mật khẩu cũ"
               type="password"
               placeholder="Nhập mật khẩu cũ"
-              components={Input}
+              component={Input}
             />
             <Field
               name="passwordNew"
               labelTitle="Mật khẩu mới"
               type="password"
               placeholder="Nhập mật khẩu mới"
-              components={Input}
+              component={Input}
             />
             <Field
               name="passwordConfirm"
               labelTitle="Xác nhận mật khẩu"
               type="password"
               placeholder="Nhập lại mật khẩu mới"
-              components={Input}
+              component={Input}
             />
             <div className="form-group__btn-gruop btn-modal">
               <Button

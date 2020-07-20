@@ -22,7 +22,7 @@ class App extends Component {
         <LayoutAdmin
           name={route.name}
           key={route.path}
-          components={route.components}
+          component={route.component}
           path={route.path}
           exact={route.exact}
         />
@@ -37,7 +37,7 @@ class App extends Component {
         <LayoutWeb
           name={route.name}
           key={route.path}
-          components={route.components}
+          component={route.component}
           path={route.path}
           exact={route.exact}
         />
@@ -54,10 +54,10 @@ class App extends Component {
         <Modal hideModal={this.props.hideModal} modal={layout.modal} />
         <Router history={browserHistory}>
           <Switch>
-            <Route exact path="/bautroixanh/login" components={LoginPage} />
+            <Route exact path="/bautroixanh/login" component={LoginPage} />
             {this.renderAdminLayout()}
             {this.renderWebLayout()}
-            <Route exact path="" components={NotFound} />
+            <Route exact path="" component={NotFound} />
           </Switch>
         </Router>
       </div>
