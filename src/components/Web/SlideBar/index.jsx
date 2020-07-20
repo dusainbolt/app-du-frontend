@@ -1,4 +1,4 @@
-import { Drawer, Button, Radio, Space } from "antd";
+import { Drawer } from "antd";
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 class sidarBarWeb extends Component {
@@ -12,7 +12,7 @@ class sidarBarWeb extends Component {
     this.props.receiveVisible();
   };
 
-  onChange = (e) => {
+  onChange = e => {
     this.setState({
       placement: e.target.value,
     });

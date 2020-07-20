@@ -90,42 +90,6 @@ class TopContent extends Component {
               </Timeline.Item>
               <Timeline.Item>
                 <label className="team-carouse--time-line__title">
-                  {t("landing_page.label_birthday")}:
-                </label>
-                18/11/1999
-              </Timeline.Item>
-              <Timeline.Item>
-                <label className="team-carouse--time-line__title">
-                  {t("landing_page.label_birthday")}:
-                </label>
-                18/11/1999
-              </Timeline.Item>
-              <Timeline.Item>
-                <label className="team-carouse--time-line__title">
-                  {t("landing_page.label_birthday")}:
-                </label>
-                18/11/1999
-              </Timeline.Item>
-              <Timeline.Item>
-                <label className="team-carouse--time-line__title">
-                  {t("landing_page.label_birthday")}:
-                </label>
-                18/11/1999
-              </Timeline.Item>
-              <Timeline.Item>
-                <label className="team-carouse--time-line__title">
-                  {t("landing_page.label_birthday")}:
-                </label>
-                18/11/1999
-              </Timeline.Item>
-              <Timeline.Item>
-                <label className="team-carouse--time-line__title">
-                  {t("landing_page.label_birthday")}:
-                </label>
-                18/11/1999
-              </Timeline.Item>
-              <Timeline.Item>
-                <label className="team-carouse--time-line__title">
                   {t("landing_page.label_gender")}:
                 </label>
                 Nam

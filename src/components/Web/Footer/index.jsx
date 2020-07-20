@@ -1,23 +1,43 @@
-import React from "react";
+import React, { Component } from "react";
 
-import { Layout } from "antd";
-
-import "./index.scss";
+import { Layout, Row, Col } from "antd";
 
 const { Footer } = Layout;
 
-export default class commonFooter extends React.Component {
+class commonFooter extends Component {
   constructor () {
     super();
-    console.log("11111","1111");
   }
 
   render () {
 
     return (
-      <Footer style={{ textAlign: "center" }}>
-        Ekoios 2020
+      <Footer className="my-footer" style={{ textAlign: "center" }}>
+        <Row gutter={[48, 48]}>
+          <Col span={6}>
+            CONTENT 1
+          </Col>
+          <Col span={6}>
+            CONTENT 2
+          </Col>
+          <Col span={6}>
+            CONTENT 3
+          </Col>
+          <Col span={6}>
+            CONTENT 4
+          </Col>
+        </Row>
+        <Row>
+          <div className="my-footer__wrapper-copyright">
+            <div className="my-footer__wrapper-copyright--content">Copyright* by Du Sainbolt 2020 
+            </div>
+ 
+            {/* <div className="my-footer__wrapper-copyright--content">Copyright* by Du Sainbolt 2020</div> */}
+          </div>
+        </Row>
       </Footer>
     );
   }
 }
+
+export default commonFooter;

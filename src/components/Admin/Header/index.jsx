@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   MenuOutlined,
   UserOutlined,
@@ -15,7 +15,7 @@ import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actio
 
 const { Paragraph } = Typography;
 
-class CommonHeader extends React.Component {
+class CommonHeader extends Component {
   state = {
     visiblePopover: false,
   }

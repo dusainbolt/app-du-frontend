@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { browserHistory } from "../../../utils/history";
 import { Layout } from "antd";
 import { connect } from "react-redux";
@@ -25,7 +25,7 @@ class App extends Component {
     }));
   }
 
-  componentDidMount() {
+  componentsDidMount() {
     const { postAuth, token } = this.props;
     if(token){
       postAuth(token);
@@ -36,7 +36,7 @@ class App extends Component {
 
   render() {
     const {
-      component: MyComponent,
+      components: Mycomponents,
       classes,
       name,
       token,
@@ -64,7 +64,7 @@ class App extends Component {
                   <Sidebar />
                 </Sider>
                 <Content className="site-layout-background">
-                  <MyComponent {...routeProps} />
+                  <Mycomponents {...routeProps} />
                 </Content>
               </Layout>
             </Layout>

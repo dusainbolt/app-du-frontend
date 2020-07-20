@@ -1,8 +1,6 @@
 import React from "react";
 import { Menu } from "antd";
-import { withTranslation } from "react-i18next";
 import { AdminRoutes } from "../../../Routes";
-import { NavLink, Redirect } from "react-router-dom";
 import { browserHistory } from "../../../utils/history";
 import {
   UploadOutlined,

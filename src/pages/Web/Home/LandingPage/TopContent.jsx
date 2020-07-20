@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Row, Col, Typography, Carousel } from "antd";
-import Button from "../../../../component/Button";
+import Button from "../../../../components/Button";
 import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
-import ImgTop2 from "../../../../common/image/bg-loginIT.jpg";
+import ImgTop2 from "../../../../common/image/back-end.png";
+import ImgTop3 from "../../../../common/image/font-end.png";
 
 import CountDownTimer from "./CountDownTime";
 import { MailFilled, InstagramFilled, FacebookFilled } from "@ant-design/icons";
@@ -59,11 +60,11 @@ class TopContent extends Component {
             lg={{ span: 10, order: 2 }}
             xl={{ span: 12, order: 2 }}
           >
-            <Carousel dots={false} speed={1500} autoplay effect="fade">
+            <Carousel dots={false} speed={1500} draggable autoplay effect="fade">
               <Col span={24}>
                 <img
                   className="img-background--top"
-                  src={ImgTop}
+                  src={ImgTop2}
                   alt="img top"
                 />
               </Col>
@@ -77,7 +78,7 @@ class TopContent extends Component {
               <Col span={24}>
                 <img
                   className="img-background--top"
-                  src={ImgTop}
+                  src={ImgTop3}
                   alt="img top"
                 />
               </Col>

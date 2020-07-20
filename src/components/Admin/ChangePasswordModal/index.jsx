@@ -2,11 +2,10 @@ import { Modal, Button, Row, Col } from "antd";
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Input from "../../../component/Login";
+import Input from "../../../components/Login";
 import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actions";
 import { actions as actionLogin } from "../../../pages/Login/actions";
 import { Formik, Field } from "formik";
-
 import * as Yup from "yup";
 
 class ModalCommon extends Component {
@@ -82,21 +81,21 @@ class ModalCommon extends Component {
               labelTitle="Mật khẩu cũ"
               type="password"
               placeholder="Nhập mật khẩu cũ"
-              component={Input}
+              components={Input}
             />
             <Field
               name="passwordNew"
               labelTitle="Mật khẩu mới"
               type="password"
               placeholder="Nhập mật khẩu mới"
-              component={Input}
+              components={Input}
             />
             <Field
               name="passwordConfirm"
               labelTitle="Xác nhận mật khẩu"
               type="password"
               placeholder="Nhập lại mật khẩu mới"
-              component={Input}
+              components={Input}
             />
             <div className="form-group__btn-gruop btn-modal">
               <Button

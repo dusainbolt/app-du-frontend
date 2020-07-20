@@ -2,19 +2,17 @@
 
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { browserHistory } from "../../../utils/history";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { connect } from "react-redux";
+import { Layout } from "antd";
 import CommonHeader from "../../../components/Web/Header";
-import Sidebar from "../../../components/Admin/SlideBar";
 import "./index.scss";
-import { actions } from "../../Login/actions";
-const { Header, Content, Sider } = Layout;
+import Footer from "../../../components/Web/Footer";
+
+const { Header, Content } = Layout;
 class App extends Component {
 
   render() {
     const {
-      component: MyComponent,
+      components: Mycomponents,
       classes,
       name,
       ...remainProps
@@ -30,7 +28,8 @@ class App extends Component {
               </Header>
               <Layout className="site-layout-web">
                 <Content className="site-layout-web-background">
-                  <MyComponent {...routeProps} />
+                  <Mycomponents {...routeProps} />
+                  <Footer />
                 </Content>
               </Layout>
             </Layout>

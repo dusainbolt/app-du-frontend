@@ -5,9 +5,9 @@ import { browserHistory } from "./utils/history";
 import LayoutAdmin from "./pages/Layout/AdminMaster";
 import LayoutWeb from "./pages/Layout/WebMaster";
 import { AdminRoutes, WebRoutes } from "./Routes";
-import AuthLoading from "./component/Loading/AuthenLoading";
-import EventLoading from "./component/Loading/EventLoading";
-import Modal from "./component/Modal";
+import AuthLoading from "./components/Loading/AuthenLoading";
+import EventLoading from "./components/Loading/EventLoading";
+import Modal from "./components/Modal";
 import LoginPage from "./pages/Login";
 import NotFound from "./pages/Web/NotFound";
 import { actions as actionLayout } from "./pages/Layout/AdminMaster/actions";
@@ -22,7 +22,7 @@ class App extends Component {
         <LayoutAdmin
           name={route.name}
           key={route.path}
-          component={route.component}
+          components={route.components}
           path={route.path}
           exact={route.exact}
         />
@@ -37,7 +37,7 @@ class App extends Component {
         <LayoutWeb
           name={route.name}
           key={route.path}
-          component={route.component}
+          components={route.components}
           path={route.path}
           exact={route.exact}
         />
@@ -54,10 +54,10 @@ class App extends Component {
         <Modal hideModal={this.props.hideModal} modal={layout.modal} />
         <Router history={browserHistory}>
           <Switch>
-            <Route exact path="/bautroixanh/login" component={LoginPage} />
+            <Route exact path="/bautroixanh/login" components={LoginPage} />
             {this.renderAdminLayout()}
             {this.renderWebLayout()}
-            <Route exact path="" component={NotFound} />
+            <Route exact path="" components={NotFound} />
           </Switch>
         </Router>
       </div>

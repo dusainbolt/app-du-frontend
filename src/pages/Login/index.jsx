@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import logo from "../../common/image/logo.png";
 import * as Yup from "yup";
-import Input from "../../component/Login";
-import Button from "../../component/Button";
+import Input from "../../components/Login";
+import Button from "../../components/Button";
 import { actions } from "../Login/actions";
 
 class LoginPage extends Component {
@@ -27,7 +27,7 @@ class LoginPage extends Component {
   onSubmit(values) {
     this.props.postLogin(values);
   }
-  componentDidMount() {
+  componentsDidMount() {
     const { token } = this.props;
     console.log(token);
     if(token){
@@ -57,14 +57,14 @@ class LoginPage extends Component {
                   name="email"
                   labelTitle="Email"
                   placeholder="Nhập email"
-                  component={Input}
+                  components={Input}
                 />
                 <Field
                   name="password"
                   labelTitle="Password"
                   type="password"
                   placeholder="Nhập password"
-                  component={Input}
+                  components={Input}
                 />
                 <Button
                   type="submit"

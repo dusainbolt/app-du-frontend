@@ -12,7 +12,7 @@ export const AdminRoutes = [
   {
     name: "Home",
     path: "/bautroixanh/home",
-    component: Homepage,
+    components: Homepage,
     iconName: "manager",
     exact: true,
   },
@@ -20,26 +20,26 @@ export const AdminRoutes = [
     name: "My Account",
     path: "/bautroixanh/my-account",
     iconName: "task",
-    component: MyAccount,
+    components: MyAccount,
   },
   {
     name: "My Acoount 2",
     path: "/bautroixanh/my-account1",
     iconName: "contact",
-    component: MyAccount,
+    components: MyAccount,
   },
 ];
 export const WebRoutes = [
   {
     name: "sdsd",
     path: "/",
-    component: HomeWeb,
+    components: HomeWeb,
     exact: true,
   }
   // {
   //   name: "sdsd",
   //   path: "/bautroixanh/my-account",
-  //   component: MyAccount,
+  //   components: MyAccount,
   //   exact: false,
   // },
 ];

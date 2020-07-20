@@ -32,7 +32,7 @@ class CommonHeader extends Component {
     });
   };
 
-  componentDidMount() {
+  componentsDidMount() {
 
   }
 

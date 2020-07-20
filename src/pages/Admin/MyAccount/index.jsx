@@ -40,7 +40,7 @@ class Home extends Component {
   }
 }
 
-const mstp = (state) => ({});
-const mdtp = (dispatch) => ({});
+const mstp = state => ({});
+const mdtp = dispatch => ({});
 
 export default connect(mstp, mdtp)(withTranslation()(Home));
