@@ -171,7 +171,7 @@
   }
   &__feature-wrapper{
     text-align: left;
-    word-break: break-word;s
+    word-break: break-all;
     >span{
       >strong{
         color: $primary-color-bold;
@@ -180,7 +180,7 @@
     }
     >a{
       color: rgba(0, 0, 0, 0.65);
-      transition: color .3s;
+      transition: color .5s;
       &:hover{
         color: $primary-color-bold;
       }
@@ -205,9 +205,9 @@
     margin-bottom: 25px;
     color: $primary-color-bold;
   }
-  &__description{
-    text-align: left;
-    word-break: break-word;
+  &__image{
+    width: 50%;
+    margin: auto;
   }
 }
 
@@ -654,6 +654,11 @@ div.ant-popover-inner {
       flex: 0 0 95%;
     }
   }
+  .my-footer{
+    &__image{
+      width: 100%
+    }
+  }  
 }
 
 @media (max-width: 768px) {
@@ -824,6 +829,12 @@ div.ant-popover-inner {
       }
     }
   }
+  
+  .my-footer{
+    &__image{
+      width: 50%
+    }
+  } 
 
   .header {
     display: flex;

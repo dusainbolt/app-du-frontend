@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Row } from "antd";
 import { RightCircleFilled } from "@ant-design/icons";
-import ImgNotFound from "../../../common/image/error-page.png";
+import ImgNotFound1 from "../../../common/image/error-404.png";
 
 class Home extends Component {
   render() {
@@ -13,7 +13,7 @@ class Home extends Component {
         <div className="not-found--wrapper">
           <img
             className="not-found--wrapper__img"
-            src={ImgNotFound}
+            src={ImgNotFound1}
             alt="notfound"
           />
         </div>

@@ -8,7 +8,7 @@ import WhyInfo from "./LandingPage/WhyInfo";
 import CarouselTeam from "./LandingPage/CarouselTeam";
 import TechStack from "./LandingPage/TechStack";
 import { actions } from "../../Admin/Home/actions";
-
+import BackTop from "../../../components/BackTop";
 class Home extends Component {
   render() {
     return (
@@ -25,6 +25,7 @@ class Home extends Component {
         <FadeIn delay={1000} transitionDuration={1000}>
           <CarouselTeam />
         </FadeIn>
+        <BackTop />
       </div>
     );
   }
