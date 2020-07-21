@@ -135,7 +135,7 @@
 
 .my-footer{
   background-color: $white-color !important;
-  padding: 24px 50px 0 24px !important;
+  padding: 24px 24px 0 24px !important;
   position: relative;
   overflow: hidden;
   &__wrapper-copyright{
@@ -155,6 +155,18 @@
       margin-bottom: 27px;
       margin-top: -15px;
     }
+  }
+  &__google-map{
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    border: solid 2px $white-color;
+    box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075)
+  }
+  &__fanpage{
+    margin-top: 12px;
+    @extend .my-footer__google-map;
+    height: 185px;
   }
 }
 
@@ -382,17 +394,14 @@
           }
         }
       }
-
       &--content {
         text-align: center;
-
         &__title.ant-typography {
           color: $black-color;
           font-size: 15px;
           font-weight: 800;
           padding: 0 10px;
         }
-
         &__description.ant-typography {
           @extend .container-ld--rows__col-one--content__description;
           color: $black-color;
