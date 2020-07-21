@@ -38,9 +38,9 @@ class commonFooter extends Component {
                 <Col xs={0} sm={0} md={24} lg={0} xl={0}>
                   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsainboltapp&tabs&width=335&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=238661450587230" className="my-footer__fanpage" width="420" height="180" scrolling="no" allowTransparency="true" allow="encrypted-media"></iframe>
                 </Col>
-                <Col xs={0} sm={24} md={0} lg={0} xl={0}>
+                {/* <Col xs={0} sm={24} md={0} lg={0} xl={0}>
                   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsainboltapp&tabs&width=335&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=238661450587230" className="my-footer__fanpage" width="420" height="180" scrolling="no" allowTransparency="true" allow="encrypted-media"></iframe>
-                </Col>
+                </Col> */}
                 <Col xs={24} sm={0} md={0} lg={0} xl={0}>
                   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsainboltapp&tabs&width=325&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=238661450587230" className="my-footer__fanpage" width="420" height="180" scrolling="no" allowTransparency="true" allow="encrypted-media"></iframe>
                 </Col>
