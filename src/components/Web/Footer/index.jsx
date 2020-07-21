@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { MailFilled, HeartFilled, FacebookFilled, EnvironmentFilled, PhoneFilled, GlobalOutlined } from "@ant-design/icons";
 import { Layout, Row, Col } from "antd";
 import FadeIn from "react-fade-in";
 const { Footer } = Layout;
@@ -15,14 +15,62 @@ class commonFooter extends Component {
       <FadeIn transitionDuration={1000}>
         <Footer className="my-footer" style={{ textAlign: "center" }}>
           <Row gutter={[48, 48]}>
-            <Col sm={12} xs={24} xl={6} span={6}>
-            CONTENT 1
+            <Col sm={12} xs={24} xl={7}>
+              CONTENT 1
             </Col>
-            <Col sm={12} xs={24} xl={6} span={6}>
-            CONTENT 2
+            <Col className="my-footer__col-feature" sm={12} xs={24} xl={6}>
+              <div className="my-footer__title">Du Sainbolt</div>
+              <Row gutter={[12, 12]}>
+                <Col className="my-footer__feature-wrapper" span={24}>
+                  <EnvironmentFilled className="my-footer__icon"/> <span><strong>Address: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                </Col>
+                <Col className="my-footer__feature-wrapper" span={24}>
+                  <PhoneFilled className="my-footer__icon"/> <span><strong>Hotline: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                </Col>
+                <Col className="my-footer__feature-wrapper" span={24}>
+                  <MailFilled className="my-footer__icon"/> <span><strong>Email: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                </Col>
+                <Col className="my-footer__feature-wrapper" span={24}>
+                  <GlobalOutlined className="my-footer__icon"/> <span><strong>Website: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                </Col>
+                <Col className="my-footer__feature-wrapper" span={24}>
+                  <FacebookFilled className="my-footer__icon"/> <span><strong>Fanpage: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                </Col>
+              </Row>
             </Col>
-            <Col sm={12} xs={24} xl={6} span={6}>
-            CONTENT 3
+            <Col className="my-footer__col-feature" sm={12} xs={24} xl={5}>
+              <div className="my-footer__title">Menu</div>
+              <Row gutter={[12, 12]}>
+                <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
+                  <HeartFilled /> Home
+                </Col>
+                <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
+                  <HeartFilled /> Timeline
+                </Col>
+                <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
+                  <HeartFilled /> App
+                </Col>
+                <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
+                  <HeartFilled /> Contact
+                </Col>
+                <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
+                  <HeartFilled   /> Privacy Policy
+                </Col>
+              </Row>
+              <div className="my-footer__description">
+                description
+                description
+                description
+                description
+                description
+                description
+                description
+                description
+                description
+                description
+                description
+                description
+              </div>
             </Col>
             <Col sm={12} xs={24} xl={6}>
               <Row>

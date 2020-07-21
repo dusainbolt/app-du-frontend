@@ -134,7 +134,7 @@
 }
 
 .my-footer{
-  background-color: $white-color !important;
+  background-color: $footer-color !important;
   padding: 24px 24px 0 24px !important;
   position: relative;
   overflow: hidden;
@@ -149,6 +149,7 @@
     padding: 25px 0;
     border-radius: 150px;
     color: $white-color;
+    box-shadow: 12px 12px 11px rgba(33, 33, 33, 0.2);
     &--content{
       font-size: 14px;
       line-height: 14px;
@@ -158,7 +159,7 @@
   }
   &__google-map{
     width: 100%;
-    height: 200px;
+    height: 130px;
     border-radius: 15px;
     border: solid 2px $white-color;
     box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075)
@@ -167,6 +168,43 @@
     margin-top: 12px;
     @extend .my-footer__google-map;
     height: 120px;
+  }
+  &__feature-wrapper{
+    text-align: left;
+    word-break: break-word;s
+    >span{
+      >strong{
+        color: $primary-color-bold;
+        font-weight: 600;
+      }
+    }
+    >a{
+      color: rgba(0, 0, 0, 0.65);
+      transition: color .3s;
+      &:hover{
+        color: $primary-color-bold;
+      }
+    }
+  }
+  span.my-footer__icon{
+    color: $primary-color-bold;
+  }
+  &__feature-wrapper-menu{
+    @extend .my-footer__feature-wrapper;
+    >span{
+      color: red
+    }
+  }
+  &__title{
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: $primary-color-bold;
+  }
+  &__description{
+    text-align: left;
+    word-break: break-word;
   }
 }
 
@@ -182,6 +220,7 @@
 }
 
 .team-carouse {
+  margin-bottom: 40px;
   position: relative;
   &--wrapper{
     margin-top: 30px;
