@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e8a3b8645316a7bae93d306127e289d4",
+    "revision": "088ac1f6da68b4f34f763c612421fe37",
     "url": "/app-du-frontend/index.html"
   },
   {
-    "revision": "4a9e36a5ab8c9a9cb146",
+    "revision": "9b3df9d8c5095ce73e17",
     "url": "/app-du-frontend/static/css/2.3cb76441.chunk.css"
   },
   {
-    "revision": "e3f715e088a584a672a2",
-    "url": "/app-du-frontend/static/css/main.dcbb8f48.chunk.css"
+    "revision": "b32a98709ccc5dcd82ad",
+    "url": "/app-du-frontend/static/css/main.178b1e08.chunk.css"
   },
   {
-    "revision": "4a9e36a5ab8c9a9cb146",
-    "url": "/app-du-frontend/static/js/2.611c2d31.chunk.js"
+    "revision": "9b3df9d8c5095ce73e17",
+    "url": "/app-du-frontend/static/js/2.babe6241.chunk.js"
   },
   {
     "revision": "cacaf3f01dd3bd8237006f7c58951c1c",
-    "url": "/app-du-frontend/static/js/2.611c2d31.chunk.js.LICENSE.txt"
+    "url": "/app-du-frontend/static/js/2.babe6241.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e3f715e088a584a672a2",
-    "url": "/app-du-frontend/static/js/main.a1d02c79.chunk.js"
+    "revision": "b32a98709ccc5dcd82ad",
+    "url": "/app-du-frontend/static/js/main.9f50d543.chunk.js"
   },
   {
     "revision": "eb5e06ff78230c73263f",
@@ -34,6 +34,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f3e7311344f4bf94b29ccd5d6826ab04",
     "url": "/app-du-frontend/static/media/LoadingProject.f3e73113.gif"
+  },
+  {
+    "revision": "76102543d9ded9fe6a962746372ad67d",
+    "url": "/app-du-frontend/static/media/Logo-footer.76102543.png"
   },
   {
     "revision": "53b25a646f0bb655fc88b612f5c79b18",
@@ -68,8 +72,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/app-du-frontend/static/media/docker.1b37c03b.jpeg"
   },
   {
-    "revision": "caf73798fb6f42cc5325b281459e0a54",
-    "url": "/app-du-frontend/static/media/error-page.caf73798.png"
+    "revision": "7abf9878a61e1e430fa060cab30134d3",
+    "url": "/app-du-frontend/static/media/error-404.7abf9878.png"
   },
   {
     "revision": "c0f69f97c3fb803f7743bb0e4a99de11",
