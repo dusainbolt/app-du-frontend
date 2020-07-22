@@ -191,8 +191,11 @@
   }
   &__feature-wrapper-menu{
     @extend .my-footer__feature-wrapper;
-    >span{
-      color: red
+    >a{
+      font-weight: 550;
+      >span{
+        color: $primary-color-bold;
+      }
     }
   }
   &__title{

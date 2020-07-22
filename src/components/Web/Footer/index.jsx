@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { MailFilled, HeartFilled, FacebookFilled, EnvironmentFilled, PhoneFilled, GlobalOutlined } from "@ant-design/icons";
 import { Layout, Row, Col } from "antd";
 import FadeIn from "react-fade-in";
+import { Link } from "react-router-dom";
+
 const { Footer } = Layout;
 
 class commonFooter extends Component {
@@ -9,8 +11,14 @@ class commonFooter extends Component {
     super();
   }
 
-  render () {
+  getCurrentFullUrl = url => {
+    return url.substring(0, url.length - 1);
+  }
 
+  render () {
+    const currentUrl = this.getCurrentFullUrl(window.location.href);
+    const phoneNumber = "0328111597";
+    const mail = "appdu.hotro@gmail.com";
     return (
       <FadeIn transitionDuration={1000}>
         <Footer className="my-footer" style={{ textAlign: "center" }}>
@@ -25,16 +33,16 @@ class commonFooter extends Component {
                   <EnvironmentFilled className="my-footer__icon"/> <span><strong>Address: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
                 </Col>
                 <Col className="my-footer__feature-wrapper" span={24}>
-                  <PhoneFilled className="my-footer__icon"/> <span><strong>Hotline: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                  <PhoneFilled className="my-footer__icon"/> <span><strong>Hotline: </strong></span><a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                 </Col>
                 <Col className="my-footer__feature-wrapper" span={24}>
-                  <MailFilled className="my-footer__icon"/> <span><strong>Email: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                  <MailFilled className="my-footer__icon"/> <span><strong>Email: </strong></span><a href={`mailto:${mail}`}>{mail}</a>
                 </Col>
                 <Col className="my-footer__feature-wrapper" span={24}>
-                  <GlobalOutlined className="my-footer__icon"/> <span><strong>Website: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                  <GlobalOutlined className="my-footer__icon"/> <span><strong>Website: </strong></span><a href={currentUrl} rel="noreferrer">{currentUrl}</a>
                 </Col>
                 <Col className="my-footer__feature-wrapper" span={24}>
-                  <FacebookFilled className="my-footer__icon"/> <span><strong>Fanpage: </strong></span><a>46 Chien Thang Ha Dong Ha Noi Viet Nam</a>
+                  <FacebookFilled className="my-footer__icon"/> <span><strong>Fanpage: </strong></span><a href="https://www.facebook.com/sainboltapp" rel="noreferrer" target="_blank">facebook.com/sainboltapp</a>
                 </Col>
               </Row>
             </Col>
@@ -42,34 +50,23 @@ class commonFooter extends Component {
               <div className="my-footer__title">Menu</div>
               <Row gutter={[12, 12]}>
                 <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
-                  <HeartFilled /> Home
+                  <Link to="/blog"><HeartFilled /> Home</Link>
                 </Col>
                 <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
-                  <HeartFilled /> Timeline
+                  <Link to="/blog"><HeartFilled /> Timeline</Link>
                 </Col>
                 <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
-                  <HeartFilled /> App
+                  <Link to="/blog"><HeartFilled /> App</Link>
                 </Col>
                 <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
-                  <HeartFilled /> Contact
+                  <Link to="/blog"><HeartFilled /> Contact</Link>
                 </Col>
                 <Col className="my-footer__feature-wrapper-menu" sm={8} xl={12}>
-                  <HeartFilled   /> Privacy Policy
+                  <Link to="/blog"><HeartFilled   /> Privacy Policy</Link>
                 </Col>
               </Row>
               <div className="my-footer__description">
-                description
-                description
-                description
-                description
-                description
-                description
-                description
-                description
-                description
-                description
-                description
-                description
+                ssssssssssss ssssssssssssss sssssssssssss  sssssssssssssssss ssssssssss
               </div>
             </Col>
             <Col sm={12} xs={24} xl={6}>
