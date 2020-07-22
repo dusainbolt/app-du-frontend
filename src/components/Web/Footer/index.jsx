@@ -22,7 +22,7 @@ class commonFooter extends Component {
     return (
       <FadeIn transitionDuration={1000}>
         <Footer className="my-footer" style={{ textAlign: "center" }}>
-          <Row gutter={[6, 48]}>
+          <Row gutter={[6, 32]}>
             <Col sm={5} lg={5} xs={24} xl={7}>
               <img className="my-footer__image" src={logoFooter} alt="img_footer" />
             </Col>
@@ -50,7 +50,7 @@ class commonFooter extends Component {
                 <Col className="my-footer__col-wrapper--title"  span={24}>
                   Contact Us
                 </Col>
-                <Col className="my-footer__col-wrapper--label" span={24}>
+                <Col className="my-footer__col-wrapper--label my-footer__icon-wrapper" span={24}>
                   <a href={facebook} rel="noreferrer" target="_blank"><FacebookFilled className="my-footer__col-wrapper--icon" /></a>
                   <a href={`mailto:${mail}`}><MailFilled className="my-footer__col-wrapper--icon" /></a>
                   <a href={`tel:${phoneNumber}`}><PhoneFilled className="my-footer__col-wrapper--icon" /></a>

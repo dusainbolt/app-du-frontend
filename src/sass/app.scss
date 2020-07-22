@@ -206,6 +206,20 @@ button {
     width: 400px;
   }
 }
+
+.back-top{
+  font-size: 40px;
+  opacity: 0.5;
+  >svg{
+    color: $primary-color-bold
+  }
+}
+
+div.back-top-wrapper{
+  right: 15px;
+  bottom: 25px;
+}
+
 span.error-field{
   border-color: #ff2121;
   border-right-width: 1px !important;

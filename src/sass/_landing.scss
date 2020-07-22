@@ -829,6 +829,15 @@ div.ant-popover-inner {
       width: 50%;
       margin: 0 25%;
     }
+    &__col-wrapper{
+      text-align: center;
+      &--label{
+        text-align: center;
+      }
+    }
+    &__icon-wrapper{
+      padding-left: 15px;
+    }
   } 
 
   .header {
