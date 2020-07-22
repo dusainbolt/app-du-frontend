@@ -62,7 +62,7 @@
       div.ant-progress-inner{
         width: 90px !important;
         height: 90px !important;
-        font-size: 15px;
+        font-size: $base-font-title;
       }
       &__value {
         display: block;
@@ -74,7 +74,7 @@
       &__title {
         display: block;
         color: $black-color;
-        font-size: 13px;
+        font-size: $base-font-size;
         font-weight: 400;
       }
     }
@@ -134,10 +134,12 @@
 }
 
 .my-footer{
-  background-color: $footer-color !important;
-  padding: 24px 24px 0 24px !important;
+  padding: 24px 50px 0 50px!important;
   position: relative;
   overflow: hidden;
+  background: $white-color !important;
+  border-top: 1px solid #ddd;
+  box-shadow: 3px 3px 3px 3px #ddd;
   &__wrapper-copyright{
     position: absolute;
     background-color: $primary-color-bold;
@@ -159,58 +161,51 @@
   }
   &__google-map{
     width: 100%;
-    height: 130px;
+    height: 150px;
     border-radius: 15px;
     border: solid 2px $white-color;
     box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075)
   }
-  &__fanpage{
-    margin-top: 12px;
-    @extend .my-footer__google-map;
-    height: 120px;
-  }
-  &__feature-wrapper{
+  &__col-wrapper{
     text-align: left;
-    word-break: break-all;
-    >span{
-      >strong{
-        color: $primary-color-bold;
-        font-weight: 600;
-      }
+    font-size: $base-font-title;
+    &--title{
+      font-weight: 700;
     }
-    >a{
-      color: rgba(0, 0, 0, 0.65);
-      transition: color .5s;
+    &--label{
+      margin-top: 3px;
+      >a, a:active{
+        color: $black-color;
+      }
+      >a:hover{
+        color: $primary-color-bold;
+      }
       &:hover{
+        cursor: pointer;
         color: $primary-color-bold;
       }
     }
-  }
-  span.my-footer__icon{
-    color: $primary-color-bold;
-  }
-  &__feature-wrapper-menu{
-    @extend .my-footer__feature-wrapper;
-    >a{
-      font-weight: 550;
-      >span{
+    &--icon{
+      margin-top: 8px;
+      font-size: 22px;
+      margin-right: 18px;
+      transition: box-shadow .1s;
+      &:hover{
+        box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075);
+        cursor: pointer;
         color: $primary-color-bold;
       }
     }
-  }
-  &__title{
-    text-align: left;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: $primary-color-bold;
   }
   &__image{
-    width: 50%;
-    margin: auto;
+    float: left !important;
+    width: 30%;
+    margin-top: -2%;
   }
 }
-
+.ant-layout-footer {
+  color: $black-color !important;
+}
 .ant-carousel .slick-slide {
   text-align: center;
   height: auto;
@@ -285,7 +280,7 @@
     }
     >li {
       div.ant-timeline-item-content {
-        font-size: 13px;
+        font-size: $base-font-size;
         color: $black-color;
         label.team-carouse--time-line__title {
           font-weight: 700;
@@ -347,7 +342,7 @@
 
     &--description {
       margin-top: 15px;
-      font-size: 13px;
+      font-size: $base-font-size;
       font-weight: 500;
       color: $white-color;
     }
@@ -389,7 +384,6 @@
 
       &--item {
         text-align: center;
-
         &__icon {
           margin: 20px 10px;
           background-color: white;
@@ -408,7 +402,7 @@
 
         &__title.ant-typography {
           color: $white-color;
-          font-size: 15px;
+          font-size: $base-font-title;
           font-weight: 800;
           padding: 0 10px;
         }
@@ -416,7 +410,7 @@
         &__description.ant-typography {
           padding: 0px 10px 15px 10px;
           color: $white-color;
-          font-size: 13px;
+          font-size: $base-font-size;
           word-break: break-word;
         }
       }
@@ -440,7 +434,7 @@
         text-align: center;
         &__title.ant-typography {
           color: $black-color;
-          font-size: 15px;
+          font-size: $base-font-title;
           font-weight: 800;
           padding: 0 10px;
         }
@@ -567,7 +561,7 @@ div.ant-popover-inner {
             color: $primary-color-bold;
             text-align: center;
             font-weight: 550;
-            font-size: 13px; 
+            font-size: $base-font-size; 
             padding: 8px 13px;
             border-radius: 150px;
             border: solid 1px $primary-color-bold;
@@ -582,12 +576,12 @@ div.ant-popover-inner {
           >p.dropdown-language {
             margin-top: 11px;
             cursor: pointer;
-            font-size: 13px;
+            font-size: $base-font-size;
             color: $primary-color-bold;
             font-weight: 550;
 
             >span.anticon-global {
-              font-size: 13px;
+              font-size: $base-font-size;
               margin-right: 3px;
             }
 
@@ -600,7 +594,7 @@ div.ant-popover-inner {
 
       &--icon {
         margin-right: 7px;
-        font-size: 15px;
+        font-size: $base-font-title;
       }
     }
   }
@@ -656,7 +650,7 @@ div.ant-popover-inner {
   }
   .my-footer{
     &__image{
-      width: 100%
+      width: 70%
     }
   }  
 }
@@ -667,7 +661,7 @@ div.ant-popover-inner {
       text-align: center;
 
       &--item {
-        font-size: 15px;
+        font-size: $base-font-title;
         margin: 0 5px;
       }
     }
@@ -697,7 +691,7 @@ div.ant-popover-inner {
     }
 
     &__title-description.ant-typography {
-      font-size: 13px;
+      font-size: $base-font-size;
     }
   }
 
@@ -751,16 +745,16 @@ div.ant-popover-inner {
             >a {
               font-weight: 650;
               padding: 10px 7px;
-              font-size: 13px;
+              font-size: $base-font-size;
             }
             >p.dropdown-language {
               margin-top: 13px;
               cursor: pointer;
               color: $primary-color-bold;
               font-weight: 650;
-              font-size: 13px;
+              font-size: $base-font-size;
               >span.anticon-global {
-                font-size: 13px;
+                font-size: $base-font-size;
                 margin-right: 3px;
               }
             }
@@ -832,7 +826,8 @@ div.ant-popover-inner {
   
   .my-footer{
     &__image{
-      width: 50%
+      width: 50%;
+      margin: 0 25%;
     }
   } 
 
