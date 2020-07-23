@@ -4,51 +4,53 @@ import { Layout, Row, Col } from "antd";
 import FadeIn from "react-fade-in";
 import { Link } from "react-router-dom";
 import logoFooter from "../../../common/image/Logo-footer.png";
+import { withTranslation } from "react-i18next";
 const { Footer } = Layout;
 
 class commonFooter extends Component {
-  constructor () {
-    super();
+
+  constructor (props) {
+    super(props);
+    this.state = {
+      phoneNumber : "0328111597",
+      mail : "appdu.hotro@gmail.com",
+      facebook : "https://www.facebook.com/sainboltapp",
+    };
   }
 
-  getCurrentFullUrl = url => {
-    return url.substring(0, url.length - 1);
-  }
-
-  render () {
-    const phoneNumber = "0328111597";
-    const mail = "appdu.hotro@gmail.com";
-    const facebook = "https://www.facebook.com/sainboltapp";
+  render() {
+    const { t } = this.props;
+    const { phoneNumber, mail, facebook } = this.state;
     return (
       <FadeIn transitionDuration={1000}>
         <Footer className="my-footer" style={{ textAlign: "center" }}>
-          <Row gutter={[6, 32]}>
+          <Row className="my-footer__content" gutter={[6, 32]}>
             <Col sm={5} lg={5} xs={24} xl={7}>
               <img className="my-footer__image" src={logoFooter} alt="img_footer" />
             </Col>
             <Col className="my-footer__col-wrapper" sm={7} lg={6} xs={12} xl={6}>
               <Row>
                 <Col className="my-footer__col-wrapper--title"  span={24}>
-                  About Us
+                  {t("footer.label_about_us")}
                 </Col>
                 <Col className="my-footer__col-wrapper--label" span={24}>
-                  <Link to="/blog">Timeline</Link>
+                  <Link to="/blog">{t("footer.label_blog")}</Link>
                 </Col>
                 <Col className="my-footer__col-wrapper--label" span={24}>
-                  <Link to="/app">App</Link>
+                  <Link to="/app">{t("footer.label_app")}</Link>
                 </Col>
                 <Col className="my-footer__col-wrapper--label" span={24}>
-                  <Link to="bautroixanh/login">Privacy Policy</Link>
+                  <Link to="bautroixanh/login">{t("footer.label_privacy_policy")}</Link>
                 </Col>
                 <Col className="my-footer__col-wrapper--label" span={24}>
-                  <Link>Help</Link>
+                  <Link>{t("footer.label_help")}</Link>
                 </Col>
               </Row>
             </Col>
             <Col className="my-footer__col-wrapper" sm={6} xs={12} lg={6} xl={5}>
               <Row>
                 <Col className="my-footer__col-wrapper--title"  span={24}>
-                  Contact Us
+                  {t("footer.label_contact_us")}
                 </Col>
                 <Col className="my-footer__col-wrapper--label my-footer__icon-wrapper" span={24}>
                   <a href={facebook} rel="noreferrer" target="_blank"><FacebookFilled className="my-footer__col-wrapper--icon" /></a>
@@ -63,7 +65,7 @@ class commonFooter extends Component {
           </Row>
           <Row>
             <div className="my-footer__wrapper-copyright">
-              <div className="my-footer__wrapper-copyright--content">Copyright* by Du Sainbolt 2020 
+              <div className="my-footer__wrapper-copyright--content">{t("footer.label_copyright")} 
               </div>
             </div>
           </Row>
@@ -73,4 +75,4 @@ class commonFooter extends Component {
   }
 }
 
-export default commonFooter;
+export default withTranslation()(commonFooter);

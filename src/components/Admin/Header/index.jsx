@@ -12,7 +12,6 @@ import { actions } from "../../../pages/Login/actions";
 import ChangePassModal from "../../../components/Admin/ChangePasswordModal";
 import LogoHeader from "../../../common/image/LogoSidebar.png";
 import { actions as actionsModal } from "../../../pages/Layout/AdminMaster/actions";
-
 const { Paragraph } = Typography;
 
 class CommonHeader extends Component {

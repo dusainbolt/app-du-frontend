@@ -11,6 +11,7 @@
     "why_title_4": "SỰ ĐỔI MỚI",
     "why_title_5": "AN TOÀN VÀ BẢO MẬT",
     "why_title_6": "HỖ TRỢ NHANH",
+    "tech-stack-title": "CÔNG NGHỆ CỦA CHÚNG TÔI",
     "label_birthday": "Ngày sinh",
     "label_gender": "Giới tính",
     "label_university": "Đại học",
@@ -30,6 +31,20 @@
   "language": {
     "value": "vn"
   },
+  "tech-stack": {
+    "html": "HTML là chữ viết tắt của Hypertext Markup Language. Nó giúp người dùng tạo và cấu trúc các thành phần trong trang web hoặc ứng dụng",
+    "jquery": "JQuery thư viện JavaScript đa trình duyệt được thiết kế để đơn giản hóa lập trình phía máy người dùng của HTML.",
+    "react_js": "React là một thư viện JavaScript mã nguồn mở để xây dựng giao diện người dùng. Nó được duy trì bởi Facebook và một cộng đồng gồm các nhà phát triển và công ty cá nhân. React có thể được sử dụng làm cơ sở trong việc phát triển các ứng dụng một trang hoặc di động.",
+    "ant_design": "Thư viện hỗ trợ thiết kế giao diện",
+    "meterial_ui": "Thư viện hỗ trợ thiết kế giao diện",
+    "linux": "Linux là một họ các hệ điều hành tự do nguồn mở và phát triển tiện lợi",
+    "mysql": "MySQL là hệ quản trị cơ sở dữ liệu tự do nguồn mở phổ biến nhất thế giới và được các nhà phát triển rất ưa chuộng trong quá trình phát triển ứng dụng.",
+    "aws": "Amazon Web Services là một công ty con của Amazon cung cấp các nền tảng điện toán đám mây theo yêu cầu cho các cá nhân, công ty và chính phủ, trên cơ sở trả tiền theo nhu cầu sử dụng.",
+    "laravel": "Laravel là một khung web PHP mã nguồn mở, miễn phí, được tạo bởi Taylor Otwell và dành cho việc phát triển các ứng dụng web theo mô hình kiến ​​trúc của bộ điều khiển xem view mô hình và dựa trên Symfony.",
+    "docker": "Docker là một dự án mã nguồn mở giúp tự động triển khai các ứng dụng Linux và Windows vào trong các container ảo hóa. Docker cung cấp một lớp trừu tượng và tự động ảo hóa dựa trên Linux.",
+    "jenkins": "Jenkins là một phần mềm tự động hóa, mã nguồn mở và viết bằng Java",
+    "scss": "Nó giúp bạn viết CSS theo cách của một ngôn ngữ lập trình, có cấu trúc rõ ràng, rành mạch, dễ phát triển và bảo trì code hơn"
+  },
   "header": {
     "language_en": "Tiếng anh",
     "language_vn": "Tiếng việt",
@@ -42,5 +57,14 @@
     "title": "Lỗi Trang 404",
     "button_go_home": "Quay lại trang chủ", 
     "description": "Xin lỗi, trang không được tìm thấy trên server"
+  },
+  "footer": {
+    "label_blog": "Blog",
+    "label_privacy_policy": "Privacy Policy",
+    "label_app": "App",
+    "label_help": "Help",
+    "label_contact_us": "Contact Us",
+    "label_copyright": "Copyright* by Du Sainbolt 2020",
+    "label_about_us": "About Us"
   }
 }

@@ -94,7 +94,7 @@ class TopContent extends Component {
       return (
         <Row>
           <div className="container-ld--title">
-            {t("tech-stack.landing_page.tech-stack-title")}
+            {t("landing_page.tech-stack-title")}
           </div>
           <Col
             xs={{ span: 24 }}
