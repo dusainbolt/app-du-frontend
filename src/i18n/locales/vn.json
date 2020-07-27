@@ -32,6 +32,8 @@
     "value": "vn"
   },
   "tech-stack": {
+    "title_front_end": "FRONT-END TECH STACK",
+    "title_back_end": "BACK-END TECH STACK",
     "html": "HTML là chữ viết tắt của Hypertext Markup Language. Nó giúp người dùng tạo và cấu trúc các thành phần trong trang web hoặc ứng dụng",
     "jquery": "JQuery thư viện JavaScript đa trình duyệt được thiết kế để đơn giản hóa lập trình phía máy người dùng của HTML.",
     "react_js": "React là một thư viện JavaScript mã nguồn mở để xây dựng giao diện người dùng. Nó được duy trì bởi Facebook và một cộng đồng gồm các nhà phát triển và công ty cá nhân. React có thể được sử dụng làm cơ sở trong việc phát triển các ứng dụng một trang hoặc di động.",

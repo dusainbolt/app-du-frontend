@@ -94,7 +94,7 @@ class TopContent extends Component {
       return (
         <Row>
           <div className="container-ld--title">
-            {t("tech-stack.landing_page.tech-stack-title")}
+            {t("landing_page.tech-stack-title")}
           </div>
           <Col
             xs={{ span: 24 }}
@@ -109,7 +109,7 @@ class TopContent extends Component {
                 />
               </Col>  
               <Col span={24}>
-                <h4 className="tech-stack--title">FRONT-END TECH STACK</h4>
+                <h4 className="tech-stack--title">{t("tech-stack.title_front_end")}</h4>
               </Col>
               <Col className="tech-stack--wrapper" span={24}>
                 <Row className="tech-stack--row">
@@ -131,7 +131,7 @@ class TopContent extends Component {
                 />
               </Col>  
               <Col span={24}>
-                <h4 className="tech-stack--title">BACK-END TECH STACK</h4>
+                <h4 className="tech-stack--title">{t("tech-stack.title_back_end")}</h4>
               </Col>
               <Col className="tech-stack--wrapper" span={24}>
                 <Row className="tech-stack--row">
