@@ -1,3 +1,8 @@
+import { browserHistory } from "../../utils/history";
+import { actions as actionLayout } from "../../pages/Layout/AdminMaster/actions";
+import { put } from "redux-saga/effects";
+import  showMessage  from "../../components/Message/index";
+
 export function getCountTime(timeStart) {
   return getTimeNowUnix() - timeStart;
 }
@@ -26,4 +31,16 @@ export function countSecondToTime(secs) {
 
 export function renderContentLanguage(valueVn, valueEn, lang) {
   return lang === "en" ? valueEn : valueVn;
+}
+
+export function* effectAfterRequest(typeMsg, msg, typeHide = 0, redirect = "") {
+  if (redirect) {
+    yield browserHistory.push(redirect);
+  }
+  if (typeHide === 1) {
+    yield put(actionLayout.hideLoadingEvent());
+  } else if (typeHide === 2) {
+    yield put(actionLayout.hideLoadingAuth());
+  }
+  if(msg) yield showMessage(typeMsg, msg);
 }

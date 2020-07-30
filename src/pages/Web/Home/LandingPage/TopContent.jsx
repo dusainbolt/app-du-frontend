@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Typography, Carousel } from "antd";
+import { Row, Col, Typography, Carousel, Skeleton } from "antd";
 import Button from "../../../../components/Button";
 import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
@@ -27,17 +27,10 @@ class TopContent extends Component {
         </Paragraph>
         <CountDownTimer />
         <div className="title-top-right__icon-group">
-          <a href={"http://facebook.com"} rel="noreferrer" target="_blank">
-            <FacebookFilled className="title-top-right__icon-group--item" />
-          </a>
-          <InstagramFilled className="title-top-right__icon-group--item" />
-          <MailFilled className="title-top-right__icon-group--item" />
-        </div>
-        <div className="title-top-right__icon-group">
           <Button
             type="submit"
             className="login__form--button white-color title-top-right--button"
-            buttonTitle={t("landing_page.button_get_started_top")}
+            buttonTitle={t("landing_page.button_subscribe_top")}
           />
         </div>
       </div>
@@ -53,13 +46,17 @@ class TopContent extends Component {
             lg={{ span: 14, order: 1 }}
             xl={{ span: 12, order: 1 }}
           >
+            {/* <Skeleton paragraph={{ rows: 6 }} active> */}
             {this.genderContentLeft()}
+            {/* </Skeleton> */}
           </Col>
           <Col
             xs={{ span: 24, order: 1 }}
             lg={{ span: 10, order: 2 }}
             xl={{ span: 12, order: 2 }}
           >
+            {/* <Skeleton.Button active size="large" shape={"square"}> */}
+
             <Carousel dots={false} speed={1500} draggable autoplay effect="fade">
               <Col span={24}>
                 <img
@@ -83,6 +80,7 @@ class TopContent extends Component {
                 />
               </Col>
             </Carousel>
+            {/* </Skeleton.Button> */}
           </Col>
         </Row>
       </div>

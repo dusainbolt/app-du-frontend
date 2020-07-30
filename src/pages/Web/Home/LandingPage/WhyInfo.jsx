@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Typography } from "antd";
+import { Row, Col, Typography, Skeleton } from "antd";
 
 import { withTranslation } from "react-i18next";
 import ImgTop from "../../../../common/image/top-img.png";
@@ -99,7 +99,9 @@ class WhyInfo extends Component {
         <Row className="container-ld" justify="center">
           <Col span={16}>
             <Title className="container-ld--title">
+              {/* <Skeleton.Input style={{ width: 200 }} className="skeleton-title" active> */}
               {t("landing_page.why_title")}
+              {/* </Skeleton.Input> */}
             </Title>
           </Col>
           <Col className="container-ld__content_center" span={16}>

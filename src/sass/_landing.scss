@@ -8,7 +8,7 @@
   padding: 30px 20px 0px 50px;
 
   &__title.ant-typography {
-    font-size: 27px;
+    font-size: 34px;
     font-weight: 720;
     color: $primary-color-bold;
   }
@@ -108,20 +108,19 @@
     word-break: break-word;
   }
   &--col-stack{ 
-    width: 85%;
+    width: 60%;
     margin-bottom: 20px;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 50%;
     height: auto;
+    transition: box-shadow .5s;
     box-shadow: 0.5px 0rem 0.5rem 0px rgba(0, 0, 0, 0.075);  
     &__img{
       width: 100%;
-      padding: 8%;
-      transition: box-shadow .5s;
-      border-radius: 10px;
-      &:hover{
-        box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.14), 0 6px 5px 5px rgba(0, 0, 0, 0.12), 0 8px 15px -5px rgba(0, 0, 0, 0.2);
-      }
+      padding: 15%;
+    }
+    &:hover{
+      box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.14), 0 6px 5px 5px rgba(0, 0, 0, 0.12), 0 8px 15px -5px rgba(0, 0, 0, 0.2);
     }
   }
   &--col-wrapper{
@@ -168,7 +167,6 @@
       height: 150px;
       border-radius: 15px;
       border: solid 2px $white-color;
-      box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075)
     }
   }
   &__col-wrapper{
@@ -363,35 +361,30 @@
     max-width: 80%;
     flex: 0 0 80%;
   }
-
+  .skeleton-title{
+    &.ant-skeleton-input{
+      height: 25px;
+    }
+  }
   &--col-padding {
     padding: 0 2%;
   }
 
   &--rows {
     width: 100%;
-
-    >div {
-      margin-bottom: 30px;
-    }
-
     &__col-one {
       margin-top: 20px;
       transition: box-shadow .5s;
-      background-color: $primary-color-bold;
-      box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075);
-      &:hover {
-        box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.14), 0 6px 5px 5px rgba(0, 0, 0, 0.12), 0 8px 15px -5px rgba(0, 0, 0, 0.2);
-      }
-      color: white;
+
+      color: $black-color;
       height: 100%;
       border-radius: 30px;
-
       &--item {
         text-align: center;
         &__icon {
           margin: 20px 10px;
           background-color: white;
+          box-shadow: $box-shadow;
           font-size: 35px;
           padding: 20px;
           border-radius: 50%;
@@ -406,7 +399,7 @@
         text-align: center;
 
         &__title.ant-typography {
-          color: $white-color;
+          color: $black-color;
           font-size: $base-font-title;
           font-weight: 800;
           padding: 0 10px;
@@ -414,7 +407,7 @@
 
         &__description.ant-typography {
           padding: 0px 10px 15px 10px;
-          color: $white-color;
+          color: $black-color;
           font-size: $base-font-size;
           word-break: break-word;
         }
@@ -423,8 +416,7 @@
 
     &__col-two {
       @extend .container-ld--rows__col-one;
-      background-color: white;
-      color: black;
+      color: $black-color;
       &--item {
         text-align: center;
         &__icon {
@@ -452,7 +444,7 @@
   }
 
   &--title.ant-typography {
-    font-size: 20px;
+    font-size: 30px;
     color: $primary-color-bold;
     text-align: center;
     font-weight: 700;
@@ -614,6 +606,18 @@ div.ant-popover-inner {
   .ant-carousel .slick-slide {
     background-color: $white-color;
     line-height: 0;
+  }
+  .ant-skeleton{
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+  }
+  .ant-skeleton-element {
+    display: table;
+  }
+  .ant-skeleton-element .ant-skeleton-button-lg{
+    width: 100%;
+    height: 200px;
   }
 }
 
