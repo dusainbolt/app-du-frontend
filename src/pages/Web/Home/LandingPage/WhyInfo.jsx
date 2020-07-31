@@ -97,14 +97,15 @@ class WhyInfo extends Component {
     return (
       <div>
         <Row className="container-ld" justify="center">
-          <Col span={16}>
+          <Col span={24}>
             <Title className="container-ld--title">
-              {/* <Skeleton.Input style={{ width: 200 }} className="skeleton-title" active> */}
               {t("landing_page.why_title")}
-              {/* </Skeleton.Input> */}
             </Title>
+            <div className="container-ld--title-description">
+              {t("landing_page.title_description")}
+            </div>
           </Col>
-          <Col className="container-ld__content_center" span={16}>
+          <Col className="container-ld__content_center" span={24}>
             <div className="container-ld--body">{this.renderContent(8)}</div>
           </Col>
         </Row>
