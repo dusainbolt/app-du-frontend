@@ -9,6 +9,7 @@ import {
   CommentOutlined,
   HeartOutlined,
 } from "@ant-design/icons";
+import plandingImg from "../../../../common/image/process/planding.png";
 
 class TopContent extends Component {
 
@@ -70,7 +71,6 @@ class TopContent extends Component {
     });
     return html;
   }
-
   render() {
     const { t } = this.props;
     return (
@@ -96,12 +96,11 @@ class TopContent extends Component {
                 </Timeline.Item>
                 <Timeline.Item dot={<SyncOutlined spin />}>
                   <div className="ld-process--item-2">
-                    <SyncOutlined className="ld-process--icon-timeline rp-mobie" />
                     <div>
                       <label>TITLE</label>
                       <p>Description</p>
                     </div>
-                    <SyncOutlined className="ld-process--icon-timeline rp-web" />
+                    <img src={plandingImg} className="ld-process--icon-timeline" width="40"  alt="image"/>
                   </div>
                 </Timeline.Item>
                 <Timeline.Item dot={<SyncOutlined spin />}>

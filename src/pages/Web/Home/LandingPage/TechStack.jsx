@@ -75,7 +75,6 @@ class TopContent extends Component {
             xs={{ span: 8 }}
             sm={{ span: 4 }}
             lg={{ span: 8 }}
-            xl={{ span: 4 }}
             key={index}
           >
             <div className="tech-stack--col-stack">
@@ -83,9 +82,8 @@ class TopContent extends Component {
                 <img className="tech-stack--col-stack__img" src={value.img} alt="tech-stack" />
               </Tooltip>
             </div>
-            {/* <div>
-              METERIAL UI
-            </div> */}
+            <div className="tech-stack--item-title">HTML</div>
+            <p className="tech-stack--item-description">Offshore NodeJS Development</p>
           </Col>
         );
       });
@@ -101,20 +99,22 @@ class TopContent extends Component {
           </div>
           <Col
             xs={{ span: 24 }}
-            lg={{ span: 12 }}
+            lg={{ span:  24}}
           >
             <Row>
-              <Col span={24}>
+              <Col 
+              xs={{ span:  0}}
+              sm={{ span:  0}}
+                   lg={{ span:  0}}
+                   xl={{ span:  10}}>
                 <img
                   className="tech-stack--col-image"
                   src={ImgFrontEnd}
                   alt="img top"
                 />
+                  <h4 className="tech-stack--title">{t("tech-stack.title_front_end")}</h4>
               </Col>  
-              <Col span={24}>
-                <h4 className="tech-stack--title">{t("tech-stack.title_front_end")}</h4>
-              </Col>
-              <Col className="tech-stack--wrapper" span={24}>
+              <Col className="tech-stack--wrapper" span={14}>
                 <Row className="tech-stack--row">
                   {this.renderTechStackFrontEnd(1)}
                 </Row>
@@ -122,6 +122,30 @@ class TopContent extends Component {
             </Row>
           </Col>
           <Col
+            xs={{ span: 24 }}
+            lg={{ span:  24}}
+          >
+            <Row>
+              <Col 
+              xs={{ span:  0}}
+              sm={{ span:  0}}
+                   lg={{ span:  0}}
+                   xl={{ span:  10}}>
+                <img
+                  className="tech-stack--col-image"
+                  src={ImgFrontEnd}
+                  alt="img top"
+                />
+                  <h4 className="tech-stack--title">{t("tech-stack.title_front_end")}</h4>
+              </Col>  
+              <Col className="tech-stack--wrapper" span={14}>
+                <Row className="tech-stack--row">
+                  {this.renderTechStackFrontEnd(0)}
+                </Row>
+              </Col>
+            </Row>
+          </Col>
+          {/* <Col
             xs={{ span: 24 }}
             lg={{ span: 12 }}
           >
@@ -142,7 +166,7 @@ class TopContent extends Component {
                 </Row>
               </Col>
             </Row>
-          </Col>
+          </Col> */}
         </Row>
       );
     }
