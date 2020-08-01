@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Tooltip } from "antd";
 import { withTranslation } from "react-i18next";
-import ImgFrontEnd from "../../../../common/image/font-end.png";
+import ImgWrapper from "../../../../common/image/wrapper-tech-stack-06-06-06.png";
 import ImgBackEnd from "../../../../common/image/back-end.png";
 import Html from "../../../../common/image/tech-stack/html.png";
 import Sass from "../../../../common/image/tech-stack/sass.png";
@@ -25,10 +25,10 @@ class TopContent extends Component {
       {
         img: Html,
         label: t("tech-stack.html")
-      },{
+      }, {
         img: Sass,
         label: t("tech-stack.scss")
-      },{
+      }, {
         img: Jquery,
         label: t("tech-stack.jquery")
       }, {
@@ -65,87 +65,89 @@ class TopContent extends Component {
     ];
   }
 
-    renderTechStackFrontEnd = type => {
-      let html = null;
-      const data = type ? this.techStackFrontEnd : this.techStackBackEnd;
-      html = data.map((value, index) => {
-        return (
-          <Col
-            className="tech-stack--col-wrapper"
-            xs={{ span: 8 }}
-            sm={{ span: 4 }}
-            lg={{ span: 8 }}
-            key={index}
-          >
-            <div className="tech-stack--col-stack">
-              <Tooltip title={value.label} color="#4961ea">
-                <img className="tech-stack--col-stack__img" src={value.img} alt="tech-stack" />
-              </Tooltip>
-            </div>
-            <div className="tech-stack--item-title">HTML</div>
-            <p className="tech-stack--item-description">Offshore NodeJS Development</p>
-          </Col>
-        );
-      });
-      return html;
-    }
-    
-    render() {
-      const { t } = this.props;
+  renderTechStackFrontEnd = type => {
+    let html = null;
+    const data = type ? this.techStackFrontEnd : this.techStackBackEnd;
+    html = data.map((value, index) => {
       return (
-        <Row>
-          <div className="container-ld--title">
-            {t("landing_page.tech-stack-title")}
+        <Col
+          className="tech-stack--col-wrapper"
+          xs={{ span: 24 }}
+          sm={{ span: 8 }}
+          key={index}
+        >
+          <div className="tech-stack--col-stack">
+            <Tooltip title={value.label} color="#4961ea">
+              <img className="tech-stack--col-stack__img" src={value.img} alt="tech-stack" />
+            </Tooltip>
           </div>
-          <Col
-            xs={{ span: 24 }}
-            lg={{ span:  24}}
-          >
-            <Row>
-              <Col 
-              xs={{ span:  0}}
-              sm={{ span:  0}}
-                   lg={{ span:  0}}
-                   xl={{ span:  10}}>
-                <img
-                  className="tech-stack--col-image"
-                  src={ImgFrontEnd}
-                  alt="img top"
-                />
-                  <h4 className="tech-stack--title">{t("tech-stack.title_front_end")}</h4>
-              </Col>  
-              <Col className="tech-stack--wrapper" span={14}>
-                <Row className="tech-stack--row">
-                  {this.renderTechStackFrontEnd(1)}
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-          <Col
-            xs={{ span: 24 }}
-            lg={{ span:  24}}
-          >
-            <Row>
-              <Col 
-              xs={{ span:  0}}
-              sm={{ span:  0}}
-                   lg={{ span:  0}}
-                   xl={{ span:  10}}>
-                <img
-                  className="tech-stack--col-image"
-                  src={ImgFrontEnd}
-                  alt="img top"
-                />
-                  <h4 className="tech-stack--title">{t("tech-stack.title_front_end")}</h4>
-              </Col>  
-              <Col className="tech-stack--wrapper" span={14}>
-                <Row className="tech-stack--row">
-                  {this.renderTechStackFrontEnd(0)}
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-          {/* <Col
+          <div className="tech-stack--item-wrapper">
+          <div className="tech-stack--item-title">HTML</div>
+          <p className="tech-stack--item-description">Offshore NodeJS Development</p>
+          </div>
+        </Col>
+      );
+    });
+    return html;
+  }
+
+  render() {
+    const { t } = this.props;
+    return (
+      <Row>
+        <div className="container-ld--title">
+          {t("landing_page.tech-stack-title")}
+        </div>
+        <Col
+          xs={{ span: 24 }}
+          lg={{ span: 24 }}
+        >
+          <Row>
+            <Col
+              xs={{ span: 0 }}
+              sm={{ span: 0 }}
+              lg={{ span: 0 }}
+              xl={{ span: 8 }}>
+              <img
+                className="tech-stack--col-image"
+                src={ImgWrapper}
+                alt="img top"
+              />
+            </Col>
+            <Col
+              className="tech-stack--wrapper"
+              xs={{ span: 24 }}
+              xl={{ span: 16 }}
+            >
+              <h4 className="tech-stack--title">{t("tech-stack.title_front_end")}</h4>
+              <Row className="tech-stack--row">
+                {this.renderTechStackFrontEnd(1)}
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+        <Col
+          xs={{ span: 24 }}
+          lg={{ span: 24 }}
+        >
+          <Row>
+            <Col
+              xs={{ span: 0 }}
+              sm={{ span: 0 }}
+              lg={{ span: 0 }}
+              xl={{ span: 8 }}>
+            </Col>
+            <Col className="tech-stack--wrapper"
+              xs={{ span: 24 }}
+              xl={{ span: 16 }}>
+              <h4 className="tech-stack--title">{t("tech-stack.title_back_end")}</h4>
+              <Row className="tech-stack--row">
+                {this.renderTechStackFrontEnd(0)}
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+        {/* <Col
             xs={{ span: 24 }}
             lg={{ span: 12 }}
           >
@@ -167,9 +169,9 @@ class TopContent extends Component {
               </Col>
             </Row>
           </Col> */}
-        </Row>
-      );
-    }
+      </Row>
+    );
+  }
 }
 
 export default withTranslation()(TopContent);

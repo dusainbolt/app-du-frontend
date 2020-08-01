@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, Typography, Carousel, Skeleton } from "antd";
 import Button from "../../../../components/Button";
 import { withTranslation } from "react-i18next";
-import ImgTop from "../../../../common/image/top-img.png";
+import ImgTop from "../../../../common/image/top-wrapper.png";
 import ImgTop2 from "../../../../common/image/back-end.png";
 import ImgTop3 from "../../../../common/image/font-end.png";
 
@@ -41,6 +41,7 @@ class TopContent extends Component {
     return (
       <div>
         <Row className="top-content">
+          {/* <img src={ImgTop} alt="img-top"/> */}
           <Col
             xs={{ span: 24, order: 2 }}
             lg={{ span: 14, order: 1 }}

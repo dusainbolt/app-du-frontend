@@ -5,7 +5,7 @@
     width: 100%;
     position: fixed;
     line-height: 0 !important;
-    box-shadow: 1px 1px 5px #ddd;
+    transition: box-shadow .3s;
     background: #fff !important;
     z-index: 9;
   }
