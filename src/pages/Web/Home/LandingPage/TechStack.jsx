@@ -7,7 +7,7 @@ import Sass from "../../../../common/image/tech-stack/sass.png";
 import Jquery from "../../../../common/image/tech-stack/jquery-logo.png";
 import Reactjs from "../../../../common/image/tech-stack/Reactlogo.png";
 import AntDesgin from "../../../../common/image/tech-stack/ant_desgin.png";
-import MeterialUI from "../../../../common/image/tech-stack/MeterialUi.png";
+import Vuejs from "../../../../common/image/tech-stack/vuejs.jpg";
 import Linux from "../../../../common/image/tech-stack/linux.png";
 import Mysql from "../../../../common/image/tech-stack/mysql.png";
 import Aws from "../../../../common/image/tech-stack/aws.jpg";
@@ -42,15 +42,15 @@ class TopContent extends Component {
         description: "",
         label: t("tech-stack.react_js"),
       }, {
+        img: Vuejs,
+        title: t("tech-stack.title_vue"),
+        description: "",
+        label: t("tech-stack.vuejs"),
+      }, {
         img: AntDesgin,
         title: t("tech-stack.title_ant"),
         description: "",
         label: t("tech-stack.ant_design"),
-      }, {
-        img: MeterialUI,
-        title: t("tech-stack.title_vue"),
-        description: "",
-        label: t("tech-stack.meterial_ui"),
       }
     ];
     this.techStackBackEnd = [
