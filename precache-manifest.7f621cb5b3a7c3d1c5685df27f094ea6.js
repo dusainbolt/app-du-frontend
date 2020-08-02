@@ -1,31 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fbef2a26ffc9d9a74a0280e2805a6c2a",
+    "revision": "f3bbdd70f587f814adef7dc22b373704",
     "url": "/app-du-frontend/index.html"
   },
   {
-    "revision": "4bb5058b9f72b5364732",
+    "revision": "b4befb18e7674de4ae01",
     "url": "/app-du-frontend/static/css/2.3cb76441.chunk.css"
   },
   {
-    "revision": "bcd3a9a69449ee6ebd37",
-    "url": "/app-du-frontend/static/css/main.ae5193cd.chunk.css"
+    "revision": "41bf52dd2faa6e94eb6e",
+    "url": "/app-du-frontend/static/css/main.2c6da33f.chunk.css"
   },
   {
-    "revision": "4bb5058b9f72b5364732",
-    "url": "/app-du-frontend/static/js/2.bd1f68a7.chunk.js"
+    "revision": "b4befb18e7674de4ae01",
+    "url": "/app-du-frontend/static/js/2.994199bc.chunk.js"
   },
   {
     "revision": "cacaf3f01dd3bd8237006f7c58951c1c",
-    "url": "/app-du-frontend/static/js/2.bd1f68a7.chunk.js.LICENSE.txt"
+    "url": "/app-du-frontend/static/js/2.994199bc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bcd3a9a69449ee6ebd37",
-    "url": "/app-du-frontend/static/js/main.3ecf694f.chunk.js"
+    "revision": "41bf52dd2faa6e94eb6e",
+    "url": "/app-du-frontend/static/js/main.d1261d1a.chunk.js"
   },
   {
     "revision": "b283ec30955883165799",
     "url": "/app-du-frontend/static/js/runtime-main.697c4963.js"
+  },
+  {
+    "revision": "7e5b02a54ca13ae19ccd8abf87613f13",
+    "url": "/app-du-frontend/static/media/Design.7e5b02a5.png"
   },
   {
     "revision": "a06cd6a3ea7db546c0f05894a2e319d1",
@@ -44,10 +48,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/app-du-frontend/static/media/LogoSidebar.53b25a64.png"
   },
   {
-    "revision": "97c310591e952de6ef9b199156190779",
-    "url": "/app-du-frontend/static/media/MeterialUi.97c31059.png"
-  },
-  {
     "revision": "1f7cc29da3361d6d0283262b436c8934",
     "url": "/app-du-frontend/static/media/Reactlogo.1f7cc29d.png"
   },
@@ -58,10 +58,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a16329131d73beafefc142c35a888163",
     "url": "/app-du-frontend/static/media/aws.a1632913.jpg"
-  },
-  {
-    "revision": "5c03ddd75e36bbb3993002a1e3741180",
-    "url": "/app-du-frontend/static/media/back-end.5c03ddd7.png"
   },
   {
     "revision": "cbe050ca3532a3340a3ad373572c3fc9",
@@ -76,8 +72,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/app-du-frontend/static/media/error-404.7abf9878.png"
   },
   {
-    "revision": "c0f69f97c3fb803f7743bb0e4a99de11",
-    "url": "/app-du-frontend/static/media/font-end.c0f69f97.png"
+    "revision": "c26f5df540d7e395d6221e7be04ad8cc",
+    "url": "/app-du-frontend/static/media/img-top1.c26f5df5.png"
+  },
+  {
+    "revision": "3fae87d99b6ec69358f0fc1795e0d191",
+    "url": "/app-du-frontend/static/media/img-top2.3fae87d9.png"
+  },
+  {
+    "revision": "9a542f17fe34d0fc8be32aafff9b19ce",
+    "url": "/app-du-frontend/static/media/img-top3.9a542f17.png"
+  },
+  {
+    "revision": "35893ca4301b0777b475f981bad324e2",
+    "url": "/app-du-frontend/static/media/img-top4.35893ca4.png"
   },
   {
     "revision": "7f08b7f381ae46ccc921e01f7413a57f",
@@ -88,12 +96,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/app-du-frontend/static/media/laravel.24acb6fa.jpg"
   },
   {
+    "revision": "55a573868798d88523c848240a15ac5c",
+    "url": "/app-du-frontend/static/media/launch.55a57386.png"
+  },
+  {
     "revision": "e74836fab633969b9906963201382192",
     "url": "/app-du-frontend/static/media/linux.e74836fa.png"
   },
   {
     "revision": "146ee029dc25ae4a428f12cce2d75054",
     "url": "/app-du-frontend/static/media/logo.146ee029.png"
+  },
+  {
+    "revision": "fafd7b6228bb5827eaa1905e79c37e98",
+    "url": "/app-du-frontend/static/media/maintaince.fafd7b62.png"
   },
   {
     "revision": "3b3290c16c793b7ddef38a0d304a59b0",
@@ -106,6 +122,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3ad6c7a8da813435cf7bd380be0ffbbb",
     "url": "/app-du-frontend/static/media/sass.3ad6c7a8.png"
+  },
+  {
+    "revision": "99c0e3e22ab92b88baa228811f764092",
+    "url": "/app-du-frontend/static/media/vuejs.99c0e3e2.jpg"
   },
   {
     "revision": "d5881214d5da7384ffa843b43182407d",
