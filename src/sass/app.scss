@@ -238,26 +238,11 @@ span.error-field{
   top: 5% !important;
 }
 
-div.ant-modal-header{
-  border-radius: 13px 13px 0 0;
-}
-
-button.ant-btn{
-  border-radius: 13px;
-  >span{
-    font-size: $base-font-size;
-    font-weight: 600;
-  }
-}
-
-div.ant-modal-content{
-  border-radius: 13px 13px;
-}
-
 span.ant-input-affix-wrapper{
   border-radius: 8px;
 }
 
 @import "./_login.scss";
 @import "./_form.scss";
+@import "./_modal.scss";
 @import "./landing.scss";

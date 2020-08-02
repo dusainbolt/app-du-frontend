@@ -14,42 +14,49 @@ import Aws from "../../../../common/image/tech-stack/aws.jpg";
 import Laravel from "../../../../common/image/tech-stack/laravel.jpg";
 import Docker from "../../../../common/image/tech-stack/docker.jpeg";
 import Jenkins from "../../../../common/image/tech-stack/Jenkins.png";
+import { Modal } from "antd";
 
 class TopContent extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      visibleModal: false,
+      title: null,
+      content: null,
+      image: null
+    };
     const { t } = this.props;
     this.techStackFrontEnd = [
       {
         img: Html,
         title: t("tech-stack.title_hmtl"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.html")
       }, {
         img: Sass,
         title: t("tech-stack.title_sass"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.scss")
       }, {
         img: Jquery,
         title: t("tech-stack.title_jquery"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.jquery")
       }, {
         img: Reactjs,
         title: t("tech-stack.title_reactjs"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.react_js"),
       }, {
         img: Vuejs,
         title: t("tech-stack.title_vue"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.vuejs"),
       }, {
         img: AntDesgin,
         title: t("tech-stack.title_ant"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.ant_design"),
       }
     ];
@@ -57,32 +64,32 @@ class TopContent extends Component {
       {
         img: Linux,
         title: t("tech-stack.title_linux"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.linux"),
       }, {
         img: Mysql,
         title: t("tech-stack.title_mysql"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.mysql"),
       }, {
         img: Aws,
         title: t("tech-stack.title_aws"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.aws"),
       }, {
         img: Laravel,
         title: t("tech-stack.title_laravel"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.laravel"),
       }, {
         img: Docker,
         title: t("tech-stack.title_docker"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.docker"),
       }, {
         img: Jenkins,
         title: t("tech-stack.title_jenkins"),
-        description: "",
+        description: t("tech-stack.get_detail"),
         label: t("tech-stack.jenkins"),
       }
     ];
@@ -105,8 +112,8 @@ class TopContent extends Component {
             </Tooltip>
           </div>
           <div className="tech-stack--item-wrapper">
-          <div className="tech-stack--item-title">{value.title}</div>
-          <p className="tech-stack--item-description">{value.description}</p>
+            <div className="tech-stack--item-title">{value.title}</div>
+            <p className="tech-stack--item-description" onClick={() => this.openModal(value)}>{value.description}</p>
           </div>
         </Col>
       );
@@ -114,8 +121,24 @@ class TopContent extends Component {
     return html;
   }
 
+  hideModal = () => {
+    this.setState({
+      visibleModal: false,
+    });
+  }
+
+  openModal = item => {
+    this.setState({
+      visibleModal: true,
+      title: item.title,
+      content: item.content,
+      image: item.img,
+    });
+  }
+
   render() {
     const { t } = this.props;
+    const { visibleModal, title, content, image } = this.state;
     return (
       <Row>
         <div className="container-ld--title">
@@ -130,7 +153,8 @@ class TopContent extends Component {
               xs={{ span: 0 }}
               sm={{ span: 0 }}
               lg={{ span: 0 }}
-              xl={{ span: 8 }}>
+              xl={{ span: 8 }}
+            >
               <img
                 className="tech-stack--col-image"
                 src={ImgWrapper}
@@ -158,11 +182,13 @@ class TopContent extends Component {
               xs={{ span: 0 }}
               sm={{ span: 0 }}
               lg={{ span: 0 }}
-              xl={{ span: 8 }}>
+              xl={{ span: 8 }}
+            >
             </Col>
             <Col className="tech-stack--wrapper"
               xs={{ span: 24 }}
-              xl={{ span: 16 }}>
+              xl={{ span: 16 }}
+            >
               <h4 className="tech-stack--title">{t("tech-stack.title_back_end")}</h4>
               <Row className="tech-stack--row">
                 {this.renderTechStackFrontEnd(0)}
@@ -170,6 +196,26 @@ class TopContent extends Component {
             </Col>
           </Row>
         </Col>
+        <Modal
+          title={title}
+          visible={visibleModal}
+          onCancel={this.hideModal}
+          footer={null}
+        >
+          <div className="form-group">
+            <img className="modal-ld__img" src={image} />
+            <span className="modal-ld__img--text">ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
+            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss</span>
+          </div>
+        </Modal>
       </Row>
     );
   }

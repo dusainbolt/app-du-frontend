@@ -115,6 +115,13 @@
     font-weight: 600;
     color: $black-color;
   }
+
+  &--item-description {
+    cursor: pointer;
+    &:hover{
+      color: $purple-color-bold;
+    }
+  }
   
   &--col-stack{ 
     width: 24%;
@@ -253,7 +260,7 @@
     display: -webkit-inline-box;
   }
   &--icon-timeline{
-    width: 55px;
+    width: 61px;
     padding: 7px;
     border: solid 1.2px $primary-color-bold;
     border-radius: 10px;
