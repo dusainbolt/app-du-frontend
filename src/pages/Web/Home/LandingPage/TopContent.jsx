@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import { Row, Col, Typography, Carousel, Skeleton } from "antd";
 import Button from "../../../../components/Button";
 import { withTranslation } from "react-i18next";
-import ImgTop2 from "../../../../common/image/back-end.png";
-import ImgTop3 from "../../../../common/image/font-end.png";
+import ImgTop4 from "../../../../common/image/img-top4.png";
+import ImgTop3 from "../../../../common/image/img-top3.png";
+import ImgTop2 from "../../../../common/image/img-top2.png";
+import ImgTop1 from "../../../../common/image/img-top1.png";
+
+
 
 import CountDownTimer from "./CountDownTime";
 
@@ -60,7 +64,7 @@ class TopContent extends Component {
               <Col span={24}>
                 <img
                   className="img-background--top"
-                  src={ImgTop2}
+                  src={ImgTop1}
                   alt="img top"
                 />
               </Col>
@@ -75,6 +79,13 @@ class TopContent extends Component {
                 <img
                   className="img-background--top"
                   src={ImgTop3}
+                  alt="img top"
+                />
+              </Col>
+              <Col span={24}>
+                <img
+                  className="img-background--top"
+                  src={ImgTop4}
                   alt="img top"
                 />
               </Col>

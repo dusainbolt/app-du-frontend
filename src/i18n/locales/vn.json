@@ -32,9 +32,24 @@
   "language": {
     "value": "vn"
   },
+  "development_process": {
+    "process_title": "QUY TRÌNH TRIỂN KHAI"
+  },
   "tech-stack": {
     "title_front_end": "FRONT-END TECH STACK",
     "title_back_end": "BACK-END TECH STACK",
+    "title_hmtl": "HTML",
+    "title_sass": "Sass",
+    "title_jquery": "jQuery",
+    "title_reactjs": "Reactjs",
+    "title_ant": "Ant Design",
+    "title_vue": "Vue",
+    "title_linux": "Linux",
+    "title_mysql": "Mysql",
+    "title_aws": "Amazon Web Services",
+    "title_laravel": "Laravel",
+    "title_docker": "Docker",
+    "title_jenkins": "Jenkins",
     "html": "HTML là chữ viết tắt của Hypertext Markup Language. Nó giúp người dùng tạo và cấu trúc các thành phần trong trang web hoặc ứng dụng",
     "jquery": "JQuery thư viện JavaScript đa trình duyệt được thiết kế để đơn giản hóa lập trình phía máy người dùng của HTML.",
     "react_js": "React là một thư viện JavaScript mã nguồn mở để xây dựng giao diện người dùng. Nó được duy trì bởi Facebook và một cộng đồng gồm các nhà phát triển và công ty cá nhân. React có thể được sử dụng làm cơ sở trong việc phát triển các ứng dụng một trang hoặc di động.",

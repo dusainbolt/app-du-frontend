@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import { Row, Col, Tooltip, Timeline } from "antd";
 import { withTranslation } from "react-i18next";
 import {
-  SafetyCertificateOutlined,
   SyncOutlined,
-  ApiOutlined,
-  StarOutlined,
-  CommentOutlined,
-  HeartOutlined,
 } from "@ant-design/icons";
 import plandingImg from "../../../../common/image/process/planding.png";
+import desginImg from "../../../../common/image/process/Design.png";
+import developmentImg from "../../../../common/image/process/development.png";
+import launchImg from "../../../../common/image/process/launch.png";
+import maintainImg from "../../../../common/image/process/maintaince.png";
 
 class TopContent extends Component {
 
@@ -76,7 +75,7 @@ class TopContent extends Component {
     return (
       <Row>
         <div className="container-ld--title">
-          {t("landing_page.tech-stack-title")}
+          {t("development_process.process_title")}
         </div>
         <Col
           xs={{ span: 24 }}
@@ -87,35 +86,50 @@ class TopContent extends Component {
               <Timeline className="ld-process" mode="alternate">
                 <Timeline.Item dot={<SyncOutlined spin />}>
                   <div className="ld-process--item">
-                    <SyncOutlined className="ld-process--icon-timeline" />
-                    <div>
-                      <label>TITLE</label>
+                    <img src={plandingImg} className="ld-process--icon-timeline" width="40" alt="image" />
+                    <div className="ld-process--text">
+                      <label>1.PLANNING</label>
                       <p>Description</p>
                     </div>
                   </div>
                 </Timeline.Item>
                 <Timeline.Item dot={<SyncOutlined spin />}>
                   <div className="ld-process--item-2">
-                    <div>
-                      <label>TITLE</label>
+                    <img src={desginImg} className="ld-process--icon-timeline rp-mobie" width="40" alt="image" />
+                    <div className="ld-process--text">
+                      <label>2.DESIGN</label>
                       <p>Description</p>
                     </div>
-                    <img src={plandingImg} className="ld-process--icon-timeline" width="40"  alt="image"/>
+                    <img src={desginImg} className="ld-process--icon-timeline rp-web" width="40" alt="image" />
                   </div>
                 </Timeline.Item>
                 <Timeline.Item dot={<SyncOutlined spin />}>
                   <div className="ld-process--item-2">
-                    <SyncOutlined className="ld-process--icon-timeline rp-mobie" />
-                    <div>
-                      <label>TITLE</label>
+                    <img src={developmentImg} className="ld-process--icon-timeline" width="40" alt="image" />
+                    <div className="ld-process--text">
+                      <label>3.DEVELOPMENT</label>
                       <p>Description</p>
                     </div>
-                    <SyncOutlined className="ld-process--icon-timeline rp-web" />
-                  </div>                </Timeline.Item>
-                <Timeline.Item dot={<SyncOutlined spin/>}>Network problems being solved 2015-09-01</Timeline.Item>
-                <Timeline.Item dot={<SyncOutlined spin/>}> Create a services site 2015-09-01</Timeline.Item>
-                <Timeline.Item dot={<SyncOutlined spin/>}>
-                  Technical testing 2015-09-01
+                  </div>
+                </Timeline.Item>
+                <Timeline.Item dot={<SyncOutlined spin />}>
+                  <div className="ld-process--item-2">
+                    <img src={launchImg} className="ld-process--icon-timeline rp-mobie" width="40" alt="image" />
+                    <div className="ld-process--text">
+                      <label>4.LAUNCH</label>
+                      <p>Description</p>
+                    </div>
+                    <img src={launchImg} className="ld-process--icon-timeline rp-web" width="40" alt="image" />
+                  </div>
+                </Timeline.Item>
+                <Timeline.Item dot={<SyncOutlined spin />}>
+                  <div className="ld-process--item">
+                    <img src={maintainImg} className="ld-process--icon-timeline" width="40" alt="image" />
+                    <div className="ld-process--text">
+                      <label>5.MAINTENANCE</label>
+                      <p>Description</p>
+                    </div>
+                  </div>
                 </Timeline.Item>
               </Timeline>
             </Col>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Row, Col, Tooltip } from "antd";
 import { withTranslation } from "react-i18next";
 import ImgWrapper from "../../../../common/image/wrapper-tech-stack-06-06-06.png";
-import ImgBackEnd from "../../../../common/image/back-end.png";
 import Html from "../../../../common/image/tech-stack/html.png";
 import Sass from "../../../../common/image/tech-stack/sass.png";
 import Jquery from "../../../../common/image/tech-stack/jquery-logo.png";
@@ -24,42 +23,66 @@ class TopContent extends Component {
     this.techStackFrontEnd = [
       {
         img: Html,
+        title: t("tech-stack.title_hmtl"),
+        description: "",
         label: t("tech-stack.html")
       }, {
         img: Sass,
+        title: t("tech-stack.title_sass"),
+        description: "",
         label: t("tech-stack.scss")
       }, {
         img: Jquery,
+        title: t("tech-stack.title_jquery"),
+        description: "",
         label: t("tech-stack.jquery")
       }, {
         img: Reactjs,
+        title: t("tech-stack.title_reactjs"),
+        description: "",
         label: t("tech-stack.react_js"),
       }, {
         img: AntDesgin,
+        title: t("tech-stack.title_ant"),
+        description: "",
         label: t("tech-stack.ant_design"),
       }, {
         img: MeterialUI,
+        title: t("tech-stack.title_vue"),
+        description: "",
         label: t("tech-stack.meterial_ui"),
       }
     ];
     this.techStackBackEnd = [
       {
         img: Linux,
+        title: t("tech-stack.title_linux"),
+        description: "",
         label: t("tech-stack.linux"),
       }, {
         img: Mysql,
+        title: t("tech-stack.title_mysql"),
+        description: "",
         label: t("tech-stack.mysql"),
       }, {
         img: Aws,
+        title: t("tech-stack.title_aws"),
+        description: "",
         label: t("tech-stack.aws"),
       }, {
         img: Laravel,
+        title: t("tech-stack.title_laravel"),
+        description: "",
         label: t("tech-stack.laravel"),
       }, {
         img: Docker,
+        title: t("tech-stack.title_docker"),
+        description: "",
         label: t("tech-stack.docker"),
       }, {
         img: Jenkins,
+        title: t("tech-stack.title_jenkins"),
+        description: "",
         label: t("tech-stack.jenkins"),
       }
     ];
@@ -82,8 +105,8 @@ class TopContent extends Component {
             </Tooltip>
           </div>
           <div className="tech-stack--item-wrapper">
-          <div className="tech-stack--item-title">HTML</div>
-          <p className="tech-stack--item-description">Offshore NodeJS Development</p>
+          <div className="tech-stack--item-title">{value.title}</div>
+          <p className="tech-stack--item-description">{value.description}</p>
           </div>
         </Col>
       );
@@ -147,28 +170,6 @@ class TopContent extends Component {
             </Col>
           </Row>
         </Col>
-        {/* <Col
-            xs={{ span: 24 }}
-            lg={{ span: 12 }}
-          >
-            <Row>
-              <Col span={24}>
-                <img
-                  className="tech-stack--col-image"
-                  src={ImgBackEnd}
-                  alt="img top"
-                />
-              </Col>  
-              <Col span={24}>
-                <h4 className="tech-stack--title">{t("tech-stack.title_back_end")}</h4>
-              </Col>
-              <Col className="tech-stack--wrapper" span={24}>
-                <Row className="tech-stack--row">
-                  {this.renderTechStackFrontEnd(0)}
-                </Row>
-              </Col>
-            </Row>
-          </Col> */}
       </Row>
     );
   }

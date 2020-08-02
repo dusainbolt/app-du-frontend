@@ -5,7 +5,7 @@
 }
 
 .title-top-right {
-  padding: 30px 20px 0px 50px;
+  padding: 30px 50px 0px 50px;
 
   &__title.ant-typography {
     font-size: 34px;
@@ -232,6 +232,16 @@
   .ant-timeline-item-head{
     .anticon-sync{
       color: $primary-color-bold;
+    }
+  }
+  &--text{
+    >label{
+      font-size: $base-font-title;
+      color: $black-color;
+      font-weight:  700; 
+    }
+    >p{
+      font-size: $base-font-size;
     }
   }
   .ant-timeline-item {
@@ -966,6 +976,10 @@ div.ant-popover-inner {
   .ld-process{
     &--item{
       display: block;
+    }
+    &--text{
+      margin: 10px 15px;
+      word-break: initial;
     }
   }
 }
