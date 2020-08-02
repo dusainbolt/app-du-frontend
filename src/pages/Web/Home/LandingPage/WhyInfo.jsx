@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Row, Col, Typography, Skeleton } from "antd";
 
 import { withTranslation } from "react-i18next";
-import ImgTop from "../../../../common/image/top-img.png";
 import {
   SafetyCertificateOutlined,
   AuditOutlined,
@@ -23,7 +22,6 @@ class WhyInfo extends Component {
     let classCol = null;
     return this.getDataInfo().map((value, index) => {
       classCol = !((index + 2) % 3) ? "col-one" : "col-two";
-      console.log(classCol);
       return (
         <Col key={index} className="container-ld--col-padding" xs={24} sm={nuberRows}>
           <div className={`container-ld--rows__${classCol}`}>
@@ -86,10 +84,6 @@ class WhyInfo extends Component {
         {this.renderInfo(nuberRows)}
       </Row>
     );
-  };
-
-  genderContentRight = () => {
-    return <img className="img-background--top" src={ImgTop} alt="img top" />;
   };
 
   render() {

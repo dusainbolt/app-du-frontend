@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import { Row, Col, Typography, Carousel, Skeleton } from "antd";
 import Button from "../../../../components/Button";
 import { withTranslation } from "react-i18next";
-import ImgTop from "../../../../common/image/top-wrapper.png";
 import ImgTop2 from "../../../../common/image/back-end.png";
 import ImgTop3 from "../../../../common/image/font-end.png";
 
 import CountDownTimer from "./CountDownTime";
-import { MailFilled, InstagramFilled, FacebookFilled } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
