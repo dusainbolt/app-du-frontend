@@ -29,7 +29,6 @@ class LoginPage extends Component {
   }
   componentDidMount() {
     const { token } = this.props;
-    console.log(token);
     if(token){
       this.props.postRedirect(token);
     }

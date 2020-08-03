@@ -14,6 +14,7 @@ import Aws from "../../../../common/image/tech-stack/aws.jpg";
 import Laravel from "../../../../common/image/tech-stack/laravel.jpg";
 import Docker from "../../../../common/image/tech-stack/docker.jpeg";
 import Jenkins from "../../../../common/image/tech-stack/Jenkins.png";
+import LazyloadImg from "../../../../components/LazyLoadingImg";
 import { Modal } from "antd";
 
 class TopContent extends Component {
@@ -108,7 +109,11 @@ class TopContent extends Component {
         >
           <div className="tech-stack--col-stack">
             <Tooltip title={value.label} color="#4961ea">
-              <img className="tech-stack--col-stack__img" src={value.img} alt="tech-stack" />
+              <LazyloadImg
+                className="tech-stack--col-stack__img"
+                src={value.img} alt="tech-stack"
+                height={65}
+              />
             </Tooltip>
           </div>
           <div className="tech-stack--item-wrapper">

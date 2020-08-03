@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Row } from "antd";
 import { RightCircleFilled } from "@ant-design/icons";
 import ImgNotFound1 from "../../../common/image/error-404.png";
+import LazyLoading from "../../../components/LazyLoadingImg";
 
 class Home extends Component {
   render() {
@@ -11,10 +12,11 @@ class Home extends Component {
     return (
       <Row className="not-found" justify="center">
         <div className="not-found--wrapper">
-          <img
+          <LazyLoading
             className="not-found--wrapper__img"
             src={ImgNotFound1}
             alt="notfound"
+            height={400}
           />
         </div>
         <div className="not-found--footer">

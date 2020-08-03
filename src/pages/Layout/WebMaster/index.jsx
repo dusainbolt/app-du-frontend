@@ -11,16 +11,16 @@ const { Header, Content } = Layout;
 class App extends Component {
 
   componentDidMount(){
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   }
   
-  handleScroll = (event) => {
+  handleScroll = event => {
     let scrollTop = Math.round(event.target.scrollingElement.scrollTop);
-    console.log(scrollTop, event);
-    if(scrollTop > 50){
-      document.getElementById('header-web').style.boxShadow = "1px 1px 5px #ddd";
-    }else{
-      document.getElementById('header-web').style.boxShadow = "none";
+    let headerTop = document.getElementById("header-web");
+    if (scrollTop > 50 && headerTop) {
+      headerTop.style.boxShadow = "1px 1px 5px #ddd";
+    }else if(scrollTop < 50 && headerTop){
+      headerTop.style.boxShadow = "none";
     }
   }
 

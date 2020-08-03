@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Row, Col, Typography, Carousel, Skeleton } from "antd";
+import { Row, Col, Typography, Carousel } from "antd";
 import Button from "../../../../components/Button";
+import LazyloadImg from "../../../../components/LazyLoadingImg";
 import { withTranslation } from "react-i18next";
 import ImgTop4 from "../../../../common/image/img-top4.png";
 import ImgTop3 from "../../../../common/image/img-top3.png";
@@ -39,6 +40,22 @@ class TopContent extends Component {
     );
   };
 
+  renderSlick = () => {
+    const data = [ImgTop1, ImgTop2, ImgTop3, ImgTop4];
+    return data.map((value, index) => {
+      return (
+        <Col span={24} key={index}>
+          <LazyloadImg
+            className="img-background--top"
+            src={value}
+            alt="img top"
+            height={200}
+          />
+        </Col>
+      );
+    });
+  }
+
   render() {
     return (
       <div>
@@ -59,36 +76,8 @@ class TopContent extends Component {
             xl={{ span: 12, order: 2 }}
           >
             {/* <Skeleton.Button active size="large" shape={"square"}> */}
-
             <Carousel dots={false} speed={1500} draggable autoplay effect="fade">
-              <Col span={24}>
-                <img
-                  className="img-background--top"
-                  src={ImgTop1}
-                  alt="img top"
-                />
-              </Col>
-              <Col span={24}>
-                <img
-                  className="img-background--top"
-                  src={ImgTop2}
-                  alt="img top"
-                />
-              </Col>
-              <Col span={24}>
-                <img
-                  className="img-background--top"
-                  src={ImgTop3}
-                  alt="img top"
-                />
-              </Col>
-              <Col span={24}>
-                <img
-                  className="img-background--top"
-                  src={ImgTop4}
-                  alt="img top"
-                />
-              </Col>
+              {this.renderSlick()}
             </Carousel>
             {/* </Skeleton.Button> */}
           </Col>

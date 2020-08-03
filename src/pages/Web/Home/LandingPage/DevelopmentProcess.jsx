@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Tooltip, Timeline } from "antd";
+import { Row, Col, Timeline } from "antd";
 import { withTranslation } from "react-i18next";
 import {
   SyncOutlined,
@@ -9,67 +9,60 @@ import desginImg from "../../../../common/image/process/Design.png";
 import developmentImg from "../../../../common/image/process/development.png";
 import launchImg from "../../../../common/image/process/launch.png";
 import maintainImg from "../../../../common/image/process/maintaince.png";
-
+import LazyLoading from "../../../../components/LazyLoadingImg";
 class TopContent extends Component {
 
   constructor(props) {
     super(props);
-    const { t } = this.props;
-    this.techStackFrontEnd = [
+    const { t } = props;
+    this.dataProcess = [
       {
-        label: t("tech-stack.html")
-      }, {
-        label: t("tech-stack.scss")
-      }, {
-        label: t("tech-stack.jquery")
-      }, {
-        label: t("tech-stack.react_js"),
-      }, {
-        label: t("tech-stack.ant_design"),
-      }, {
-        label: t("tech-stack.meterial_ui"),
-      }
-    ];
-    this.techStackBackEnd = [
+        img: plandingImg,
+        title: t("ld_process.title_1"),
+        description: t("ld_process.des_1"),
+      },
       {
-        label: t("tech-stack.linux"),
-      }, {
-        label: t("tech-stack.mysql"),
-      }, {
-        label: t("tech-stack.aws"),
-      }, {
-        label: t("tech-stack.laravel"),
-      }, {
-        label: t("tech-stack.docker"),
-      }, {
-        label: t("tech-stack.jenkins"),
+        img: desginImg,
+        title: t("ld_process.title_2"),
+        description: t("ld_process.des_1"),
+      },
+      {
+        img: developmentImg,
+        title: t("ld_process.title_3"),
+        description: t("ld_process.des_1"),
+      },
+      {
+        img: launchImg,
+        title: t("ld_process.title_4"),
+        description: t("ld_process.des_1"),
+      },
+      {
+        img: maintainImg,
+        title: t("ld_process.title_5"),
+        description: t("ld_process.des_1"),
       }
     ];
   }
 
-  renderTechStackFrontEnd = type => {
-    let html = null;
-    const data = type ? this.techStackFrontEnd : this.techStackBackEnd;
-    html = data.map((value, index) => {
+  renderContentProcess = () => {
+    let checkEven = false;
+    return this.dataProcess.map((value, index) => {
+      checkEven = index % 2 === 0 ? true : false;
       return (
-        <Col
-          className="tech-stack--col-wrapper"
-          xs={{ span: 8 }}
-          sm={{ span: 4 }}
-          lg={{ span: 8 }}
-          xl={{ span: 4 }}
-          key={index}
-        >
-          <div className="tech-stack--col-stack">
-            <Tooltip title={value.label} color="#4961ea">
-              <img className="tech-stack--col-stack__img" src={value.img} alt="tech-stack" />
-            </Tooltip>
+        <Timeline.Item key={index} dot={<SyncOutlined spin />}>
+          <div className="ld-process--item-2">
+            <LazyLoading src={value.img} className={`ld-process--icon-timeline ${checkEven ? "" : "rp-mobie"}`} alt="image" />
+            <div className="ld-process--text">
+              <label>{value.title}</label>
+              <p>{value.description}</p>
+            </div>
+            {!checkEven && <LazyLoading src={value.img} className="ld-process--icon-timeline rp-web" alt="image" />}
           </div>
-        </Col>
+        </Timeline.Item>
       );
     });
-    return html;
   }
+
   render() {
     const { t } = this.props;
     return (
@@ -84,56 +77,9 @@ class TopContent extends Component {
           <Row>
             <Col span={24}>
               <Timeline className="ld-process" mode="alternate">
-                <Timeline.Item dot={<SyncOutlined spin />}>
-                  <div className="ld-process--item">
-                    <img src={plandingImg} className="ld-process--icon-timeline" width="40" alt="image" />
-                    <div className="ld-process--text">
-                      <label>1.PLANNING</label>
-                      <p>Description</p>
-                    </div>
-                  </div>
-                </Timeline.Item>
-                <Timeline.Item dot={<SyncOutlined spin />}>
-                  <div className="ld-process--item-2">
-                    <img src={desginImg} className="ld-process--icon-timeline rp-mobie" width="40" alt="image" />
-                    <div className="ld-process--text">
-                      <label>2.DESIGN</label>
-                      <p>Description</p>
-                    </div>
-                    <img src={desginImg} className="ld-process--icon-timeline rp-web" width="40" alt="image" />
-                  </div>
-                </Timeline.Item>
-                <Timeline.Item dot={<SyncOutlined spin />}>
-                  <div className="ld-process--item-2">
-                    <img src={developmentImg} className="ld-process--icon-timeline" width="40" alt="image" />
-                    <div className="ld-process--text">
-                      <label>3.DEVELOPMENT</label>
-                      <p>Description</p>
-                    </div>
-                  </div>
-                </Timeline.Item>
-                <Timeline.Item dot={<SyncOutlined spin />}>
-                  <div className="ld-process--item-2">
-                    <img src={launchImg} className="ld-process--icon-timeline rp-mobie" width="40" alt="image" />
-                    <div className="ld-process--text">
-                      <label>4.LAUNCH</label>
-                      <p>Description</p>
-                    </div>
-                    <img src={launchImg} className="ld-process--icon-timeline rp-web" width="40" alt="image" />
-                  </div>
-                </Timeline.Item>
-                <Timeline.Item dot={<SyncOutlined spin />}>
-                  <div className="ld-process--item">
-                    <img src={maintainImg} className="ld-process--icon-timeline" width="40" alt="image" />
-                    <div className="ld-process--text">
-                      <label>5.MAINTENANCE</label>
-                      <p>Description</p>
-                    </div>
-                  </div>
-                </Timeline.Item>
+                {this.renderContentProcess()}
               </Timeline>
             </Col>
-
           </Row>
         </Col>
       </Row>

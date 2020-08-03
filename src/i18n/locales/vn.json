@@ -85,5 +85,14 @@
     "label_contact_us": "Contact Us",
     "label_copyright": "Copyright* by Du Sainbolt 2020",
     "label_about_us": "About Us"
+  },
+  "ld_process": {
+    "title_1": "1.PLANNING",
+    "title_2": "2.DESIGN",
+    "title_3": "3.DEVELOPMENT",
+    "title_4": "4.LAUNCH",
+    "title_5": "5.MAINTENANCE",
+    "des_1": "Desciprtion",
+    "des_2": ""
   }
 }
