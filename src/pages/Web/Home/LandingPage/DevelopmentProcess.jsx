@@ -24,22 +24,22 @@ class TopContent extends Component {
       {
         img: desginImg,
         title: t("ld_process.title_2"),
-        description: t("ld_process.des_1"),
+        description: t("ld_process.des_2"),
       },
       {
         img: developmentImg,
         title: t("ld_process.title_3"),
-        description: t("ld_process.des_1"),
+        description: t("ld_process.des_3"),
       },
       {
         img: launchImg,
         title: t("ld_process.title_4"),
-        description: t("ld_process.des_1"),
+        description: t("ld_process.des_4"),
       },
       {
         img: maintainImg,
         title: t("ld_process.title_5"),
-        description: t("ld_process.des_1"),
+        description: t("ld_process.des_5"),
       }
     ];
   }

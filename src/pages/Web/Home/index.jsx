@@ -6,7 +6,7 @@ import FadeIn from "react-fade-in";
 import TopContent from "./LandingPage/TopContent";
 import WhyInfo from "./LandingPage/WhyInfo";
 import DevelopmentProcess from "./LandingPage/DevelopmentProcess";
-import CarouselTeam from "./LandingPage/CarouselTeam";
+import ContactReview from "./LandingPage/ContactReview";
 import TechStack from "./LandingPage/TechStack";
 import { actions } from "../../Admin/Home/actions";
 import BackTop from "../../../components/BackTop";
@@ -27,7 +27,7 @@ class Home extends Component {
           <DevelopmentProcess />
         </FadeIn>
         <FadeIn delay={1000} transitionDuration={1000}>
-          <CarouselTeam />
+          <ContactReview />
         </FadeIn>
         <BackTop />
       </div>
