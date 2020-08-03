@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/app-du-frontend/static/css/main.8885e2d0.chunk.css",
-    "main.js": "/app-du-frontend/static/js/main.5d4c93e7.chunk.js",
-    "main.js.map": "/app-du-frontend/static/js/main.5d4c93e7.chunk.js.map",
+    "main.js": "/app-du-frontend/static/js/main.b049c846.chunk.js",
+    "main.js.map": "/app-du-frontend/static/js/main.b049c846.chunk.js.map",
     "runtime-main.js": "/app-du-frontend/static/js/runtime-main.697c4963.js",
     "runtime-main.js.map": "/app-du-frontend/static/js/runtime-main.697c4963.js.map",
     "static/css/2.3cb76441.chunk.css": "/app-du-frontend/static/css/2.3cb76441.chunk.css",
-    "static/js/2.4182865b.chunk.js": "/app-du-frontend/static/js/2.4182865b.chunk.js",
-    "static/js/2.4182865b.chunk.js.map": "/app-du-frontend/static/js/2.4182865b.chunk.js.map",
+    "static/js/2.e4165c39.chunk.js": "/app-du-frontend/static/js/2.e4165c39.chunk.js",
+    "static/js/2.e4165c39.chunk.js.map": "/app-du-frontend/static/js/2.e4165c39.chunk.js.map",
     "index.html": "/app-du-frontend/index.html",
-    "precache-manifest.9a7e66073a8d85d93b01c58b145b589f.js": "/app-du-frontend/precache-manifest.9a7e66073a8d85d93b01c58b145b589f.js",
+    "precache-manifest.057ec8028054aedf3b91c275f253c953.js": "/app-du-frontend/precache-manifest.057ec8028054aedf3b91c275f253c953.js",
     "service-worker.js": "/app-du-frontend/service-worker.js",
     "static/css/2.3cb76441.chunk.css.map": "/app-du-frontend/static/css/2.3cb76441.chunk.css.map",
     "static/css/main.8885e2d0.chunk.css.map": "/app-du-frontend/static/css/main.8885e2d0.chunk.css.map",
-    "static/js/2.4182865b.chunk.js.LICENSE.txt": "/app-du-frontend/static/js/2.4182865b.chunk.js.LICENSE.txt",
+    "static/js/2.e4165c39.chunk.js.LICENSE.txt": "/app-du-frontend/static/js/2.e4165c39.chunk.js.LICENSE.txt",
     "static/media/Design.png": "/app-du-frontend/static/media/Design.1c6872c8.png",
     "static/media/Jenkins.png": "/app-du-frontend/static/media/Jenkins.a06cd6a3.png",
     "static/media/LoadingProject.gif": "/app-du-frontend/static/media/LoadingProject.f3e73113.gif",
@@ -45,8 +45,8 @@
   "entrypoints": [
     "static/js/runtime-main.697c4963.js",
     "static/css/2.3cb76441.chunk.css",
-    "static/js/2.4182865b.chunk.js",
+    "static/js/2.e4165c39.chunk.js",
     "static/css/main.8885e2d0.chunk.css",
-    "static/js/main.5d4c93e7.chunk.js"
+    "static/js/main.b049c846.chunk.js"
   ]
 }
