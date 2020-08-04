@@ -74,7 +74,7 @@
   },
   "not_found": {
     "title": "Lỗi Trang 404",
-    "button_go_home": "Quay lại trang chủ", 
+    "button_go_home": "Quay lại trang chủ",
     "description": "Xin lỗi, trang không được tìm thấy trên server"
   },
   "footer": {
@@ -87,11 +87,11 @@
     "label_about_us": "About Us"
   },
   "ld_process": {
-    "title_1": "1.PLANNING",
-    "title_2": "2.DESIGN",
-    "title_3": "3.DEVELOPMENT",
-    "title_4": "4.LAUNCH",
-    "title_5": "5.MAINTENANCE",
+    "title_1": "1. PLANNING",
+    "title_2": "2. DESIGN",
+    "title_3": "3. DEVELOPMENT",
+    "title_4": "4. LAUNCH",
+    "title_5": "5. MAINTENANCE",
     "des_1": "Client Meeting, Client Requirement ,Analysis ,Collect Data",
     "des_2": "Wireframe layout, Prototype Design, Design Signoff",
     "des_3": "Client Meeting, Client Requirement, Analysis, Collect Data",

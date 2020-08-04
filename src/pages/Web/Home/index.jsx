@@ -26,6 +26,7 @@ class Home extends Component {
         <FadeIn delay={1000} transitionDuration={1000}>
           <DevelopmentProcess />
         </FadeIn>
+        <div style={{ marginTop: "50px" }}></div>
         <FadeIn delay={1000} transitionDuration={1000}>
           <ContactReview />
         </FadeIn>
@@ -35,9 +36,7 @@ class Home extends Component {
   }
 }
 
-const mstp = state => ({
-});
-const mdtp = dispatch => ({
-});
+const mstp = (state) => ({});
+const mdtp = (dispatch) => ({});
 
 export default connect(mstp, mdtp)(withTranslation()(Home));

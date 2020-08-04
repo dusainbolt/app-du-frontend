@@ -41,7 +41,7 @@
       border-radius: 50%;
       background-color: $primary-color-bold;
 
-      >svg {
+      > svg {
         color: white;
       }
 
@@ -59,7 +59,7 @@
 
     div &--process-circle {
       margin: 0px 30px 10px 0px;
-      div.ant-progress-inner{
+      div.ant-progress-inner {
         width: 90px !important;
         height: 90px !important;
         font-size: $base-font-title;
@@ -86,20 +86,20 @@
     margin-top: 7% !important;
   }
 }
-.tech-stack{
+.tech-stack {
   margin: 30px 0;
-  &--wrapper{
+  &--wrapper {
     position: relative;
-    margin-bottom: 20px
+    margin-bottom: 20px;
   }
 
-  &--col-image{
+  &--col-image {
     width: 150%;
     position: absolute;
     margin-top: 50px;
   }
 
-  &--title{
+  &--title {
     width: 90%;
     margin: auto;
     margin-bottom: 20px;
@@ -110,7 +110,7 @@
     word-break: break-word;
   }
 
-  &--item-title{
+  &--item-title {
     font-size: 20px;
     font-weight: 600;
     color: $black-color;
@@ -118,43 +118,43 @@
 
   &--item-description {
     cursor: pointer;
-    &:hover{
+    &:hover {
       color: $purple-color-bold;
     }
   }
-  
-  &--col-stack{ 
+
+  &--col-stack {
     width: 24%;
     margin-bottom: 8px;
     border-radius: 10px;
     border: solid 1.2px $primary-color-bold;
     height: auto;
-    transition: box-shadow .5s;
-    &__img{
+    transition: box-shadow 0.5s;
+    &__img {
       width: 100%;
       padding: 15%;
     }
-    &:hover{
+    &:hover {
       box-shadow: $box-shadow-primary;
     }
   }
-  &--col-wrapper{
+  &--col-wrapper {
     margin-bottom: 15px;
   }
-  &--row{
+  &--row {
     width: 90%;
     margin: auto;
   }
 }
 
-.my-footer{
-  padding: 24px 50px 0 50px!important;
+.my-footer {
+  padding: 24px 50px 0 50px !important;
   position: relative;
   overflow: hidden;
   background: $white-color !important;
   border-top: 1px solid #ddd;
   box-shadow: 3px 3px 3px 3px #ddd;
-  &__wrapper-copyright{
+  &__wrapper-copyright {
     position: absolute;
     background-color: $primary-color-bold;
     text-align: center;
@@ -166,56 +166,57 @@
     border-radius: 150px;
     color: $white-color;
     box-shadow: 12px 12px 11px rgba(33, 33, 33, 0.2);
-    &--content{
+    &--content {
       font-size: 14px;
       line-height: 14px;
       margin-bottom: 27px;
       margin-top: -15px;
     }
   }
-  &__content{
+  &__content {
     margin-bottom: 40px !important;
   }
-  &__google-map{
-    >iframe{
+  &__google-map {
+    > iframe {
       width: 100%;
       height: 150px;
       border-radius: 15px;
       border: solid 2px $white-color;
     }
   }
-  &__col-wrapper{
+  &__col-wrapper {
     text-align: left;
     font-size: $base-font-title;
-    &--title{
+    &--title {
       font-weight: 700;
     }
-    &--label{
+    &--label {
       margin-top: 3px;
-      >a, a:active{
+      > a,
+      a:active {
         color: $black-color;
       }
-      >a:hover{
+      > a:hover {
         color: $primary-color-bold;
       }
-      &:hover{
+      &:hover {
         cursor: pointer;
         color: $primary-color-bold;
       }
     }
-    &--icon{
+    &--icon {
       margin-top: 8px;
       font-size: 22px;
       margin-right: 18px;
-      transition: box-shadow .1s;
-      &:hover{
+      transition: box-shadow 0.1s;
+      &:hover {
         box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075);
         cursor: pointer;
         color: $primary-color-bold;
       }
     }
   }
-  &__image{
+  &__image {
     float: left !important;
     width: 30%;
     margin-top: -2%;
@@ -235,19 +236,19 @@
   color: #fff;
 }
 
-.ld-process{
-  .ant-timeline-item-head{
-    .anticon-sync{
+.ld-process {
+  .ant-timeline-item-head {
+    .anticon-sync {
       color: $primary-color-bold;
     }
   }
-  &--text{
-    >label{
+  &--text {
+    > label {
       font-size: $base-font-title;
       color: $black-color;
-      font-weight:  700; 
+      font-weight: 700;
     }
-    >p{
+    > p {
       font-size: $base-font-size;
     }
   }
@@ -255,25 +256,25 @@
     width: 90%;
     margin: auto !important;
   }
-  &--item{
+  &--item {
     margin-top: 15px;
     display: -webkit-inline-box;
   }
-  &--icon-timeline{
+  &--icon-timeline {
     width: 61px;
     padding: 7px;
     border: solid 1.2px $primary-color-bold;
     border-radius: 10px;
-    margin: 0 15px; 
-    transition: box-shadow .5s;
-    >svg{
+    margin: 0 15px;
+    transition: box-shadow 0.5s;
+    > svg {
       color: $white-color;
     }
-    &:hover{
+    &:hover {
       box-shadow: $box-shadow-primary;
-    } 
+    }
   }
-  &--item-2{
+  &--item-2 {
     @extend .ld-process--item;
   }
 }
@@ -281,21 +282,64 @@
 .team-carouse {
   margin-bottom: 40px;
   position: relative;
-  &--wrapper{
+  &--wrapper {
     width: 80%;
     flex: none !important;
-    height: 300px;
+    max-height: 270px;
     margin: auto;
-    margin-top: 30px;
+    box-shadow: $box-shadow-primary;
+    margin-top: 100px;
     margin-bottom: 30px;
     background-color: $white-color;
+  }
+  &--img {
+    box-shadow: $box-shadow-primary;
+    position: absolute;
+    padding: 2px;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    left: calc(50% - 60px);
+    top: -60px;
+  }
+  &--text-wrapper {
+    padding: 0 30px;
+    text-align: center;
+    margin-top: 80px;
+    line-height: 30px;
+    &__title {
+      font-size: 22px;
+    }
+    &__job {
+      font-size: 14px;
+      color: $primary-color-bold;
+    }
+    &__des {
+      margin-top: 5px;
+      font-size: 16px;
+    }
   }
   .ant-carousel .slick-slide {
     line-height: 100px;
   }
+  .ant-carousel .slick-dots li button {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 1px $primary-color-bold;
+  }
 
+  ul.slick-dots-bottom {
+    bottom: -10px;
+  }
+  .ant-carousel .slick-dots li.slick-active button {
+    box-shadow: $box-shadow-primary;
+    background-color: $primary-color-bold;
+  }
 
   &--icon-left {
+    display: none !important;
+    transition: display 0.3s;
     z-index: 10;
     padding: 5px;
     position: absolute;
@@ -303,8 +347,8 @@
     border-radius: 0px 45px 45px 0px;
     font-size: 35px;
     opacity: 0.7;
-    >svg {
-      color: $white-color;
+    > svg {
+      color: $primary-color-bold;
     }
   }
 
@@ -324,8 +368,8 @@
     max-width: 80%;
     flex: 0 0 80%;
   }
-  .skeleton-title{
-    &.ant-skeleton-input{
+  .skeleton-title {
+    &.ant-skeleton-input {
       height: 25px;
     }
   }
@@ -337,7 +381,7 @@
     width: 100%;
     &__col-one {
       margin-top: 20px;
-      transition: box-shadow .5s;
+      transition: box-shadow 0.5s;
 
       color: $black-color;
       height: 100%;
@@ -352,7 +396,7 @@
           padding: 20px;
           border-radius: 50%;
 
-          >svg {
+          > svg {
             color: $primary-color-bold;
           }
         }
@@ -385,7 +429,7 @@
         &__icon {
           @extend .container-ld--rows__col-one--item__icon;
           background-color: $primary-color-bold;
-          >svg {
+          > svg {
             color: $white-color;
           }
         }
@@ -412,7 +456,7 @@
     font-weight: 700;
     margin-top: 50px;
   }
-  &--title-description{
+  &--title-description {
     font-size: 15px;
     line-height: 26px;
     color: $black-color-light;
@@ -421,16 +465,16 @@
     padding: 0 10px;
     margin-top: 10px;
   }
-  &--title{
+  &--title {
     @extend .container-ld--title.ant-typography;
     width: 100%;
     margin-bottom: 45px;
   }
 }
 
-.ant-carousel .slick-slide {
-  background-color: $primary-color-bold;
-}
+// .ant-carousel .slick-slide {
+//   background-color: $primary-color-bold;
+// }
 
 .ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
   stroke: $primary-color-bold !important;
@@ -472,13 +516,13 @@ div.ant-popover-inner {
   }
 
   &__language {
-    >ul {
+    > ul {
       border-radius: 10px;
       overflow: hidden;
       padding: 0px;
       box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08);
 
-      >li {
+      > li {
         padding: 10px 15px;
         color: $primary-color-bold;
         font-weight: 700;
@@ -494,7 +538,7 @@ div.ant-popover-inner {
   &__web {
     position: relative;
 
-    >img {
+    > img {
       position: absolute;
       left: 50px;
       top: 3px;
@@ -507,7 +551,7 @@ div.ant-popover-inner {
     &--display-mobie {
       display: none;
 
-      &--icon>svg {
+      &--icon > svg {
         position: absolute;
         color: $primary-color-bold;
         font-size: 30px;
@@ -517,7 +561,7 @@ div.ant-popover-inner {
     }
 
     &--menu {
-      >ul {
+      > ul {
         position: absolute;
         list-style-type: none;
         right: 15px;
@@ -526,15 +570,15 @@ div.ant-popover-inner {
         text-overflow: ellipsis;
         overflow: hidden;
 
-        >li {
+        > li {
           margin-right: 20px;
           float: left;
-          >a {
+          > a {
             display: block;
             color: $primary-color-bold;
             text-align: center;
             font-weight: 550;
-            font-size: $base-font-size; 
+            font-size: $base-font-size;
             padding: 8px 13px;
             border-radius: 150px;
             border: solid 1px $primary-color-bold;
@@ -546,19 +590,19 @@ div.ant-popover-inner {
             }
           }
 
-          >p.dropdown-language {
+          > p.dropdown-language {
             margin-top: 11px;
             cursor: pointer;
             font-size: $base-font-size;
             color: $primary-color-bold;
             font-weight: 550;
 
-            >span.anticon-global {
+            > span.anticon-global {
               font-size: $base-font-size;
               margin-right: 3px;
             }
 
-            >span.anticon-down {
+            > span.anticon-down {
               margin-left: 3px;
             }
           }
@@ -578,7 +622,7 @@ div.ant-popover-inner {
     background-color: $white-color;
     line-height: 0;
   }
-  .ant-skeleton{
+  .ant-skeleton {
     width: 80%;
     margin: auto;
     margin-top: 5%;
@@ -586,7 +630,7 @@ div.ant-popover-inner {
   .ant-skeleton-element {
     display: table;
   }
-  .ant-skeleton-element .ant-skeleton-button-lg{
+  .ant-skeleton-element .ant-skeleton-button-lg {
     width: 100%;
     height: 200px;
   }
@@ -600,19 +644,19 @@ div.ant-popover-inner {
     &__content {
       width: 80%;
     }
-    &--wrapper-social{
+    &--wrapper-social {
       height: 20%;
-      &__group{
+      &__group {
         transform: translateX(-50%) translateY(-20%);
         bottom: 5px;
-        >a.icon_team{
-          >span{
+        > a.icon_team {
+          > span {
             margin: 0 8px;
-            >svg{
+            > svg {
               font-size: 24px;
               color: $white-color;
             }
-          } 
+          }
         }
       }
     }
@@ -627,32 +671,32 @@ div.ant-popover-inner {
       }
     }
   }
-  .container-ld{
+  .container-ld {
     .container-ld__content_center {
       max-width: 95%;
       flex: 0 0 95%;
     }
   }
-  .tech-stack{
-    &--title{
+  .tech-stack {
+    &--title {
       text-align: center;
     }
-    &--item-title{
+    &--item-title {
       margin-top: 10px;
     }
-    &--col-stack{
+    &--col-stack {
       margin: auto;
       width: 30%;
     }
-    &--wrapper{
+    &--wrapper {
       text-align: center;
     }
   }
-  .my-footer{
-    &__image{
-      width: 70%
+  .my-footer {
+    &__image {
+      width: 70%;
     }
-  }  
+  }
 }
 
 @media (max-width: 768px) {
@@ -701,15 +745,15 @@ div.ant-popover-inner {
       margin: auto;
     }
 
-    &--wrapper-social{
-      &__group{
+    &--wrapper-social {
+      &__group {
         transform: translateX(-50%) translateY(-5%);
-        >a.icon_team{
-          >span{
-            >svg{
+        > a.icon_team {
+          > span {
+            > svg {
               font-size: 30px;
             }
-          } 
+          }
         }
       }
     }
@@ -739,21 +783,21 @@ div.ant-popover-inner {
   .header {
     &__web {
       &--menu {
-        >ul {
-          >li {
-            margin-right: 15px;  
-            >a {
+        > ul {
+          > li {
+            margin-right: 15px;
+            > a {
               font-weight: 650;
               padding: 10px 7px;
               font-size: $base-font-size;
             }
-            >p.dropdown-language {
+            > p.dropdown-language {
               margin-top: 13px;
               cursor: pointer;
               color: $primary-color-bold;
               font-weight: 650;
               font-size: $base-font-size;
-              >span.anticon-global {
+              > span.anticon-global {
                 font-size: $base-font-size;
                 margin-right: 3px;
               }
@@ -770,16 +814,16 @@ div.ant-popover-inner {
     display: inline-block !important;
   }
 
-  .tech-stack{
-    &--col-stack{
+  .tech-stack {
+    &--col-stack {
       width: 20%;
       margin-left: 5%;
     }
-    div &--col-wrapper{
+    div &--col-wrapper {
       display: flex;
       text-align: left;
     }
-    &--item-wrapper{
+    &--item-wrapper {
       width: 68%;
     }
   }
@@ -837,22 +881,22 @@ div.ant-popover-inner {
       }
     }
   }
-  
-  .my-footer{
-    &__image{
+
+  .my-footer {
+    &__image {
       width: 50%;
       margin: 0 25%;
     }
-    &__col-wrapper{
+    &__col-wrapper {
       text-align: center;
-      &--label{
+      &--label {
         text-align: center;
       }
     }
-    &__icon-wrapper{
+    &__icon-wrapper {
       padding-left: 15px;
     }
-  } 
+  }
 
   .header {
     display: flex;
@@ -868,7 +912,7 @@ div.ant-popover-inner {
         display: none;
       }
 
-      >img {
+      > img {
         left: 10px;
       }
 
@@ -880,16 +924,23 @@ div.ant-popover-inner {
     }
   }
 
+  .team-carouse {
+    margin-bottom: 40px;
+    &--wrapper {
+      max-height: 400px;
+    }
+  }
+
   .container-ld {
     &--title.ant-typography {
       font-size: 22px;
     }
   }
-  .ld-process{
-    &--item{
+  .ld-process {
+    &--item {
       display: block;
     }
-    &--text{
+    &--text {
       margin: 10px 15px;
       word-break: initial;
     }

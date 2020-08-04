@@ -19,12 +19,13 @@ $black-color-light: #777;
 }
 
 /* Typography */
-$base-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+  "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $base-font-size: 14px;
 $base-font-title: 16px;
 $base-font-large: 18px;
-$box-shadow-primary: 0 0 10px 0 rgba(15,121,255,.3);
-$box-shadow: 10px 10px 32px -8px rgba(0,0,0,0.11);
+$box-shadow-primary: 0 0 10px 0 rgba(15, 121, 255, 0.3);
+$box-shadow: 10px 10px 32px -8px rgba(0, 0, 0, 0.11);
 /* Common style */
 %wrapper {
   box-sizing: border-box;
@@ -122,11 +123,11 @@ button {
 .site-layout .site-layout-background {
   background: #fff;
 }
-.site-layout-web-background{
+.site-layout-web-background {
   margin-top: 30px;
 }
 
-.authen-loading{
+.authen-loading {
   position: fixed;
   left: 0;
   right: 0;
@@ -135,7 +136,7 @@ button {
   bottom: 0;
   z-index: 99999;
   background-color: #fefefc;
-  >img{
+  > img {
     position: fixed;
     left: 0;
     right: 0;
@@ -146,33 +147,33 @@ button {
   }
 }
 
-.not-found{
+.not-found {
   width: 100%;
   position: relative;
   top: 80px;
   display: block;
   text-align: center;
-  &--wrapper{
-    &__img{
+  &--wrapper {
+    &__img {
       width: 50%;
       margin: auto;
     }
   }
-  &--footer{
+  &--footer {
     width: 100%;
     text-align: center;
-    &--title{
+    &--title {
       margin-top: 20px;
       font-size: 25px;
       font-weight: 700;
       color: $primary-color-bold;
     }
-    &--description{
+    &--description {
       margin-top: 15px;
       font-size: 16px;
       margin-bottom: 50px;
     }
-    &--button{
+    &--button {
       margin-top: 15px;
       background-color: $primary-color-bold;
       padding: 15px;
@@ -180,10 +181,10 @@ button {
       font-size: $base-font-title;
       color: $white-color;
       border-radius: 30px;
-      &__icon{
+      &__icon {
         font-size: $base-font-title;
       }
-      &:hover{
+      &:hover {
         color: $white-color;
         background-color: $purple-color-bold;
       }
@@ -191,7 +192,7 @@ button {
   }
 }
 
-.event-loading{
+.event-loading {
   position: fixed;
   left: 0;
   right: 0;
@@ -200,7 +201,7 @@ button {
   bottom: 0;
   z-index: 99999;
   background-color: rgba(215, 224, 243, 0.5);
-  >div{
+  > div {
     position: fixed;
     left: 0;
     right: 0;
@@ -211,34 +212,34 @@ button {
   }
 }
 
-.back-top{
+.back-top {
   font-size: 50px;
-  >svg{
-    color: $primary-color-bold
+  > svg {
+    color: $primary-color-bold;
   }
 }
 
-div.back-top-wrapper{
+div.back-top-wrapper {
   right: 30px;
   bottom: 25px;
 }
 
-span.error-field{
+span.error-field {
   border-color: #ff2121;
   border-right-width: 1px !important;
   outline: 0;
   box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.13);
   margin-bottom: 3px;
-  &:hover{
+  &:hover {
     border-color: #ff2121;
     box-shadow: 0 0 0 1px rgba(247, 0, 0, 0.23);
   }
 }
-.ant-message{
+.ant-message {
   top: 5% !important;
 }
 
-span.ant-input-affix-wrapper{
+span.ant-input-affix-wrapper {
   border-radius: 8px;
 }
 
