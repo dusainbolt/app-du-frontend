@@ -282,7 +282,13 @@
   margin-bottom: 40px;
   position: relative;
   &--wrapper{
+    width: 80%;
+    flex: none !important;
+    height: 300px;
+    margin: auto;
     margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: $white-color;
   }
   .ant-carousel .slick-slide {
     line-height: 100px;

@@ -6,9 +6,6 @@ import { renderContentLanguage } from "../../../../common/js/function";
 import {
   RightCircleFilled,
   LeftCircleFilled,
-  FacebookFilled,
-  InstagramFilled,
-  MailFilled
 } from "@ant-design/icons";
 
 const ENG = "ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH";
@@ -38,17 +35,8 @@ class TopContent extends Component {
     const { t } = this.props;
     return (
       <Row>
-        <Col className="team-carouse--wrapper" lg={8} xl={10} xs={24}>
-          <div className="team-carouse__content">
-            <label className="team-carouse__content--title">
-              Chief Executive Officer
-            </label>
-            <p className="team-carouse__content--description">
-              {renderContentLanguage(VN, ENG, t("language.value"))}
-            </p>
-          </div>
-        </Col>
-        <Col className="team-carouse--wrapper" lg={16} xl={14} xs={24}>
+        <Col className="team-carouse--wrapper" xs={24}>
+
         </Col>
       </Row>
     );

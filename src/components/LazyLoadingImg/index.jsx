@@ -1,5 +1,6 @@
 import React from "react";
 import Lazyload from "react-lazyload";
+import FadeIn from "react-fade-in";
 
 export default function LazyloadImg({
   delayThrottle,
@@ -8,7 +9,9 @@ export default function LazyloadImg({
 }) {
   return (
     <Lazyload throttle={delayThrottle ? delayThrottle : 400} height={height}>
-      <img {...props} />
+      <FadeIn delay={100} transitionDuration={400}>
+        <img {...props} />
+      </FadeIn>
     </Lazyload>
   );
 }
