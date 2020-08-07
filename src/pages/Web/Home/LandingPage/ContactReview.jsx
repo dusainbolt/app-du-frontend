@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
-import { Carousel, Timeline } from "antd";
-import { renderContentLanguage } from "../../../../common/js/function";
+import { Carousel } from "antd";
 import { RightCircleFilled, LeftCircleFilled } from "@ant-design/icons";
-
-const ENG = "ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH ENGLISH";
-const VN = "VN VN VN VN VN VN VN VN VN VN VN VN VN VN VN VN VN VVN VN";
 
 class TopContent extends Component {
   constructor(props) {
@@ -34,7 +30,7 @@ class TopContent extends Component {
     const { t } = this.props;
     const { user } = this.state;
     return (
-      <Row>
+      <Row className="team-carouse--row">
         <Col className="team-carouse--wrapper" xs={24}>
           <img className="team-carouse--img" src={user.url_avatar} />
           <div className="team-carouse--text-wrapper">
@@ -67,7 +63,7 @@ class TopContent extends Component {
           <LeftCircleFilled className="team-carouse--icon-left" onClick={this.previous} />
           <Carousel
             draggable={true}
-            ref={(node) => (this.carousel = node)}
+            ref={node => (this.carousel = node)}
             speed={500}
             effect="scrolling"
           >

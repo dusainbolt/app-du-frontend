@@ -1,7 +1,4 @@
-import {
-  put,
-  takeLatest,
-} from "redux-saga/effects";
+import { put, takeLatest } from "redux-saga/effects";
 import { actions, ActionTypes } from "./actions";
 import {
   postLoginApi,
@@ -9,9 +6,7 @@ import {
   postLogoutAdminApi,
   postChangePasswordAdminApi,
 } from "../../services/AuthRequest";
-import {
-  actions as actionLayout
-} from "../Layout/AdminMaster/actions";
+import { actions as actionLayout } from "../Layout/AdminMaster/actions";
 
 import { effectAfterRequest } from "../../common/js/function";
 import api from "../../services/api";
@@ -33,15 +28,13 @@ function* redirectForLogin(action) {
     yield api.setAuthRequest(action.values);
     const response = yield postAuthAdminApi();
     yield put(actions.postAuthAdminSuccess({ token: action.values }, response));
-    yield effectAfterRequest(
-      "success","Chào mừng đến trang quản trị",2,"/bautroixanh/home");
+    yield effectAfterRequest("success", "Chào mừng đến trang quản trị", 2, "/bautroixanh/home");
   } catch (e) {
     yield effectAfterRequest("error", "Phiên đăng nhập hết hạn", 2);
   }
 }
 
 function* checkAuthAdmin(action) {
-  // yield put(actions.postAuthAdminError({}));
   try {
     yield api.setAuthRequest(action.values);
     const response = yield postAuthAdminApi();
@@ -52,10 +45,9 @@ function* checkAuthAdmin(action) {
 }
 
 function* logoutAdmin(action) {
-  const { token } = action;
   yield put(actionLayout.showLoadingEvent());
   try {
-    yield postLogoutAdminApi({ token });
+    yield postLogoutAdminApi({ token: action.token });
   } catch (e) {
     yield put(actions.postLoginSuccess({}));
   }
@@ -66,10 +58,16 @@ function* logoutAdmin(action) {
 function* changePassword(action) {
   yield put(actionLayout.showLoadingEvent());
   try {
-    yield postChangePasswordAdminApi(action.values);
-    yield put(actionLayout.hideModal());
-    yield effectAfterRequest("success", "Đổi mật khẩu thành công", 1);
+    const response = yield postChangePasswordAdminApi(action.values);
+    if (response.data) {
+      yield put(actions.postChangePasswordSuccess(response));
+      yield effectAfterRequest("success", "Đổi mật khẩu thành công", 1);
+    } else {
+      yield put(actions.postAuthAdminError({}));
+      yield effectAfterRequest("warning", "Đổi mật khẩu thất bại", 1);
+    }
   } catch (e) {
+    yield put(actions.postAuthAdminError(e));
     yield effectAfterRequest("warning", "Đổi mật khẩu thất bại", 1);
   }
 }

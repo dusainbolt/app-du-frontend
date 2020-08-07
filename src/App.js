@@ -7,10 +7,8 @@ import LayoutWeb from "./pages/Layout/WebMaster";
 import { AdminRoutes, WebRoutes } from "./Routes";
 import AuthLoading from "./components/Loading/AuthenLoading";
 import EventLoading from "./components/Loading/EventLoading";
-import Modal from "./components/Modal";
 import LoginPage from "./pages/Login";
 import NotFound from "./pages/Web/NotFound";
-import { actions as actionLayout } from "./pages/Layout/AdminMaster/actions";
 import "./App.css";
 import "./sass/app.scss";
 import { connect } from "react-redux";
@@ -51,7 +49,6 @@ class App extends Component {
       <div className="App">
         <AuthLoading isLoading={layout.isLoadingAuth} />
         <EventLoading isLoading={layout.isLoadingEvent}/>
-        <Modal hideModal={this.props.hideModal} modal={layout.modal} />
         <Router history={browserHistory}>
           <Switch>
             <Route exact path="/bautroixanh/login" component={LoginPage} />
@@ -70,7 +67,6 @@ const mstp = state => ({
 });
 
 const mdtp = dispatch => ({
-  hideModal: () => dispatch(actionLayout.hideModal()),
 });
 
 

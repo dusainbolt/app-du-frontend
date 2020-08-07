@@ -9,32 +9,26 @@ import Footer from "../../../components/Web/Footer";
 
 const { Header, Content } = Layout;
 class App extends Component {
-
-  componentDidMount(){
+  componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
   }
-  
-  handleScroll = event => {
+
+  handleScroll = (event) => {
     let scrollTop = Math.round(event.target.scrollingElement.scrollTop);
     let headerTop = document.getElementById("header-web");
     if (scrollTop > 50 && headerTop) {
       headerTop.style.boxShadow = "1px 1px 5px #ddd";
-    }else if(scrollTop < 50 && headerTop){
+    } else if (scrollTop < 50 && headerTop) {
       headerTop.style.boxShadow = "none";
     }
-  }
+  };
 
   render() {
-    const {
-      component: Mycomponent,
-      classes,
-      name,
-      ...remainProps
-    } = this.props;
+    const { component: Mycomponent, classes, name, ...remainProps } = this.props;
     return (
       <Route
         {...remainProps}
-        render={routeProps => {
+        render={(routeProps) => {
           return (
             <Layout className="layout-web">
               <Header id="header-web" className="layout-web__header-web">

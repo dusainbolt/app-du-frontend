@@ -3,10 +3,6 @@ import { actions as actionLayout } from "../../pages/Layout/AdminMaster/actions"
 import { put } from "redux-saga/effects";
 import  showMessage  from "../../components/Message/index";
 
-export function getCountTime(timeStart) {
-  return getTimeNowUnix() - timeStart;
-}
-
 export function getTimeNowUnix() {
   return Math.round(new Date().getTime() / 1000);
 }
@@ -27,10 +23,6 @@ export function countSecondToTime(secs) {
     s: seconds,
   };
   return obj;
-}
-
-export function renderContentLanguage(valueVn, valueEn, lang) {
-  return lang === "en" ? valueEn : valueVn;
 }
 
 export function* effectAfterRequest(typeMsg, msg, typeHide = 0, redirect = "") {

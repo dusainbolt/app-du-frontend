@@ -8,8 +8,6 @@ import ImgTop3 from "../../../../common/image/img-top3.png";
 import ImgTop2 from "../../../../common/image/img-top2.png";
 import ImgTop1 from "../../../../common/image/img-top1.png";
 
-
-
 import CountDownTimer from "./CountDownTime";
 
 const { Title, Paragraph } = Typography;
@@ -45,36 +43,25 @@ class TopContent extends Component {
     return data.map((value, index) => {
       return (
         <Col span={24} key={index}>
-          <LazyloadImg
-            className="img-background--top"
-            src={value}
-            alt="img top"
-            height={200}
-          />
+          <LazyloadImg className="img-background--top" src={value} alt="img top" height={200} />
         </Col>
       );
     });
-  }
+  };
 
   render() {
     return (
       <div>
+        <div className="top-content--bg"></div>
+
         <Row className="top-content">
           {/* <img src={ImgTop} alt="img-top"/> */}
-          <Col
-            xs={{ span: 24, order: 2 }}
-            lg={{ span: 14, order: 1 }}
-            xl={{ span: 12, order: 1 }}
-          >
+          <Col xs={{ span: 24, order: 2 }} lg={{ span: 14, order: 1 }} xl={{ span: 12, order: 1 }}>
             {/* <Skeleton paragraph={{ rows: 6 }} active> */}
             {this.genderContentLeft()}
             {/* </Skeleton> */}
           </Col>
-          <Col
-            xs={{ span: 24, order: 1 }}
-            lg={{ span: 10, order: 2 }}
-            xl={{ span: 12, order: 2 }}
-          >
+          <Col xs={{ span: 24, order: 1 }} lg={{ span: 10, order: 2 }} xl={{ span: 12, order: 2 }}>
             {/* <Skeleton.Button active size="large" shape={"square"}> */}
             <Carousel dots={false} speed={1500} draggable autoplay effect="fade">
               {this.renderSlick()}

@@ -1,6 +1,4 @@
 export const ActionTypes = {
-  SHOW_MODAL: "SHOW_MODAL",
-  HIDE_MODAL: "HIDE_MODAL",
   SHOW_LOADING_AUTH: "SHOW_LOADING_AUTH",
   HIDE_LOADING_AUTH: "HIDE_LOADING_AUTH",
   SHOW_LOADING_EVENT: "SHOW_LOADING_EVENT",
@@ -8,18 +6,6 @@ export const ActionTypes = {
 };
 
 export const actions = {
-  showModal: function (title, content) {
-    return {
-      type: ActionTypes.SHOW_MODAL,
-      title,
-      content,
-    };
-  },
-  hideModal: function () {
-    return {
-      type: ActionTypes.HIDE_MODAL,
-    };
-  },
   showLoadingAuth: function () {
     return {
       type: ActionTypes.SHOW_LOADING_AUTH    

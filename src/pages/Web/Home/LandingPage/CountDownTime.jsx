@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Progress } from "antd";
 import {
-  getCountTime,
+  getTimeNowUnix,
   countSecondToTime,
 } from "../../../../common/js/function";
 import { withTranslation } from "react-i18next";
 class CountDownTimer extends Component {
   constructor(props) {
     super(props);
-    this.state = { time: {}, seconds: getCountTime(942226248) };
+    this.state = { time: {}, seconds: getTimeNowUnix() - 942226248 };
     this.timer = 0;
   }
   componentDidMount() {

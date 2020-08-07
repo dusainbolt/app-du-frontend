@@ -9,6 +9,9 @@ export const ActionTypes = {
   POST_LOGIN_SUCCESS: "POST_LOGIN_SUCCESS",
   POST_LOGIN_ERROR: "POST_LOGIN_ERROR",
   POST_CHANGE_PASSWORD_START: "POST_CHANGE_PASSWORD_START",
+  POST_CHANGE_PASSWORD_SUCCESS: "POST_CHANGE_PASSWORD_SUCCESS",
+  POST_CHANGE_PASSWORD_ERROR: "POST_CHANGE_PASSWORD_START",
+
 };
 
 export const actions = {
@@ -73,6 +76,18 @@ export const actions = {
     return {
       type: ActionTypes.POST_CHANGE_PASSWORD_START,
       values,
+    };
+  },
+  postChangePasswordSuccess: function (success) {
+    return {
+      type: ActionTypes.POST_CHANGE_PASSWORD_SUCCESS,
+      payload: success,
+    };
+  },
+  postChangePasswordError: function (error) {
+    return {
+      type: ActionTypes.POST_CHANGE_PASSWORD_ERROR,
+      error,
     };
   },
 };

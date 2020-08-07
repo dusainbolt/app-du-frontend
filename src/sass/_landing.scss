@@ -282,10 +282,16 @@
 .team-carouse {
   margin-bottom: 40px;
   position: relative;
+  // &--row {
+  //   background: url(../common//image/reviewImg.png);
+
+  //   background-size: 300px 100px;
+  //   background-repeat: no-repeat;
+  // }
   &--wrapper {
     width: 80%;
     flex: none !important;
-    max-height: 270px;
+    max-height: 280px;
     margin: auto;
     box-shadow: $box-shadow-primary;
     margin-top: 100px;
@@ -376,7 +382,16 @@
   &--col-padding {
     padding: 0 2%;
   }
-
+  &--bg-right {
+    background: url("../common/image/team-left-image.png") no-repeat;
+    background-size: 300px 330px;
+    background-position: 0px 1px;
+  }
+  &--bg-left {
+    background: url("../common/image/team-right-image.png") no-repeat;
+    background-size: 300px 330px;
+    background-position: right;
+  }
   &--rows {
     width: 100%;
     &__col-one {
@@ -622,6 +637,11 @@ div.ant-popover-inner {
     background-color: $white-color;
     line-height: 0;
   }
+  &--bg {
+    width: 100%;
+    height: 500px;
+    background: url("../common/image/header-bg.png");
+  }
   .ant-skeleton {
     width: 80%;
     margin: auto;
@@ -641,34 +661,8 @@ div.ant-popover-inner {
     width: max-content;
   }
   .team-carouse {
-    &__content {
-      width: 80%;
-    }
-    &--wrapper-social {
-      height: 20%;
-      &__group {
-        transform: translateX(-50%) translateY(-20%);
-        bottom: 5px;
-        > a.icon_team {
-          > span {
-            margin: 0 8px;
-            > svg {
-              font-size: 24px;
-              color: $white-color;
-            }
-          }
-        }
-      }
-    }
-
     &--icon-left {
       top: 42%;
-    }
-
-    &--card {
-      &__image {
-        border-radius: 15px 0px 0px 0px;
-      }
     }
   }
   .container-ld {
@@ -736,29 +730,6 @@ div.ant-popover-inner {
 
     &__title-description.ant-typography {
       font-size: $base-font-size;
-    }
-  }
-
-  .team-carouse {
-    &__content {
-      width: 80%;
-      margin: auto;
-    }
-
-    &--wrapper-social {
-      &__group {
-        transform: translateX(-50%) translateY(-5%);
-        > a.icon_team {
-          > span {
-            > svg {
-              font-size: 30px;
-            }
-          }
-        }
-      }
-    }
-    ul.team-carouse--time-line {
-      max-height: 325px;
     }
   }
 
@@ -927,7 +898,7 @@ div.ant-popover-inner {
   .team-carouse {
     margin-bottom: 40px;
     &--wrapper {
-      max-height: 400px;
+      max-height: 420px;
     }
   }
 
