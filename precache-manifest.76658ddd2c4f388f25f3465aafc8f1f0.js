@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff1aa57d721cf761d6a8eaa7b251ac54",
+    "revision": "828c1c39615066cb72393be7ca1c41e3",
     "url": "/app-du-frontend/index.html"
   },
   {
-    "revision": "aca584a224b5ef992508",
-    "url": "/app-du-frontend/static/css/2.3cb76441.chunk.css"
+    "revision": "615b2539ae2be347f91e",
+    "url": "/app-du-frontend/static/css/2.9c8c8187.chunk.css"
   },
   {
-    "revision": "29da42816a92dd57f56d",
-    "url": "/app-du-frontend/static/css/main.58f0df1b.chunk.css"
+    "revision": "52a1ba7ee712c85ff4b2",
+    "url": "/app-du-frontend/static/css/main.5b9ff297.chunk.css"
   },
   {
-    "revision": "aca584a224b5ef992508",
-    "url": "/app-du-frontend/static/js/2.96d29f18.chunk.js"
+    "revision": "615b2539ae2be347f91e",
+    "url": "/app-du-frontend/static/js/2.dfb634f3.chunk.js"
   },
   {
     "revision": "cacaf3f01dd3bd8237006f7c58951c1c",
-    "url": "/app-du-frontend/static/js/2.96d29f18.chunk.js.LICENSE.txt"
+    "url": "/app-du-frontend/static/js/2.dfb634f3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "29da42816a92dd57f56d",
-    "url": "/app-du-frontend/static/js/main.622e3661.chunk.js"
+    "revision": "52a1ba7ee712c85ff4b2",
+    "url": "/app-du-frontend/static/js/main.1b55c9ed.chunk.js"
   },
   {
     "revision": "b283ec30955883165799",
@@ -76,6 +76,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/app-du-frontend/static/media/error-404.7abf9878.png"
   },
   {
+    "revision": "bf23cbd11ae8953ccb895471e36ea21e",
+    "url": "/app-du-frontend/static/media/header-bg.bf23cbd1.png"
+  },
+  {
     "revision": "c26f5df540d7e395d6221e7be04ad8cc",
     "url": "/app-du-frontend/static/media/img-top1.c26f5df5.png"
   },
@@ -126,6 +130,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3ad6c7a8da813435cf7bd380be0ffbbb",
     "url": "/app-du-frontend/static/media/sass.3ad6c7a8.png"
+  },
+  {
+    "revision": "392cd7647c7008d9d2afec937be6e621",
+    "url": "/app-du-frontend/static/media/team-left-image.392cd764.png"
+  },
+  {
+    "revision": "b860c2146e0d35ca5a2396bee71b73be",
+    "url": "/app-du-frontend/static/media/team-right-image.b860c214.png"
   },
   {
     "revision": "99c0e3e22ab92b88baa228811f764092",
