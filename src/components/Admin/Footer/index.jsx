@@ -6,18 +6,6 @@ import "./index.scss";
 
 const { Footer } = Layout;
 
-export default class commonFooter extends React.Component {
-  constructor () {
-    super();
-    console.log("11111","1111");
-  }
-
-  render () {
-
-    return (
-      <Footer style={{ textAlign: "center" }}>
-        Ekoios 2020
-      </Footer>
-    );
-  }
+export default function commonFooter() {
+  return <Footer style={{ textAlign: "center" }}>Du Sainbolt 2020</Footer>;
 }

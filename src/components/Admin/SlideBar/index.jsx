@@ -2,11 +2,7 @@ import React from "react";
 import { Menu } from "antd";
 import { AdminRoutes } from "../../../Routes";
 import { browserHistory } from "../../../utils/history";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
+import { UploadOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import "./index.scss";
 
 const icons = {
@@ -14,22 +10,20 @@ const icons = {
   task: VideoCameraOutlined,
   contact: UploadOutlined,
 };
-class Sidebar extends React.Component {
 
-  constructor(props){
-    super(props);
-  }
+function Sidebar() {
 
-  renderMenu = () => {
+  const renderMenu = () => {
     let menu = null;
     menu = AdminRoutes.map((item, index) => {
       if (index !== 0) {
-        const activeClassMenun = window.location.pathname === item.path ? "ant-menu-item-selected" : "";
+        const activeClassMenun =
+          window.location.pathname === item.path ? "ant-menu-item-selected" : "";
         return (
           <Menu.Item
             key={`${item.name}_${index}`}
-            icon={this.getIconMenu(item.iconName)}
-            onClick={() => this.gerRedirect(item.path)}
+            icon={getIconMenu(item.iconName)}
+            onClick={() => gerRedirect(item.path)}
             className={activeClassMenun}
           >
             {item.name}
@@ -39,25 +33,20 @@ class Sidebar extends React.Component {
     });
     return menu;
   };
-  
-  gerRedirect = path =>{
+
+  const gerRedirect = path => {
     return browserHistory.push(path);
   };
-  getIconMenu = iconName => {
+  const getIconMenu = iconName => {
     const Icon = icons[iconName];
     return icons ? <Icon /> : "";
   };
-  render() {
-    return (
-      <Menu
-        mode="inline"
-        theme="light"
-        className="layout-page-sider-menu"
-      >
-        {this.renderMenu()}
-      </Menu>
-    );
-  }
+
+  return (
+    <Menu mode="inline" theme="light" className="layout-page-sider-menu">
+      {renderMenu()}
+    </Menu>
+  );
 }
 
 export default Sidebar;

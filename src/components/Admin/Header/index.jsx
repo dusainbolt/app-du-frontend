@@ -8,10 +8,12 @@ import LogoHeader from "../../../common/image/LogoSidebar.png";
 import ChangePasswordModal from "./ChangePasswordModal";
 import { useMemo } from "react";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const { Paragraph } = Typography;
 
 function CommonHeader({ toggleMenu }) {
+  const { t } = useTranslation();
   const token = useSelector(state => state.loginReducer.auth?.token);
   const userDetail = useSelector(state => state.loginReducer.userDetail);
   const isLoadingChangePassword = useSelector(state => state.loginReducer.isLoadingChangePassword);

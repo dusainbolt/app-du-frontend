@@ -1,16 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import { Spin } from "antd";
-class EventLoading extends Component {
-  render() {
-    const { isLoading } = this.props;
-    return (
-      isLoading && (
-        <div className="event-loading">
-          <Spin tip="Loading..."></Spin>
-        </div>
-      )
-    );
-  }
+
+function EventLoading({ isLoading }) {
+  return (
+    isLoading && (
+      <div className="event-loading">
+        <Spin tip="Loading..."></Spin>
+      </div>
+    )
+  );
 }
 
 export default EventLoading;
