@@ -37,7 +37,7 @@ function CommonFooter() {
                 <Link to="bautroixanh/login">{t("footer.label_privacy_policy")}</Link>
               </Col>
               <Col className="my-footer__col-wrapper--label" span={24}>
-                <Link>{t("footer.label_help")}</Link>
+                <Link to="/app">{t("footer.label_help")}</Link>
               </Col>
             </Row>
           </Col>
