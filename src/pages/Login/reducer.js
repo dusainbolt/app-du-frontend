@@ -8,10 +8,6 @@ const DEFAULT_STATE = {
 
 export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-  case ActionTypes.POST_LOGIN_START:
-    return {
-      ...state,
-    };
   case ActionTypes.POST_LOGIN_SUCCESS:
     return {
       ...state,
@@ -42,10 +38,6 @@ export default (state = DEFAULT_STATE, action) => {
       ...state,
       userDetail: action.payload.data,
       isLoadingChangePassword: true,
-    };
-  case ActionTypes.POST_CHANGE_PASSWORD_ERROR:
-    return {
-      ...state,
     };
   default:
     return state;

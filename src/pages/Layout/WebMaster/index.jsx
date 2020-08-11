@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import { Layout } from "antd";
 import CommonHeader from "../../../components/Web/Header";
 import "./index.scss";
+import { showBodyHeader, showTopHeader } from "../../../common/js/function";
 import Footer from "../../../components/Web/Footer";
 
 const { Header, Content } = Layout;
@@ -13,15 +14,11 @@ function App({ component: Mycomponent, classes, name, ...remainProps }) {
 
   const handleScroll = event => {
     let scrollTop = Math.round(event.target.scrollingElement.scrollTop);
-    let headerTop = document.getElementById("header-web");
-    if (scrollTop > 400 && headerTop) {
-      headerTop.style.boxShadow = "1px 1px 5px #ddd";
-      headerTop.style.position = "fixed";
-      headerTop.style.backgroundColor = "white";
-    } else if (scrollTop < 400 && headerTop) {
-      headerTop.style.boxShadow = "none";
-      headerTop.style.position = "absolute";
-      headerTop.style.backgroundColor = "transparent";
+    let header = document.getElementById("header-web");
+    if (scrollTop > 400 && header) {
+      showTopHeader(header);
+    } else if (scrollTop < 400 && header) {
+      showBodyHeader(header);
     }
   };
   return (

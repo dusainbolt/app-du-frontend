@@ -36,3 +36,16 @@ export function* effectAfterRequest(typeMsg, msg, typeHide = 0, redirect = "") {
   }
   if(msg) yield showMessage(typeMsg, msg);
 }
+
+
+export function showTopHeader(header){
+  header.style.boxShadow = "1px 1px 5px #ddd";
+  header.style.position = "fixed";
+  header.style.backgroundColor = "white";
+}
+
+export function showBodyHeader(header){
+  header.style.boxShadow = "none";
+  header.style.position = "absolute";
+  header.style.backgroundColor = "transparent";
+}

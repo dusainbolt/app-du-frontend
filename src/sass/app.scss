@@ -213,9 +213,19 @@ button {
 }
 
 .back-top {
-  font-size: 50px;
+  font-size: 22px;
+  padding: 8px;
+  border: solid 2px $primary-color-bold;
+  border-radius: 50%;
   > svg {
     color: $primary-color-bold;
+  }
+  &:hover{
+    border-radius: 50%;
+    background-color: $primary-color-bold; 
+    > svg {
+      color: white;
+    }
   }
 }
 
