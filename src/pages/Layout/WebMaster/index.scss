@@ -3,10 +3,9 @@
     height: 60px !important;
     padding: 0;
     width: 100%;
-    position: fixed;
     line-height: 0 !important;
     transition: box-shadow .3s;
-    background: #fff !important;
+    background: transparent;
     z-index: 9;
   }
   .site-layout-web {

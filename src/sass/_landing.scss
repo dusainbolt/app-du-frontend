@@ -1,6 +1,9 @@
 .layout-web {
+  background-color: transparent !important;
   .ant-layout-header {
     padding: 0;
+    transition: position 1s;
+    background-color: transparent;
   }
 }
 
@@ -641,6 +644,9 @@ div.ant-popover-inner {
     width: 100%;
     height: 500px;
     background: url("../common/image/header-bg.png");
+    top: -30%;  
+    position: absolute;
+
   }
   .ant-skeleton {
     width: 80%;

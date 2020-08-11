@@ -14,10 +14,13 @@ function App({ component: Mycomponent, classes, name, ...remainProps }) {
   const handleScroll = event => {
     let scrollTop = Math.round(event.target.scrollingElement.scrollTop);
     let headerTop = document.getElementById("header-web");
-    if (scrollTop > 50 && headerTop) {
+    if (scrollTop > 400 && headerTop) {
       headerTop.style.boxShadow = "1px 1px 5px #ddd";
-    } else if (scrollTop < 50 && headerTop) {
+      headerTop.style.position = "fixed";
+      headerTop.style.backgroundColor = "white";
+    } else if (scrollTop < 400 && headerTop) {
       headerTop.style.boxShadow = "none";
+      headerTop.style.position = "absolute";
     }
   };
   return (
