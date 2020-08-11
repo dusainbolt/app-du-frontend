@@ -5,13 +5,13 @@ import { RightCircleFilled, LeftCircleFilled } from "@ant-design/icons";
 
 let carousel = React.createRef();
 
-function TopContent() {
+function ContactReview() {
   const [user, setUser] = useState({
     name: "Du Sainbolt",
     des:
       "A title is one or more words used before or after a person's name, in certain contexts. It may signify either veneration, an official position, or a professional or academic qualification. In some languages, titles may be inserted between the first aaa aa",
     url_avatar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRH0jj8tNxcDI8aKOESEgrPGna-RMgUvNCs8w&usqp=CAU",
+      "https://www.w3schools.com/howto/img_avatar.png",
   });
 
   const next = () => {
@@ -66,4 +66,4 @@ function TopContent() {
   );
 }
 
-export default TopContent;
+export default ContactReview;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Progress } from "antd";
 import { getTimeNowUnix, countSecondToTime } from "../../../../common/js/function";
-import { timeTopPage } from "../../../../common/js/config";
+import { timeTopPage } from "../../../../common/js/configLandingPage";
 import { useTranslation } from "react-i18next";
 
 function CountDownTimer() {

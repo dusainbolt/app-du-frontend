@@ -11,7 +11,7 @@ import FadeIn from "react-fade-in";
 
 import { Link } from "react-router-dom";
 import { Menu, Dropdown } from "antd";
-import { listLangage } from "../../../common/js/config";
+import { listLangage } from "../../../common/js/configLandingPage";
 import LogoHeader from "../../../common/image/LogoSidebar.png";
 import SideBar from "../SlideBar";
 import { useTranslation } from "react-i18next";

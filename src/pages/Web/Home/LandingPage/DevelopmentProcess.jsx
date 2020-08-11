@@ -1,10 +1,11 @@
 import React from "react";
 import { Row, Col, Timeline } from "antd";
-import { withTranslation, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { SyncOutlined } from "@ant-design/icons";
 import LazyLoading from "../../../../components/LazyLoadingImg";
-import { dataProcess } from "../../../../common/js/config";
-function TopContent() {
+import { dataProcess } from "../../../../common/js/configLandingPage";
+
+function DevelopmentProcess() {
   const { t } = useTranslation();
 
   const renderContentProcess = () => {
@@ -52,4 +53,4 @@ function TopContent() {
   );
 }
 
-export default withTranslation()(TopContent);
+export default DevelopmentProcess;
