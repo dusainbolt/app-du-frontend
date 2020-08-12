@@ -212,28 +212,6 @@ button {
   }
 }
 
-.back-top {
-  font-size: 22px;
-  padding: 8px;
-  border: solid 2px $primary-color-bold;
-  border-radius: 50%;
-  > svg {
-    color: $primary-color-bold;
-  }
-  &:hover{
-    border-radius: 50%;
-    background-color: $primary-color-bold; 
-    > svg {
-      color: white;
-    }
-  }
-}
-
-div.back-top-wrapper {
-  right: 30px;
-  bottom: 25px;
-}
-
 span.error-field {
   border-color: #ff2121;
   border-right-width: 1px !important;

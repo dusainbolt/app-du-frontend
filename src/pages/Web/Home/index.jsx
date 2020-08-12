@@ -2,7 +2,7 @@ import React from "react";
 import FadeIn from "react-fade-in";
 import TopContent from "./LandingPage/TopContent";
 import WhyInfo from "./LandingPage/WhyInfo";
-import DevelopmentProcess from "./LandingPage/DevelopmentProcess";
+import DevelopmentProcess from "./LandingPage/DevelopmentProcessTest";
 import ContactReview from "./LandingPage/ContactReview";
 import TechStack from "./LandingPage/TechStack";
 import { actions } from "../../Admin/Home/actions";

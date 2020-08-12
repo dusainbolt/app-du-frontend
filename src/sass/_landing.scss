@@ -1,5 +1,6 @@
 .layout-web {
   background-color: transparent !important;
+
   .ant-layout-header {
     padding: 0;
     transition: position 1s;
@@ -44,7 +45,7 @@
       border-radius: 50%;
       background-color: $primary-color-bold;
 
-      > svg {
+      >svg {
         color: white;
       }
 
@@ -62,11 +63,13 @@
 
     div &--process-circle {
       margin: 0px 30px 10px 0px;
+
       div.ant-progress-inner {
         width: 90px !important;
         height: 90px !important;
         font-size: $base-font-title;
       }
+
       &__value {
         display: block;
         color: $primary-color-bold;
@@ -89,8 +92,10 @@
     margin-top: 7% !important;
   }
 }
+
 .tech-stack {
   margin: 30px 0;
+
   &--wrapper {
     position: relative;
     margin-bottom: 20px;
@@ -121,6 +126,7 @@
 
   &--item-description {
     cursor: pointer;
+
     &:hover {
       color: $purple-color-bold;
     }
@@ -133,17 +139,21 @@
     border: solid 1.2px $primary-color-bold;
     height: auto;
     transition: box-shadow 0.5s;
+
     &__img {
       width: 100%;
       padding: 15%;
     }
+
     &:hover {
       box-shadow: $box-shadow-primary;
     }
   }
+
   &--col-wrapper {
     margin-bottom: 15px;
   }
+
   &--row {
     width: 90%;
     margin: auto;
@@ -157,6 +167,7 @@
   background: $white-color !important;
   border-top: 1px solid #ddd;
   box-shadow: 3px 3px 3px 3px #ddd;
+
   &__wrapper-copyright {
     position: absolute;
     background-color: $primary-color-bold;
@@ -169,6 +180,7 @@
     border-radius: 150px;
     color: $white-color;
     box-shadow: 12px 12px 11px rgba(33, 33, 33, 0.2);
+
     &--content {
       font-size: 14px;
       line-height: 14px;
@@ -176,42 +188,52 @@
       margin-top: -15px;
     }
   }
+
   &__content {
     margin-bottom: 40px !important;
   }
+
   &__google-map {
-    > iframe {
+    >iframe {
       width: 100%;
       height: 150px;
       border-radius: 15px;
       border: solid 2px $white-color;
     }
   }
+
   &__col-wrapper {
     text-align: left;
     font-size: $base-font-title;
+
     &--title {
       font-weight: 700;
     }
+
     &--label {
       margin-top: 3px;
-      > a,
+
+      >a,
       a:active {
         color: $black-color;
       }
-      > a:hover {
+
+      >a:hover {
         color: $primary-color-bold;
       }
+
       &:hover {
         cursor: pointer;
         color: $primary-color-bold;
       }
     }
+
     &--icon {
       margin-top: 8px;
       font-size: 22px;
       margin-right: 18px;
       transition: box-shadow 0.1s;
+
       &:hover {
         box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075);
         cursor: pointer;
@@ -219,15 +241,18 @@
       }
     }
   }
+
   &__image {
     float: left !important;
     width: 30%;
     margin-top: -2%;
   }
 }
+
 .ant-layout-footer {
   color: $black-color !important;
 }
+
 .ant-carousel .slick-slide {
   text-align: center;
   height: auto;
@@ -239,58 +264,79 @@
   color: #fff;
 }
 
-.ld-process {
-  .ant-timeline-item-head {
-    .anticon-sync {
-      color: $primary-color-bold;
-    }
+// .ld-process {
+//   .ant-timeline-item-head {
+//     .anticon-sync {
+//       color: $primary-color-bold;
+//     }
+//   }
+//   &--text {
+//     > label {
+//       font-size: $base-font-title;
+//       color: $black-color;
+//       font-weight: 700;
+//     }
+//     > p {
+//       font-size: $base-font-size;
+//     }
+//   }
+//   .ant-timeline-item {
+//     width: 90%;
+//     margin: auto !important;
+//   }
+//   &--item {
+//     margin-top: 15px;
+//     display: -webkit-inline-box;
+//   }
+//   &--icon-timeline {
+//     width: 61px;
+//     padding: 7px;
+//     border: solid 1.2px $primary-color-bold;
+//     border-radius: 10px;
+//     margin: 0 15px;
+//     transition: box-shadow 0.5s;
+//     > svg {
+//       color: $white-color;
+//     }
+//     &:hover {
+//       box-shadow: $box-shadow-primary;
+//     }
+//   }
+//   &--item-2 {
+//     @extend .ld-process--item;
+//   }
+// }
+
+.back-top {
+  font-size: 22px;
+  padding: 8px;
+  border: solid 2px $primary-color-bold;
+  border-radius: 50%;
+
+  >svg {
+    color: $primary-color-bold;
   }
-  &--text {
-    > label {
-      font-size: $base-font-title;
-      color: $black-color;
-      font-weight: 700;
+
+  &:hover {
+    border-radius: 50%;
+    background-color: $primary-color-bold;
+
+    >svg {
+      color: white;
     }
-    > p {
-      font-size: $base-font-size;
-    }
-  }
-  .ant-timeline-item {
-    width: 90%;
-    margin: auto !important;
-  }
-  &--item {
-    margin-top: 15px;
-    display: -webkit-inline-box;
-  }
-  &--icon-timeline {
-    width: 61px;
-    padding: 7px;
-    border: solid 1.2px $primary-color-bold;
-    border-radius: 10px;
-    margin: 0 15px;
-    transition: box-shadow 0.5s;
-    > svg {
-      color: $white-color;
-    }
-    &:hover {
-      box-shadow: $box-shadow-primary;
-    }
-  }
-  &--item-2 {
-    @extend .ld-process--item;
   }
 }
+
+div.back-top-wrapper {
+  right: 30px;
+  bottom: 25px;
+}
+
 
 .team-carouse {
   margin-bottom: 40px;
   position: relative;
-  // &--row {
-  //   background: url(../common//image/reviewImg.png);
 
-  //   background-size: 300px 100px;
-  //   background-repeat: no-repeat;
-  // }
   &--wrapper {
     width: 80%;
     flex: none !important;
@@ -301,6 +347,7 @@
     margin-bottom: 30px;
     background-color: $white-color;
   }
+
   &--img {
     box-shadow: $box-shadow-primary;
     position: absolute;
@@ -311,26 +358,32 @@
     left: calc(50% - 60px);
     top: -60px;
   }
+
   &--text-wrapper {
     padding: 0 30px;
     text-align: center;
     margin-top: 80px;
     line-height: 30px;
+
     &__title {
       font-size: 22px;
     }
+
     &__job {
       font-size: 14px;
       color: $primary-color-bold;
     }
+
     &__des {
       margin-top: 5px;
       font-size: 16px;
     }
   }
+
   .ant-carousel .slick-slide {
     line-height: 100px;
   }
+
   .ant-carousel .slick-dots li button {
     height: 15px;
     width: 15px;
@@ -341,6 +394,7 @@
   ul.slick-dots-bottom {
     bottom: -10px;
   }
+
   .ant-carousel .slick-dots li.slick-active button {
     box-shadow: $box-shadow-primary;
     background-color: $primary-color-bold;
@@ -356,7 +410,8 @@
     border-radius: 0px 45px 45px 0px;
     font-size: 35px;
     opacity: 0.7;
-    > svg {
+
+    >svg {
       color: $primary-color-bold;
     }
   }
@@ -377,26 +432,32 @@
     max-width: 80%;
     flex: 0 0 80%;
   }
+
   .skeleton-title {
     &.ant-skeleton-input {
       height: 25px;
     }
   }
+
   &--col-padding {
     padding: 0 2%;
   }
+
   &--bg-right {
     background: url("../common/image/team-left-image.png") no-repeat;
     background-size: 300px 330px;
     background-position: 0px 1px;
   }
+
   &--bg-left {
     background: url("../common/image/team-right-image.png") no-repeat;
     background-size: 300px 330px;
     background-position: right;
   }
+
   &--rows {
     width: 100%;
+
     &__col-one {
       margin-top: 20px;
       transition: box-shadow 0.5s;
@@ -404,8 +465,10 @@
       color: $black-color;
       height: 100%;
       border-radius: 30px;
+
       &--item {
         text-align: center;
+
         &__icon {
           margin: 20px 10px;
           background-color: white;
@@ -414,7 +477,7 @@
           padding: 20px;
           border-radius: 50%;
 
-          > svg {
+          >svg {
             color: $primary-color-bold;
           }
         }
@@ -442,24 +505,30 @@
     &__col-two {
       @extend .container-ld--rows__col-one;
       color: $black-color;
+
       &--item {
         text-align: center;
+
         &__icon {
           @extend .container-ld--rows__col-one--item__icon;
           background-color: $primary-color-bold;
-          > svg {
+
+          >svg {
             color: $white-color;
           }
         }
       }
+
       &--content {
         text-align: center;
+
         &__title.ant-typography {
           color: $black-color;
           font-size: $base-font-title;
           font-weight: 800;
           padding: 0 10px;
         }
+
         &__description.ant-typography {
           @extend .container-ld--rows__col-one--content__description;
         }
@@ -474,6 +543,7 @@
     font-weight: 700;
     margin-top: 50px;
   }
+
   &--title-description {
     font-size: 15px;
     line-height: 26px;
@@ -483,6 +553,7 @@
     padding: 0 10px;
     margin-top: 10px;
   }
+
   &--title {
     @extend .container-ld--title.ant-typography;
     width: 100%;
@@ -490,9 +561,14 @@
   }
 }
 
-// .ant-carousel .slick-slide {
-//   background-color: $primary-color-bold;
-// }
+.layout-web {
+  .ld-step {
+    width: 80%;
+    margin: auto;
+    display: block;
+  }
+}
+
 
 .ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
   stroke: $primary-color-bold !important;
@@ -534,13 +610,13 @@ div.ant-popover-inner {
   }
 
   &__language {
-    > ul {
+    >ul {
       border-radius: 10px;
       overflow: hidden;
       padding: 0px;
       box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08);
 
-      > li {
+      >li {
         padding: 10px 15px;
         color: $primary-color-bold;
         font-weight: 700;
@@ -556,7 +632,7 @@ div.ant-popover-inner {
   &__web {
     position: relative;
 
-    > img {
+    >img {
       position: absolute;
       left: 50px;
       top: 3px;
@@ -569,7 +645,7 @@ div.ant-popover-inner {
     &--display-mobie {
       display: none;
 
-      &--icon > svg {
+      &--icon>svg {
         position: absolute;
         color: $primary-color-bold;
         font-size: 30px;
@@ -579,7 +655,7 @@ div.ant-popover-inner {
     }
 
     &--menu {
-      > ul {
+      >ul {
         position: absolute;
         list-style-type: none;
         right: 15px;
@@ -588,10 +664,11 @@ div.ant-popover-inner {
         text-overflow: ellipsis;
         overflow: hidden;
 
-        > li {
+        >li {
           margin-right: 20px;
           float: left;
-          > a {
+
+          >a {
             display: block;
             color: $primary-color-bold;
             text-align: center;
@@ -601,6 +678,7 @@ div.ant-popover-inner {
             border-radius: 150px;
             border: solid 1px $primary-color-bold;
             text-decoration: none;
+
             &:hover {
               color: white;
               background-color: $purple-color-bold;
@@ -608,19 +686,19 @@ div.ant-popover-inner {
             }
           }
 
-          > p.dropdown-language {
+          >p.dropdown-language {
             margin-top: 11px;
             cursor: pointer;
             font-size: $base-font-size;
             color: $primary-color-bold;
             font-weight: 550;
 
-            > span.anticon-global {
+            >span.anticon-global {
               font-size: $base-font-size;
               margin-right: 3px;
             }
 
-            > span.anticon-down {
+            >span.anticon-down {
               margin-left: 3px;
             }
           }
@@ -639,22 +717,26 @@ div.ant-popover-inner {
   .ant-carousel .slick-slide {
     line-height: 0;
   }
+
   &--bg {
     width: 100%;
     height: 500px;
     background: url("../common/image/header-bg.png");
-    top: -30%;  
+    top: -30%;
     position: absolute;
 
   }
+
   .ant-skeleton {
     width: 80%;
     margin: auto;
     margin-top: 5%;
   }
+
   .ant-skeleton-element {
     display: table;
   }
+
   .ant-skeleton-element .ant-skeleton-button-lg {
     width: 100%;
     height: 200px;
@@ -665,32 +747,39 @@ div.ant-popover-inner {
   .title-top-right__icon-group-detail--container {
     width: max-content;
   }
+
   .team-carouse {
     &--icon-left {
       top: 42%;
     }
   }
+
   .container-ld {
     .container-ld__content_center {
       max-width: 95%;
       flex: 0 0 95%;
     }
   }
+
   .tech-stack {
     &--title {
       text-align: center;
     }
+
     &--item-title {
       margin-top: 10px;
     }
+
     &--col-stack {
       margin: auto;
       width: 30%;
     }
+
     &--wrapper {
       text-align: center;
     }
   }
+
   .my-footer {
     &__image {
       width: 70%;
@@ -751,29 +840,34 @@ div.ant-popover-inner {
         }
       }
     }
+
     .container-ld__content_center {
       max-width: 95%;
       flex: 0 0 95%;
     }
   }
+
   .header {
     &__web {
       &--menu {
-        > ul {
-          > li {
+        >ul {
+          >li {
             margin-right: 15px;
-            > a {
+
+            >a {
               font-weight: 650;
               padding: 10px 7px;
               font-size: $base-font-size;
             }
-            > p.dropdown-language {
+
+            >p.dropdown-language {
               margin-top: 13px;
               cursor: pointer;
               color: $primary-color-bold;
               font-weight: 650;
               font-size: $base-font-size;
-              > span.anticon-global {
+
+              >span.anticon-global {
                 font-size: $base-font-size;
                 margin-right: 3px;
               }
@@ -786,8 +880,14 @@ div.ant-popover-inner {
 }
 
 @media (max-width: 414px) {
+
   .rp-mobie {
     display: inline-block !important;
+  }
+
+  div.back-top-wrapper {
+    right: 15px;
+    bottom: 25px;
   }
 
   .tech-stack {
@@ -795,10 +895,12 @@ div.ant-popover-inner {
       width: 20%;
       margin-left: 5%;
     }
+
     div &--col-wrapper {
       display: flex;
       text-align: left;
     }
+
     &--item-wrapper {
       width: 68%;
     }
@@ -830,6 +932,16 @@ div.ant-popover-inner {
       }
     }
   }
+
+  .layout-web {
+    .ld-step {
+      width: 90%;
+      .ant-steps-horizontal{
+        display: -webkit-box;
+      }
+    }
+  }
+  
 
   .team-carouse {
     ul.team-carouse--time-line {
@@ -863,12 +975,15 @@ div.ant-popover-inner {
       width: 50%;
       margin: 0 25%;
     }
+
     &__col-wrapper {
       text-align: center;
+
       &--label {
         text-align: center;
       }
     }
+
     &__icon-wrapper {
       padding-left: 15px;
     }
@@ -888,7 +1003,7 @@ div.ant-popover-inner {
         display: none;
       }
 
-      > img {
+      >img {
         left: 10px;
       }
 
@@ -902,6 +1017,7 @@ div.ant-popover-inner {
 
   .team-carouse {
     margin-bottom: 40px;
+
     &--wrapper {
       max-height: 420px;
     }
@@ -912,10 +1028,12 @@ div.ant-popover-inner {
       font-size: 22px;
     }
   }
+
   .ld-process {
     &--item {
       display: block;
     }
+
     &--text {
       margin: 10px 15px;
       word-break: initial;
