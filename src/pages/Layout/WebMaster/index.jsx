@@ -21,6 +21,7 @@ function App({ component: Mycomponent, classes, name, ...remainProps }) {
     } else if (scrollTop < 400 && headerTop) {
       headerTop.style.boxShadow = "none";
       headerTop.style.position = "absolute";
+      headerTop.style.backgroundColor = "transparent";
     }
   };
   return (
