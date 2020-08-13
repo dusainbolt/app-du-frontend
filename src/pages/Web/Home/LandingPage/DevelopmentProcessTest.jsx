@@ -1,8 +1,19 @@
 import React from "react";
 import { Steps, Button, message, Row, Col } from "antd";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
-
+import FadeIn from "react-fade-in";
+import {
+  SafetyCertificateOutlined,
+  AuditOutlined,
+  ApiOutlined,
+  StarOutlined,
+  CommentOutlined,
+  HeartOutlined,
+} from "@ant-design/icons";import { useTranslation } from "react-i18next";
+import ImgTop4 from "../../../../common/image/img-top4.png";
+import ImgTop3 from "../../../../common/image/img-top3.png";
+import ImgTop2 from "../../../../common/image/img-top1.png";
+import ImgTop1 from "../../../../common/image/img-top1.png";
 const { Step } = Steps;
 
 function DevelopmentProcess() {
@@ -23,7 +34,7 @@ function DevelopmentProcess() {
     },
     {
       title: t("ld_process.title_2"),
-      content: () => renderStepOne(),
+      content: () => renderStepTwo(),
     },
     {
       title: t("ld_process.title_3"),
@@ -42,11 +53,34 @@ function DevelopmentProcess() {
   const renderStepOne = () => {
     return (
       <Row>
-        <Col xs={{ span: 24 }} sm={{ span: 12 }}>
-          Image
+        <Col md={{ span: 24 }} lg={{ span: 14 }}>
+          <img className="ld-step__img" src={ImgTop3} alt="img" />
         </Col>
-        <Col xs={{ span: 24 }} sm={{ span: 12 }}>
-          Text
+        <Col md={{ span: 24 }} lg={{ span: 10 }}>
+          <div className="ld-step__content-wrapper">
+            <h2 className="ld-step__content-wrapper--title">1.PLANNING</h2>
+            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
+            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
+            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
+            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
+            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
+          </div>
+        </Col>
+      </Row>
+    );
+  };
+
+  const renderStepTwo = () => {
+    return (
+      <Row>
+        <Col md={{ span: 24 }} lg={{ span: 14 }}>
+          <img className="ld-step__img" src={ImgTop2} alt="img" />
+        </Col>
+        <Col md={{ span: 24 }} lg={{ span: 10 }}>
+          <div className="ld-step__content-wrapper">
+            <h2 className="ld-step__content-wrapper--title">1.DESIGN</h2>
+            <label>sdsdsd</label>
+          </div>
         </Col>
       </Row>
     );

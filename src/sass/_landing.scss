@@ -569,6 +569,28 @@ div.back-top-wrapper {
     .ant-steps{
       display: none;
     }
+    &__img{
+      width: 100%;
+    }
+    &__content-wrapper{
+      height: 100%;
+      padding-left: 65px;
+      &--title{
+        padding-top: 35px;
+        font-size: 50px;
+        font-weight: 700;
+      }
+      &--para{
+        font-size: 18px;
+        display: block;
+        margin-bottom: 15px;
+        >span{
+          margin-right: 5px;
+          font-size: 20px;
+          color: $primary-color-bold;
+        }
+      }
+    }
   }
 }
 
@@ -880,6 +902,36 @@ div.ant-popover-inner {
       }
     }
   }
+  .layout-web {
+    .ld-step {
+      width: 100%;
+      &__img{
+        width: 80%;
+        margin-left: 10%;
+      }
+      &__content-wrapper{
+        height: 100%;
+        padding-left: 0;
+        text-align: center;
+        &--title{
+          padding-top: 35px;
+          font-size: 50px;
+          font-weight: 700;
+        }
+        &--para{
+          font-size: 18px;
+          display: inline-grid;
+          margin-bottom: 15px;
+          padding: 10px;
+          >span{
+            margin-right: 5px;
+            font-size: 20px;
+            color: $primary-color-bold;
+          }
+        }
+      }
+    }
+  }  
 }
 
 @media (max-width: 414px) {
@@ -940,6 +992,15 @@ div.ant-popover-inner {
     .ld-step {
       .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item{
         padding-left: 0;
+      }
+      &__content-wrapper{
+        width: 95%;
+        margin: auto;
+        &--title{
+          padding-top: 35px;
+          font-size: 35px;
+          font-weight: 700;
+        }
       }
     }
   }
