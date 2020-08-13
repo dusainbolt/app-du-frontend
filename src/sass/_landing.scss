@@ -566,6 +566,9 @@ div.back-top-wrapper {
     width: 80%;
     margin: auto;
     display: block;
+    .ant-steps{
+      display: none;
+    }
   }
 }
 
@@ -935,9 +938,8 @@ div.ant-popover-inner {
 
   .layout-web {
     .ld-step {
-      width: 90%;
-      .ant-steps-horizontal{
-        display: -webkit-box;
+      .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item{
+        padding-left: 0;
       }
     }
   }
