@@ -591,6 +591,24 @@ div.back-top-wrapper {
         }
       }
     }
+    .steps-action{
+      text-align: center;
+      margin-top: 20px;
+      .btn-next{
+        background: $primary-color-bold;
+        border-color: $primary-color-bold;
+        width: 100px;
+      }
+      .btn-previous{
+        color: $primary-color-bold;
+        border-color: $primary-color-bold;
+      }
+      .btn-done{
+        color: $white-color;
+        border-color: $green-color;
+        background-color: $green-color;
+      }
+    }
   }
 }
 
@@ -919,13 +937,13 @@ div.ant-popover-inner {
           font-weight: 700;
         }
         &--para{
-          font-size: 18px;
+          font-size: 16px;
           display: inline-grid;
           margin-bottom: 15px;
           padding: 10px;
           >span{
             margin-right: 5px;
-            font-size: 20px;
+            font-size: 18px;
             color: $primary-color-bold;
           }
         }
@@ -933,6 +951,7 @@ div.ant-popover-inner {
     }
   }  
 }
+
 
 @media (max-width: 414px) {
 

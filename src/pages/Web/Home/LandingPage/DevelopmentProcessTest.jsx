@@ -1,7 +1,6 @@
 import React from "react";
 import { Steps, Button, message, Row, Col } from "antd";
 import { useState } from "react";
-import FadeIn from "react-fade-in";
 import {
   SafetyCertificateOutlined,
   AuditOutlined,
@@ -9,11 +8,10 @@ import {
   StarOutlined,
   CommentOutlined,
   HeartOutlined,
-} from "@ant-design/icons";import { useTranslation } from "react-i18next";
-import ImgTop4 from "../../../../common/image/img-top4.png";
+} from "@ant-design/icons";
+import Lazyload from "../../../../components/LazyLoadingImg";
+import { useTranslation } from "react-i18next";
 import ImgTop3 from "../../../../common/image/img-top3.png";
-import ImgTop2 from "../../../../common/image/img-top1.png";
-import ImgTop1 from "../../../../common/image/img-top1.png";
 const { Step } = Steps;
 
 function DevelopmentProcess() {
@@ -27,88 +25,95 @@ function DevelopmentProcess() {
     setCurrent(current - 1);
   };
 
-  const steps = [
+  const dataStep = [
     {
       title: t("ld_process.title_1"),
-      content: () => renderStepOne(),
+      img: ImgTop3,
+      content: t("ld_process.des_1"),
+      icon: [CommentOutlined, ApiOutlined, HeartOutlined, StarOutlined],
     },
     {
       title: t("ld_process.title_2"),
-      content: () => renderStepTwo(),
     },
     {
       title: t("ld_process.title_3"),
-      content: () => renderStepOne(),
     },
     {
       title: t("ld_process.title_4"),
-      content: () => renderStepOne(),
     },
     {
       title: t("ld_process.title_5"),
-      content: () => renderStepOne(),
     },
   ];
 
-  const renderStepOne = () => {
+  const steps = [
+    {
+      content: () => renderStepOne(dataStep[0], [1, 2]),
+    },
+    {
+      content: () => renderStepOne(dataStep[0], [2, 1]),
+    },
+    {
+      content: () => renderStepOne(dataStep[0], [1, 2]),
+    },
+    {
+      content: () => renderStepOne(dataStep[0], [2, 1]),
+    },
+    {
+      content: () => renderStepOne(dataStep[0], [1, 2]),
+    },
+  ];
+
+  const renderStepOne = (data, order) => {
     return (
       <Row>
-        <Col md={{ span: 24 }} lg={{ span: 14 }}>
-          <img className="ld-step__img" src={ImgTop3} alt="img" />
+        <Col md={{ span: 24, order: 1 }} lg={{ span: 14, order: order[0] }}>
+          <Lazyload className="ld-step__img" src={data.img} alt="image" />
         </Col>
-        <Col md={{ span: 24 }} lg={{ span: 10 }}>
+        <Col md={{ span: 24, order: 2 }} lg={{ span: 10, order: order[1] }}>
           <div className="ld-step__content-wrapper">
-            <h2 className="ld-step__content-wrapper--title">1.PLANNING</h2>
-            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
-            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
-            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
-            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
-            <label className="ld-step__content-wrapper--para"><SafetyCertificateOutlined className=""/>sdsdsdsds</label>
+            <h2 className="ld-step__content-wrapper--title">{data.title}</h2>
+            {renderContentStep(data)}
           </div>
         </Col>
       </Row>
     );
   };
 
-  const renderStepTwo = () => {
-    return (
-      <Row>
-        <Col md={{ span: 24 }} lg={{ span: 14 }}>
-          <img className="ld-step__img" src={ImgTop2} alt="img" />
-        </Col>
-        <Col md={{ span: 24 }} lg={{ span: 10 }}>
-          <div className="ld-step__content-wrapper">
-            <h2 className="ld-step__content-wrapper--title">1.DESIGN</h2>
-            <label>sdsdsd</label>
-          </div>
-        </Col>
-      </Row>
-    );
+  const renderContentStep = data => {
+    const listContent = data.content.split(",");
+    return listContent.map((value, index) => {
+      const Icon = data.icon[index];
+      return (
+        <label key={value} className="ld-step__content-wrapper--para">
+          <Icon /> {value}
+        </label>
+      );
+    });
   };
 
   return (
     <Row className="ld-step">
       <div className="container-ld--title">{t("development_process.process_title")}</div>
-      <Steps current={current}>
-        {steps.map(item => (
-          <Step key={item.title} title={item.title} />
-        ))}
-      </Steps>
       <div className="steps-content">{steps[current].content()}</div>
       <div className="steps-action">
         {current < steps.length - 1 && (
-          <Button type="primary" onClick={next()}>
-            Next
+          <Button className="btn-next" type="primary" onClick={next()}>
+            {`${t("ld_process.step")} ${current + 2}`}
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success("Processing complete!")}>
-            Done
+          <Button
+            className="btn-done"
+            type="primary"
+            onClick={() => message.success("Processing complete!")}
+          >
+            {t("ld_process.done")}
           </Button>
         )}
         {current > 0 && (
-          <Button style={{ margin: "0 8px" }} onClick={prev()}>
-            Previous
+          <Button className="btn-previous" style={{ margin: "0 8px" }} onClick={prev()}>
+            {t("ld_process.previous")}
           </Button>
         )}
       </div>
