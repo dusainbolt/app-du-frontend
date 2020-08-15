@@ -2,12 +2,21 @@ import React from "react";
 import { Steps, Button, message, Row, Col } from "antd";
 import { useState } from "react";
 import {
-  SafetyCertificateOutlined,
-  AuditOutlined,
-  ApiOutlined,
-  StarOutlined,
+  PieChartOutlined,
+  BulbOutlined,
+  RocketOutlined,
   CommentOutlined,
-  HeartOutlined,
+  BorderOuterOutlined,
+  BugOutlined,
+  CheckOutlined,
+  LockOutlined,
+  AppstoreAddOutlined,
+  PicLeftOutlined,
+  RiseOutlined,
+  BarChartOutlined,
+  ToolOutlined,
+  FileDoneOutlined,
+  SecurityScanOutlined,
 } from "@ant-design/icons";
 import Lazyload from "../../../../components/LazyLoadingImg";
 import { useTranslation } from "react-i18next";
@@ -30,19 +39,31 @@ function DevelopmentProcess() {
       title: t("ld_process.title_1"),
       img: ImgTop3,
       content: t("ld_process.des_1"),
-      icon: [CommentOutlined, ApiOutlined, HeartOutlined, StarOutlined],
+      icon: [CommentOutlined, BulbOutlined, PieChartOutlined, AppstoreAddOutlined],
     },
     {
       title: t("ld_process.title_2"),
+      img: ImgTop3,
+      content: t("ld_process.des_2"),
+      icon: [BorderOuterOutlined, PicLeftOutlined, CheckOutlined],
     },
     {
       title: t("ld_process.title_3"),
+      img: ImgTop3,
+      content: t("ld_process.des_3"),
+      icon: [CommentOutlined, BulbOutlined, PieChartOutlined, AppstoreAddOutlined],
     },
     {
       title: t("ld_process.title_4"),
+      img: ImgTop3,
+      content: t("ld_process.des_4"),
+      icon: [RiseOutlined, SecurityScanOutlined, BugOutlined, FileDoneOutlined],
     },
     {
       title: t("ld_process.title_5"),
+      img: ImgTop3,
+      content: t("ld_process.des_5"),
+      icon: [LockOutlined, BarChartOutlined, ToolOutlined, RocketOutlined],
     },
   ];
 
@@ -51,16 +72,16 @@ function DevelopmentProcess() {
       content: () => renderStepOne(dataStep[0], [1, 2]),
     },
     {
-      content: () => renderStepOne(dataStep[0], [2, 1]),
+      content: () => renderStepOne(dataStep[1], [2, 1]),
     },
     {
-      content: () => renderStepOne(dataStep[0], [1, 2]),
+      content: () => renderStepOne(dataStep[2], [1, 2]),
     },
     {
-      content: () => renderStepOne(dataStep[0], [2, 1]),
+      content: () => renderStepOne(dataStep[3], [2, 1]),
     },
     {
-      content: () => renderStepOne(dataStep[0], [1, 2]),
+      content: () => renderStepOne(dataStep[4], [1, 2]),
     },
   ];
 
@@ -70,7 +91,7 @@ function DevelopmentProcess() {
         <Col md={{ span: 24, order: 1 }} lg={{ span: 14, order: order[0] }}>
           <Lazyload className="ld-step__img" src={data.img} alt="image" />
         </Col>
-        <Col md={{ span: 24, order: 2 }} lg={{ span: 10, order: order[1] }}>
+        <Col className="ld-step__col-content" md={{ span: 24, order: 2 }} lg={{ span: 10, order: order[1] }}>
           <div className="ld-step__content-wrapper">
             <h2 className="ld-step__content-wrapper--title">{data.title}</h2>
             {renderContentStep(data)}

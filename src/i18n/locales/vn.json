@@ -96,9 +96,9 @@
     "previous": "Trước đó",
     "done": "Hoàn thành",
     "des_1": "Client Meeting, Client Requirement, Analysis, Collect Data",
-    "des_2": "Wireframe layout, Prototype Design, Design Signoff",
+    "des_2": "Wireframe layout, Prototype Design, Design Sign off",
     "des_3": "Client Meeting, Client Requirement, Analysis, Collect Data",
-    "des_4": "Design Quality, Testing, Approval",
-    "des_5": "Maintenance"
+    "des_4": "Design Quality, Testing, Error detection, Approval",
+    "des_5": "Security & performance, The Stability, Revision, Upgrade"
   }
 }

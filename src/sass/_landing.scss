@@ -566,44 +566,60 @@ div.back-top-wrapper {
     width: 80%;
     margin: auto;
     display: block;
-    .ant-steps{
+
+    .ant-steps {
       display: none;
     }
-    &__img{
+
+    &__col-content {
       width: 100%;
     }
-    &__content-wrapper{
+
+    &__img {
+      width: 100%;
+    }
+
+    &__content-wrapper {
       height: 100%;
       padding-left: 65px;
-      &--title{
+
+      &--title {
         padding-top: 35px;
         font-size: 50px;
         font-weight: 700;
       }
-      &--para{
+
+      &--para {
         font-size: 18px;
+        color: $black-color-light;
+        font-weight: 500;
         display: block;
         margin-bottom: 15px;
-        >span{
+
+        >span {
           margin-right: 5px;
           font-size: 20px;
           color: $primary-color-bold;
         }
       }
     }
-    .steps-action{
+
+    .steps-action {
       text-align: center;
       margin-top: 20px;
-      .btn-next{
+
+      .btn-next {
         background: $primary-color-bold;
         border-color: $primary-color-bold;
         width: 100px;
       }
-      .btn-previous{
+
+      .btn-previous {
         color: $primary-color-bold;
         border-color: $primary-color-bold;
       }
-      .btn-done{
+
+      .btn-done {
         color: $white-color;
         border-color: $green-color;
         background-color: $green-color;
@@ -920,28 +936,34 @@ div.ant-popover-inner {
       }
     }
   }
+
   .layout-web {
     .ld-step {
       width: 100%;
-      &__img{
+
+      &__img {
         width: 80%;
         margin-left: 10%;
       }
-      &__content-wrapper{
+
+      &__content-wrapper {
         height: 100%;
         padding-left: 0;
         text-align: center;
-        &--title{
+
+        &--title {
           padding-top: 35px;
           font-size: 50px;
           font-weight: 700;
         }
-        &--para{
+
+        &--para {
           font-size: 16px;
           display: inline-grid;
           margin-bottom: 15px;
           padding: 10px;
-          >span{
+
+          >span {
             margin-right: 5px;
             font-size: 18px;
             color: $primary-color-bold;
@@ -949,7 +971,7 @@ div.ant-popover-inner {
         }
       }
     }
-  }  
+  }
 }
 
 
@@ -1009,13 +1031,15 @@ div.ant-popover-inner {
 
   .layout-web {
     .ld-step {
-      .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item{
+      .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item {
         padding-left: 0;
       }
-      &__content-wrapper{
+
+      &__content-wrapper {
         width: 95%;
         margin: auto;
-        &--title{
+
+        &--title {
           padding-top: 35px;
           font-size: 35px;
           font-weight: 700;
@@ -1023,7 +1047,7 @@ div.ant-popover-inner {
       }
     }
   }
-  
+
 
   .team-carouse {
     ul.team-carouse--time-line {
