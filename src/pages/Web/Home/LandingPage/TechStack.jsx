@@ -3,8 +3,9 @@ import { Row, Col, Tooltip } from "antd";
 import { useTranslation } from "react-i18next";
 import ImgWrapper from "../../../../common/image/wrapper-tech-stack-06-06-06.png";
 import LazyloadImg from "../../../../components/LazyLoadingImg";
-import { Modal } from "antd";
 import { listStackBackEnd, listStackFontEnd } from "../../../../common/js/configLandingPage";
+import { useMemo } from "react";
+import ModalCommon from "../../../../components/Modal";
 
 function TechStack() {
   const [visible, setVisible] = useState(false);
@@ -45,10 +46,31 @@ function TechStack() {
   };
 
   const openModal = item => () => {
-    const { title, content, img } = item;
-    setContentModal({ title, content, img });
+    const { title, label, img } = item;
+    setContentModal({ title, label, img });
     setVisible(true);
   };
+
+  const renderContentDetail = () => {
+    return (
+      <div className="modal__detail-stack">
+        <img className="modal-ld__img" src={contentModal.img} />
+        <h3>{contentModal.label}</h3>
+      </div>
+    );
+  };
+
+  const renderDetailTechStack = useMemo(() => {
+    return (
+      <ModalCommon
+        title={contentModal.title}
+        width={500}
+        visible={visible}
+        content={renderContentDetail()}
+        onCancel={hideModal}
+      ></ModalCommon>
+    );
+  }, [visible]);
 
   return (
     <Row>
@@ -73,21 +95,7 @@ function TechStack() {
           </Col>
         </Row>
       </Col>
-      <Modal title={contentModal.title} visible={visible} onCancel={hideModal} footer={null}>
-        <div className="form-group">
-          <img className="modal-ld__img" src={contentModal.img} />
-          <span className="modal-ld__img--text">
-            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss ssssssssssssssssssss
-            ssssssssssssssssssss sssssssssssss ssssssssssssssssssss ssssssssssssssssssss
-            sssssssssssss ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
-            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss ssssssssssssssssssss
-            ssssssssssssssssssss sssssssssssss ssssssssssssssssssss ssssssssssssssssssss
-            sssssssssssss ssssssssssssssssssss ssssssssssssssssssss sssssssssssss
-            ssssssssssssssssssss ssssssssssssssssssss sssssssssssss ssssssssssssssssssss
-            ssssssssssssssssssss sssssssssssss
-          </span>
-        </div>
-      </Modal>
+      {renderDetailTechStack}
     </Row>
   );
 }

@@ -29,8 +29,9 @@
     color: $black-color-light;
   }
 
-  &--button {
+  &--button.ant-btn{
     width: 210px;
+    height: 40px;
     text-align: center;
   }
 
@@ -607,23 +608,6 @@ div.back-top-wrapper {
     .steps-action {
       text-align: center;
       margin-top: 20px;
-
-      .btn-next {
-        background: $primary-color-bold;
-        border-color: $primary-color-bold;
-        width: 100px;
-      }
-
-      .btn-previous {
-        color: $primary-color-bold;
-        border-color: $primary-color-bold;
-      }
-
-      .btn-done {
-        color: $white-color;
-        border-color: $green-color;
-        background-color: $green-color;
-      }
     }
   }
 }
@@ -812,7 +796,17 @@ div.ant-popover-inner {
       top: 42%;
     }
   }
+ .layout-web{
+  .ld-step{
+    &__content-wrapper {
+      &--title {
+        font-size: 35px;
+        width: 350px;
+      }
+    }
+  }
 
+ }
   .container-ld {
     .container-ld__content_center {
       max-width: 95%;

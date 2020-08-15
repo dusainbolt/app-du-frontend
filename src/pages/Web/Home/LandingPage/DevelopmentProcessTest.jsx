@@ -1,5 +1,5 @@
 import React from "react";
-import { Steps, Button, message, Row, Col } from "antd";
+import { Steps, message, Row, Col } from "antd";
 import { useState } from "react";
 import {
   PieChartOutlined,
@@ -20,8 +20,8 @@ import {
 } from "@ant-design/icons";
 import Lazyload from "../../../../components/LazyLoadingImg";
 import { useTranslation } from "react-i18next";
+import ButtonCommon from "../../../../components/Button";
 import ImgTop3 from "../../../../common/image/img-top3.png";
-const { Step } = Steps;
 
 function DevelopmentProcess() {
   const [current, setCurrent] = useState(0);
@@ -91,7 +91,11 @@ function DevelopmentProcess() {
         <Col md={{ span: 24, order: 1 }} lg={{ span: 14, order: order[0] }}>
           <Lazyload className="ld-step__img" src={data.img} alt="image" />
         </Col>
-        <Col className="ld-step__col-content" md={{ span: 24, order: 2 }} lg={{ span: 10, order: order[1] }}>
+        <Col
+          className="ld-step__col-content"
+          md={{ span: 24, order: 2 }}
+          lg={{ span: 10, order: order[1] }}
+        >
           <div className="ld-step__content-wrapper">
             <h2 className="ld-step__content-wrapper--title">{data.title}</h2>
             {renderContentStep(data)}
@@ -119,23 +123,28 @@ function DevelopmentProcess() {
       <div className="steps-content">{steps[current].content()}</div>
       <div className="steps-action">
         {current < steps.length - 1 && (
-          <Button className="btn-next" type="primary" onClick={next()}>
-            {`${t("ld_process.step")} ${current + 2}`}
-          </Button>
+          <ButtonCommon
+            className="btn-primary"
+            type="primary"
+            onClick={next()}
+            title={`${t("ld_process.step")} ${current + 2}`}
+          />
         )}
         {current === steps.length - 1 && (
-          <Button
-            className="btn-done"
+          <ButtonCommon
+            className="btn-green"
             type="primary"
             onClick={() => message.success("Processing complete!")}
-          >
-            {t("ld_process.done")}
-          </Button>
+            title={t("ld_process.done")}
+          />
         )}
         {current > 0 && (
-          <Button className="btn-previous" style={{ margin: "0 8px" }} onClick={prev()}>
-            {t("ld_process.previous")}
-          </Button>
+          <ButtonCommon
+            className="btn-outline-primary"
+            title={t("ld_process.previous")}
+            style={{ margin: "0 8px" }}
+            onClick={prev()}
+          />
         )}
       </div>
     </Row>

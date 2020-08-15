@@ -28,8 +28,8 @@ function TopContent() {
         <div className="title-top-right__icon-group">
           <Button
             type="submit"
-            className="login__form--button white-color title-top-right--button"
-            buttonTitle={t("landing_page.button_subscribe_top")}
+            className="title-top-right--button btn-primary"
+            title={t("landing_page.button_subscribe_top")}
           />
         </div>
       </div>

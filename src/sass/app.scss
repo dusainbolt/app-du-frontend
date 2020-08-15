@@ -4,8 +4,9 @@ $black-color: #000;
 $purple-color-bold: #8145f0;
 $purple-color-light: #b896f6;
 $primary-color-bold: #4961ea;
-$primary-color-light: #3f51b563;
+$primary-color-light: #7487f7e6;
 $green-color: #04d786;
+$green-color-light: #56ecb3;
 $gray-color-bold: #9fafc1;
 $gray-color-light: #c9d3dd;
 $red-color: #f76060;
@@ -83,17 +84,6 @@ input {
 input::placeholder {
   font-size: $base-font-size * 0.75;
   color: $gray-color-bold;
-}
-
-button {
-  color: $white-color;
-  padding: 8px 15px;
-  border: none;
-  outline: none;
-  border-radius: 100px;
-  background-color: $primary-color-bold;
-  font-family: $base-font-family;
-  cursor: pointer;
 }
 
 .required {
@@ -231,7 +221,8 @@ span.ant-input-affix-wrapper {
   border-radius: 8px;
 }
 
-@import "./_login.scss";
-@import "./_form.scss";
-@import "./_modal.scss";
-@import "./landing.scss";
+@import "./_login";
+@import "./_form";
+@import "./_modal";
+@import "./_landing";
+@import "./_button";
