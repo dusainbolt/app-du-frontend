@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/app-du-frontend/static/css/main.4e95a51c.chunk.css",
-    "main.js": "/app-du-frontend/static/js/main.49127ac2.chunk.js",
-    "main.js.map": "/app-du-frontend/static/js/main.49127ac2.chunk.js.map",
+    "main.css": "/app-du-frontend/static/css/main.a0f9eda2.chunk.css",
+    "main.js": "/app-du-frontend/static/js/main.681123d7.chunk.js",
+    "main.js.map": "/app-du-frontend/static/js/main.681123d7.chunk.js.map",
     "runtime-main.js": "/app-du-frontend/static/js/runtime-main.697c4963.js",
     "runtime-main.js.map": "/app-du-frontend/static/js/runtime-main.697c4963.js.map",
     "static/css/2.9c8c8187.chunk.css": "/app-du-frontend/static/css/2.9c8c8187.chunk.css",
-    "static/js/2.d6736410.chunk.js": "/app-du-frontend/static/js/2.d6736410.chunk.js",
-    "static/js/2.d6736410.chunk.js.map": "/app-du-frontend/static/js/2.d6736410.chunk.js.map",
+    "static/js/2.e72a7ecb.chunk.js": "/app-du-frontend/static/js/2.e72a7ecb.chunk.js",
+    "static/js/2.e72a7ecb.chunk.js.map": "/app-du-frontend/static/js/2.e72a7ecb.chunk.js.map",
     "index.html": "/app-du-frontend/index.html",
-    "precache-manifest.8f3474f03b9c5910ab5baa77b87d2d0e.js": "/app-du-frontend/precache-manifest.8f3474f03b9c5910ab5baa77b87d2d0e.js",
+    "precache-manifest.4e314ecd017d74481dc3aebb26353788.js": "/app-du-frontend/precache-manifest.4e314ecd017d74481dc3aebb26353788.js",
     "service-worker.js": "/app-du-frontend/service-worker.js",
     "static/css/2.9c8c8187.chunk.css.map": "/app-du-frontend/static/css/2.9c8c8187.chunk.css.map",
-    "static/css/main.4e95a51c.chunk.css.map": "/app-du-frontend/static/css/main.4e95a51c.chunk.css.map",
-    "static/js/2.d6736410.chunk.js.LICENSE.txt": "/app-du-frontend/static/js/2.d6736410.chunk.js.LICENSE.txt",
+    "static/css/main.a0f9eda2.chunk.css.map": "/app-du-frontend/static/css/main.a0f9eda2.chunk.css.map",
+    "static/js/2.e72a7ecb.chunk.js.LICENSE.txt": "/app-du-frontend/static/js/2.e72a7ecb.chunk.js.LICENSE.txt",
     "static/media/Design.png": "/app-du-frontend/static/media/Design.1c6872c8.png",
     "static/media/Jenkins.png": "/app-du-frontend/static/media/Jenkins.a06cd6a3.png",
     "static/media/LoadingProject.gif": "/app-du-frontend/static/media/LoadingProject.f3e73113.gif",
@@ -45,8 +45,8 @@
   "entrypoints": [
     "static/js/runtime-main.697c4963.js",
     "static/css/2.9c8c8187.chunk.css",
-    "static/js/2.d6736410.chunk.js",
-    "static/css/main.4e95a51c.chunk.css",
-    "static/js/main.49127ac2.chunk.js"
+    "static/js/2.e72a7ecb.chunk.js",
+    "static/css/main.a0f9eda2.chunk.css",
+    "static/js/main.681123d7.chunk.js"
   ]
 }
