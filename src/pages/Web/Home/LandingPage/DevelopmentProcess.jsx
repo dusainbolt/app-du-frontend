@@ -1,54 +1,157 @@
 import React from "react";
-import { Row, Col, Timeline } from "antd";
+import { Steps, message, Row, Col } from "antd";
+import { useState } from "react";
+import {
+  PieChartOutlined,
+  BulbOutlined,
+  RocketOutlined,
+  CommentOutlined,
+  BorderOuterOutlined,
+  BugOutlined,
+  CheckOutlined,
+  LockOutlined,
+  AppstoreAddOutlined,
+  PicLeftOutlined,
+  RiseOutlined,
+  BarChartOutlined,
+  ToolOutlined,
+  FileDoneOutlined,
+  SecurityScanOutlined,
+} from "@ant-design/icons";
+import Lazyload from "../../../../components/LazyLoadingImg";
 import { useTranslation } from "react-i18next";
-import { SyncOutlined } from "@ant-design/icons";
-import LazyLoading from "../../../../components/LazyLoadingImg";
-import { dataProcess } from "../../../../common/js/configLandingPage";
+import ButtonCommon from "../../../../components/Button";
+import ImgStep_1 from "../../../../common/image/process/step-1.png";
+import ImgStep_2 from "../../../../common/image/process/step-2.png";
+import ImgStep_3 from "../../../../common/image/process/step-3.png";
+import ImgStep_4 from "../../../../common/image/process/step-4.png";
+import ImgStep_5 from "../../../../common/image/process/step-5.png";
 
 function DevelopmentProcess() {
+  const [current, setCurrent] = useState(0);
   const { t } = useTranslation();
+  
+  const next = () => () => {
+    setCurrent(current + 1);
+  };
 
-  const renderContentProcess = () => {
-    let checkEven = false;
-    return dataProcess.map((value, index) => {
-      checkEven = index % 2 === 0 ? true : false;
-      return (
-        <Timeline.Item key={index} dot={<SyncOutlined spin />}>
-          <div className="ld-process--item-2">
-            <LazyLoading
-              src={value.img}
-              className={`ld-process--icon-timeline ${checkEven ? "" : "rp-mobie"}`}
-              alt="image"
-            />
-            <div className="ld-process--text">
-              <label>{value.title}</label>
-              <p>{value.description}</p>
-            </div>
-            {!checkEven && (
-              <LazyLoading
-                src={value.img}
-                className="ld-process--icon-timeline rp-web"
-                alt="image"
-              />
-            )}
+  const prev = () => () => {
+    setCurrent(current - 1);
+  };
+
+  const dataStep = [
+    {
+      title: t("ld_process.title_1"),
+      img: ImgStep_1,
+      content: t("ld_process.des_1"),
+      icon: [CommentOutlined, BulbOutlined, PieChartOutlined, AppstoreAddOutlined],
+    },
+    {
+      title: t("ld_process.title_2"),
+      img: ImgStep_2,
+      content: t("ld_process.des_2"),
+      icon: [BorderOuterOutlined, PicLeftOutlined, CheckOutlined],
+    },
+    {
+      title: t("ld_process.title_3"),
+      img: ImgStep_3,
+      content: t("ld_process.des_3"),
+      icon: [CommentOutlined, BulbOutlined, PieChartOutlined, AppstoreAddOutlined],
+    },
+    {
+      title: t("ld_process.title_4"),
+      img: ImgStep_4,
+      content: t("ld_process.des_4"),
+      icon: [RiseOutlined, SecurityScanOutlined, BugOutlined, FileDoneOutlined],
+    },
+    {
+      title: t("ld_process.title_5"),
+      img: ImgStep_5,
+      content: t("ld_process.des_5"),
+      icon: [LockOutlined, BarChartOutlined, ToolOutlined, RocketOutlined],
+    },
+  ];
+
+  const steps = [
+    {
+      content: () => renderStepOne(dataStep[0], [1, 2]),
+    },
+    {
+      content: () => renderStepOne(dataStep[1], [2, 1]),
+    },
+    {
+      content: () => renderStepOne(dataStep[2], [1, 2]),
+    },
+    {
+      content: () => renderStepOne(dataStep[3], [2, 1]),
+    },
+    {
+      content: () => renderStepOne(dataStep[4], [1, 2]),
+    },
+  ];
+
+  const renderStepOne = (data, order) => {
+    return (
+      <Row>
+        <Col md={{ span: 24, order: 1 }} lg={{ span: 14, order: order[0] }}>
+          <Lazyload className="ld-step__img" src={data.img} alt="image" />
+        </Col>
+        <Col
+          className="ld-step__col-content"
+          md={{ span: 24, order: 2 }}
+          lg={{ span: 10, order: order[1] }}
+        >
+          <div className="ld-step__content-wrapper">
+            <h2 className="ld-step__content-wrapper--title">{data.title}</h2>
+            {renderContentStep(data)}
           </div>
-        </Timeline.Item>
+        </Col>
+      </Row>
+    );
+  };
+
+  const renderContentStep = data => {
+    const listContent = data.content.split(",");
+    return listContent.map((value, index) => {
+      const Icon = data.icon[index];
+      return (
+        <label key={value} className="ld-step__content-wrapper--para">
+          <Icon /> {value}
+        </label>
       );
     });
   };
 
   return (
-    <Row>
+    <Row className="ld-step">
       <div className="container-ld--title">{t("development_process.process_title")}</div>
-      <Col className="container-ld--bg-right" xs={{ span: 24 }} lg={{ span: 24 }}>
-        <Row className="container-ld--bg-left">
-          <Col span={24}>
-            <Timeline className="ld-process" mode="alternate">
-              {renderContentProcess()}
-            </Timeline>
-          </Col>
-        </Row>
-      </Col>
+      <div className="steps-content">{steps[current].content()}</div>
+      <div className="steps-action">
+        {current < steps.length - 1 && (
+          <ButtonCommon
+            className="btn-primary"
+            type="primary"
+            onClick={next()}
+            title={`${t("ld_process.step")} ${current + 2}`}
+          />
+        )}
+        {current === steps.length - 1 && (
+          <ButtonCommon
+            className="btn-green"
+            type="primary"
+            onClick={() => message.success("Processing complete!")}
+            title={t("ld_process.done")}
+          />
+        )}
+        {current > 0 && (
+          <ButtonCommon
+            className="btn-outline-primary"
+            title={t("ld_process.previous")}
+            style={{ margin: "0 8px" }}
+            onClick={prev()}
+          />
+        )}
+      </div>
     </Row>
   );
 }
