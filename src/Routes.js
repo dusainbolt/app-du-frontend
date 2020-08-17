@@ -1,7 +1,5 @@
-// import LoginPage from "./pages/Login";
 import Homepage from "./pages/Admin/Home";
 import MyAccount from "./pages/Admin/MyAccount";
-// import Web from "./pages/Layout/Web";
 import HomeWeb from "./pages/Web/Home";
 
 export const AdminRoutes = [

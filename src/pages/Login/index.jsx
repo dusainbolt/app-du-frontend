@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import logo from "../../common/image/logo.png";
 import * as Yup from "yup";
-import Input from "../../components/Login";
+import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { actions } from "../Login/actions";
 
@@ -42,7 +42,7 @@ class LoginPage extends Component {
         onSubmit={this.onSubmit}
       >
         {formik => (
-          <div className="login">
+          <div className="login layout-web">
             <div className="login__wrapper">
               <h5 className="login__wrapper--title white-color">Du Sainbolt</h5>
               <h3 className="login__wrapper--des white-color">
@@ -68,8 +68,8 @@ class LoginPage extends Component {
                 <Button
                   type="submit"
                   onClick={formik.handleSubmit}
-                  className="login__form--button white-color"
-                  buttonTitle="Đăng nhập"
+                  className="login__form--button white-color btn-primary"
+                  title="Đăng nhập"
                 />
               </div>
             </div>

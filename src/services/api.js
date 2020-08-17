@@ -30,8 +30,9 @@ class AxiosServer {
     }
     return Promise.reject(error);
   }
-  get(endpoint) {
-    return this.instance.get(this.getFullUrl(endpoint));
+  get(endpoint, body = {}) {
+    this.instance.defaults.params = body;
+    return this.instance.get(this.getFullUrl(endpoint), { params : body });
   }
   post(endpoint, body) {
     return this.instance.post(this.getFullUrl(endpoint), body);

@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Row, Col, Modal } from "antd";
-import Input from "../../../components/Login";
+import { Row, Col, Modal } from "antd";
+import Input from "../../../components/Input";
 import { Formik, Field } from "formik";
+import Button from "../../Button";
 import {
   validateFormChangePassword,
   fieldChangePassword,
@@ -34,7 +35,7 @@ function ModalChangePassword({ userDetail, visible, onCancel, receiveSubmit }) {
         onReset={onCancel}
       >
         {formik => (
-          <div className="form-group">
+          <div className="form-group layout-web">
             <div className="form-group__title">
               <Row justify="space-between">
                 <Col span={24}>
@@ -72,20 +73,16 @@ function ModalChangePassword({ userDetail, visible, onCancel, receiveSubmit }) {
             />
             <div className="form-group__btn-gruop btn-modal">
               <Button
-                key="back"
-                className="form-group__btn-left white-color"
+                className="btn-outline-primary"
                 onClick={formik.handleReset}
-              >
-                Hủy
-              </Button>
+                title="Hủy"
+              />
               <Button
-                key="submit"
-                className="form-group__btn-right white-color"
+                className="form-group__btn-right btn-primary"
                 type="submit"
+                title="Hoan tat"
                 onClick={formik.handleSubmit}
-              >
-                Hoàn tất
-              </Button>
+              />
             </div>
           </div>
         )}

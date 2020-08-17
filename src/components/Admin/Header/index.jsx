@@ -9,6 +9,7 @@ import ChangePasswordModal from "./ChangePasswordModal";
 import { useMemo } from "react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useCallback } from "react";
 
 const { Paragraph } = Typography;
 
@@ -50,9 +51,9 @@ function CommonHeader({ toggleMenu }) {
     setVisiblePopover(!visiblePopover);
   };
 
-  const handleChangePassword = values => {
+  const handleChangePassword = useCallback(values => {
     dispatch(actions.postChangePasswordStart(values));
-  };
+  }, []);
 
   const renderModalChangePassword = useMemo(() => {
     return (

@@ -18,6 +18,7 @@ export default (state = DEFAULT_STATE, action) => {
       ...state,
     };
   case ActionTypes.POST_AUTH_SUCCESS:
+    console.log(action);
     return {
       ...state,
       auth: action.payload.token,
@@ -38,6 +39,11 @@ export default (state = DEFAULT_STATE, action) => {
       ...state,
       userDetail: action.payload.data,
       isLoadingChangePassword: true,
+    };
+  case ActionTypes.POST_CHANGE_PASSWORD_ERROR:
+    return {
+      ...state,
+      isLoadingChangePassword: false,
     };
   default:
     return state;

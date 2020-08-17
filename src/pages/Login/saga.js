@@ -59,15 +59,20 @@ function* changePassword(action) {
   yield put(actionLayout.showLoadingEvent());
   try {
     const response = yield postChangePasswordAdminApi(action.values);
-    if (response.data) {
+    console.log(response);
+    console.log("CODE: ", response.meta.code);
+    if (response.meta.code === 0) {
+      console.log("CODE: ", response.meta.code);
       yield put(actions.postChangePasswordSuccess(response));
       yield effectAfterRequest("success", "Đổi mật khẩu thành công", 1);
     } else {
-      yield put(actions.postAuthAdminError({}));
+      yield put(actions.postChangePasswordError({}));
+      console.log("CODE: ", response.meta.code);
       yield effectAfterRequest("warning", "Đổi mật khẩu thất bại", 1);
     }
   } catch (e) {
-    yield put(actions.postAuthAdminError(e));
+    console.log("CODE: ", e);
+    yield put(actions.postChangePasswordError(e));
     yield effectAfterRequest("warning", "Đổi mật khẩu thất bại", 1);
   }
 }
