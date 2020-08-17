@@ -1,35 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "59392a0f05a0191bfe0eb8695066bdbe",
+    "revision": "167ec89c4a4ad124597a72a9ceb580c6",
     "url": "/app-du-frontend/index.html"
   },
   {
-    "revision": "d0b6fe907a8718a73d25",
+    "revision": "a11bdc5226f5b2b36e20",
     "url": "/app-du-frontend/static/css/2.9c8c8187.chunk.css"
   },
   {
-    "revision": "4e3ad606fa030516f2b9",
-    "url": "/app-du-frontend/static/css/main.a0f9eda2.chunk.css"
+    "revision": "77ef19e82d2e6309c0ed",
+    "url": "/app-du-frontend/static/css/main.99057210.chunk.css"
   },
   {
-    "revision": "d0b6fe907a8718a73d25",
-    "url": "/app-du-frontend/static/js/2.e72a7ecb.chunk.js"
+    "revision": "a11bdc5226f5b2b36e20",
+    "url": "/app-du-frontend/static/js/2.38516fc1.chunk.js"
   },
   {
     "revision": "cacaf3f01dd3bd8237006f7c58951c1c",
-    "url": "/app-du-frontend/static/js/2.e72a7ecb.chunk.js.LICENSE.txt"
+    "url": "/app-du-frontend/static/js/2.38516fc1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4e3ad606fa030516f2b9",
-    "url": "/app-du-frontend/static/js/main.681123d7.chunk.js"
+    "revision": "77ef19e82d2e6309c0ed",
+    "url": "/app-du-frontend/static/js/main.9e08c964.chunk.js"
   },
   {
     "revision": "b283ec30955883165799",
     "url": "/app-du-frontend/static/js/runtime-main.697c4963.js"
-  },
-  {
-    "revision": "1c6872c8221f8f99f4c21d96cfe5bd41",
-    "url": "/app-du-frontend/static/media/Design.1c6872c8.png"
   },
   {
     "revision": "a06cd6a3ea7db546c0f05894a2e319d1",
@@ -62,10 +58,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cbe050ca3532a3340a3ad373572c3fc9",
     "url": "/app-du-frontend/static/media/bg-loginIT.cbe050ca.jpg"
-  },
-  {
-    "revision": "a247d0cfd1e610ab52fbd9640bdefc53",
-    "url": "/app-du-frontend/static/media/development.a247d0cf.png"
   },
   {
     "revision": "1b37c03bad9c06d9cb12f4fda15f89aa",
@@ -104,10 +96,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/app-du-frontend/static/media/laravel.24acb6fa.jpg"
   },
   {
-    "revision": "983e94723249a3ba4d1183e286e888a0",
-    "url": "/app-du-frontend/static/media/launch.983e9472.png"
-  },
-  {
     "revision": "e74836fab633969b9906963201382192",
     "url": "/app-du-frontend/static/media/linux.e74836fa.png"
   },
@@ -116,20 +104,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/app-du-frontend/static/media/logo.146ee029.png"
   },
   {
-    "revision": "92be9a9724fa37a069f88ae0d4eb9e59",
-    "url": "/app-du-frontend/static/media/maintaince.92be9a97.png"
-  },
-  {
     "revision": "3b3290c16c793b7ddef38a0d304a59b0",
     "url": "/app-du-frontend/static/media/mysql.3b3290c1.png"
   },
   {
-    "revision": "13f03192aa24f27935c7664b88700f98",
-    "url": "/app-du-frontend/static/media/planding.13f03192.png"
-  },
-  {
     "revision": "3ad6c7a8da813435cf7bd380be0ffbbb",
     "url": "/app-du-frontend/static/media/sass.3ad6c7a8.png"
+  },
+  {
+    "revision": "f9579ecd03f375092871fd10b3271d92",
+    "url": "/app-du-frontend/static/media/step-1.f9579ecd.png"
+  },
+  {
+    "revision": "61fe36f834647368a6ce8fc03d6f6639",
+    "url": "/app-du-frontend/static/media/step-2.61fe36f8.png"
+  },
+  {
+    "revision": "ea6fbe72c9b9ebf1de0a4da2d8959024",
+    "url": "/app-du-frontend/static/media/step-3.ea6fbe72.png"
+  },
+  {
+    "revision": "101a0c5f9729607eb1961572a5b47358",
+    "url": "/app-du-frontend/static/media/step-4.101a0c5f.png"
+  },
+  {
+    "revision": "5e25b2b829c4fb2121ddc536a0d3049d",
+    "url": "/app-du-frontend/static/media/step-5.5e25b2b8.png"
   },
   {
     "revision": "392cd7647c7008d9d2afec937be6e621",
