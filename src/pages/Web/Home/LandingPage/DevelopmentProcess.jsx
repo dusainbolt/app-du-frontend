@@ -30,7 +30,7 @@ import ImgStep_5 from "../../../../common/image/process/step-5.png";
 function DevelopmentProcess() {
   const [current, setCurrent] = useState(0);
   const { t } = useTranslation();
-  
+
   const next = () => () => {
     setCurrent(current + 1);
   };
@@ -90,6 +90,12 @@ function DevelopmentProcess() {
     },
   ];
 
+  const renderWrapperStep = () => {
+    return steps.map((item, index) => {
+      return index === current ? <div key={index} className="steps-content">{item.content()}</div> : "";
+    });
+  };
+
   const renderStepOne = (data, order) => {
     return (
       <Row>
@@ -125,7 +131,7 @@ function DevelopmentProcess() {
   return (
     <Row className="ld-step">
       <div className="container-ld--title">{t("development_process.process_title")}</div>
-      <div className="steps-content">{steps[current].content()}</div>
+      {renderWrapperStep()}
       <div className="steps-action">
         {current < steps.length - 1 && (
           <ButtonCommon

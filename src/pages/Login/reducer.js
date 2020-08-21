@@ -18,7 +18,6 @@ export default (state = DEFAULT_STATE, action) => {
       ...state,
     };
   case ActionTypes.POST_AUTH_SUCCESS:
-    console.log(action);
     return {
       ...state,
       auth: action.payload.token,

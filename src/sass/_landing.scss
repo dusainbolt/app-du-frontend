@@ -29,7 +29,7 @@
     color: $black-color-light;
   }
 
-  &--button.ant-btn{
+  &--button.ant-btn {
     width: 210px;
     height: 40px;
     text-align: center;
@@ -424,18 +424,20 @@ div.back-top-wrapper {
   }
 }
 
-.form-contact{
+.form-contact {
   padding: 0px 5px;
   background-color: white;
   width: 550px;
   margin: auto;
   margin-top: -50px;
-  box-shadow: 0 0.2rem 1rem 0 rgba(0,0,0,.11);
+  box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, .11);
   border-radius: 10px;
-  >h3{
+
+  >h3 {
     text-align: center;
   }
-  &--title{
+
+  &--title {
     display: inline-block;
     padding: 15px 0px 5px 0px;
     font-size: 25px;
@@ -449,6 +451,7 @@ div.back-top-wrapper {
   position: relative;
   margin-bottom: 4%;
   background-color: #f8f8f8;
+
   .container-ld__content_center {
     max-width: 80%;
     flex: 0 0 80%;
@@ -479,6 +482,7 @@ div.back-top-wrapper {
   &--rows {
     width: 100%;
     background-color: #f8f8f8;
+
     &__col-one {
       margin-top: 20px;
       transition: box-shadow 0.5s;
@@ -816,17 +820,19 @@ div.ant-popover-inner {
       top: 42%;
     }
   }
- .layout-web{
-  .ld-step{
-    &__content-wrapper {
-      &--title {
-        font-size: 35px;
-        width: 350px;
+
+  .layout-web {
+    .ld-step {
+      &__content-wrapper {
+        &--title {
+          font-size: 35px;
+          width: 350px;
+        }
       }
     }
+
   }
 
- }
   .container-ld {
     .container-ld__content_center {
       max-width: 95%;
@@ -911,6 +917,16 @@ div.ant-popover-inner {
             padding: 15px;
           }
         }
+      }
+    }
+
+    &--col-contact {
+      margin: auto;
+      width: 80%;
+      margin-top: 15px;
+
+      .form-contact {
+        width: 100%;
       }
     }
 

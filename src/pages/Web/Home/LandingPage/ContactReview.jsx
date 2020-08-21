@@ -41,7 +41,7 @@ function ContactReview() {
 
   return (
     <Row className="container-ld--rows">
-      <Col xl={{ span: 12 }} lg={{ span: 24 }}>
+      <Col className="container-ld--col-contact" xl={{ span: 12 }} lg={{ span: 24 }}>
         <div className="form-contact">
           <Formik>
             {formik => (
