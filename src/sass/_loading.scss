@@ -37,3 +37,17 @@
     width: 400px;
   }
 }
+
+.my-spin{
+  .ant-spin-nested-loading{
+    background-color: #fafafa;
+  }
+  .ant-spin-text{
+    color: $black-color-light;
+  }
+  &--icon{
+    &.anticon{
+      color: $black-color-light;
+    }
+  }
+}

@@ -425,15 +425,15 @@ div.back-top-wrapper {
 }
 
 .form-contact {
-  padding: 0px 5px;
   background-color: white;
   width: 550px;
+  overflow: hidden;
   margin: auto;
   margin-top: -50px;
   box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, .11);
   border-radius: 10px;
 
-  >h3 {
+  h3 {
     text-align: center;
   }
 

@@ -4,11 +4,17 @@ import { Carousel, Tooltip } from "antd";
 import { PARAMS, REVIEW } from "../../common";
 import Input from "../Input";
 import Button from "../Button";
+import Spin from "../Spin";
 import { useTranslation } from "react-i18next";
 import { Formik, Field } from "formik";
 
-import { SmileOutlined, MehOutlined, FrownOutlined, RightCircleFilled, LeftCircleFilled } from "@ant-design/icons";
-
+import {
+  SmileOutlined,
+  MehOutlined,
+  FrownOutlined,
+  RightCircleFilled,
+  LeftCircleFilled,
+} from "@ant-design/icons";
 
 let carousel = React.createRef();
 
@@ -70,71 +76,75 @@ function ContactReview() {
     );
   };
 
-  const renderContentModal = useMemo(() => {
-
-  },[visibleConfirm]);
+  const renderContentModal = useMemo(() => {}, [visibleConfirm]);
 
   const onChangeVote = type => () => {
     setVote(type);
   };
 
-  const renderVote = useMemo(()=>{
+  const renderVote = useMemo(() => {
     return votes.map(item => {
       const Icon = item.icon;
-      console.log("type----->", item.type);
-      console.log("vote----->", vote);
       const classActive = item.type === vote ? "is-active" : "";
       return (
         <Tooltip key={item.type} title={"HAI LONG"} color="#4961ea">
-          <Icon  className={classActive} onClick={onChangeVote(item.type)} />
+          <Icon className={classActive} onClick={onChangeVote(item.type)} />
         </Tooltip>
       );
     });
-  },[vote]);
+  }, [vote]);
 
+  const toggleModal = () => {
+    setVisibleConfirm(!visibleConfirm);
+  };
+
+  const renderFormContact = () => {
+    return (
+      <Formik initialValues={paramsContact}>
+        {formik => (
+          <h3>
+            <span className="form-contact--title">{t("landing_page.contact_us")}</span>
+            <div className="form-group">
+              <Field
+                name={PARAMS.EMAIL}
+                placeholder={t("landing_page.place_holder_email")}
+                component={Input}
+              />
+              <Field
+                name={PARAMS.NAME}
+                placeholder={t("landing_page.place_holder_name")}
+                component={Input}
+              />
+              <Field
+                name={PARAMS.CONTACT}
+                rows={4}
+                type="textarea"
+                placeholder={t("landing_page.place_holder_contact")}
+                component={Input}
+              />
+              <div className="form-contact--icon-gr-review">
+                {renderVote}
+                <div className="">TESTING </div>
+              </div>
+              <Button
+                onClick={toggleModal}
+                className="btn-primary form-contact--btn-submit"
+                title="Gui tin nhan"
+              />
+            </div>
+          </h3>
+        )}
+      </Formik>
+    );
+  };
   return (
     <Row className="container-ld--rows">
       <Col className="container-ld--col-contact" xl={{ span: 12 }} lg={{ span: 24 }}>
         <div className="form-contact">
-          <Formik initialValues={paramsContact}>
-            {formik => (
-              <h3>
-                <span className="form-contact--title">{t("landing_page.contact_us")}</span>
-                <div className="form-group">
-                  <Field
-                    name={PARAMS.EMAIL}
-                    placeholder={t("landing_page.place_holder_email")}
-                    component={Input}
-                  />
-                  <Field
-                    name={PARAMS.NAME}
-                    placeholder={t("landing_page.place_holder_name")}
-                    component={Input}
-                  />
-                  <Field
-                    name={PARAMS.CONTACT}
-                    rows={4}
-                    type="textarea"
-                    placeholder={t("landing_page.place_holder_contact")}
-                    component={Input}
-                  />
-                  <div className="form-contact--icon-gr-review">
-                    {/* <Tooltip title={"HAI LONG"} color="#4961ea">
-                      <FrownOutlined onClick={onChangeVote(1)} className="is-active" />
-                    </Tooltip>
-
-                    <MehOutlined />
-                    <SmileOutlined /> */}
-                    {renderVote}
-                    <div className="">sdsdsdsd  </div>
-                  </div>
-                  <Button onClick={""} className="btn-primary form-contact--btn-submit" title="Gui tin nhan"/>
-                </div>
-              </h3>
-            )}
-          </Formik>
+          <Spin isLoading={visibleConfirm} content={renderFormContact()} />
         </div>
       </Col>
+
       <Col xl={{ span: 12 }} lg={{ span: 24 }} className="container-ld--rows__course team-carouse">
         <LeftCircleFilled className="team-carouse--icon-left" onClick={previous} />
         <Carousel draggable={true} ref={node => (carousel = node)} speed={500} effect="scrolling">
