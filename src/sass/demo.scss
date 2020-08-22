@@ -1,0 +1,25 @@
+.demo{
+  width: 400px;
+  margin: auto;
+  margin-top: 125px;
+  >h2{
+    text-align: center;
+    color: $primary-color-bold;
+  }
+  &--email-label{
+    &.ant-input-affix-wrapper, input.ant-input{
+      background-color: #fff5e3;
+    }
+  }
+  .input {
+    .ant-input-affix-wrapper {
+      height: 40px;
+    }
+  }
+  .btn-modal{
+    text-align: center;
+    >button{
+      margin: 0 5px;
+    }
+  }
+}

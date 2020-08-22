@@ -1,25 +1,25 @@
 export const ActionTypes = {
-  CHANGE_LANGUAGE: "CHANGE_LANGUAGE",
-  GET_DEMO_SUCCESS: "GET_DEMO_SUCCESS",
-  GET_DEMO_ERROR: "GET_DEMO_ERROR"
+  SEND_EMAIL_START: "SEND_EMAIL_START",
+  SEND_EMAIl_SUCCESS: "SEND_EMAIl_SUCCESS",
+  SEND_EMAIl_ERROR: "SEND_EMAIl_ERROR"
 };
 
 export const actions = {
-  changeLanguage: function (lang) {
+  sendEmailStart: function(params){
     return {
-      type: ActionTypes.CHANGE_LANGUAGE,
-      lang
+      type: ActionTypes.SEND_EMAIL_START,
+      params
     };
   },
-  getDemoSuccess: function (success) {
+  sendEmailSuccess: function(success){
     return {
-      type: ActionTypes.GET_DEMO_SUCCESS,
+      type: ActionTypes.SEND_EMAIl_SUCCESS,
       payload: success
     };
   },
-  getDemoError: function (error) {
+  sendEmailError: function(error){
     return {
-      type: ActionTypes.GET_DEMO_ERROR,
+      type: ActionTypes.SEND_EMAIl_ERROR,
       payload: error
     };
   }
