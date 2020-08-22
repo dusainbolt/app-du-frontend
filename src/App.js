@@ -7,6 +7,7 @@ import LayoutWeb from "./pages/Layout/WebMaster";
 import { AdminRoutes, WebRoutes } from "./Routes";
 import AuthLoading from "./components/Loading/AuthenLoading";
 import EventLoading from "./components/Loading/EventLoading";
+import Home from "./pages/Admin/Home";
 import LoginPage from "./pages/Login";
 import NotFound from "./pages/Web/NotFound";
 import "./App.css";
@@ -54,7 +55,7 @@ class App extends Component {
             <Route exact path="/bautroixanh/login" component={LoginPage} />
             {this.renderAdminLayout()}
             {this.renderWebLayout()}
-            <Route exact path="" component={NotFound} />
+            <Route exact path="" component={Home} />
           </Switch>
         </Router>
       </div>
