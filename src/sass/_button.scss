@@ -3,10 +3,8 @@ button {
   padding: 8px 15px;
   border: none;
   outline: none;
-  width: 120px;
   transition: background-color .3s;
   transition: border-color .3s;
-  border-radius: 100px;
   font-family: $base-font-family;
   cursor: pointer;
 }
@@ -14,46 +12,51 @@ button {
 button.ant-btn {
   border-radius: 100px;
   color: $white-color;
+  min-width: 130px;
   >span {
     font-size: 14px;
     font-weight: bold;
   }
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     color: $white-color;
   }
 }
 
-.layout-web {
-  button.btn-primary {
+.ant-btn {
+  &.btn-primary {
     background: $primary-color-bold;
     border-color: $primary-color-bold;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: $primary-color-light;
       border-color: $primary-color-light;
     }
   }
 
-  button.btn-outline-primary {
+  &.btn-outline-primary {
     color: $primary-color-bold;
     border-color: $primary-color-bold;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $white-color;
       background: $purple-color-light;
       border-color: $purple-color-light;
     }
   }
 
-  button.btn-green {
+  &.btn-green {
     color: $white-color;
     border-color: $green-color;
     background-color: $green-color;
 
-    &:hover {
+    &:hover,
+    &:focus {
       border-color: $green-color-light;
       background-color: $green-color-light;
     }
   }
-
 }

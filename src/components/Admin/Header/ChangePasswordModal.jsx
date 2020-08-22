@@ -5,14 +5,14 @@ import { Formik, Field } from "formik";
 import Button from "../../Button";
 import {
   validateFormChangePassword,
-  fieldChangePassword,
-} from "../../../common/js/configValueSubmit";
+  PARAMS,
+} from "../../../common";
 
 function ModalChangePassword({ userDetail, visible, onCancel, receiveSubmit }) {
   const initialValues = {
-    [fieldChangePassword.PASSWORD]: "",
-    [fieldChangePassword.PASSWORD_NEW]: "",
-    [fieldChangePassword.PASSWORD_CONFIRM]: "",
+    [PARAMS.PASSWORD]: "",
+    [PARAMS.PASSWORD_NEW]: "",
+    [PARAMS.PASSWORD_CONFIRM]: "",
   };
 
   const onSubmit = values => {
@@ -51,21 +51,21 @@ function ModalChangePassword({ userDetail, visible, onCancel, receiveSubmit }) {
               </Row>
             </div>
             <Field
-              name={fieldChangePassword.PASSWORD}
+              name={PARAMS.PASSWORD}
               labelTitle="Mật khẩu cũ"
               type="password"
               placeholder="Nhập mật khẩu cũ"
               component={Input}
             />
             <Field
-              name={fieldChangePassword.PASSWORD_NEW}
+              name={PARAMS.PASSWORD_NEW}
               labelTitle="Mật khẩu mới"
               type="password"
               placeholder="Nhập mật khẩu mới"
               component={Input}
             />
             <Field
-              name={fieldChangePassword.PASSWORD_CONFIRM}
+              name={PARAMS.PASSWORD_CONFIRM}
               labelTitle="Xác nhận mật khẩu"
               type="password"
               placeholder="Nhập lại mật khẩu mới"

@@ -1,96 +1,17 @@
-/* Color */
-$white-color: #fff;
-$black-color: #000;
-$purple-color-bold: #8145f0;
-$purple-color-light: #b896f6;
-$primary-color-bold: #4961ea;
-$primary-color-light: #7487f7e6;
-$green-color: #04d786;
-$green-color-light: #56ecb3;
-$gray-color-bold: #9fafc1;
-$gray-color-light: #c9d3dd;
-$red-color: #f76060;
-$disabled-color: #e5e8ea;
-$footer-color: #fbfbfb;
-$disabled-color-light: #e0e3e4;
-$black-color-light: #777;
-
-.white-color {
-  color: $white-color;
-}
-
-/* Typography */
-$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-  "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$base-font-size: 14px;
-$base-font-title: 16px;
-$base-font-large: 18px;
-$box-shadow-primary: 0 0 10px 0 rgba(15, 121, 255, 0.3);
-$box-shadow: 10px 10px 32px -8px rgba(0, 0, 0, 0.11);
+@import "./variable";
+@import "./layout";
+@import "./field";
+@import "./loading";
+@import "./_login";
+@import "./_form";
+@import "./_modal";
+@import "./_landing";
+@import "./_button";
+@import "./notFound";
 /* Common style */
-%wrapper {
-  box-sizing: border-box;
-  background-color: $white-color;
-  border-radius: 5px;
-}
 
-body {
-  font-size: $base-font-size !important;
-  font-family: $base-font-family !important;
-  webkit-font-smoothing: antialiased;
-}
 
-h1 {
-  font-size: $base-font-size * 2.441;
-}
 
-h2 {
-  font-size: $base-font-size * 1.953;
-}
-
-h3 {
-  font-size: $base-font-size * 1.563;
-}
-
-h4 {
-  font-size: $base-font-size * 1.25;
-}
-
-h5 {
-  font-size: $base-font-size;
-}
-
-h6 {
-  font-size: $base-font-size * 0.8;
-}
-
-span {
-  font-size: $base-font-size * 0.75;
-}
-
-a {
-  text-decoration: none;
-}
-
-input {
-  border: 2px solid $gray-color-light;
-  padding: 5px;
-  outline: none;
-  box-sizing: border-box;
-  border-radius: 5px;
-  width: 100%;
-}
-
-input::placeholder {
-  font-size: $base-font-size * 0.75;
-  color: $gray-color-bold;
-}
-
-.required {
-  display: block;
-  text-align: left;
-  color: $red-color;
-}
 
 #components-layout-demo-custom-trigger .trigger {
   font-size: 18px;
@@ -117,112 +38,7 @@ input::placeholder {
   margin-top: 30px;
 }
 
-.authen-loading {
-  position: fixed;
-  left: 0;
-  right: 0;
-  text-align: center;
-  top: 0;
-  bottom: 0;
-  z-index: 99999;
-  background-color: #fefefc;
-  > img {
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 15%;
-    width: 400px;
-  }
-}
-
-.not-found {
-  width: 100%;
-  position: relative;
-  top: 80px;
-  display: block;
-  text-align: center;
-  &--wrapper {
-    &__img {
-      width: 50%;
-      margin: auto;
-    }
-  }
-  &--footer {
-    width: 100%;
-    text-align: center;
-    &--title {
-      margin-top: 20px;
-      font-size: 25px;
-      font-weight: 700;
-      color: $primary-color-bold;
-    }
-    &--description {
-      margin-top: 15px;
-      font-size: 16px;
-      margin-bottom: 50px;
-    }
-    &--button {
-      margin-top: 15px;
-      background-color: $primary-color-bold;
-      padding: 15px;
-      font-weight: 700;
-      font-size: $base-font-title;
-      color: $white-color;
-      border-radius: 30px;
-      &__icon {
-        font-size: $base-font-title;
-      }
-      &:hover {
-        color: $white-color;
-        background-color: $purple-color-bold;
-      }
-    }
-  }
-}
-
-.event-loading {
-  position: fixed;
-  left: 0;
-  right: 0;
-  text-align: center;
-  top: 0;
-  bottom: 0;
-  z-index: 99999;
-  background-color: rgba(215, 224, 243, 0.5);
-  > div {
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 40%;
-    width: 400px;
-  }
-}
-
-span.error-field {
-  border-color: #ff2121;
-  border-right-width: 1px !important;
-  outline: 0;
-  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.13);
-  margin-bottom: 3px;
-  &:hover {
-    border-color: #ff2121;
-    box-shadow: 0 0 0 1px rgba(247, 0, 0, 0.23);
-  }
-}
 .ant-message {
   top: 5% !important;
 }
 
-span.ant-input-affix-wrapper {
-  border-radius: 8px;
-}
-
-@import "./_login";
-@import "./_form";
-@import "./_modal";
-@import "./_landing";
-@import "./_button";

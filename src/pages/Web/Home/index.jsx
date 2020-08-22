@@ -1,10 +1,10 @@
 import React from "react";
 import FadeIn from "react-fade-in";
-import TopContent from "./LandingPage/TopContent";
-import WhyInfo from "./LandingPage/WhyInfo";
-import DevelopmentProcess from "./LandingPage/DevelopmentProcess";
-import ContactReview from "./LandingPage/ContactReview";
-import TechStack from "./LandingPage/TechStack";
+import TopContent from "../../../components/LandingTopContent";
+import WhyInfo from "../../../components/LandingWhyInfo";
+import DevelopmentProcess from "../../../components/LandingProcess";
+import ContactReview from "../../../components/LandingContact";
+import TechStack from "../../../components/LandingTechStack";
 import { actions } from "../../Admin/Home/actions";
 import BackTop from "../../../components/BackTop";
 

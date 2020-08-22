@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import { Layout } from "antd";
 import CommonHeader from "../../../components/Web/Header";
 import "./index.scss";
-import { showBodyHeader, showTopHeader } from "../../../common/js/function";
+import { showBodyHeader, showTopHeader } from "../../../utils";
 import Footer from "../../../components/Web/Footer";
 
 const { Header, Content } = Layout;

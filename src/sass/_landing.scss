@@ -437,12 +437,52 @@ div.back-top-wrapper {
     text-align: center;
   }
 
+  &--icon-gr-review {
+    margin-top: 15px;
+
+    >span {
+      cursor: pointer;
+      margin: 0 10px;
+      color: $black-color-light;
+      font-size: 30px;
+      &:hover {
+        color: $primary-color-light;
+      }
+
+      &.is-active {
+        color: $primary-color-bold;
+      }
+    }
+  }
+
   &--title {
     display: inline-block;
     padding: 15px 0px 5px 0px;
     font-size: 25px;
     color: $primary-color-bold;
-    border-bottom: solid 2px $black-color-light;
+    border-bottom: solid 2px $primary-color-bold;
+  }
+
+  .input {
+    .ant-input-affix-wrapper {
+      height: 40px;
+
+      >input {
+        font-size: 16px;
+
+        &::placeholder {
+          font-size: 13px;
+        }
+      }
+
+      &.ant-input-affix-wrapper-textarea-with-clear-btn {
+        height: auto;
+      }
+    }
+  }
+  &--btn-submit{
+    width: 100%;
+    height: 150px;
   }
 }
 
@@ -592,6 +632,7 @@ div.back-top-wrapper {
     margin: auto;
     display: block;
     min-height: 650px;
+
     .ant-steps {
       display: none;
     }
@@ -824,6 +865,7 @@ div.ant-popover-inner {
   .layout-web {
     .ld-step {
       min-height: 500px;
+
       &__content-wrapper {
         &--title {
           font-size: 35px;
@@ -844,6 +886,7 @@ div.ant-popover-inner {
         width: 100%;
       }
     }
+
     .container-ld__content_center {
       max-width: 95%;
       flex: 0 0 95%;
@@ -981,6 +1024,7 @@ div.ant-popover-inner {
     .ld-step {
       width: 100%;
       min-height: 725px;
+
       &__img {
         width: 80%;
         margin-left: 10%;
@@ -1074,6 +1118,7 @@ div.ant-popover-inner {
   .layout-web {
     .ld-step {
       min-height: 650px;
+
       .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item {
         padding-left: 0;
       }
@@ -1166,10 +1211,12 @@ div.ant-popover-inner {
 
   .team-carouse {
     margin-bottom: 40px;
-    &--text-wrapper{
+
+    &--text-wrapper {
       max-height: 300px;
       overflow: auto;
     }
+
     &--wrapper {
       max-height: 420px;
     }

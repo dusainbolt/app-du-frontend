@@ -8,7 +8,7 @@ import {
 } from "../../services/AuthRequest";
 import { actions as actionLayout } from "../Layout/AdminMaster/actions";
 
-import { effectAfterRequest } from "../../common/js/function";
+import { effectAfterRequest } from "../../utils";
 import api from "../../services/api";
 
 function* postLogin(action) {

@@ -1,7 +1,7 @@
-import { browserHistory } from "../../utils/history";
-import { actions as actionLayout } from "../../pages/Layout/AdminMaster/actions";
+import { browserHistory } from "./history";
+import { actions as actionLayout } from "../pages/Layout/AdminMaster/actions";
 import { put } from "redux-saga/effects";
-import  showMessage  from "../../components/Message/index";
+import  showMessage  from "../components/Message/index";
 
 export function getTimeNowUnix() {
   return Math.round(new Date().getTime() / 1000);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Typography } from "antd";
 import { useTranslation } from "react-i18next";
-import { DataWhyInfo } from "../../../../common/js/configLandingPage";
+import { DATA_WHY_INFO } from "../../common/configLandingPage";
 
 const { Title, Paragraph } = Typography;
 
@@ -10,7 +10,7 @@ function WhyInfo() {
 
   const renderInfo = nuberRows => {
     let classCol = null;
-    return DataWhyInfo.map((value, index) => {
+    return DATA_WHY_INFO.map((value, index) => {
       classCol = !((index + 2) % 3) ? "col-one" : "col-two";
       return (
         <Col key={index} className="container-ld--col-padding" xs={24} sm={nuberRows}>
@@ -20,10 +20,10 @@ function WhyInfo() {
             </div>
             <div className={`container-ld--rows__${classCol}--content`}>
               <Title className={`container-ld--rows__${classCol}--content__title`}>
-                {value.title}
+                {t(value.title)}
               </Title>
               <Paragraph className={`container-ld--rows__${classCol}--content__description`}>
-                {value.description}
+                {t(value.description)}
               </Paragraph>
             </div>
           </div>

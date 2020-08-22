@@ -1,11 +1,11 @@
 import React from "react";
 import { Row, Col, Typography, Carousel } from "antd";
-import Button from "../../../../components/Button";
-import LazyloadImg from "../../../../components/LazyLoadingImg";
+import Button from "../Button";
+import LazyloadImg from "../LazyLoadingImg";
 import { useTranslation } from "react-i18next";
-import { dataSlickImageTop } from "../../../../common/js/configLandingPage";
+import { DATA_SLICK_IMG_TOP } from "../../common/configLandingPage";
 
-import CountDownTimer from "./CountDownTime";
+import CountDownTimer from "../LandingCountDown";
 
 const { Title, Paragraph } = Typography;
 
@@ -37,7 +37,7 @@ function TopContent() {
   };
 
   const renderSlick = () => {
-    return dataSlickImageTop.map((value, index) => {
+    return DATA_SLICK_IMG_TOP.map((value, index) => {
       return (
         <Col span={24} key={index}>
           <LazyloadImg className="img-background--top" src={value} alt="img top" height={200} />

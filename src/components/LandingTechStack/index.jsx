@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Row, Col, Tooltip } from "antd";
 import { useTranslation } from "react-i18next";
-import ImgWrapper from "../../../../common/image/wrapper-tech-stack-06-06-06.png";
-import LazyloadImg from "../../../../components/LazyLoadingImg";
-import { listStackBackEnd, listStackFontEnd } from "../../../../common/js/configLandingPage";
-import { useMemo } from "react";
-import ModalCommon from "../../../../components/Modal";
+import ImgWrapper from "../../common/image/wrapper-tech-stack-06-06-06.png";
+import LazyloadImg from "../LazyLoadingImg";
+import { LIST_STACK_BE, LIST_STACK_FE } from "../../common/configLandingPage";
+import ModalCommon from "../Modal";
 
 function TechStack() {
   const [visible, setVisible] = useState(false);
@@ -15,12 +14,12 @@ function TechStack() {
 
   const renderTechStackFrontEnd = type => {
     let html = null;
-    const data = type ? listStackFontEnd : listStackBackEnd;
+    const data = type ? LIST_STACK_FE : LIST_STACK_BE;
     html = data.map((value, index) => {
       return (
         <Col className="tech-stack--col-wrapper" xs={{ span: 24 }} sm={{ span: 8 }} key={index}>
           <div className="tech-stack--col-stack">
-            <Tooltip title={value.label} color="#4961ea">
+            <Tooltip title={t(value.label)} color="#4961ea">
               <LazyloadImg
                 className="tech-stack--col-stack__img"
                 src={value.img}
@@ -30,9 +29,9 @@ function TechStack() {
             </Tooltip>
           </div>
           <div className="tech-stack--item-wrapper">
-            <div className="tech-stack--item-title">{value.title}</div>
+            <div className="tech-stack--item-title">{t(value.title)}</div>
             <p className="tech-stack--item-description" onClick={openModal(value)}>
-              {value.description}
+              {t(value.description)}
             </p>
           </div>
         </Col>
@@ -55,7 +54,7 @@ function TechStack() {
     return (
       <div className="modal__detail-stack">
         <img className="modal-ld__img" src={contentModal.img} />
-        <h3>{contentModal.label}</h3>
+        <h3>{t(contentModal.label)}</h3>
       </div>
     );
   };
@@ -63,7 +62,7 @@ function TechStack() {
   const renderDetailTechStack = useMemo(() => {
     return (
       <ModalCommon
-        title={contentModal.title}
+        title={t(contentModal.title)}
         width={500}
         visible={visible}
         content={renderContentDetail()}
