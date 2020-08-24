@@ -8,13 +8,19 @@ import { useState } from "react";
 import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "./actions";
+import { initSocket } from "../../../utils/socket";
 import { SendOutlined, FileAddOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function Home() {
   const [listInput, setListInput] = useState({ sub: "", msg_1: "", email: "" });
   const [current, setCurrent] = useState(1);
   const dispatch = useDispatch();
+
+  useEffect(()=>{
+    initSocket();
+  },[]);
 
   const renderField = useMemo(
     formik => {

@@ -7,6 +7,10 @@ export const REVIEW = {
   SATISFIED: 3
 };
 
+export const SOCKET = {
+  API_URL: `${process.env.REACT_APP_SOCKET_URL}`,
+};
+
 export const PARAMS = {
   PASSWORD: "password",
   PASSWORD_NEW: "passwordNew",
