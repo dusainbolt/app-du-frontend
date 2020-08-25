@@ -28,10 +28,14 @@ function connectSocketError() {
 }
 
 function getMessage(callbackMessage) {
-  socket.on("message", res => {
-    const data = JSON.parse(res).data.message;
-    callbackMessage(data);
+  socket.on("__chatSocket", res => {
+    // const data = JSON.parse(res).data.payload;
+    console.log("----->Data", res);
+    callbackMessage(res.data);
   });
 }
+// message
+// new message
+
 
 export { initSocket };
