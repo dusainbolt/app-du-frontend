@@ -8,6 +8,8 @@ export default function Input({
   labelTitle,
   countRows,
   type,
+  Icon,
+  callHandleIcon,
   ...props
 }) {
   const errorValidate = errors[field.name] && touched[field.name];
@@ -35,6 +37,7 @@ export default function Input({
           {...props}
         />
       )}
+      { Icon ? <Icon className="input__icon" onClick={callHandleIcon} /> : ""}
       {errorValidate && (
         <span className="required">{errors[field.name]}</span>
       )}

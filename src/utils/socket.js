@@ -5,15 +5,10 @@ let socket = null;
 
 function initSocket(callbackMessage) {
   console.log(SOCKET.API_URL);
-  console.log("-> start init socket-------------------");
   socket = io(SOCKET.API_URL);
   socket.on("connect", () => {
+    console.log("---->>>>>>>>>>>> CONNECT SOCKET <<<<<<<<<--------");
     // socket.emit("join-room", userId.toString());
-    // socketIo.emit("/me");
-    // getDataStreamUser(streamInfo);
-    // liveChatLine(liveChatLineCallBack);
-    // liveEnd(liveEndCallBack);
-    // getSendItem();
     getMessage(callbackMessage);
   });
 
@@ -23,7 +18,7 @@ function initSocket(callbackMessage) {
 function connectSocketError() {
   socket.on("connect_error", res => {
     console.log(res);
-    console.log("socket---------------------=", res);
+    console.log("!!!!!!!!!!!!!! SOCKET ERROR !!!!!!!!!!!!!", res);
   });
 }
 

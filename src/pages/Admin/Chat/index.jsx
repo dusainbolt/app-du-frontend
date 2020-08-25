@@ -13,11 +13,16 @@ import { SendOutlined, FileAddOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Comment, Tooltip, List } from "antd";
+import ChatBox from "../../../components/ChatBox";
+import CreateNickNameForm from "../../../components/CreateNickName";
+import Modal from "../../../components/Modal";
 import moment from "moment";
 
 function Home() {
   const [listInput, setListInput] = useState({ sub: "", msg_1: "", email: "" });
-  const [current, setCurrent] = useState(1);
+  const [user, setUser] = useState({});
+  const [dataMessage, setDataMessage] = useState([]);
+  const [visibleModalNickName, setVisibleModalNickname] = useState(false);
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
 
@@ -25,45 +30,63 @@ function Home() {
     setMessage(message);
   };
 
+
+  const onCreateNickName = useCallback(values => {
+    setVisibleModalNickname(false);
+    setUser(values);
+  },[]);
+
   useEffect(() => {
+    var x = document.getElementsByTagName("BODY")[0];
+    x.style.backgroundColor = "#f8f8f8";
+    setVisibleModalNickname(false);
     initSocket(getSocketMessage);
+    setDataMessage([
+      {
+        id: 0,
+        nickName: "Du sainbolt",
+        content: "hi iam du",
+        email: "dulh18199@gmail.com",
+        createAt: 1597199370
+      },
+      {
+        id: 1,
+        nickName: "Du sainbolt",
+        content: "hi iam du",
+        email: "dulh18199@gmail.com",
+        createAt: 1597199370
+      },
+      {
+        id: 2,
+        nickName: "Du sainbolt",
+        content: "hi iam du",
+        email: "dulh18199@gmail.com",
+        createAt: 1597199370
+      },
+      {
+        id: 3,
+        nickName: "Du sainbolt",
+        content: "hi iam du",
+        email: "dulh18199@gmail.com",
+        createAt: 1597199370
+      }
+    ]);
   }, []);
 
-  const data = [
-    {
-      actions: [<span key="comment-list-reply-to-0">Reply to</span>],
-      author: "Han Solo",
-      avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      content: (
-        <p>
-          We supply a series of design principles, practical patterns and high quality design
-          resources (Sketch and Axure), to help people create their product prototypes beautifully
-          and efficiently.
-        </p>
-      ),
-      datetime: (
-        <Tooltip title={moment().subtract(1, "days").format("YYYY-MM-DD HH:mm:ss")}>
-          <span>{moment().subtract(1, "days").fromNow()}</span>
-        </Tooltip>
-      ),
-    },
-    {
-      author: "Han Solo",
-      avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      content: (
-        <p>
-          We supply a series of design principles, practical patterns and high quality design
-          resources (Sketch and Axure), to help people create their product prototypes beautifully
-          and efficiently.
-        </p>
-      ),
-      datetime: (
-        <Tooltip title={moment().subtract(2, "days").format("YYYY-MM-DD HH:mm:ss")}>
-          <span>{moment().subtract(2, "days").fromNow()}</span>
-        </Tooltip>
-      ),
-    },
-  ];
+  const renderModalName = useMemo(() => {
+    return (
+      <Modal
+        width={400}
+        visible={visibleModalNickName}
+        content={<CreateNickNameForm callCreateNickname={onCreateNickName} />}
+        title="Create nickname"
+      />
+    );
+  }, [visibleModalNickName]);
+
+  const onSendMessage = values => {
+    console.log(values);
+  };
 
   return (
     <Row>
@@ -71,28 +94,11 @@ function Home() {
       <Formik onSubmit={""} initialValues={true && listInput}>
         {formik => (
           <div className="demo chat">
-            <div className="chat--container">
-              <List
-                className="comment-list"
-                // header={`${data.length} replies`}
-                itemLayout="horizontal"
-                dataSource={data}
-                renderItem={item => (
-                  <li>
-                    <Comment
-                      actions={item.actions}
-                      author={item.author}
-                      avatar={item.avatar}
-                      content={item.content}
-                      datetime={item.datetime}
-                    />
-                  </li>
-                )}
-              />
-            </div>
-            <Link style={{ textAlign: "center", fontSize: "11px", display: "block" }} to="/">
+            <ChatBox callMessage={onSendMessage} data={dataMessage} />
+            <Link className="demo--link-to" to="/">
               Quay lại trang chủ
             </Link>
+            {renderModalName}
           </div>
         )}
       </Formik>

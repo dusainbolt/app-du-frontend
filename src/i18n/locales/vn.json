@@ -40,7 +40,16 @@
     "process_title": "QUY TRÌNH TRIỂN KHAI"
   },
   "msg": {
-    "loading": "Đang tải..."
+    "loading": "Đang tải...",
+    "msgValidateRequired": "The field is required",
+    "msgValidateEmail": "The field must format email",
+    "required": "The field is invalid",
+    "msgEmailInvalid": "The {{fieldName} format is invalid",
+    "rangeNickName": "Nickname must be at least [2-25] characters",
+    "onlyLetterNumber": "The Nickname must be including only uppercase letters, lowercase letters, Space or Number",
+    "msgRePasswordMustMatch": "Please input re-enter password match the password",
+    "msgRequiredPassword": "{{fieldName}} must be at least [2-24] characters including only uppercase letters, lowercase letters (! # <> &@%+$*._-)",
+    "msgRequiredCodeMin": "The code is invalid."
   },
   "tech-stack": {
     "title_front_end": "FRONT-END TECH STACK",

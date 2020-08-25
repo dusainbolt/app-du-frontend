@@ -13,7 +13,9 @@ input::placeholder {
 
 .input{
   .ant-input-affix-wrapper,  input.ant-input, textarea.ant-input{
+    min-height: 40px;
     border: none;
+    font-size: 16px;
     background-color: #f0f2f5;
     border-radius: 5px;
   }
@@ -22,6 +24,16 @@ input::placeholder {
   .ant-input-affix-wrapper:hover, .ant-input-affix-wrapper-focused{
     border-color: $primary-color-light;
     border-right-width: 2px !important;
+  }
+  .ant-input-affix-wrapper{
+    height: auto;
+    >input {
+      font-size: 16px;
+
+      &::placeholder {
+        font-size: 13px;
+      }
+    }
   }
 }
 
