@@ -23,6 +23,7 @@ class AxiosServer {
   handelSuccess(response) {
     return response.data;
   }
+  
   handelError(error) {
     if (error.response && error.response.status === 401) {
       localStorage.removeItem("persist:root");
@@ -30,6 +31,7 @@ class AxiosServer {
     }
     return Promise.reject(error);
   }
+
   get(endpoint, body = {}) {
     this.instance.defaults.params = body;
     return this.instance.get(this.getFullUrl(endpoint), { params : body });

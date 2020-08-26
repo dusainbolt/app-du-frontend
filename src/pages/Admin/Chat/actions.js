@@ -1,25 +1,25 @@
 export const ActionTypes = {
-  SEND_EMAIL_START: "SEND_EMAIL_START",
-  SEND_EMAIl_SUCCESS: "SEND_EMAIl_SUCCESS",
-  SEND_EMAIl_ERROR: "SEND_EMAIl_ERROR"
+  SEND_MESSAGE_START: "SEND_MESSAGE_START",
+  SEND_MESSAGE_SUCCESS: "SEND_MESSAGE_SUCCESS",
+  SEND_MESSAGE_ERROR: "SEND_MESSAGE_ERROR"
 };
 
 export const actions = {
-  sendEmailStart: function(params){
+  sendMessageStart: function(params){
     return {
-      type: ActionTypes.SEND_EMAIL_START,
+      type: ActionTypes.SEND_MESSAGE_START,
       params
     };
   },
-  sendEmailSuccess: function(success){
+  sendMessageSuccess: function(success){
     return {
-      type: ActionTypes.SEND_EMAIl_SUCCESS,
+      type: ActionTypes.SEND_MESSAGE_SUCCESS,
       payload: success
     };
   },
-  sendEmailError: function(error){
+  sendMessageError: function(error){
     return {
-      type: ActionTypes.SEND_EMAIl_ERROR,
+      type: ActionTypes.SEND_MESSAGE_ERROR,
       payload: error
     };
   }

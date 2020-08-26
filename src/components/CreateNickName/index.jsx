@@ -5,7 +5,7 @@ import Button from "../Button";
 import { validateFormCreateNickName } from "../../common";
 
 export default function CreateNickname({ callCreateNickname }) {
-  const initialValues = { nickName: "", email: "" };
+  const initialValues = { userName: "", userEmail: "" };
 
   const onSubmitCreate = values => {
     callCreateNickname(values);

@@ -20,60 +20,109 @@ import moment from "moment";
 
 function Home() {
   const [listInput, setListInput] = useState({ sub: "", msg_1: "", email: "" });
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ userId: 12 });
   const [dataMessage, setDataMessage] = useState([]);
   const [visibleModalNickName, setVisibleModalNickname] = useState(false);
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
 
+  const dumyData = [
+    {
+      id: 12,
+      userId: 12,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+    {
+      id: 1,
+      userId: 12,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+    {
+      id: 2,
+      userId: 12,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+    {
+      id: 2,
+      userId: 12,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+    {
+      id: 3,
+      userId: 12,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+    {
+      id: 3,
+      userId: 13,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+    {
+      id: 3,
+      userId: 14,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+    {
+      id: 3,
+      userId: 25,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+    {
+      id: 3,
+      userId: 6,
+      userName: "Du sainbolt",
+      message: "hi iam du",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    },
+  ];
+
   const getSocketMessage = message => {
     setMessage(message);
   };
 
-
-  const onCreateNickName = useCallback(values => {
-    setVisibleModalNickname(false);
-    setUser(values);
-  },[]);
+  const onCreateNickName = useCallback(
+    values => {
+      setUser(values);
+      setVisibleModalNickname(false);
+    },
+    [visibleModalNickName]
+  );
 
   useEffect(() => {
     var x = document.getElementsByTagName("BODY")[0];
     x.style.backgroundColor = "#f8f8f8";
-    setVisibleModalNickname(false);
+    setVisibleModalNickname(true);
     initSocket(getSocketMessage);
-    setDataMessage([
-      {
-        id: 0,
-        nickName: "Du sainbolt",
-        content: "hi iam du",
-        email: "dulh18199@gmail.com",
-        createAt: 1597199370
-      },
-      {
-        id: 1,
-        nickName: "Du sainbolt",
-        content: "hi iam du",
-        email: "dulh18199@gmail.com",
-        createAt: 1597199370
-      },
-      {
-        id: 2,
-        nickName: "Du sainbolt",
-        content: "hi iam du",
-        email: "dulh18199@gmail.com",
-        createAt: 1597199370
-      },
-      {
-        id: 3,
-        nickName: "Du sainbolt",
-        content: "hi iam du",
-        email: "dulh18199@gmail.com",
-        createAt: 1597199370
-      }
-    ]);
+    setDataMessage(dumyData);
   }, []);
 
   const renderModalName = useMemo(() => {
+    console.log("set-------->", visibleModalNickName);
     return (
       <Modal
         width={400}
@@ -84,9 +133,24 @@ function Home() {
     );
   }, [visibleModalNickName]);
 
-  const onSendMessage = values => {
-    console.log(values);
-  };
+  const onSendMessage = useCallback(values => {
+    const msg = {
+      id: 15151,
+      userId: 6,
+      userName: "Du sainbolt",
+      message: "NEW CHAT BOTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx",
+      userEmail: "dulh18199@gmail.com",
+      createAt: 1597199370,
+    };
+    setDataMessage([...dataMessage, msg]);
+  },[dataMessage]);
+
+  const renderChatBox = useMemo(() => {
+    console.log("set-------->", dataMessage);
+    return <ChatBox user={user} callMessage={onSendMessage} data={dataMessage} />;
+  }, [dataMessage]);
+
+  console.log(dataMessage);
 
   return (
     <Row>
@@ -94,7 +158,7 @@ function Home() {
       <Formik onSubmit={""} initialValues={true && listInput}>
         {formik => (
           <div className="demo chat">
-            <ChatBox callMessage={onSendMessage} data={dataMessage} />
+            {typeof user.userName !== "undefined" && renderChatBox}
             <Link className="demo--link-to" to="/">
               Quay lại trang chủ
             </Link>
