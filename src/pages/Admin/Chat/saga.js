@@ -18,6 +18,6 @@ function* sendEmail(action) {
   }
 }
 
-export function* watchSendEmail() {
-  yield takeLatest(ActionTypes.SEND_EMAIL_START, sendEmail);
+export function* watchSendMessage() {
+  yield takeLatest(ActionTypes.SEND_MESSAGE_START, sendEmail);
 }

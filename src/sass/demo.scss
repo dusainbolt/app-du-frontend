@@ -158,3 +158,17 @@
     }
   }
 }
+
+@media (max-width: 414px) {
+  .demo{
+    &.chat{
+      width: 350px;
+      margin-top: 50px;
+    }
+  }
+  .chat{
+    &--content{
+      width: 80%;
+    }
+  }
+}

@@ -7,12 +7,15 @@ import { Tooltip } from "antd";
 import ScrollToBottom from "react-scroll-to-bottom";
 
 export default function ChatBox({ user, data, callMessage }) {
+
   const messagesEndRef = useRef(null);
   const initialVales = { message: "" };
   const onPress = (values, { resetForm }) => {
     callMessage(values);
     resetForm();
   };
+
+  console.log(data);
 
   const renderListChat = (chat, manyChat, key) => {
     return (
@@ -40,7 +43,6 @@ export default function ChatBox({ user, data, callMessage }) {
   };
 
   const checkManyChat = (userId, manyChat) => {
-    console.log(userId, manyChat);
     if (userId === manyChat) return "";
     return (
       <Tooltip title="prompt text" placement="left" color={"#02020259"}>
@@ -71,6 +73,7 @@ export default function ChatBox({ user, data, callMessage }) {
         {formik => (
           <div className="chat--container__bottom">
             <Lazyload
+              delayThrottle={10}
               className="chat--container__bottom--img"
               src={"https://www.w3schools.com/howto/img_avatar.png"}
               alt="image"
