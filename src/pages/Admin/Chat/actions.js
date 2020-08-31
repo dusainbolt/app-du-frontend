@@ -8,6 +8,7 @@ export const ActionTypes = {
   GET_LIST_CHAT_START: "GET_LIST_CHAT_START",
   GET_LIST_CHAT_SUCCESS: "GET_LIST_CHAT_SUCCESS",
   GET_LIST_CHAT_ERROR: "GET_LIST_CHAT_ERROR",
+  PUT_SOCKET_LIST_CHAT: "PUT_SOCKET_LIST_CHAT"
 };
 
 export const actions = {
@@ -39,6 +40,12 @@ export const actions = {
     return {
       type: ActionTypes.GET_LIST_CHAT_SUCCESS,
       payload: success
+    };
+  },
+  putListChatSocket: function(data){
+    return {
+      type: ActionTypes.PUT_SOCKET_LIST_CHAT,
+      payload: data,
     };
   },
   getListChatError: function(error){

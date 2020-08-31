@@ -27,24 +27,19 @@ function Chat() {
   const extant = useSelector(state => state.chatReducer.extant);
 
   const [paramsChat, setParamsChat] = useState({ limit: 10 });
-  const [dataMessage, setDataMessage] = useState([]);
   const [visibleModalNickName, setVisibleModalNickname] = useState(false);
   const dispatch = useDispatch();
 
   const getSocketMessage = useCallback(
     message => {
-      setDataMessage(oldData => [...oldData, message]);
+      dispatch(actions.putListChatSocket(message));
     },
-    [dataMessage]
+    []
   );
 
   const onCreateNickName = useCallback(values => {
     dispatch(actions.loginChatStart(values));
   }, []);
-
-  useEffect(() => {
-    setDataMessage(listChat);
-  }, [listChat]);
 
   useEffect(() => {
     var x = document.getElementsByTagName("BODY")[0];
@@ -97,10 +92,10 @@ function Chat() {
         isLoadingChat={isLoadingChat}
         extant={extant}
         callMessage={onSendMessage}
-        data={dataMessage}
+        data={listChat}
       />
     );
-  }, [dataMessage, user, isLoadingListChat, isLoadingChat, extant]);
+  }, [listChat, user, isLoadingListChat, isLoadingChat, extant]);
 
   return (
     <Row>

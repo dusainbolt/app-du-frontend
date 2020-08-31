@@ -65,6 +65,11 @@ export default (state = DEFAULT_STATE, action) => {
       listChat: action.payload.listChat.reverse().concat(state.listChat),
       extant: action.payload.extant
     };  
+  case ActionTypes.PUT_SOCKET_LIST_CHAT: 
+  return {
+    ...state,
+    listChat: state.listChat.concat(action.payload)
+  }
   default:
     return state;
   }
