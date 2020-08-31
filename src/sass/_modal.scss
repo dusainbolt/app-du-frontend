@@ -4,6 +4,12 @@
       border-radius: 7px;
       overflow: hidden;
     }
+    .ant-modal-body{
+      padding: 0;
+    }
+    &--body{
+      padding: 24px;
+    }
     &__title {
       text-align: center;
       &.ant-typography {

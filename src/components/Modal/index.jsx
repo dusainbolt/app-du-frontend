@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Typography } from "antd";
-
+import Spin from "../Spin";
 const { Title } = Typography;
 
 function ModalCommon({
@@ -9,9 +9,21 @@ function ModalCommon({
   width,
   classTitle = "",
   title,
+  isLoadingSpin = false,
   content,
   levelTitle = 4,
 }) {
+  const renderContent = () => {
+    return (
+      <div className="modal--body">
+        <Title className={`modal__title ${classTitle}`} level={levelTitle}>
+          <span>{title}</span>
+        </Title>
+        {content}
+      </div>
+    );
+  };
+
   return (
     <Modal
       visible={visible}
@@ -22,10 +34,7 @@ function ModalCommon({
       title={null}
       closable={false}
     >
-      <Title className={`modal__title ${classTitle}`} level={levelTitle}>
-        <span>{title}</span>
-      </Title>
-      {content}
+      <Spin isLoading={isLoadingSpin} content={renderContent()} />
     </Modal>
   );
 }

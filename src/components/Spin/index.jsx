@@ -14,7 +14,7 @@ export default function SpinCommon({
   const icon = <HourglassOutlined className="my-spin--icon" spin />;
   const { t } = useTranslation();
   return (
-    <div className={isLoading && "my-spin"}>
+    <div className={isLoading ? "my-spin" : ""}>
       <Spin {...props} indicator={icon} spinning={isLoading} tip={t(dataText)} delay={delay}>
         {content}
       </Spin>

@@ -29,6 +29,9 @@ class AxiosServer {
       localStorage.removeItem("persist:root");
       browserHistory.push("/bautroixanh/login");
     }
+    if (error.response && error.response.status === 400) {
+      return error.response.data;
+    }
     return Promise.reject(error);
   }
 

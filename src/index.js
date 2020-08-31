@@ -7,15 +7,19 @@ import * as serviceWorker from "./serviceWorker";
 import { persistor, store, sagaMiddleware } from "./redux/configStore";
 import { PersistGate } from "redux-persist/es/integration/react";
 import { Provider } from "react-redux";
+import api from "./services/api";
 import rootSaga from "./redux/rootSaga";
 import "antd/dist/antd.css";
 
+const onBeforeLift = store => () => {
+  const { loginReducer } = store.getState();
+  api.setAuthRequest(loginReducer.userDetail?.token);
+};
+
 ReactDOM.render(
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      {/* <React.StrictMode> */}
+    <PersistGate onBeforeLift={onBeforeLift(store)} loading={null} persistor={persistor}>
       <App />
-      {/* </React.StrictMode> */}
     </PersistGate>
   </Provider>,
   document.getElementById("root")

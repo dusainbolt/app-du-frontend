@@ -4,33 +4,31 @@ import { Row, message } from "antd";
 import { Formik, Field } from "formik";
 import { useState } from "react";
 import { useMemo } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actions } from "./actions";
 import { initSocket } from "../../../utils/socket";
 import { SendOutlined, FileAddOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Comment, Tooltip, List } from "antd";
+import Spin from "../../../components/Spin";
 import ChatBox from "../../../components/ChatBox";
 import CreateNickNameForm from "../../../components/CreateNickName";
 import Modal from "../../../components/Modal";
 
-function Home() {
-  const [user, setUser] = useState({ userId: 12 });
+function Chat() {
+  // const [user, setUser] = useState({ userId: 12 });
+  const user = useSelector(state => state.loginReducer.userDetail);
+  const isLoadingLogin = useSelector(state => state.chatReducer.isLoadingLogin);
+  const errorLogin = useSelector(state => state.chatReducer.errorLogin);
+  const isLoadingChat = useSelector(state => state.chatReducer.isLoadingChat);
+  const listChat = useSelector(state => state.chatReducer.listChat);
+  const isLoadingListChat = useSelector(state => state.chatReducer.isLoadingListChat);
+
+  const [paramsChat, setParamsChat] = useState({ limit: 10 });
   const [dataMessage, setDataMessage] = useState([]);
   const [visibleModalNickName, setVisibleModalNickname] = useState(false);
   const dispatch = useDispatch();
-
-  // const dumyData = [
-  //   {
-  //     id: 12,
-  //     userId: 12,
-  //     userName: "Du sainbolt",
-  //     message: "hi iam du",
-  //     userEmail: "dulh18199@gmail.com",
-  //     createAt: 1597199370,
-  //   },
-  // ];
 
   const getSocketMessage = useCallback(
     message => {
@@ -39,47 +37,68 @@ function Home() {
     [dataMessage]
   );
 
-  const onCreateNickName = useCallback(
-    values => {
-      setUser(values);
-      setVisibleModalNickname(false);
-    },
-    [visibleModalNickName]
-  );
+  const onCreateNickName = useCallback(values => {
+    console.log(values);
+    dispatch(actions.loginChatStart(values));
+  }, []);
+
+  useEffect(() => {
+    setDataMessage(listChat);
+  }, [listChat]);
 
   useEffect(() => {
     var x = document.getElementsByTagName("BODY")[0];
     x.style.backgroundColor = "#f8f8f8";
-    setVisibleModalNickname(true);
-    initSocket(getSocketMessage);
   }, []);
+
+  useEffect(() => {
+    if (user?.userInfo) {
+      initSocket(getSocketMessage);
+      setVisibleModalNickname(false);
+      dispatch(actions.getListChatStart(paramsChat));
+    } else {
+      setVisibleModalNickname(true);
+    }
+  }, [user]);
 
   const renderModalName = useMemo(() => {
     return (
       <Modal
         width={400}
         visible={visibleModalNickName}
-        content={<CreateNickNameForm callCreateNickname={onCreateNickName} />}
+        isLoadingSpin={isLoadingLogin}
+        content={
+          <CreateNickNameForm
+            isLoadingLogin={isLoadingLogin}
+            errorLogin={errorLogin}
+            callCreateNickname={onCreateNickName}
+          />
+        }
         title="Create nickname"
       />
     );
-  }, [visibleModalNickName]);
+  }, [isLoadingLogin, errorLogin, visibleModalNickName]);
 
-  const onSendMessage = useCallback(
-    values => {
-      dispatch(actions.sendMessageStart({ ...values, ...user }));
-    },
-    [user]
-  );
+  const onSendMessage = useCallback(values => {
+    dispatch(actions.sendMessageStart(values));
+  }, []);
 
   const renderChatBox = useMemo(() => {
-    return <ChatBox user={user} callMessage={onSendMessage} data={dataMessage} />;
-  }, [dataMessage, user]);
+    return (
+      <ChatBox
+        user={user?.userInfo}
+        isLoadingList={isLoadingListChat}
+        isLoadingChat={isLoadingChat}
+        callMessage={onSendMessage}
+        data={dataMessage}
+      />
+    );
+  }, [dataMessage, user, isLoadingListChat, isLoadingChat]);
 
   return (
     <Row>
       <div className="demo chat">
-        {typeof user.userName !== "undefined" && renderChatBox}
+        {typeof user?.userInfo !== "undefined" && renderChatBox}
         <Link className="demo--link-to" to="/">
           Quay lại trang chủ
         </Link>
@@ -89,4 +108,4 @@ function Home() {
   );
 }
 
-export default memo(Home);
+export default memo(Chat);

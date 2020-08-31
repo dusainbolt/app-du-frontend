@@ -1,4 +1,5 @@
 import { ActionTypes } from "./actions";
+import { ActionTypes as actionChat } from "../Admin/Chat/actions";
 
 const DEFAULT_STATE = {
   isLoadingChangePassword: false,
@@ -44,6 +45,12 @@ export default (state = DEFAULT_STATE, action) => {
       ...state,
       isLoadingChangePassword: false,
     };
+  case actionChat.LOGIN_CHAT_SUCCESS: {
+    return {
+      ...state,
+      userDetail: action.payload,
+    };
+  }  
   default:
     return state;
   }

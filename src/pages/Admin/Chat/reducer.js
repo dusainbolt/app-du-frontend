@@ -1,27 +1,70 @@
 import { ActionTypes } from "./actions";
+import { actions } from "../../Layout/AdminMaster/actions";
 
 const DEFAULT_STATE = {
-  isLoading: false
+  isLoadingLogin: false,
+  isLoadingChat: false,
+  isLoadingListChat: false,
+  errorLogin: "",
+  errorChat: "",
+  listChat: {},
+  extant: 100,
+  errorListChat: "",
 };
 
 export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-  case ActionTypes.GET_DEMO_START:
+  case ActionTypes.LOGIN_CHAT_START:
     return {
       ...state,
-      isLoading: true
+      isLoadingLogin: true
     };
-  case ActionTypes.GET_DEMO_ERROR:
+  case ActionTypes.LOGIN_CHAT_ERROR:
     return {
       ...state,
-      isLoading: false,
-      error: ""
+      isLoadingLogin: false,
+      errorLogin: action.payload
     };
-  case ActionTypes.GET_DEMO_SUCCESS:
+  case ActionTypes.LOGIN_CHAT_SUCCESS:
     return {
       ...state,
-      isLoading: false
+      isLoadingLogin: false,
+      errorLogin: "",
     };
+  case ActionTypes.SEND_MESSAGE_START:
+    return {
+      ...state,
+      isLoadingChat: true
+    };
+  case ActionTypes.SEND_MESSAGE_ERROR:
+    return {
+      ...state,
+      isLoadingChat: false,
+      errorChat: action.payload
+    };
+  case ActionTypes.SEND_MESSAGE_SUCCESS:
+    return {
+      ...state,
+      isLoadingChat: false
+    };
+  case ActionTypes.GET_LIST_CHAT_START:
+    return {
+      ...state,
+      isLoadingListChat: true
+    };
+  case ActionTypes.GET_LIST_CHAT_ERROR:
+    return {
+      ...state,
+      isLoadingListChat: false,
+      errorListChat: action.payload
+    };
+  case ActionTypes.GET_LIST_CHAT_SUCCESS:
+    return {
+      ...state,
+      isLoadingListChat: false,
+      listChat: action.payload.listChat.reverse(),
+      extant: action.payload.extant
+    };  
   default:
     return state;
   }

@@ -15,8 +15,13 @@ function* postLogin(action) {
   yield put(actionLayout.showLoadingEvent());
   try {
     const response = yield postLoginApi(action.values);
-    yield put(actions.postLoginSuccess(response));
-    yield effectAfterRequest("success", "Chào mừng đến trang quản trị", 1, "/bautroixanh/home");
+    if (response.meta.code === 0) {
+      yield put(actions.postLoginSuccess(response.data));
+      yield effectAfterRequest("success", "Chào mừng đến trang quản trị", 1, "/bautroixanh/home");
+    } else {
+      yield put(actions.postLoginError({}));
+      yield effectAfterRequest("error", "Sai tài khoản hoặc mật khẩu", 1);
+    }
   } catch (e) {
     yield effectAfterRequest("error", "Sai tài khoản hoặc mật khẩu", 1);
   }

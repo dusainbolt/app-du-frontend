@@ -42,11 +42,14 @@ export const validateFormChangePassword = Yup.object({
     .max(27, "Vui lòng nhập dưới 27 ký tự"),
 });
 
-export const validateFormCreateNickName = Yup.object({
-  userName: Yup.string()
-    .matches(/^[A-Za-z0-9 ]+$/, getI18n().t("msg.onlyLetterNumber"))
-    .test("len",  getI18n().t("msg.rangeNickName"), val => checkStringRange(val, 2, 25)),
-  userEmail: Yup.string()
+export const validateMessage = Yup.object({
+  message: Yup.string()
+    .required()
+});
+
+export const validateLoginCommon = Yup.object({
+  email: Yup.string()
     .required(getI18n().t("msg.msgValidateRequired"))
-    .email(getI18n().t("msg.msgValidateEmail")) 
+    .email(getI18n().t("msg.msgValidateEmail")),
+  password: Yup.string().required("please enter password"),
 });

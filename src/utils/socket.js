@@ -10,6 +10,7 @@ function initSocket(callbackMessage) {
     console.log("---->>>>>>>>>>>> CONNECT SOCKET <<<<<<<<<--------");
     // socket.emit("join-room", userId.toString());
     getMessage(callbackMessage);
+    getMessage1(callbackMessage);
   });
 
   connectSocketError();
@@ -24,13 +25,17 @@ function connectSocketError() {
 
 function getMessage(callbackMessage) {
   socket.on("__chatSocket", res => {
-    // const data = JSON.parse(res).data.payload;
+    console.log("----->Data", res);
+    callbackMessage(res.data);
+  });
+}
+function getMessage1(callbackMessage) {
+  socket.on("__chatSocket1", res => {
     console.log("----->Data", res);
     callbackMessage(res.data);
   });
 }
 // message
 // new message
-
 
 export { initSocket };

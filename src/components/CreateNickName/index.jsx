@@ -2,46 +2,50 @@ import React from "react";
 import { Formik, Field } from "formik";
 import Input from "../Input";
 import Button from "../Button";
-import { validateFormCreateNickName } from "../../common";
-import { useState } from "react";
+import { validateLoginCommon } from "../../common";
+import { useTranslation } from "react-i18next";
+import Dot from "../Dot";
+import { useSelector } from "react-redux";
 
-export default function CreateNickname({ callCreateNickname }) {
-  const initialValues = { userName: "", userEmail: "" };
-  const [userId, setUserId] = useState(0);
+export default function CreateNickname({ isLoadingLogin, callCreateNickname, errorLogin }) {
+  const initialValues = { email: "", password: "" };
+
+  const { t } = useTranslation();
   const onSubmitCreate = values => {
-    let id = userId;
-    if(!userId){
-      id = getRandomInt(999999);
-      setUserId(id);
-    }
-    callCreateNickname({ ...values, userId: id });
+    callCreateNickname(values);
   };
-
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
 
   return (
     <Formik
       onSubmit={onSubmitCreate}
-      validationSchema={validateFormCreateNickName}
+      validationSchema={validateLoginCommon}
       initialValues={initialValues}
     >
       {formik => (
         <div className="form__nick-name">
           <Field
             onPressEnter={formik.handleSubmit}
-            name="userEmail"
+            name="email"
             placeholder="Your email address"
             component={Input}
           />
           <Field
             onPressEnter={formik.handleSubmit}
-            name="userName"
-            placeholder="Your nickname"
+            type="password"
+            name="password"
+            placeholder="Your password"
             component={Input}
           />
-          <Button onClick={formik.handleSubmit} className="btn-primary" title="CREATE" />
+          {errorLogin ? (
+            <span className="required required--submit">{t(`msg.${errorLogin}`)}</span>
+          ) : (
+            ""
+          )}
+          {isLoadingLogin ? (
+            <Dot />
+          ) : (
+            <Button onClick={formik.handleSubmit} className="btn-primary" title="CREATE" />
+          )}
         </div>
       )}
     </Formik>

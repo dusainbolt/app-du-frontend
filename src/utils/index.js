@@ -54,3 +54,7 @@ export function checkStringRange(value, min, max) {
   const length = value.trim().length;
   return length >= min && length <= max;
 }
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}

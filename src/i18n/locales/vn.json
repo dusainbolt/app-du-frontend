@@ -41,6 +41,7 @@
   },
   "msg": {
     "loading": "Đang tải...",
+    "login_fail": "Your email or password invalid",
     "msgValidateRequired": "The field is required",
     "msgValidateEmail": "The field must format email",
     "required": "The field is invalid",
