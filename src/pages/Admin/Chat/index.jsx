@@ -24,6 +24,7 @@ function Chat() {
   const isLoadingChat = useSelector(state => state.chatReducer.isLoadingChat);
   const listChat = useSelector(state => state.chatReducer.listChat);
   const isLoadingListChat = useSelector(state => state.chatReducer.isLoadingListChat);
+  const extant = useSelector(state => state.chatReducer.extant);
 
   const [paramsChat, setParamsChat] = useState({ limit: 10 });
   const [dataMessage, setDataMessage] = useState([]);
@@ -38,7 +39,6 @@ function Chat() {
   );
 
   const onCreateNickName = useCallback(values => {
-    console.log(values);
     dispatch(actions.loginChatStart(values));
   }, []);
 
@@ -50,6 +50,11 @@ function Chat() {
     var x = document.getElementsByTagName("BODY")[0];
     x.style.backgroundColor = "#f8f8f8";
   }, []);
+
+  const onLoadMoreList = useCallback(() => {
+    console.log("->>>>>>>>>>>>>", listChat[0].id);
+    dispatch(actions.getListChatStart({ idChat: listChat[0].id }));
+  }, [listChat]);
 
   useEffect(() => {
     if (user?.userInfo) {
@@ -88,12 +93,14 @@ function Chat() {
       <ChatBox
         user={user?.userInfo}
         isLoadingList={isLoadingListChat}
+        callLoadMore={onLoadMoreList}
         isLoadingChat={isLoadingChat}
+        extant={extant}
         callMessage={onSendMessage}
         data={dataMessage}
       />
     );
-  }, [dataMessage, user, isLoadingListChat, isLoadingChat]);
+  }, [dataMessage, user, isLoadingListChat, isLoadingChat, extant]);
 
   return (
     <Row>

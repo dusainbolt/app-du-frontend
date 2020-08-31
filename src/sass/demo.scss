@@ -71,6 +71,15 @@
       padding: 15px 15px 0 15px;
     }
     
+    .load-more{
+      text-align: center;
+      cursor: pointer;
+      color: $primary-color-bold;
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+
     &--box {
       height: 550px;
       width: 100%;

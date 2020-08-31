@@ -6,9 +6,19 @@ import { SendOutlined, LoadingOutlined } from "@ant-design/icons";
 import { Tooltip, Skeleton } from "antd";
 import ScrollToBottom from "react-scroll-to-bottom";
 import { useState } from "react";
-import { validateMessage } from "../../common";
+import { convertDateTime, genderTimeCount } from "../../utils";
+import { TYPE_DATE_TIME, validateMessage } from "../../common";
+import Dot from "../Dot";
 
-export default function ChatBox({ isLoadingList, isLoadingChat, user, data, callMessage }) {
+export default function ChatBox({
+  isLoadingList,
+  isLoadingChat,
+  user,
+  data,
+  extant,
+  callMessage,
+  callLoadMore,
+}) {
   const messagesEndRef = useRef(null);
   const initialVales = { message: "" };
   const [type, setType] = useState("text");
@@ -22,34 +32,44 @@ export default function ChatBox({ isLoadingList, isLoadingChat, user, data, call
       <div key={key} className={`chat--content ${chat.userId === user.id && "right"}`}>
         {chat.userId !== user.id && (
           <div className="chat--content--avatar">
-            {checkManyChat(chat.userId, chat.avatarUrl, manyChat[key - 1])}
+            {checkManyChat(chat, manyChat[key - 1])}
           </div>
         )}
         <div className="chat--content__msg-wrapper">
           <div className="chat--content__msg-wrapper--name">
-            {chat.userName}: <span>Vừa xong</span>
+            {chat.userName}: <span>{genderTimeCount(chat.createdAt)}</span>
           </div>
-          <Tooltip title="prompt text" placement="top" color={"#02020259"}>
+          <Tooltip title={genderTooltipMess(chat.createdAt)} placement="top" color={"#ababab"}>
             <div className="chat--content__msg-wrapper--message">{chat.message}</div>
           </Tooltip>
         </div>
         {chat.userId === user.id && (
           <div className="chat--content--avatar">
-            {checkManyChat(chat.userId, chat.avatarUrl, manyChat[key - 1])}
+            {checkManyChat(chat, manyChat[key - 1])}
           </div>
         )}
       </div>
     );
   };
 
-  const checkManyChat = (userId, avatar, manyChat) => {
+  const checkManyChat = (chat, manyChat) => {
+    const { userId, avatarUrl, userName, userEmail } = chat;
     if (userId === manyChat) return "";
     return (
-      <Tooltip title="prompt text" placement="left" color={"#02020259"}>
-        <Lazyload className="chat--content__img" src={avatar} alt="image" />
+      <Tooltip title={genderTooltipAvatar(userName, userEmail)} placement="left" color={"#ababab"}>
+        <Lazyload className="chat--content__img" src={avatarUrl} alt="image" />
       </Tooltip>
     );
   };
+
+  const genderTooltipMess = date => {
+    return "Sent date: " + convertDateTime(date, TYPE_DATE_TIME.TIME_AND_DATE);
+  };
+
+  const genderTooltipAvatar = (name, email) => {
+    return name + "-" + email;
+  };
+  
 
   const renderContentMsg = useMemo(() => {
     if (!data?.length) return "";
@@ -64,6 +84,15 @@ export default function ChatBox({ isLoadingList, isLoadingChat, user, data, call
     <div className="chat--container">
       <ScrollToBottom ref={messagesEndRef} className="chat--container--box">
         <Skeleton paragraph={{ rows: 10 }} active loading={isLoadingList}></Skeleton>
+        {isLoadingList ? (
+          <Dot />
+        ) : (
+          extant > 0 && (
+            <div onClick={callLoadMore} className="load-more">
+              Load more
+            </div>
+          )
+        )}
         {renderContentMsg}
       </ScrollToBottom>
       <Formik validationSchema={validateMessage} onSubmit={onPress} initialValues={initialVales}>

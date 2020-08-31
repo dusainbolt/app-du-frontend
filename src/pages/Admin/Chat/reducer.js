@@ -7,7 +7,7 @@ const DEFAULT_STATE = {
   isLoadingListChat: false,
   errorLogin: "",
   errorChat: "",
-  listChat: {},
+  listChat: [],
   extant: 100,
   errorListChat: "",
 };
@@ -62,7 +62,7 @@ export default (state = DEFAULT_STATE, action) => {
     return {
       ...state,
       isLoadingListChat: false,
-      listChat: action.payload.listChat.reverse(),
+      listChat: action.payload.listChat.reverse().concat(state.listChat),
       extant: action.payload.extant
     };  
   default:

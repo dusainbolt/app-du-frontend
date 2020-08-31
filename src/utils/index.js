@@ -1,7 +1,9 @@
 import { browserHistory } from "./history";
 import { actions as actionLayout } from "../pages/Layout/AdminMaster/actions";
 import { put } from "redux-saga/effects";
+import { TIME_UTC_FORMAT, DATE_UTC_FORMAT, TYPE_DATE_TIME } from "../common";
 import showMessage from "../components/Message/index";
+import moment from "moment";
 
 export function getTimeNowUnix() {
   return Math.round(new Date().getTime() / 1000);
@@ -50,11 +52,46 @@ export function showBodyHeader(header) {
 }
 
 export function checkStringRange(value, min, max) {
-  if(!value) return false;
+  if (!value) return false;
   const length = value.trim().length;
   return length >= min && length <= max;
 }
 
-function getRandomInt(max) {
+export function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
+}
+
+export function convertDateTime(timeNumber, type = "") {
+  if (!timeNumber) return "";
+  const timeConvert = moment.unix(timeNumber).format(TIME_UTC_FORMAT.TYPE_2);
+  const dateConvert = moment.unix(timeNumber).format(DATE_UTC_FORMAT);
+  switch (type) {
+  case TYPE_DATE_TIME.DATE:
+    return dateConvert;
+  case TYPE_DATE_TIME.TIME:
+    return timeConvert;
+  case TYPE_DATE_TIME.TIME_AND_DATE:
+    return dateConvert + " " + timeConvert;
+  default:
+    return dateConvert;
+  }
+}
+
+export function genderTimeCount(timeNumber) {
+  var now = moment(new Date()); //todays date
+  var myTime = moment.unix(timeNumber);
+  var duration = now.diff(myTime);
+  if (duration < 60000) {
+    return "now";
+  } else if (duration > 60000 && duration < 3600000) {
+    return now.diff(myTime, "minutes") + " minutes";
+  } else if (duration > 3600000 && duration < 86400000){
+    return now.diff(myTime, "hours") + " hours";
+  } else if (duration > 86400000 && duration < 604800000){
+    return now.diff(myTime, "days") + " days";
+  } else if( duration > 604800000){
+    return moment.unix(timeNumber).format(DATE_UTC_FORMAT);
+  }else{
+    return moment.unix(timeNumber).format(DATE_UTC_FORMAT);
+  }
 }

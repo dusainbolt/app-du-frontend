@@ -53,3 +53,16 @@ export const validateLoginCommon = Yup.object({
     .email(getI18n().t("msg.msgValidateEmail")),
   password: Yup.string().required("please enter password"),
 });
+
+export const TIME_UTC_FORMAT = {
+  TYPE_1: "HHmmss",
+  TYPE_2: "HH:mm:ss",
+};
+
+export const DATE_UTC_FORMAT = "DD/MM/YYYY";
+
+export const TYPE_DATE_TIME = {
+  DATE: DATE_UTC_FORMAT,
+  TIME: TIME_UTC_FORMAT.TYPE_2,
+  TIME_AND_DATE: TIME_UTC_FORMAT + " " + DATE_UTC_FORMAT,
+}
