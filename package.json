@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://dusainbolt.github.io/app-du-frontend/",
-  "engines": {
-    "node": "12.11.1"
-  },
-  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -40,7 +36,7 @@
     "yup": "^0.29.1"
   },
   "scripts": {
-    "start": "node --experimental-modules ./index.js",
+    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eslint": "eslint path/to/src",
