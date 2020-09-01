@@ -40,7 +40,7 @@
     "yup": "^0.29.1"
   },
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node --experimental-modules ./index.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eslint": "eslint path/to/src",
