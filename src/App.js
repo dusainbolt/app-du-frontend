@@ -1,25 +1,24 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { browserHistory } from "./utils/history";
-import LayoutAdmin from "./pages/Layout/AdminMaster";
-import LayoutWeb from "./pages/Layout/WebMaster";
-import { AdminRoutes, WebRoutes } from "./Routes";
+import LayoutAdmin from "./pages/Layout";
+import LayoutAuth from "./pages/AuthCommon";
+import { Routes, RoutesAuth } from "./Routes";
 import AuthLoading from "./components/Loading/AuthenLoading";
 import EventLoading from "./components/Loading/EventLoading";
-import Email from "./pages/Admin/Home";
-import Chat from "./pages/Admin/Chat";
-import LoginPage from "./pages/Login";
-import NotFound from "./pages/Web/NotFound";
+import NotFound from "./pages/NotFound";
 import "./App.css";
 import "./sass/app.scss";
-import { connect } from "react-redux";
-class App extends Component {
-  renderAdminLayout = () => {
+import { useSelector } from "react-redux";
+
+function App() {
+  const layout = useSelector(state => state.layoutReducer);
+
+  const renderLayout = (listRoutes, LayoutCommon) => {
     let html = null;
-    html = AdminRoutes.map(route => {
+    html = listRoutes.map(route => {
       return (
-        <LayoutAdmin
+        <LayoutCommon
           name={route.name}
           key={route.path}
           component={route.component}
@@ -30,47 +29,20 @@ class App extends Component {
     });
     return html;
   };
-  renderWebLayout = () => {
-    let html = null;
-    html = WebRoutes.map(route => {
-      return (
-        <LayoutWeb
-          name={route.name}
-          key={route.path}
-          component={route.component}
-          path={route.path}
-          exact={route.exact}
-        />
-      );
-    });
-    return html;
-  };
-  render() {
-    const { layout } = this.props;
-    return (
-      <div className="App">
-        <AuthLoading isLoading={layout.isLoadingAuth} />
-        <EventLoading isLoading={layout.isLoadingEvent}/>
-        <Router history={browserHistory}>
-          <Switch>
-            <Route exact path="/bautroixanh/login" component={LoginPage} />
-            {this.renderAdminLayout()}
-            {this.renderWebLayout()}
-            <Route exact path="email" component={Email} />
-            <Route exact path="" component={Chat} />
-          </Switch>
-        </Router>
-      </div>
-    );
-  }
+
+  return (
+    <div className="App">
+      <AuthLoading isLoading={layout.isLoadingAuth} />
+      <EventLoading isLoading={layout.isLoadingEvent} />
+      <Router history={browserHistory}>
+        <Switch>
+          {renderLayout(Routes, LayoutAdmin)}
+          {renderLayout(RoutesAuth, LayoutAuth)}
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
-const mstp = state => ({
-  layout: state.layoutReducer,
-});
-
-const mdtp = dispatch => ({
-});
-
-
-export default connect(mstp, mdtp)(withTranslation()(App));
+export default App;

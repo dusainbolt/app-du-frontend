@@ -1,5 +1,5 @@
 import { browserHistory } from "./history";
-import { actions as actionLayout } from "../pages/Layout/AdminMaster/actions";
+import { actions as actionLayout } from "../pages/Layout/actions";
 import { put } from "redux-saga/effects";
 import { TIME_UTC_FORMAT, DATE_UTC_FORMAT, TYPE_DATE_TIME } from "../common";
 import showMessage from "../components/Message/index";

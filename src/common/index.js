@@ -65,4 +65,10 @@ export const TYPE_DATE_TIME = {
   DATE: DATE_UTC_FORMAT,
   TIME: TIME_UTC_FORMAT.TYPE_2,
   TIME_AND_DATE: TIME_UTC_FORMAT + " " + DATE_UTC_FORMAT,
-}
+};
+
+export const TYPE_ANT = {
+  SUCCESS: "success",
+  ERROR: "error",
+  WARNING: "warning",
+};

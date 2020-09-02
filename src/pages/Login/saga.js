@@ -6,7 +6,7 @@ import {
   postLogoutAdminApi,
   postChangePasswordAdminApi,
 } from "../../services/AuthRequest";
-import { actions as actionLayout } from "../Layout/AdminMaster/actions";
+import { actions as actionLayout } from "../Layout/actions";
 
 import { effectAfterRequest } from "../../utils";
 import api from "../../services/api";
@@ -17,7 +17,7 @@ function* postLogin(action) {
     const response = yield postLoginApi(action.values);
     if (response.meta.code === 0) {
       yield put(actions.postLoginSuccess(response.data));
-      yield effectAfterRequest("success", "Chào mừng đến trang quản trị", 1, "/bautroixanh/home");
+      yield effectAfterRequest("success", "Chào mừng đến trang quản trị", 1, "/home");
     } else {
       yield put(actions.postLoginError({}));
       yield effectAfterRequest("error", "Sai tài khoản hoặc mật khẩu", 1);
@@ -33,7 +33,7 @@ function* redirectForLogin(action) {
     yield api.setAuthRequest(action.values);
     const response = yield postAuthAdminApi();
     yield put(actions.postAuthAdminSuccess({ token: action.values }, response));
-    yield effectAfterRequest("success", "Chào mừng đến trang quản trị", 2, "/bautroixanh/home");
+    yield effectAfterRequest("success", "Chào mừng đến trang quản trị", 2, "/home");
   } catch (e) {
     yield effectAfterRequest("error", "Phiên đăng nhập hết hạn", 2);
   }
@@ -57,26 +57,21 @@ function* logoutAdmin(action) {
     yield put(actions.postLoginSuccess({}));
   }
   yield put(actions.postLoginSuccess({}));
-  yield effectAfterRequest("warning", "Đã đăng xuất", 1, "/bautroixanh/login");
+  yield effectAfterRequest("warning", "Đã đăng xuất", 1, "/login");
 }
 
 function* changePassword(action) {
   yield put(actionLayout.showLoadingEvent());
   try {
     const response = yield postChangePasswordAdminApi(action.values);
-    console.log(response);
-    console.log("CODE: ", response.meta.code);
     if (response.meta.code === 0) {
-      console.log("CODE: ", response.meta.code);
       yield put(actions.postChangePasswordSuccess(response));
       yield effectAfterRequest("success", "Đổi mật khẩu thành công", 1);
     } else {
       yield put(actions.postChangePasswordError({}));
-      console.log("CODE: ", response.meta.code);
       yield effectAfterRequest("warning", "Đổi mật khẩu thất bại", 1);
     }
   } catch (e) {
-    console.log("CODE: ", e);
     yield put(actions.postChangePasswordError(e));
     yield effectAfterRequest("warning", "Đổi mật khẩu thất bại", 1);
   }

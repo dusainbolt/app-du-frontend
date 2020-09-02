@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu } from "antd";
-import { AdminRoutes } from "../../../Routes";
-import { browserHistory } from "../../../utils/history";
+import { Routes } from "../../Routes";
+import { browserHistory } from "../../utils/history";
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import "./index.scss";
 
@@ -15,14 +15,14 @@ function Sidebar() {
 
   const renderMenu = () => {
     let menu = null;
-    menu = AdminRoutes.map((item, index) => {
+    menu = Routes.map((item, index) => {
       if (index !== 0) {
         const activeClassMenun =
           window.location.pathname === item.path ? "ant-menu-item-selected" : "";
         return (
           <Menu.Item
             key={`${item.name}_${index}`}
-            icon={getIconMenu(item.iconName)}
+            // icon={getIconMenu(item.iconName)}
             onClick={() => gerRedirect(item.path)}
             className={activeClassMenun}
           >

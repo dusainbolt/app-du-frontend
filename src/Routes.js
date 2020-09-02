@@ -1,45 +1,44 @@
-import Homepage from "./pages/Admin/Home";
-import MyAccount from "./pages/Admin/MyAccount";
-import HomeWeb from "./pages/Web/Home";
+import Homepage from "./pages/Home";
+import LoginPage from "./pages/Login";
 
-export const AdminRoutes = [
-  {
-    path: "/bautroixanh",
-    exact: true,
-  },
+export const Routes = [
   {
     name: "Home",
-    path: "/bautroixanh/home",
-    component: Homepage,
-    iconName: "manager",
-    exact: true,
-  },
-  {
-    name: "My Account",
-    path: "/bautroixanh/my-account",
-    iconName: "task",
-    component: MyAccount,
-  },
-  {
-    name: "My Acoount 2",
-    path: "/bautroixanh/my-account1",
-    iconName: "contact",
-    component: MyAccount,
-  },
-];
-export const WebRoutes = [
-  {
-    name: "sdsd",
     path: "/",
-    component: HomeWeb,
     exact: true,
-  }
-  // {
-  //   name: "sdsd",
-  //   path: "/bautroixanh/my-account",
-  //   component: MyAccount,
-  //   exact: false,
-  // },
+    component: Homepage,
+  },
+  {
+    name: "Home1",
+    path: "/home",
+    exact: true,
+    component: Homepage,
+  },
 ];
 
-// export default routes;
+export const RoutesAuth = [
+  {
+    name: "Welcome",
+    path: "/welcome",
+    exact: true,
+    component: LoginPage,
+  },
+  {
+    name: "Login",
+    path: "/login",
+    exact: true,
+    component: LoginPage,
+  },
+  {
+    name: "Register",
+    path: "/register",
+    exact: true,
+    component: LoginPage,
+  },
+  {
+    name: "ForgotPassword",
+    path: "/forgot-password",
+    exact: true,
+    component: LoginPage,
+  },
+];

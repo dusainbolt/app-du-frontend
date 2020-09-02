@@ -3,8 +3,8 @@ import { withTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Row } from "antd";
 import { RightCircleFilled } from "@ant-design/icons";
-import ImgNotFound1 from "../../../common/image/error-404.png";
-import LazyLoading from "../../../components/LazyLoadingImg";
+import ImgNotFound1 from "../../common/image/error-404.png";
+import LazyLoading from "../../components/LazyLoadingImg";
 
 class Home extends Component {
   render() {

@@ -1,12 +1,12 @@
 import React from "react";
 import { Row, Col, Modal } from "antd";
-import Input from "../../../components/Input";
+import Input from "../Input";
 import { Formik, Field } from "formik";
-import Button from "../../Button";
+import Button from "../Button";
 import {
   validateFormChangePassword,
   PARAMS,
-} from "../../../common";
+} from "../../common";
 
 function ModalChangePassword({ userDetail, visible, onCancel, receiveSubmit }) {
   const initialValues = {
