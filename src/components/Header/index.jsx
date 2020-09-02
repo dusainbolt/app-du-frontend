@@ -5,7 +5,6 @@ import { Typography, Avatar, Popover, Modal } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../pages/Login/actions";
 import LogoHeader from "../../common/image/LogoSidebar.png";
-import ChangePasswordModal from "./ChangePasswordModal";
 import { useMemo } from "react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -57,12 +56,7 @@ function CommonHeader({ toggleMenu }) {
 
   const renderModalChangePassword = useMemo(() => {
     return (
-      <ChangePasswordModal
-        receiveSubmit={handleChangePassword}
-        userDetail={userDetail}
-        onCancel={hideModal}
-        visible={visibleModal}
-      />
+      <div>changePassword</div>
     );
   }, [visibleModal]);
 
