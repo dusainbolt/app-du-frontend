@@ -1,6 +1,6 @@
 import Homepage from "./pages/Admin/Home";
 import MyAccount from "./pages/Admin/MyAccount";
-import HomeWeb from "./pages/Web/Home";
+import HomeWeb from "./pages/WebHome";
 
 export const AdminRoutes = [
   {
@@ -33,13 +33,7 @@ export const WebRoutes = [
     path: "/",
     component: HomeWeb,
     exact: true,
-  }
-  // {
-  //   name: "sdsd",
-  //   path: "/bautroixanh/my-account",
-  //   component: MyAccount,
-  //   exact: false,
-  // },
+  },
 ];
 
 // export default routes;

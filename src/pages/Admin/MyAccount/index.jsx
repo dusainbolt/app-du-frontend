@@ -23,7 +23,6 @@ class Home extends Component {
               className="img_profile"
               alt="Avatar"
             />
-
           </div>
           ssssssssssss
         </Col>

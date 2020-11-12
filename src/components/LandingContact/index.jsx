@@ -144,7 +144,6 @@ function ContactReview() {
           <Spin isLoading={visibleConfirm} content={renderFormContact()} />
         </div>
       </Col>
-
       <Col xl={{ span: 12 }} lg={{ span: 24 }} className="container-ld--rows__course team-carouse">
         <LeftCircleFilled className="team-carouse--icon-left" onClick={previous} />
         <Carousel draggable={true} ref={node => (carousel = node)} speed={500} effect="scrolling">

@@ -7,7 +7,6 @@ import LayoutWeb from "./pages/Layout/WebMaster";
 import { AdminRoutes, WebRoutes } from "./Routes";
 import AuthLoading from "./components/Loading/AuthenLoading";
 import EventLoading from "./components/Loading/EventLoading";
-import Home from "./pages/Admin/Home";
 import LoginPage from "./pages/Login";
 import NotFound from "./pages/Web/NotFound";
 import "./App.css";
@@ -49,13 +48,13 @@ class App extends Component {
     return (
       <div className="App">
         <AuthLoading isLoading={layout.isLoadingAuth} />
-        <EventLoading isLoading={layout.isLoadingEvent}/>
+        <EventLoading isLoading={layout.isLoadingEvent} />
         <Router history={browserHistory}>
           <Switch>
             <Route exact path="/bautroixanh/login" component={LoginPage} />
             {this.renderAdminLayout()}
             {this.renderWebLayout()}
-            <Route exact path="" component={Home} />
+            <Route exact path="" component={NotFound} />
           </Switch>
         </Router>
       </div>
@@ -67,8 +66,6 @@ const mstp = state => ({
   layout: state.layoutReducer,
 });
 
-const mdtp = dispatch => ({
-});
-
+const mdtp = dispatch => ({});
 
 export default connect(mstp, mdtp)(withTranslation()(App));

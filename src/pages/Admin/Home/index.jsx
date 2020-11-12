@@ -54,9 +54,7 @@ function Home() {
     dispatch(actions.sendEmailStart({ email, sub, msg }));
   };
 
-  const redirectHome = () => {
-
-  };
+  const redirectHome = () => {};
 
   return (
     <Row>
@@ -96,8 +94,8 @@ function Home() {
                 />
               </div>
             </div>
-            <Link style={{ textAlign: "center", fontSize: "11px", display: "block"}} to="/">
-            Quay lại trang chủ        
+            <Link style={{ textAlign: "center", fontSize: "11px", display: "block" }} to="/">
+              Quay lại trang chủ
             </Link>
           </div>
         )}

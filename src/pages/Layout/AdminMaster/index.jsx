@@ -44,7 +44,7 @@ function App({ component: Mycomponent, classes, name, path, ...remainProps }) {
               <CommonHeader toggleMenu={toggleMenu} />
             </Header>
             <Layout className="site-layout">
-              <Sider trigger={null} collapsible collapsed={collapsed}>
+              <Sider trigger={null} collapsed={collapsed}>
                 <Sidebar />
               </Sider>
               <Content onClick={onClickContent} className="site-layout-background">
