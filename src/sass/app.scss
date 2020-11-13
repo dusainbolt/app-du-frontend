@@ -6,13 +6,11 @@
 @import "./_form";
 @import "./_modal";
 @import "./_landing";
+@import "./flag";
 @import "./_button";
 @import "./notFound";
 @import "./demo";
 /* Common style */
-
-
-
 
 #components-layout-demo-custom-trigger .trigger {
   font-size: 18px;
@@ -42,4 +40,3 @@
 .ant-message {
   top: 5% !important;
 }
-

@@ -8,11 +8,11 @@ import {
   BookFilled,
 } from "@ant-design/icons";
 import FadeIn from "react-fade-in";
-
+import FlagLanguage from "../../Flag";
 import { Link } from "react-router-dom";
 import { Menu, Dropdown } from "antd";
 import { listLangage } from "../../../common/configLandingPage";
-import LogoHeader from "../../../common/image/LogoSidebar.png";
+import LogoHeader from "../../../resource/image/LogoSidebar.png";
 import SideBar from "../SlideBar";
 import { useTranslation } from "react-i18next";
 
@@ -77,6 +77,7 @@ function CommonHeader() {
                 </Link>
               </li>
               <li>
+                <FlagLanguage />
                 <Dropdown
                   overlayClassName="header__language"
                   trigger="click"

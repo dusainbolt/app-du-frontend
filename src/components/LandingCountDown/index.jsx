@@ -54,9 +54,7 @@ function CountDownTimer() {
 
   return (
     <div className="title-top-right__icon-group-detail">
-      <div className="title-top-right__icon-group-detail--container">
-        {renderProcessTime()}
-      </div>
+      <div className="title-top-right__icon-group-detail--container">{renderProcessTime()}</div>
     </div>
   );
 }

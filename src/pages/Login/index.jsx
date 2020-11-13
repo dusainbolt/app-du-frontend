@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Formik, Field } from "formik";
 import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
-import logo from "../../common/image/logo.png";
+import logo from "../../resource/image/logo.png";
 import * as Yup from "yup";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
@@ -29,35 +29,27 @@ class LoginPage extends Component {
   }
   componentDidMount() {
     const { token } = this.props;
-    if(token){
+    if (token) {
       this.props.postRedirect(token);
     }
-  }  
+  }
   render() {
     const { initialValues } = this.state;
     return (
       <Formik
         initialValues={initialValues}
         validationSchema={this.validationSchema}
-        onSubmit={this.onSubmit}
-      >
+        onSubmit={this.onSubmit}>
         {formik => (
           <div className="login layout-web">
             <div className="login__wrapper">
               <h5 className="login__wrapper--title white-color">Du Sainbolt</h5>
-              <h3 className="login__wrapper--des white-color">
-                Welcome to Admin Manager
-              </h3>
+              <h3 className="login__wrapper--des white-color">Welcome to Admin Manager</h3>
               <div className="login__form">
                 <p className="login__form--title">
                   <img width="40%" src={logo} alt="logo" />
                 </p>
-                <Field
-                  name="email"
-                  labelTitle="Email"
-                  placeholder="Nhập email"
-                  component={Input}
-                />
+                <Field name="email" labelTitle="Email" placeholder="Nhập email" component={Input} />
                 <Field
                   name="password"
                   labelTitle="Password"

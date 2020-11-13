@@ -4,7 +4,7 @@ import "./index.scss";
 import { Typography, Avatar, Popover, Modal } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../../pages/Login/actions";
-import LogoHeader from "../../../common/image/LogoSidebar.png";
+import LogoHeader from "../../../resource/image/LogoSidebar.png";
 import ChangePasswordModal from "./ChangePasswordModal";
 import { useMemo } from "react";
 import { useEffect } from "react";
@@ -87,8 +87,7 @@ function CommonHeader({ toggleMenu }) {
             trigger="click"
             className="profile__popover"
             visible={visiblePopover}
-            onVisibleChange={handleVisibleChange}
-          >
+            onVisibleChange={handleVisibleChange}>
             <Avatar className="profile__icon--avatar" icon={<UserOutlined />} />
           </Popover>
         </div>

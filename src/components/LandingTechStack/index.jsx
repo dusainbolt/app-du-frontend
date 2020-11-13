@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Row, Col, Tooltip } from "antd";
 import { useTranslation } from "react-i18next";
-import ImgWrapper from "../../common/image/wrapper-tech-stack-06-06-06.png";
+import ImgWrapper from "../../resource/image/wrapper-tech-stack-06-06-06.png";
 import LazyloadImg from "../LazyLoadingImg";
 import { LIST_STACK_BE, LIST_STACK_FE } from "../../common/configLandingPage";
 import ModalCommon from "../Modal";
@@ -66,8 +66,7 @@ function TechStack() {
         width={500}
         visible={visible}
         content={renderContentDetail()}
-        onCancel={hideModal}
-      ></ModalCommon>
+        onCancel={hideModal}></ModalCommon>
     );
   }, [visible]);
 

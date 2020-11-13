@@ -4,7 +4,7 @@ import { getI18n } from "react-i18next";
 export const REVIEW = {
   NOT_SATISFIED: 1,
   NORMAL: 2,
-  SATISFIED: 3
+  SATISFIED: 3,
 };
 
 export const PARAMS = {
@@ -16,6 +16,19 @@ export const PARAMS = {
   CONTACT: "contact",
   VOTE: "vote",
 };
+
+export const DATA_LANGUAGE = [
+  {
+    lang: "en",
+    icon: "",
+    label: "lang.en",
+  },
+  {
+    lang: "ja",
+    icon: "",
+    label: "lang.ja",
+  },
+];
 
 export const validateFormChangePassword = Yup.object({
   [PARAMS.PASSWORD]: Yup.string()

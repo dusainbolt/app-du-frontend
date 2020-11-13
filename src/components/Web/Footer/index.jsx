@@ -4,7 +4,7 @@ import { Layout, Row, Col } from "antd";
 import FadeIn from "react-fade-in";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import logoFooter from "../../../common/image/Logo-footer.png";
+import logoFooter from "../../../resource/image/Logo-footer.png";
 
 const { Footer } = Layout;
 

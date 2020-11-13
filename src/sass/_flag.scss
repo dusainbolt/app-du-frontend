@@ -1,0 +1,38 @@
+.flag-wrapper {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  &.active {
+    cursor: not-allowed;
+    filter: opacity(0.5);
+  }
+  &.login-flag {
+    justify-content: center;
+    margin-top: 40px;
+    .lang {
+      color: "RED";
+    }
+  }
+  .lang {
+    margin-right: 8px;
+  }
+  &.popover {
+    margin-top: 5px;
+    .flag {
+      margin-left: auto;
+    }
+  }
+  .flag {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: "RED";
+    img {
+      width: 16px;
+      height: 12px;
+    }
+  }
+}
