@@ -139,12 +139,12 @@ function ContactReview() {
   };
   return (
     <Row className="container-ld--rows">
-      <Col className="container-ld--col-contact" xl={{ span: 12 }} lg={{ span: 24 }}>
+      <Col className="container-ld--col-contact" xs={24} lg={12}>
         <div className="form-contact">
           <Spin isLoading={visibleConfirm} content={renderFormContact()} />
         </div>
       </Col>
-      <Col xl={{ span: 12 }} lg={{ span: 24 }} className="container-ld--rows__course team-carouse">
+      <Col xs={24} lg={12} className="container-ld--rows__course team-carouse">
         <LeftCircleFilled className="team-carouse--icon-left" onClick={previous} />
         <Carousel draggable={true} ref={node => (carousel = node)} speed={500} effect="scrolling">
           <Col span={24}>{renderContentCourse()}</Col>

@@ -46,7 +46,7 @@
       border-radius: 50%;
       background-color: $primary-color-bold;
 
-      >svg {
+      > svg {
         color: white;
       }
 
@@ -58,7 +58,6 @@
   }
 
   &__icon-group-detail {
-    margin-top: 1%;
     position: relative;
     margin-bottom: 35px;
 
@@ -195,7 +194,7 @@
   }
 
   &__google-map {
-    >iframe {
+    > iframe {
       width: 100%;
       height: 150px;
       border-radius: 15px;
@@ -214,12 +213,12 @@
     &--label {
       margin-top: 3px;
 
-      >a,
+      > a,
       a:active {
         color: $black-color;
       }
 
-      >a:hover {
+      > a:hover {
         color: $primary-color-bold;
       }
 
@@ -230,10 +229,9 @@
     }
 
     &--icon {
-      margin-top: 8px;
       font-size: 22px;
-      margin-right: 18px;
       transition: box-shadow 0.1s;
+      margin: 5px 12px;
 
       &:hover {
         box-shadow: 1px 0rem 1rem 0px rgba(0, 0, 0, 0.075);
@@ -243,9 +241,15 @@
     }
   }
 
+  &__icon-wrapper {
+    justify-content: start;
+    a .anticon-facebook {
+      margin-left: 0;
+    }
+  }
+
   &__image {
-    float: left !important;
-    width: 30%;
+    max-width: 140px;
     margin-top: -2%;
   }
 }
@@ -314,7 +318,7 @@
   border: solid 2px $primary-color-bold;
   border-radius: 50%;
 
-  >svg {
+  > svg {
     color: $primary-color-bold;
   }
 
@@ -322,7 +326,7 @@
     border-radius: 50%;
     background-color: $primary-color-bold;
 
-    >svg {
+    > svg {
       color: white;
     }
   }
@@ -333,7 +337,6 @@ div.back-top-wrapper {
   bottom: 25px;
 }
 
-
 .team-carouse {
   margin-bottom: 40px;
   position: relative;
@@ -341,7 +344,7 @@ div.back-top-wrapper {
   &--wrapper {
     width: 80%;
     flex: none !important;
-    max-height: 280px;
+    max-height: 300px;
     margin: auto;
     box-shadow: $box-shadow-primary;
     margin-top: 100px;
@@ -412,7 +415,7 @@ div.back-top-wrapper {
     font-size: 35px;
     opacity: 0.7;
 
-    >svg {
+    > svg {
       color: $primary-color-bold;
     }
   }
@@ -426,11 +429,11 @@ div.back-top-wrapper {
 
 .form-contact {
   background-color: white;
-  width: 550px;
+  max-width: 550px;
   overflow: hidden;
   margin: auto;
   margin-top: -50px;
-  box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, .11);
+  box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.11);
   border-radius: 10px;
 
   h3 {
@@ -440,7 +443,7 @@ div.back-top-wrapper {
   &--icon-gr-review {
     margin-top: 15px;
 
-    >span {
+    > span {
       cursor: pointer;
       margin: 0 10px;
       color: $black-color-light;
@@ -467,7 +470,7 @@ div.back-top-wrapper {
     .ant-input-affix-wrapper {
       height: 40px;
 
-      >input {
+      > input {
         font-size: 16px;
 
         &::placeholder {
@@ -480,7 +483,7 @@ div.back-top-wrapper {
       }
     }
   }
-  &--btn-submit{
+  &--btn-submit {
     width: 100%;
     height: 150px;
   }
@@ -542,7 +545,7 @@ div.back-top-wrapper {
           padding: 20px;
           border-radius: 50%;
 
-          >svg {
+          > svg {
             color: $primary-color-bold;
           }
         }
@@ -578,7 +581,7 @@ div.back-top-wrapper {
           @extend .container-ld--rows__col-one--item__icon;
           background-color: $primary-color-bold;
 
-          >svg {
+          > svg {
             color: $white-color;
           }
         }
@@ -632,7 +635,6 @@ div.back-top-wrapper {
     margin: auto;
     display: block;
     min-height: 650px;
-
     .ant-steps {
       display: none;
     }
@@ -662,7 +664,7 @@ div.back-top-wrapper {
         display: block;
         margin-bottom: 15px;
 
-        >span {
+        > span {
           margin-right: 5px;
           font-size: 20px;
           color: $primary-color-bold;
@@ -676,7 +678,6 @@ div.back-top-wrapper {
     }
   }
 }
-
 
 .ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
   stroke: $primary-color-bold !important;
@@ -718,13 +719,13 @@ div.ant-popover-inner {
   }
 
   &__language {
-    >ul {
+    > ul {
       border-radius: 10px;
       overflow: hidden;
       padding: 0px;
       box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08);
 
-      >li {
+      > li {
         padding: 10px 15px;
         color: $primary-color-bold;
         font-weight: 700;
@@ -740,7 +741,7 @@ div.ant-popover-inner {
   &__web {
     position: relative;
 
-    >img {
+    > img {
       position: absolute;
       left: 50px;
       top: 3px;
@@ -753,7 +754,7 @@ div.ant-popover-inner {
     &--display-mobie {
       display: none;
 
-      &--icon>svg {
+      &--icon > svg {
         position: absolute;
         color: $primary-color-bold;
         font-size: 30px;
@@ -763,7 +764,7 @@ div.ant-popover-inner {
     }
 
     &--menu {
-      >ul {
+      > ul {
         position: absolute;
         list-style-type: none;
         right: 15px;
@@ -772,11 +773,11 @@ div.ant-popover-inner {
         text-overflow: ellipsis;
         overflow: hidden;
 
-        >li {
+        > li {
           margin-right: 20px;
           float: left;
 
-          >a {
+          > a {
             display: block;
             color: $primary-color-bold;
             text-align: center;
@@ -794,19 +795,19 @@ div.ant-popover-inner {
             }
           }
 
-          >p.dropdown-language {
+          > p.dropdown-language {
             margin-top: 11px;
             cursor: pointer;
             font-size: $base-font-size;
             color: $primary-color-bold;
             font-weight: 550;
 
-            >span.anticon-global {
+            > span.anticon-global {
               font-size: $base-font-size;
               margin-right: 3px;
             }
 
-            >span.anticon-down {
+            > span.anticon-down {
               margin-left: 3px;
             }
           }
@@ -832,7 +833,6 @@ div.ant-popover-inner {
     background: url("../common/image/header-bg.png");
     top: -30%;
     position: absolute;
-
   }
 
   .ant-skeleton {
@@ -851,12 +851,11 @@ div.ant-popover-inner {
   }
 }
 
-@media (max-width: 1024px) {
-  .title-top-right__icon-group-detail--container {
-    width: max-content;
-  }
-
+@media (max-width: $breakpoint_large_desktop_max) {
   .team-carouse {
+    &--wrapper {
+      max-height: 400px;
+    }
     &--icon-left {
       top: 42%;
     }
@@ -873,7 +872,6 @@ div.ant-popover-inner {
         }
       }
     }
-
   }
 
   .container-ld {
@@ -883,7 +881,7 @@ div.ant-popover-inner {
       margin-top: 15px;
 
       .form-contact {
-        width: 100%;
+        width: 80%;
       }
     }
 
@@ -919,7 +917,7 @@ div.ant-popover-inner {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint_tablet_max) {
   .title-top-right {
     &__icon-group {
       text-align: center;
@@ -932,7 +930,6 @@ div.ant-popover-inner {
 
     &__icon-group-detail {
       &--container {
-        width: max-content;
         margin: auto;
       }
 
@@ -977,10 +974,6 @@ div.ant-popover-inner {
       margin: auto;
       width: 80%;
       margin-top: 15px;
-
-      .form-contact {
-        width: 100%;
-      }
     }
 
     .container-ld__content_center {
@@ -991,25 +984,33 @@ div.ant-popover-inner {
 
   .header {
     &__web {
+      &--display-mobie {
+        display: flex;
+        position: absolute;
+        right: 50px;
+      }
+      &--display-web {
+        display: none;
+      }
       &--menu {
-        >ul {
-          >li {
+        > ul {
+          > li {
             margin-right: 15px;
 
-            >a {
+            > a {
               font-weight: 650;
               padding: 10px 7px;
               font-size: $base-font-size;
             }
 
-            >p.dropdown-language {
+            > p.dropdown-language {
               margin-top: 13px;
               cursor: pointer;
               color: $primary-color-bold;
               font-weight: 650;
               font-size: $base-font-size;
 
-              >span.anticon-global {
+              > span.anticon-global {
                 font-size: $base-font-size;
                 margin-right: 3px;
               }
@@ -1049,7 +1050,7 @@ div.ant-popover-inner {
           margin-bottom: 15px;
           padding: 10px;
 
-          >span {
+          > span {
             margin-right: 5px;
             font-size: 18px;
             color: $primary-color-bold;
@@ -1058,18 +1059,34 @@ div.ant-popover-inner {
       }
     }
   }
+  .my-footer {
+    &__col-wrapper {
+      &--title,
+      &--label {
+        text-align: center;
+      }
+      a .anticon-facebook {
+        margin-left: 12px;
+      }
+    }
+  }
 }
 
-
-@media (max-width: 414px) {
-
+@media (max-width: $breakpoint_mobile_max) {
   .rp-mobie {
     display: inline-block !important;
   }
 
+  .title-top-right__title-description {
+    padding: 0 18px;
+  }
   div.back-top-wrapper {
     right: 15px;
     bottom: 25px;
+  }
+
+  .form-contact {
+    min-width: 350px;
   }
 
   .tech-stack {
@@ -1136,12 +1153,13 @@ div.ant-popover-inner {
     }
   }
 
-
   .team-carouse {
     ul.team-carouse--time-line {
       max-height: 250px;
     }
-
+    &--wrapper {
+      min-width: 350px;
+    }
     &--card {
       &__image {
         border-radius: 15px 15px 0px 0px;
@@ -1177,10 +1195,6 @@ div.ant-popover-inner {
         text-align: center;
       }
     }
-
-    &__icon-wrapper {
-      padding-left: 15px;
-    }
   }
 
   .header {
@@ -1197,14 +1211,8 @@ div.ant-popover-inner {
         display: none;
       }
 
-      >img {
+      > img {
         left: 10px;
-      }
-
-      &--display-mobie {
-        display: flex;
-        position: absolute;
-        right: 50px;
       }
     }
   }

@@ -20,7 +20,6 @@ let localLang = localStorage.getItem("lang");
 const lang = localLang ? localLang : "vn";
 
 function CommonHeader() {
-
   const [visible, setVisible] = useState(false);
   const { t, i18n } = useTranslation();
   const onShowSidebar = () => {
@@ -34,8 +33,7 @@ function CommonHeader() {
           <Menu.Item
             key={value}
             className={checkActiveLanguage(lang, value)}
-            onClick={changeLocales(value)}
-          >
+            onClick={changeLocales(value)}>
             {t(`header.language_${value}`)}
           </Menu.Item>
         ))}
@@ -82,8 +80,7 @@ function CommonHeader() {
                 <Dropdown
                   overlayClassName="header__language"
                   trigger="click"
-                  overlay={renderMenuLanguage(t, lang)}
-                >
+                  overlay={renderMenuLanguage(t, lang)}>
                   <p className="ant-dropdown-link dropdown-language">
                     <GlobalOutlined />
                     {lang === "vn" ? t("header.language_vn") : t("header.language_en")}
