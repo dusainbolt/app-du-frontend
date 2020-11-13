@@ -72,8 +72,6 @@
     "scss": "Nó giúp bạn viết CSS theo cách của một ngôn ngữ lập trình, có cấu trúc rõ ràng, rành mạch, dễ phát triển và bảo trì code hơn"
   },
   "header": {
-    "language_en": "Tiếng anh",
-    "language_vn": "Tiếng việt",
     "menu_home": "Trang chủ",
     "menu_blog": "Dòng thời gian",
     "menu_app": "Ứng dụng",
@@ -92,6 +90,10 @@
     "label_contact_us": "Contact Us",
     "label_copyright": "Copyright* by Du Sainbolt 2020",
     "label_about_us": "About Us"
+  },
+  "lang": {
+    "en": "Tiếng anh",
+    "vn": "Tiếng việt"
   },
   "ld_process": {
     "title_1": "1. PLANNING",

@@ -2,19 +2,23 @@
   display: flex;
   cursor: pointer;
   align-items: center;
+  height: 34px;
   &.active {
     cursor: not-allowed;
     filter: opacity(0.5);
   }
-  &.login-flag {
-    justify-content: center;
-    margin-top: 40px;
-    .lang {
-      color: "RED";
-    }
+
+  &.item {
+    height: unset;
   }
+
+  .anticon-caret-down {
+    font-size: $base-font-size;
+  }
+
   .lang {
     margin-right: 8px;
+    font-size: $base-font-size;
   }
   &.popover {
     margin-top: 5px;

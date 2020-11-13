@@ -15,9 +15,9 @@ function App({ component: Mycomponent, classes, name, ...remainProps }) {
   const handleScroll = event => {
     let scrollTop = Math.round(event.target.scrollingElement.scrollTop);
     let header = document.getElementById("header-web");
-    if (scrollTop > 400 && header) {
+    if (scrollTop > 64 && header) {
       showTopHeader(header);
-    } else if (scrollTop < 400 && header) {
+    } else if (scrollTop < 64 && header) {
       showBodyHeader(header);
     }
   };

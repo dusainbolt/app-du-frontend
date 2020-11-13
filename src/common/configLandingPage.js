@@ -1,3 +1,4 @@
+import React from "react";
 import Html from "../resource/image/tech-stack/html.png";
 import Sass from "../resource/image/tech-stack/sass.png";
 import Jquery from "../resource/image/tech-stack/jquery-logo.png";
@@ -19,6 +20,9 @@ import ImgStep_2 from "../resource/image/process/step-2.png";
 import ImgStep_3 from "../resource/image/process/step-3.png";
 import ImgStep_4 from "../resource/image/process/step-4.png";
 import ImgStep_5 from "../resource/image/process/step-5.png";
+import FlagVN from "../resource/image/flag/FlagVN";
+import FlagEN from "../resource/image/flag/FlagEN";
+
 import {
   SafetyCertificateOutlined,
   AuditOutlined,
@@ -41,6 +45,19 @@ import {
   FileDoneOutlined,
   SecurityScanOutlined,
 } from "@ant-design/icons";
+
+export const DATA_LANGUAGE = [
+  {
+    lang: "vn",
+    icon: <FlagVN />,
+    label: "lang.vn",
+  },
+  {
+    lang: "en",
+    icon: <FlagEN />,
+    label: "lang.en",
+  },
+];
 
 export const listLangage = ["vn", "en"];
 

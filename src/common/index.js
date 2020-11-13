@@ -17,19 +17,6 @@ export const PARAMS = {
   VOTE: "vote",
 };
 
-export const DATA_LANGUAGE = [
-  {
-    lang: "en",
-    icon: "",
-    label: "lang.en",
-  },
-  {
-    lang: "ja",
-    icon: "",
-    label: "lang.ja",
-  },
-];
-
 export const validateFormChangePassword = Yup.object({
   [PARAMS.PASSWORD]: Yup.string()
     .required(getI18n().t("Vui lòng nhập mật khẩu cũ"))

@@ -22,33 +22,9 @@ const lang = localLang ? localLang : "vn";
 function CommonHeader() {
   const [visible, setVisible] = useState(false);
   const { t, i18n } = useTranslation();
+
   const onShowSidebar = () => {
     setVisible(!visible);
-  };
-
-  const renderMenuLanguage = (t, lang) => {
-    return (
-      <Menu>
-        {listLangage.map(value => (
-          <Menu.Item
-            key={value}
-            className={checkActiveLanguage(lang, value)}
-            onClick={changeLocales(value)}>
-            {t(`header.language_${value}`)}
-          </Menu.Item>
-        ))}
-      </Menu>
-    );
-  };
-
-  const checkActiveLanguage = (lang, value) => {
-    if (lang === value) return "header__active-language";
-    return "";
-  };
-
-  const changeLocales = type => () => {
-    i18n.changeLanguage(type);
-    localStorage.setItem("lang", type);
   };
 
   return (
@@ -78,16 +54,6 @@ function CommonHeader() {
               </li>
               <li>
                 <FlagLanguage />
-                <Dropdown
-                  overlayClassName="header__language"
-                  trigger="click"
-                  overlay={renderMenuLanguage(t, lang)}>
-                  <p className="ant-dropdown-link dropdown-language">
-                    <GlobalOutlined />
-                    {lang === "vn" ? t("header.language_vn") : t("header.language_en")}
-                    <CaretDownFilled />
-                  </p>
-                </Dropdown>
               </li>
             </ul>
           </div>
