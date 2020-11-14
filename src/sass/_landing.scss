@@ -269,55 +269,12 @@
   color: #fff;
 }
 
-// .ld-process {
-//   .ant-timeline-item-head {
-//     .anticon-sync {
-//       color: $primary-color-bold;
-//     }
-//   }
-//   &--text {
-//     > label {
-//       font-size: $base-font-title;
-//       color: $black-color;
-//       font-weight: 700;
-//     }
-//     > p {
-//       font-size: $base-font-size;
-//     }
-//   }
-//   .ant-timeline-item {
-//     width: 90%;
-//     margin: auto !important;
-//   }
-//   &--item {
-//     margin-top: 15px;
-//     display: -webkit-inline-box;
-//   }
-//   &--icon-timeline {
-//     width: 61px;
-//     padding: 7px;
-//     border: solid 1.2px $primary-color-bold;
-//     border-radius: 10px;
-//     margin: 0 15px;
-//     transition: box-shadow 0.5s;
-//     > svg {
-//       color: $white-color;
-//     }
-//     &:hover {
-//       box-shadow: $box-shadow-primary;
-//     }
-//   }
-//   &--item-2 {
-//     @extend .ld-process--item;
-//   }
-// }
-
 .back-top {
   font-size: 22px;
   padding: 8px;
   border: solid 2px $primary-color-bold;
   border-radius: 50%;
-  background-color: #f5f5ff;
+  // background-color: $bg-layout-fb;
 
   > svg {
     color: $primary-color-bold;
@@ -634,8 +591,8 @@ div.back-top-wrapper {
   .ld-step {
     width: 80%;
     margin: auto;
-    display: block;
-    min-height: 650px;
+    margin-bottom: 150px;
+    // min-height: 650px;
     .ant-steps {
       display: none;
     }
@@ -676,7 +633,8 @@ div.back-top-wrapper {
 
     .steps-action {
       text-align: center;
-      margin-top: 20px;
+      width: 100%;
+      margin-top: 30px;
     }
   }
 }
@@ -865,12 +823,13 @@ div.ant-popover-inner {
 
   .layout-web {
     .ld-step {
-      min-height: 500px;
+      // min-height: 500px;
 
       &__content-wrapper {
+        transform: translate(25%, -50%);
         &--title {
+          white-space: nowrap;
           font-size: 35px;
-          width: 350px;
         }
       }
     }
@@ -915,6 +874,23 @@ div.ant-popover-inner {
   .my-footer {
     &__image {
       width: 70%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint_desktop_max) {
+  .layout-web {
+    .ld-step {
+      &__content-wrapper {
+        width: max-content;
+        margin: auto;
+        position: unset;
+        top: unset;
+        transform: unset;
+        &--para {
+          width: max-content;
+        }
+      }
     }
   }
 }
@@ -1026,7 +1002,7 @@ div.ant-popover-inner {
   .layout-web {
     .ld-step {
       width: 100%;
-      min-height: 725px;
+      // min-height: 725px;
 
       &__img {
         width: 80%;
@@ -1040,7 +1016,7 @@ div.ant-popover-inner {
 
         &--title {
           padding-top: 35px;
-          font-size: 50px;
+          font-size: 35px;
           font-weight: 700;
           text-align: center;
           width: 100%;
@@ -1136,7 +1112,7 @@ div.ant-popover-inner {
 
   .layout-web {
     .ld-step {
-      min-height: 650px;
+      // min-height: 650px;
 
       .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item {
         padding-left: 0;

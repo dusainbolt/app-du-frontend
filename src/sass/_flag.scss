@@ -14,11 +14,13 @@
 
   .anticon-caret-down {
     font-size: $base-font-size;
+    margin-left: 2px;
   }
 
   .lang {
     margin-right: 8px;
     font-size: $base-font-size;
+    width: max-content;
   }
   &.popover {
     margin-top: 5px;
@@ -27,16 +29,16 @@
     }
   }
   .flag {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     align-items: center;
     display: flex;
     justify-content: center;
-    background-color: "RED";
-    img {
-      width: 16px;
-      height: 12px;
+    background-color: $bg-layout-fb;
+    .flag-icon {
+      width: 22px;
+      height: 18px;
     }
   }
 }
